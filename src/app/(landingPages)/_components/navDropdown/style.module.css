@@ -1,0 +1,25 @@
+.dropdown {
+  border-bottom: 2px solid transparent;
+}
+
+.dropdownMenu {
+  box-shadow: 0 4px 6px 0 #0c002e0f;
+  height: 0px;
+  overflow: hidden;
+}
+
+.dropdown:hover {
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.arrowIcon {
+  transition: all 0.2s linear;
+}
+
+.dropdown:hover .arrowIcon {
+  transform: rotate(-180deg);
+}
+
+.dropdown:hover .dropdownMenu {
+  height: auto;
+}

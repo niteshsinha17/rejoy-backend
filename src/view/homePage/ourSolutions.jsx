@@ -1,0 +1,100 @@
+import { Container, Section } from "@/components";
+import LeftImageSection from "@/components/leftImageSection";
+import RightImageSection from "@/components/rightImageSection";
+import { ROUTES } from "@/enum";
+import Link from "next/link";
+import DigitalTherapy from "../../../public/images/home/digital-therapy.png";
+import Move from "../../../public/images/home/move.png";
+import Musculoskeletal from "../../../public/images/home/musculoskeletal.png";
+import OnCall from "../../../public/images/home/on-call.png";
+
+const ButtonLink = (props) => {
+  return (
+    <Link
+      className="text-lg bg-green py-3 px-6 text-white font-poppins font-semibold rounded-3xl hover:bg-yellow hover:text-textPrimary"
+      href={props.href}
+    >
+      {props.text}
+    </Link>
+  );
+};
+
+const OurSolutions = () => {
+  return (
+    <Section>
+      <Container>
+        <h2 className="heading-2 text-center">
+          Rejoy <span className="text-primary">Health Care Center</span>
+        </h2>
+        <p className="body-1 mt-4 text-center">
+          We offer a holistic approach to improving health and well-being by
+          addressing physical health needs
+        </p>
+
+        <LeftImageSection
+          heading="Targeted Musculoskeletal Care"
+          para="Use our therapeutic exercises created by professional PTs to manage your back and joint pains. Our AI system and computer vision leave you at ease that you are performing the exercises properly."
+          custom={
+            <div className="mt-4">
+              <ButtonLink href={ROUTES.MUSCULOSKELETAL} text="Learn More" />
+            </div>
+          }
+          img={Musculoskeletal}
+          imgAlt="Targeted Musculoskeletal Care"
+        />
+        <RightImageSection
+          heading="Digital Physical Therapy"
+          para="Rejoy Health's Digital Therapist leverages sensor technology to provide real-time feedback, making movement an effective form of medicine. By capturing detailed movement data, the therapist can customize the program based on actual performance, eliminating guesswork and maximizing relief."
+          custom={
+            <div className="mt-4">
+              <ButtonLink
+                href={ROUTES.DIGITAL_PHYSICAL_THERAPY}
+                text="Learn More"
+              />
+            </div>
+          }
+          img={DigitalTherapy}
+          imgAlt="Digital Physical Therapy"
+        />
+        <LeftImageSection
+          heading="On Call"
+          para="When immediate relief is essential, our on-demand team of Physical Health Specialists is readily available. Offering round-the-clock text-based support across three continents, patients can access high-quality care precisely when and where they require it. Say goodbye to waiting on hold or speaking with unqualified individuals beforehand."
+          custom={
+            <div className="mt-4">
+              <ButtonLink href={ROUTES.ON_CALL} text="Learn More" />
+            </div>
+          }
+          img={OnCall}
+          imgAlt="On Call"
+        />
+        <RightImageSection
+          heading="Move"
+          para="Move understands that movement is integral to promoting longevity, well-being, and a life free from discomfort. By harnessing wearable technology and partnering with certified personal trainers, Move is revolutionizing exercise. Their programs are designed to enhance and sustain physical health, mitigate health risks, and empower individuals to achieve their personal fitness objectives. Move ensures exercise is not only more effective but also easily accessible to all."
+          custom={
+            <div className="mt-4">
+              <ButtonLink href={ROUTES.MOVE} text="Learn More" />
+            </div>
+          }
+          img={Move}
+          imgAlt="Move"
+        />
+        <LeftImageSection
+          heading="Precision Motion Technology"
+          para="Precision Motion Technology, powered by TrueMotion™, establishes an unprecedented benchmark in joint and muscle care. Move recognizes that precise movement is crucial for optimal well-being. By integrating TrueMotion™ technology, they deliver unrivaled accuracy and effectiveness in their programs. This advanced technology enhances joint and muscle care, enabling individuals to achieve their health goals with unparalleled precision. Move's commitment to incorporating TrueMotion™ technology sets them apart in providing exceptional care for joint and muscle health."
+          custom={
+            <div className="mt-4">
+              <ButtonLink
+                href={ROUTES.PRECISION_MOTION_TECHNOLOGY}
+                text="Learn More"
+              />
+            </div>
+          }
+          img={Move}
+          imgAlt="Precision Motion Technology"
+        />
+      </Container>
+    </Section>
+  );
+};
+
+export default OurSolutions;
