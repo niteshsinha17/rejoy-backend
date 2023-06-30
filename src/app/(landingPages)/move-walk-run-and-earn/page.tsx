@@ -1,4 +1,5 @@
+import WalkAndEarnPage from "@/view/walkAndEarnPage";
+
 export default function MoveAndEarn() {
-  console.log("move and earn page");
-  return <div>move and earn</div>;
+  return <WalkAndEarnPage />;
 }
