@@ -34,7 +34,7 @@ const navLinks: INavItem[] = [
       {
         name: "Digital Physical Therapy",
         description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget augue nec massa volutpat aliquam.",
+          "AI-powered physical therapy from the comfort of your home.",
         path: ROUTES.DIGITAL_PHYSICAL_THERAPY,
         icon: therapyIcon,
       },

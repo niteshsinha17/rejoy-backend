@@ -24,14 +24,12 @@ export const Hero = () => {
       <TopBanner>
         <Container>
           <h1 className="text-center heading-1 text-textPrimary">
-            <span>Overcome Pain Anytime,</span>
-            <br /> Anywhere
+            <span>Your Personal Health Companion For</span>
+            <br /> Optimal Physical Well-being
           </h1>
           <p className="text-center max-w-lg mx-auto body-1 mt-4">
-            Our innovative approach combines the expertise of physical
-            therapists with advanced computer vision and AI to provide
-            customized treatment plans that can be accessed from the comfort of
-            your own home.
+            Rejoy Health offers next-gen digital health solutions that helped
+            10,000+ people improve their lives.
           </p>
 
           <div className="flex justify-center mt-4 space-x-4">

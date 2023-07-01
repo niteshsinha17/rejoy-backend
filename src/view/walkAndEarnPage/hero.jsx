@@ -10,7 +10,7 @@ const ButtonLink = (props) => {
 
 export const Hero = () => {
   return (
-    <div className="relative bg-[#f7fdfc] pb-[210px]">
+    <div className="relative bg-[#eaf4f7] pb-[210px]">
       <div
         className="absolute"
         style={{

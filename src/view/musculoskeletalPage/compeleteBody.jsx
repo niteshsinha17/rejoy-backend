@@ -24,7 +24,7 @@ const Card = (props) => {
 const CompleteBody = () => {
   return (
     <div>
-      <div className="bg-[#f7fdfc]">
+      <div className="bg-[#eaf4f7]">
         <div className="relative pt-[120px] pb-[220px] mb-[220px]">
           <Container>
             <h2 className="heading-2 text-center">

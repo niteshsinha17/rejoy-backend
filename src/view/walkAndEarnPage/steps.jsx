@@ -7,7 +7,7 @@ import Walk from "../../../public/images/walk-and-earn/walk.png";
 
 export const Steps = () => {
   return (
-    <div className="bg-[#f7fdfc]">
+    <div className="bg-[#eaf4f7]">
       <Section>
         <Container>
           <h2 className="heading-2 text-center">

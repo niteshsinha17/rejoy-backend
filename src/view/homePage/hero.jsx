@@ -10,7 +10,7 @@ const ButtonLink = (props) => {
 
 export const Hero = () => {
   return (
-    <div className="relative bg-[#f7fdfc] pb-[210px]">
+    <div className="relative bg-[#eaf4f7] pb-[210px]">
       <div
         className="absolute"
         style={{
@@ -24,12 +24,13 @@ export const Hero = () => {
       <TopBanner>
         <Container>
           <h1 className="text-center heading-1 text-textPrimary">
-            <span>Your Personal Health Companion For</span>
-            <br /> Optimal Physical Well-being
+            <span>Your Personal Health Companion</span>
           </h1>
-          <p className="text-center max-w-lg mx-auto body-1 mt-4">
-            Rejoy Health offers next-gen digital health solutions that helped
-            10,000+ people improve their lives.
+          <p className="text-center max-w-xl mx-auto body-1 mt-4">
+            Experience the future of physical therapy with Rejoy&apos;s
+            AI-powered platform. Achieve optimal recovery and wellness with
+            personalized, convenient, and effective therapy sessions right from
+            the comfort of your home.
           </p>
 
           <div className="flex justify-center mt-4 space-x-4">

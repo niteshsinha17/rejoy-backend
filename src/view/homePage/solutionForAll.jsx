@@ -2,7 +2,7 @@ import { Container, Section } from "@/components";
 
 const SolutionForAll = () => {
   return (
-    <div className="bg-[#f7fdfc]">
+    <div className="bg-[#eaf4f7]">
       <Section>
         <Container>
           <div>
