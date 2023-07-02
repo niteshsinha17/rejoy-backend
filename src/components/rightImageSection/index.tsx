@@ -26,6 +26,8 @@ const RightImageSection = (props: {
       </div>
       <div>
         <Image
+          width={500}
+          height={500}
           className="max-w-sm mx-auto"
           src={props.img}
           alt={props.imgAlt}

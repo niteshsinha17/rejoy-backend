@@ -16,7 +16,7 @@ const NavDropdown = (props: INavDropdownProps) => {
         alt="arrow down"
       />
       <div
-        className={`${classes.dropdownMenu} fixed bg-white w-[100%] left-[0px] top-[102px]`}
+        className={`${classes.dropdownMenu} fixed bg-white w-[100%] left-[0px] top-[100px]`}
       >
         <div className="container mx-auto py-4 grid grid-cols-3 gap-4">
           {props.item.children?.map((subLink, index) => {

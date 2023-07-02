@@ -11,6 +11,8 @@ const LeftImageSection = (props: {
     <div className="aligned-section grid grid-cols-2 gap-x-2 pt-[60px] items-center">
       <div>
         <Image
+          width={500}
+          height={500}
           className="max-w-sm mx-auto"
           src={props.img}
           alt={props.imgAlt}
