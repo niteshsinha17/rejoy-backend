@@ -61,7 +61,9 @@ const Footer = () => {
                   Precision Motion Technology
                 </FooterLink>
                 <FooterLink path={ROUTES.MOVE}>Move</FooterLink>
-                <FooterLink path={ROUTES.HOUSE_CALLS}>House Calls</FooterLink>
+                <FooterLink path={ROUTES.IN_CENTER_VISITS}>
+                  House Calls
+                </FooterLink>
               </div>
               <div>
                 <Heading>Term and Conditions</Heading>

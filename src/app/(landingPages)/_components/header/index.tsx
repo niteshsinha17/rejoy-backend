@@ -50,10 +50,10 @@ const navLinks: INavItem[] = [
         icon: onCallIcon,
       },
       {
-        name: "House Calls",
+        name: "In-Center Visits",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget augue nec massa volutpat aliquam.",
-        path: ROUTES.HOUSE_CALLS,
+        path: ROUTES.IN_CENTER_VISITS,
         icon: houseCallIcon,
       },
       {

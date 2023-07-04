@@ -3,7 +3,7 @@ export enum ROUTES {
   HOME = "/",
   MOVE_AND_EARN = "/move-walk-run-and-earn",
   MUSCULOSKELETAL = "/musculoskeletal",
-  HOUSE_CALLS = "/house-calls",
+  IN_CENTER_VISITS = "/in-center-visits",
   DIGITAL_PHYSICAL_THERAPY = "/digital-physical-therapy",
   ON_CALL = "/on-call",
   MOVE = "/move",
