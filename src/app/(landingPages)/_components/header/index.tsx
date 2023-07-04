@@ -4,6 +4,8 @@ import { ROUTES } from "@/enum";
 import useScrollPosition from "@/hooks/scrollPosition";
 import { usePathname } from "next/navigation";
 import {
+  academyIcon,
+  houseCallIcon,
   motionIcon,
   moveIcon,
   musculoskeletalIcon,
@@ -23,14 +25,16 @@ const navLinks: INavItem[] = [
     type: "link",
   },
   {
-    name: "Move and Earn",
-    path: ROUTES.MOVE_AND_EARN,
-    type: "link",
-  },
-  {
     name: "Solutions",
     type: "dropdown",
     children: [
+      {
+        name: "Precision Motion Technology",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget augue nec massa volutpat aliquam.",
+        path: ROUTES.PRECISION_MOTION_TECHNOLOGY,
+        icon: motionIcon,
+      },
       {
         name: "Digital Physical Therapy",
         description:
@@ -46,26 +50,26 @@ const navLinks: INavItem[] = [
         icon: onCallIcon,
       },
       {
-        name: "Precision Motion Technology",
+        name: "House Calls",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget augue nec massa volutpat aliquam.",
-        path: ROUTES.PRECISION_MOTION_TECHNOLOGY,
-        icon: motionIcon,
+        path: ROUTES.HOUSE_CALLS,
+        icon: houseCallIcon,
       },
       {
-        name: "Move",
+        name: "Move and Earn",
         description:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget augue nec massa volutpat aliquam.",
-        path: ROUTES.MOVE,
+        path: ROUTES.MOVE_AND_EARN,
         icon: moveIcon,
       },
-      // {
-      //   name: "House Calls",
-      //   description:
-      //     "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget augue nec massa volutpat aliquam.",
-      //   path: ROUTES.HOUSE_CALLS,
-      //   icon: "",
-      // },
+      {
+        name: "Academy",
+        description:
+          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget augue nec massa volutpat aliquam.",
+        path: ROUTES.ACADEMY,
+        icon: academyIcon,
+      },
       {
         name: "Musculoskeletal",
         description:
