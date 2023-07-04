@@ -14,7 +14,7 @@ const SolutionForAll = () => {
             <div className="grid grid-cols-2">
               <div className="py-[40px] px-[80px]">
                 <div className="mb-2 mx-auto text-base bg-primary text-white inline-block p-1 px-4 rounded-full">
-                  For Providers
+                  For Employers
                 </div>
 
                 <div className="my-[50px]">
@@ -30,15 +30,11 @@ const SolutionForAll = () => {
                     effectively.
                   </p>
                 </div>
-                <div className="heading-5  text-primary">
-                  <div className="heading-1">83% </div>
-                  Average rate of symptom reduction per patient
-                </div>
               </div>
               <div className="border-l-primaryBoder border-l-2 py-[40px] px-[80px]">
                 <div>
                   <div className="mb-2 mx-auto text-base bg-primary text-white inline-block p-1 px-4 rounded-full">
-                    For Payers
+                    For Health Plans
                   </div>
                   <div className="my-[50px]">
                     <h3 className="heading-5">
@@ -52,11 +48,6 @@ const SolutionForAll = () => {
                       validated solutions that can help adults and teens through
                       many different health chapters.
                     </p>
-                  </div>
-                  <div className="heading-5 text-primary">
-                    <div className="heading-1">8.3x </div>
-                    Use our solutions to reduce medical claims by $2,800 spend
-                    per participant, delivering an average 3.81x ROI
                   </div>
                 </div>
               </div>

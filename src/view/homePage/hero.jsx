@@ -24,7 +24,7 @@ export const Hero = () => {
       <TopBanner>
         <Container>
           <h1 className="text-center heading-1 text-textPrimary">
-            <span>Your Personal Health Companion</span>
+            <span>Physical Therapy: Anytime, Anywhere</span>
           </h1>
           <p className="text-center max-w-xl mx-auto body-1 mt-4">
             Experience the future of physical therapy with Rejoy&apos;s
