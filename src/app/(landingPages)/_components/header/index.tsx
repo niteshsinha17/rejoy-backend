@@ -2,8 +2,12 @@
 import { Container } from "@/components";
 import { ROUTES } from "@/enum";
 import useScrollPosition from "@/hooks/scrollPosition";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
 import {
+  CloseIcon,
+  MenuIcon,
   academyIcon,
   houseCallIcon,
   motionIcon,
@@ -31,7 +35,7 @@ const navLinks: INavItem[] = [
       {
         name: "Precision Motion Technology",
         description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget augue nec massa volutpat aliquam.",
+          "Discover a groundbreaking approach to joint and muscle care with our state-of-the-art TrueMotion™ technology.",
         path: ROUTES.PRECISION_MOTION_TECHNOLOGY,
         icon: motionIcon,
       },
@@ -44,36 +48,35 @@ const navLinks: INavItem[] = [
       },
       {
         name: "On Call",
-        description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget augue nec massa volutpat aliquam.",
+        description: "Your 24/7 on-demand access to Clinical Pain Specialists",
         path: ROUTES.ON_CALL,
         icon: onCallIcon,
       },
       {
         name: "In-Center Visits",
         description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget augue nec massa volutpat aliquam.",
+          "Experience exceptional care that combines the convenience of digital accessibility with the personalized touch of in-person visits.",
         path: ROUTES.IN_CENTER_VISITS,
         icon: houseCallIcon,
       },
       {
         name: "Move and Earn",
         description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget augue nec massa volutpat aliquam.",
+          "Rejoy empowers you to embrace the value of daily movement by rewarding your every step. ",
         path: ROUTES.MOVE_AND_EARN,
         icon: moveIcon,
       },
       {
         name: "Academy",
         description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget augue nec massa volutpat aliquam.",
+          "Your comprehensive resource for achieving a pain-free life.",
         path: ROUTES.ACADEMY,
         icon: academyIcon,
       },
       {
         name: "Musculoskeletal",
         description:
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eget augue nec massa volutpat aliquam.",
+          "Physical therapists with advanced computer vision and AI to provide customized treatment plans that can be accessed from the comfort of your own home.",
         path: ROUTES.MUSCULOSKELETAL,
         icon: musculoskeletalIcon,
       },
@@ -85,8 +88,12 @@ export default function LandingPageHeader() {
   const pathName = usePathname();
   const scrollPosition = useScrollPosition();
 
-  let headerClasses = `${classes.header} flex justify-center items-center fixed bg-white`;
+  const [openMenu, setOpenMenu] = useState(false);
+  let headerClasses = `${classes.header} flex justify-center items-center fixed bg-white h-[100px] md:h-[auto]`;
 
+  if (openMenu) {
+    headerClasses += ` bg-white `;
+  }
   if (scrollPosition > 50) {
     headerClasses += ` ${classes.headerShadow}`;
   }
@@ -94,13 +101,17 @@ export default function LandingPageHeader() {
     <header className={headerClasses}>
       <div className="grow">
         <Container>
-          <div className="flex items-center">
+          <div className="flex justify-between items-center">
             <div className="">
               <BrandLogo />
             </div>
-            <div className="flex-1">
-              <div className="flex items-center justify-end space-x-6 font-manrope">
-                <ul className="flex space-x-5">
+            <div
+              className={`fixed md:relative top-[100px] md:top-[0px] bg-white md:bg-[transparent] flex-1 
+              md:h-[auto] w-[100%] md:w-[auto] left-[0px] ${classes.nav}
+              `}
+            >
+              <div className="h-[100%] md:h-[auto] flex flex-col md:flex-row md:items-center justify-end md:space-x-6 font-manrope">
+                <ul className="md:flex md:space-x-5">
                   {navLinks.map((navLink, index) => {
                     if (navLink.path && navLink.type === "link")
                       return (
@@ -122,6 +133,16 @@ export default function LandingPageHeader() {
                   Download the app
                 </span>
               </div>
+            </div>
+
+            <div className="md:hidden">
+              <button onClick={() => setOpenMenu(!openMenu)}>
+                <Image
+                  className="h-3 w-3"
+                  src={openMenu ? CloseIcon : MenuIcon}
+                  alt="toggle"
+                />
+              </button>
             </div>
           </div>
         </Container>

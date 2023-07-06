@@ -1,5 +1,13 @@
 const Section = (props) => {
-  return <div className="section py-[120px] relative">{props.children}</div>;
+  return (
+    <div
+      className={`section py-[80px] sm:py-[120px] relative ${
+        props.noBottomPadding ? "py:pb-[0px] sm:pb-[0px]" : ""
+      }`}
+    >
+      {props.children}
+    </div>
+  );
 };
 
 export default Section;

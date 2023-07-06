@@ -12,7 +12,6 @@ export const HomePageView = () => {
       <OurSolutions />
       <SolutionForAll />
       <WalkAndEarn />
-      {/* <Section1 /> */}
     </div>
   );
 };

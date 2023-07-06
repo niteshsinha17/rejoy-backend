@@ -10,7 +10,7 @@ export const metadata = {
 
 export default function RootLayout(props: ILayoutProps) {
   return (
-    <html lang="en">
+    <html lang="en" className="text-sm sm:text-lg">
       <body suppressHydrationWarning={true}>
         <LandingPageHeader />
         {props.children}

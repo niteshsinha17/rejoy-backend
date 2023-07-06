@@ -2,7 +2,7 @@ import { Container, Section } from "@/components";
 
 const Section2 = () => {
   return (
-    <Section>
+    <Section noBottomPadding>
       <Container>
         <h2 className="heading-2 text-center">
           What is

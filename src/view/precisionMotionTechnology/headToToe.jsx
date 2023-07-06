@@ -37,7 +37,7 @@ const HeadToToe = () => {
             including:
           </p>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 mt-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-6">
             <Card img={Back.src} heading="Back & Spine" />
             <Card img={HipAndKnee.src} heading="Hips & Knee" />
             <Card img={WristAndHand.src} heading="Hand and Wrist" />

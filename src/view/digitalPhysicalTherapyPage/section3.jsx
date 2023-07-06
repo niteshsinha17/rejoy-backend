@@ -8,7 +8,7 @@ import AiTherapist from "../../../public/images/digital-tharapy/therapist.png";
 
 const Section3 = () => {
   return (
-    <Section>
+    <Section noBottomPadding>
       <Container>
         <h2 className="heading-2 text-center">
           The Power of
@@ -22,10 +22,10 @@ const Section3 = () => {
 
         <div className="mt-4">
           <LeftImageSection
-            heading="Advanced Motion Sensors"
-            para="Our wearable motion sensors accurately detect your movements during each session, enabling precise tracking and analysis."
+            heading="Computer Vision"
+            para="This cutting-edge technology ensures real-time monitoring of your actions, granting invaluable insights into your performance. By capturing even the subtlest nuances of your motion, our AI-powered detector maximizes the accuracy of its assessments. With its unparalleled precision, our motion detector AI revolutionizes the way you measure and enhance your physical capabilities."
             img={MotionSensor}
-            imgAlt="Advanced Motion Sensors"
+            imgAlt="Computer Vision"
           />
           <RightImageSection
             heading="AI Therapist"
@@ -35,7 +35,7 @@ const Section3 = () => {
           />
           <LeftImageSection
             heading="Comprehensive Data Collection"
-            para="Our state-of-the-art technology captures a wide range of measurements, ensuring precise monitoring and progress tracking."
+            para="Our state-of-the-art technology captures a wide range of measurements, ensuring precise monitoring and progress tracking. From velocity and acceleration to joint angles and body positioning, our AI system meticulously records every aspect of your movement. With this comprehensive data, you can gain deeper insights into your performance and make informed adjustments to achieve optimal results."
             img={DataCollection}
             imgAlt="Comprehensive Data Collection"
           />

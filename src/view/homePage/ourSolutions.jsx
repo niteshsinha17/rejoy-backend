@@ -11,7 +11,7 @@ import OnCall from "../../../public/images/home/on-call.png";
 const ButtonLink = (props) => {
   return (
     <Link
-      className="text-lg bg-green py-3 px-6 text-white font-poppins font-semibold rounded-3xl hover:bg-yellow hover:text-textPrimary"
+      className="text-base md:text-lg bg-green py-3 px-6 text-white font-poppins font-semibold rounded-3xl hover:bg-yellow hover:text-textPrimary inline-block"
       href={props.href}
     >
       {props.text}
@@ -30,18 +30,21 @@ const OurSolutions = () => {
           We offer a holistic approach to improving health and well-being by
           addressing physical health needs
         </p>
-
         <LeftImageSection
-          heading="Targeted Musculoskeletal Care"
-          para="Use our therapeutic exercises created by professional PTs to manage your back and joint pains. Our AI system and computer vision leave you at ease that you are performing the exercises properly."
+          heading="Precision Motion Technology"
+          para="Precision Motion Technology, powered by TrueMotion™, establishes an unprecedented benchmark in joint and muscle care. Move recognizes that precise movement is crucial for optimal well-being. By integrating TrueMotion™ technology, they deliver unrivaled accuracy and effectiveness in their programs. This advanced technology enhances joint and muscle care, enabling individuals to achieve their health goals with unparalleled precision. Move's commitment to incorporating TrueMotion™ technology sets them apart in providing exceptional care for joint and muscle health."
           custom={
             <div className="mt-4">
-              <ButtonLink href={ROUTES.MUSCULOSKELETAL} text="Learn More" />
+              <ButtonLink
+                href={ROUTES.PRECISION_MOTION_TECHNOLOGY}
+                text="Learn More"
+              />
             </div>
           }
-          img={Musculoskeletal}
-          imgAlt="Targeted Musculoskeletal Care"
+          img={Move}
+          imgAlt="Precision Motion Technology"
         />
+
         <RightImageSection
           heading="Digital Physical Therapy"
           para="Rejoy Health's Digital Therapist leverages sensor technology to provide real-time feedback, making movement an effective form of medicine. By capturing detailed movement data, the therapist can customize the program based on actual performance, eliminating guesswork and maximizing relief."
@@ -72,25 +75,22 @@ const OurSolutions = () => {
           para="Move understands that movement is integral to promoting longevity, well-being, and a life free from discomfort. By harnessing wearable technology and partnering with certified personal trainers, Move is revolutionizing exercise. Their programs are designed to enhance and sustain physical health, mitigate health risks, and empower individuals to achieve their personal fitness objectives. Move ensures exercise is not only more effective but also easily accessible to all."
           custom={
             <div className="mt-4">
-              <ButtonLink href={ROUTES.MOVE} text="Learn More" />
+              <ButtonLink href={ROUTES.MOVE_AND_EARN} text="Learn More" />
             </div>
           }
           img={Move}
           imgAlt="Move"
         />
         <LeftImageSection
-          heading="Precision Motion Technology"
-          para="Precision Motion Technology, powered by TrueMotion™, establishes an unprecedented benchmark in joint and muscle care. Move recognizes that precise movement is crucial for optimal well-being. By integrating TrueMotion™ technology, they deliver unrivaled accuracy and effectiveness in their programs. This advanced technology enhances joint and muscle care, enabling individuals to achieve their health goals with unparalleled precision. Move's commitment to incorporating TrueMotion™ technology sets them apart in providing exceptional care for joint and muscle health."
+          heading="Targeted Musculoskeletal Care"
+          para="Use our therapeutic exercises created by professional PTs to manage your back and joint pains. Our AI system and computer vision leave you at ease that you are performing the exercises properly."
           custom={
             <div className="mt-4">
-              <ButtonLink
-                href={ROUTES.PRECISION_MOTION_TECHNOLOGY}
-                text="Learn More"
-              />
+              <ButtonLink href={ROUTES.MUSCULOSKELETAL} text="Learn More" />
             </div>
           }
-          img={Move}
-          imgAlt="Precision Motion Technology"
+          img={Musculoskeletal}
+          imgAlt="Targeted Musculoskeletal Care"
         />
       </Container>
     </Section>

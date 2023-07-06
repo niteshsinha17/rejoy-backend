@@ -17,7 +17,7 @@ const SpotLight = (props) => {
     <Section>
       <Container>
         <div className="py-6 px-5 bg-primary rounded-xl text-white flex shadow-lg">
-          <div className="w-7/12">
+          <div className="md:w-7/12">
             <h2 className="heading-2">
               ReJoy Spotlight:
               <span className="text-secondary">
@@ -35,8 +35,23 @@ const SpotLight = (props) => {
               ReJoy can have on your organization's MSK strategy.
             </p>
 
-            <div className="flex space-x-4 mt-6">
-              <ButtonLink href="#" text="Join now" />
+            <div className="text-center flex flex-col sm:flex-row mt-4  sm:space-x-4">
+              <a
+                href="https://play.google.com/store/apps/details?id=com.rejoy.app"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white text-primary px-6 py-3 rounded-full font-bold hover:bg-yellow hover:text-black mb-2 sm:mb-[0px]"
+              >
+                Google Play
+              </a>
+              <a
+                href="https://apps.apple.com/us/app/rejoy/id1546446309"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white text-primary px-6 py-3 rounded-full font-bold  hover:bg-yellow hover:text-black"
+              >
+                App Store
+              </a>
             </div>
           </div>
         </div>

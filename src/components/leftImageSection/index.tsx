@@ -8,7 +8,7 @@ const LeftImageSection = (props: {
   custom?: JSX.Element;
 }) => {
   return (
-    <div className="aligned-section grid grid-cols-2 gap-x-2 pt-[60px] items-center">
+    <div className="aligned-section md:grid grid-cols-1 md:grid-cols-2 md:gap-x-2 mb-4 md:mb-[0px] md:pt-[60px] items-center">
       <div>
         <Image
           width={500}
@@ -20,13 +20,11 @@ const LeftImageSection = (props: {
       </div>
       <div>
         {props.heading && (
-          <h3 className="font-poppins font-semibold text-2xl text-textPrimary">
-            {props.heading}
-          </h3>
+          <h3 className="heading-4 text-textPrimary">{props.heading}</h3>
         )}
 
         {props.para && (
-          <p className="font-manrope font-normal text-base mt-2 leading-loose text-textSecondary">
+          <p className="body-1 mt-2 max-w-2xl text-textSecondary">
             {props.para}
           </p>
         )}

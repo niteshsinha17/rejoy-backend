@@ -8,7 +8,7 @@ import classes from "./whyMatters.module.css";
 const CardItem = (props) => {
   return (
     <div
-      className={`relative border border-[#ccc] py-6 px-4 rounded-lg ${classes.mainBody}`}
+      className={`relative border mb-4 md:mb-[0px] mx-auto max-w-3xl border-[#ccc] py-6 px-4 rounded-lg ${classes.mainBody}`}
     >
       <div
         className={`absolute top-[0px] translate-y-[-50%] translate-x-[-50%] left-[50%] flex items-center justify-center bg-[#aceefe] rounded-full h-[70px] w-[70px] ${classes.iconWrapper}`}

@@ -8,8 +8,8 @@ const RightImageSection = (props: {
   custom?: JSX.Element;
 }) => {
   return (
-    <div className="aligned-section grid grid-cols-2 gap-x-2 pt-[60px] items-center">
-      <div>
+    <div className="aligned-section grid grid-cols-1 md:grid-cols-2 md:gap-x-2 md:pt-[60px] items-center">
+      <div className="order-1 md:order-[0]">
         {props.heading && (
           <h3 className="font-poppins font-semibold text-2xl text-textPrimary">
             {props.heading}
@@ -17,14 +17,14 @@ const RightImageSection = (props: {
         )}
 
         {props.para && (
-          <p className="font-manrope font-normal text-base mt-2 leading-loose text-textSecondary">
+          <p className="font-manrope font-normal text-base mt-2 leading-loose max-w-2xl text-textSecondary">
             {props.para}
           </p>
         )}
 
         {props.custom && props.custom}
       </div>
-      <div>
+      <div className="order-[0] md:order-1">
         <Image
           width={500}
           height={500}

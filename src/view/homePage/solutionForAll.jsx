@@ -11,8 +11,8 @@ const SolutionForAll = () => {
               <span className="text-primary"> All Of Our Partners</span>
             </h2>
 
-            <div className="grid grid-cols-2">
-              <div className="py-[40px] px-[80px]">
+            <div className="grid grid-cols-1 md:grid-cols-2">
+              <div className="py-[40px] px-[20px] md:px-[80px]">
                 <div className="mb-2 mx-auto text-base bg-primary text-white inline-block p-1 px-4 rounded-full">
                   For Employers
                 </div>
@@ -31,7 +31,7 @@ const SolutionForAll = () => {
                   </p>
                 </div>
               </div>
-              <div className="border-l-primaryBoder border-l-2 py-[40px] px-[80px]">
+              <div className="border-l-primaryBoder border-l-2 py-[40px] px-[20px] md:px-[80px]">
                 <div>
                   <div className="mb-2 mx-auto text-base bg-primary text-white inline-block p-1 px-4 rounded-full">
                     For Health Plans

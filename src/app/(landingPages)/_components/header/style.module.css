@@ -22,3 +22,11 @@
   font-weight: 500;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .nav {
+    height: calc(100vh - 100px);
+    height: 0px;
+    overflow: hidden;
+  }
+}

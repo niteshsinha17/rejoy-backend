@@ -7,7 +7,7 @@ import classes from "./style.module.css";
 const NavDropdown = (props: INavDropdownProps) => {
   return (
     <li
-      className={`h-[100px] flex cursor-pointer items-center justify-center text-base text-textPrimary ${classes.dropdown}`}
+      className={`md:h-[100px] px-3 py-4 text-xl flex cursor-pointer items-center justify-between md:justify-center md:text-base text-textPrimary ${classes.dropdown}`}
     >
       {props.item.name}
       <Image

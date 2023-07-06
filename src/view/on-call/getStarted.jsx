@@ -15,12 +15,12 @@ const GetStarted = () => {
             on-demand access to Clinical Pain Specialists can make in your life.
           </p>
 
-          <div className="flex justify-center mt-4 space-x-4">
+          <div className="flex justify-center items-center flex-col sm:flex-row mt-4 space-y-4 sm:space-y-[0px] sm:space-x-4">
             <a
               href="https://play.google.com/store/apps/details?id=com.rejoy.app"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white text-primary px-6 py-3 rounded-full font-bold hover:bg-yellow hover:text-black"
+              className="bg-white max-w-sm text-primary px-6 py-3 rounded-full font-bold hover:bg-yellow hover:text-black"
             >
               Google Play
             </a>
@@ -28,7 +28,7 @@ const GetStarted = () => {
               href="https://apps.apple.com/us/app/rejoy/id1546446309"
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-white text-primary px-6 py-3 rounded-full font-bold  hover:bg-yellow hover:text-black"
+              className="bg-white max-w-sm text-primary px-6 py-3 rounded-full font-bold  hover:bg-yellow hover:text-black"
             >
               App Store
             </a>

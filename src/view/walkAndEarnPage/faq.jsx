@@ -4,7 +4,7 @@ const Faq = () => {
   return (
     <Section>
       <Container>
-        <div className="grid grid-cols-2">
+        <div className="grid grid-cols-1 md:grid-cols-2">
           <div>
             <h2 className="heading-2">
               Frequently Asked <br />{" "}

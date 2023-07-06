@@ -1,4 +1,6 @@
 import { Container, Section } from "@/components";
+import Image from "next/image";
+import Img from "../../../public/images/in-center-visits/patient-getting-treatment-massage.jpg";
 
 const Card = (props) => {
   return (
@@ -19,7 +21,7 @@ const Benefits = () => {
           <span className="text-primary">in-center visits at ReJoy</span>
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8 items-center">
           <div>
             <Card
               heading="Convenient access and scheduling:"
@@ -38,7 +40,13 @@ const Benefits = () => {
               text="ReJoy ensures seamless coordination of care by integrating digital and in-center visits through our dedicated care team. Your treatment plan will be consistently monitored and adjusted to meet your evolving needs."
             />
           </div>
-          <div></div>
+          <div>
+            <Image
+              src={Img}
+              alt="Patient getting treatment massage"
+              className="rounded-xl w-[100%]"
+            />
+          </div>
         </div>
       </Container>
     </Section>
