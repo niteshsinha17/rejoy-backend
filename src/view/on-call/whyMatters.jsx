@@ -61,7 +61,7 @@ const WhyMatters = () => {
           <CardItem
             heading="Streamlined Appointments"
             img={Appointment}
-            text="No more unnecessary appointments that eat up your valuable time. Rejoy eliminates the need for multiple visits by connecting you directly with Clinical Pain Specialists through our text-based communication platform. Experience a streamlined process that puts your pain relief at the forefront."
+            text="No more unnecessary appointments that eat up your valuable time. Rejoy eliminates the need for multiple visits by connecting you directly with Clinical Pain Specialists through our video and text based communication platform. Experience a streamlined process that puts your pain relief at the forefront."
           />
           <CardItem
             heading="Cost Savings"

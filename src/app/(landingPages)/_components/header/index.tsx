@@ -35,50 +35,50 @@ const navLinks: INavItem[] = [
       {
         name: "Precision Motion Technology",
         description:
-          "Discover a groundbreaking approach to joint and muscle care with our state-of-the-art TrueMotion™ technology.",
+          "Discover a groundbreaking approach to joint and muscle care with our state-of-the-art RejoyMotion™ technology",
         path: ROUTES.PRECISION_MOTION_TECHNOLOGY,
         icon: motionIcon,
       },
       {
         name: "Digital Physical Therapy",
         description:
-          "AI-powered physical therapy from the comfort of your home.",
+          "Computer Vision powered physical therapy from the comfort of your home",
         path: ROUTES.DIGITAL_PHYSICAL_THERAPY,
         icon: therapyIcon,
       },
       {
+        name: "Musculoskeletal Care",
+        description:
+          "Physical therapists with advanced computer vision and AI to provide customized treatment plans that can be accessed from the comfort of your own home",
+        path: ROUTES.MUSCULOSKELETAL,
+        icon: musculoskeletalIcon,
+      },
+      {
         name: "On Call",
-        description: "Your 24/7 on-demand access to Clinical Pain Specialists",
+        description: "Your 24/7 on-demand access to Specialists",
         path: ROUTES.ON_CALL,
         icon: onCallIcon,
       },
       {
         name: "In-Center Visits",
         description:
-          "Experience exceptional care that combines the convenience of digital accessibility with the personalized touch of in-person visits.",
+          "Experience exceptional care that complements the convenience of digital accessibility with the personalized touch of in-person visits",
         path: ROUTES.IN_CENTER_VISITS,
         icon: houseCallIcon,
       },
       {
         name: "Move and Earn",
         description:
-          "Rejoy empowers you to embrace the value of daily movement by rewarding your every step. ",
+          "Rejoy empowers you to embrace the value of daily movement by rewarding your every step",
         path: ROUTES.MOVE_AND_EARN,
         icon: moveIcon,
       },
       {
         name: "Academy",
         description:
-          "Your comprehensive resource for achieving a pain-free life.",
+          "Your ultimate pain relief companion, offering comprehensive resources and ChatGPT-powered guidance for a pain-free life",
         path: ROUTES.ACADEMY,
         icon: academyIcon,
-      },
-      {
-        name: "Musculoskeletal",
-        description:
-          "Physical therapists with advanced computer vision and AI to provide customized treatment plans that can be accessed from the comfort of your own home.",
-        path: ROUTES.MUSCULOSKELETAL,
-        icon: musculoskeletalIcon,
       },
     ],
   },
@@ -106,7 +106,7 @@ export default function LandingPageHeader() {
               <BrandLogo />
             </div>
             <div
-              className={`fixed md:relative top-[100px] md:top-[0px] bg-white md:bg-[transparent] flex-1 
+              className={`fixed md:relative top-[100px] md:top-[0px] bg-white md:bg-[transparent] flex-1
               md:h-[auto] w-[100%] md:w-[auto] left-[0px] ${classes.nav}
               `}
             >

@@ -25,12 +25,12 @@ export const Hero = () => {
       <TopBanner>
         <Container>
           <h1 className="text-center heading-1 text-textPrimary">
-            <span>TrueMotion™ Technology </span>
+            <span>RejoyMotion™ Technology </span>
             <br /> Setting a New Standard for Joint and Muscle Care
           </h1>
           <p className="text-center max-w-3xl mx-auto body-1 mt-4">
             Discover a groundbreaking approach to joint and muscle care with our
-            state-of-the-art TrueMotion™ technology. We have redefined exercise
+            state-of-the-art RejoyMotion™ technology. We have redefined exercise
             therapy, providing our members with real-time guidance that delivers
             exceptional outcomes. Say goodbye to conventional methods and
             embrace the future of pain management.

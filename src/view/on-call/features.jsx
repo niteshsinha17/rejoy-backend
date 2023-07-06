@@ -16,7 +16,7 @@ const Features = () => {
 
         <LeftImageSection
           heading="Text-based communication"
-          para="Rejoy provides a convenient text-based communication platform for you to connect with our team of experts. Through this intuitive interface, you can easily convey your pain concerns and receive prompt responses, ensuring a seamless and efficient communication experience."
+          para="Rejoy provides a convenient video and text based communication platform for you to connect with our team of experts. Through this intuitive interface, you can easily convey your pain concerns and receive prompt responses, ensuring a seamless and efficient communication experience."
           img={TextBased.src}
           imgAlt="Text-based communication"
         />

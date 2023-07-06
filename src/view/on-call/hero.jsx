@@ -25,8 +25,7 @@ export const Hero = () => {
       <TopBanner>
         <Container>
           <h1 className="text-center heading-1 text-textPrimary">
-            <span>On-Call </span>
-            <br /> On-Demand Pain Relief and Movement Improvement
+            On-Demand Pain Relief and Movement Improvement
           </h1>
           <p className="text-center max-w-4xl mx-auto body-1 mt-4">
             Welcome to Rejoy, your 24/7 on-demand access to Clinical Pain

@@ -32,7 +32,7 @@ const OurSolutions = () => {
         </p>
         <LeftImageSection
           heading="Precision Motion Technology"
-          para="Precision Motion Technology, powered by TrueMotion™, establishes an unprecedented benchmark in joint and muscle care. Move recognizes that precise movement is crucial for optimal well-being. By integrating TrueMotion™ technology, they deliver unrivaled accuracy and effectiveness in their programs. This advanced technology enhances joint and muscle care, enabling individuals to achieve their health goals with unparalleled precision. Move's commitment to incorporating TrueMotion™ technology sets them apart in providing exceptional care for joint and muscle health."
+          para="Precision Motion Technology, powered by RejoyMotion™, establishes an unprecedented benchmark in joint and muscle care. Move recognizes that precise movement is crucial for optimal well-being. By integrating RejoyMotion™ technology, they deliver unrivaled accuracy and effectiveness in their programs. This advanced technology enhances joint and muscle care, enabling individuals to achieve their health goals with unparalleled precision. Move's commitment to incorporating TrueMotion™ technology sets them apart in providing exceptional care for joint and muscle health."
           custom={
             <div className="mt-4">
               <ButtonLink
@@ -60,6 +60,17 @@ const OurSolutions = () => {
           imgAlt="Digital Physical Therapy"
         />
         <LeftImageSection
+          heading="Targeted Musculoskeletal Care"
+          para="Use our therapeutic exercises created by professional PTs to manage your back and joint pains. Our AI system and computer vision leave you at ease that you are performing the exercises properly."
+          custom={
+            <div className="mt-4">
+              <ButtonLink href={ROUTES.MUSCULOSKELETAL} text="Learn More" />
+            </div>
+          }
+          img={Musculoskeletal}
+          imgAlt="Targeted Musculoskeletal Care"
+        />
+        <RightImageSection
           heading="On Call"
           para="When immediate relief is essential, our on-demand team of Physical Health Specialists is readily available. Offering round-the-clock text-based support across three continents, patients can access high-quality care precisely when and where they require it. Say goodbye to waiting on hold or speaking with unqualified individuals beforehand."
           custom={
@@ -70,7 +81,7 @@ const OurSolutions = () => {
           img={OnCall}
           imgAlt="On Call"
         />
-        <RightImageSection
+        <LeftImageSection
           heading="Move"
           para="Move understands that movement is integral to promoting longevity, well-being, and a life free from discomfort. By harnessing wearable technology and partnering with certified personal trainers, Move is revolutionizing exercise. Their programs are designed to enhance and sustain physical health, mitigate health risks, and empower individuals to achieve their personal fitness objectives. Move ensures exercise is not only more effective but also easily accessible to all."
           custom={
@@ -80,17 +91,6 @@ const OurSolutions = () => {
           }
           img={Move}
           imgAlt="Move"
-        />
-        <LeftImageSection
-          heading="Targeted Musculoskeletal Care"
-          para="Use our therapeutic exercises created by professional PTs to manage your back and joint pains. Our AI system and computer vision leave you at ease that you are performing the exercises properly."
-          custom={
-            <div className="mt-4">
-              <ButtonLink href={ROUTES.MUSCULOSKELETAL} text="Learn More" />
-            </div>
-          }
-          img={Musculoskeletal}
-          imgAlt="Targeted Musculoskeletal Care"
         />
       </Container>
     </Section>

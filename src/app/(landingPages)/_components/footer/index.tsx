@@ -46,7 +46,7 @@ const soicalLinks = [
   {
     name: "Twitter",
     icon: twitterIcon,
-    url: "https://twitter.com/rhealthai",
+    url: "https://twitter.com/rejoyhealth",
   },
   {
     name: "Linkedin",
@@ -61,7 +61,7 @@ const soicalLinks = [
   {
     name: "Youtube",
     icon: youTubeIcon,
-    url: "https://m.youtube.com/channel/UCMqk_PKcedTOo0f3cJxqzgw",
+    url: "https://www.youtube.com/@rejoyhealthusa",
   },
   {
     name: "Tiktok",
@@ -80,8 +80,9 @@ const Footer = () => {
             <div className="max-w-md">
               <Heading>Company</Heading>
               <Para>
-                Rejoy Health offers next-gen digital health solutions that
-                helped 10,000+ people improve their lives.
+                Rejoy Health offers next-gen digital Digital musculoskeletal care/
+                Digital MSK health solutions
+                that helped 10,000+ people improve their lives.
               </Para>
             </div>
 
@@ -131,8 +132,12 @@ const Footer = () => {
                 <FooterLink path={ROUTES.DIGITAL_PHYSICAL_THERAPY}>
                   Digital Physical Therapy
                 </FooterLink>
-                <FooterLink path={ROUTES.ON_CALL}>On Call</FooterLink>
-
+                <FooterLink path={ROUTES.MUSCULOSKELETAL}>
+                  Musculoskeletal Care
+                </FooterLink>
+                <FooterLink path={ROUTES.ON_CALL}>
+                  On Call
+                </FooterLink>
                 <FooterLink path={ROUTES.MOVE_AND_EARN}>
                   Move and Earn
                 </FooterLink>
@@ -140,9 +145,6 @@ const Footer = () => {
                   In-Center Visits
                 </FooterLink>
                 <FooterLink path={ROUTES.ACADEMY}>Academy</FooterLink>
-                <FooterLink path={ROUTES.MUSCULOSKELETAL}>
-                  Musculoskeletal
-                </FooterLink>
               </div>
               <div>
                 <Heading>Term and Conditions</Heading>
