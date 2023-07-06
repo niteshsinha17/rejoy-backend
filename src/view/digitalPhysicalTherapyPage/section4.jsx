@@ -1,13 +1,9 @@
-"use client";
 import { Container, Section } from "@/components";
-import useScreenSize from "@/hooks/screenSize";
 import Image from "next/image";
 import StepImageXs from "../../../public/images/digital-tharapy/step-xs.png";
 import StepImageMd from "../../../public/images/digital-tharapy/steps-md.png";
 
 const Section4 = () => {
-  const screenSize = useScreenSize();
-
   return (
     <Section>
       <Container>
@@ -18,8 +14,13 @@ const Section4 = () => {
         </h2>
 
         <Image
-          className="mt-5 mx-auto"
-          src={screenSize < 768 ? StepImageXs : StepImageMd}
+          className="mt-5 mx-auto hidden md:block"
+          src={StepImageMd}
+          alt="steps"
+        />
+        <Image
+          className="mt-5 mx-auto md:hidden"
+          src={StepImageXs}
           alt="steps"
         />
       </Container>

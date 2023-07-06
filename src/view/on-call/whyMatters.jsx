@@ -25,7 +25,12 @@ const CardItem = (props) => {
       <div
         className={`${classes.cardImg} absolute h-[100%] w-[100%] left-[0px] top-[0px] z-[-1]`}
       >
-        <Image src={props.img} height={150} className="opacity-5" />
+        <Image
+          src={props.img}
+          height={150}
+          alt={props.heading}
+          className="opacity-5"
+        />
       </div>
     </div>
   );
