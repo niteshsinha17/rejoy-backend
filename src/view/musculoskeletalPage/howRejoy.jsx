@@ -2,7 +2,7 @@ import { Accordion, Container, Section } from "@/components";
 
 export const HowRejoy = () => {
   return (
-    <Section>
+    <Section noBottomPadding>
       <Container>
         <h2 className="heading-2 text-center">
           Empowering{" "}

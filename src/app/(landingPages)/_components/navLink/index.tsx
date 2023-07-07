@@ -6,12 +6,12 @@ export const NavLink = (props: INavLinkProps) => {
   return (
     <li className={classes.navLink}>
       <Link
-        className="block px-3 py-4 nav-link md:h-[100px] text-xl md:text-base md:flex cursor-pointer items-center justify-center text-textPrimary"
+        className="block px-3 py-4 nav-link font-semibold md:font-normal md:h-[100px] text-xl md:text-base md:flex cursor-pointer items-center justify-center text-textPrimary"
         href={props.path}
       >
         {props.name}
       </Link>
-      <div className="h-[1px] bg-[#ccc] mx-3 md:hidden"></div>
+      <div className="h-[1px] bg-[#ccc] md:hidden"></div>
     </li>
   );
 };

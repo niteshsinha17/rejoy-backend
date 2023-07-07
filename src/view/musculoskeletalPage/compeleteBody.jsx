@@ -25,7 +25,7 @@ const CompleteBody = () => {
   return (
     <div>
       <div className="bg-[#eaf4f7]">
-        <div className="relative pt-[120px] pb-[220px] mb-[220px]">
+        <div className="relative pt-[120px] pb-[120px] md:pb-[220px] md:mb-[220px]">
           <Container>
             <h2 className="heading-2 text-center">
               Targets all <br />
@@ -37,7 +37,7 @@ const CompleteBody = () => {
               focuses on the specific areas where you feel discomfort
             </p>
 
-            <div className="absolute left-[0px] w-[100%] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mt-6">
+            <div className="md:absolute left-[0px] w-[100%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-6">
               <Card img={Back.src} text="Back" />
               <Card img={HipAndKnee.src} text="Hip & Knee" />
               <Card img={WristAndHand.src} text="Wrist, Hand, Ancle & Foot" />

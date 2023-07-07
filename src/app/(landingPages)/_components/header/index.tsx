@@ -3,6 +3,7 @@ import { Container } from "@/components";
 import { ROUTES } from "@/enum";
 import useScrollPosition from "@/hooks/scrollPosition";
 import Image from "next/image";
+import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import {
@@ -92,11 +93,15 @@ export default function LandingPageHeader() {
   let headerClasses = `${classes.header} flex justify-center items-center fixed bg-white h-[100px] md:h-[auto]`;
 
   if (openMenu) {
-    headerClasses += ` bg-white `;
+    headerClasses += ` ${classes.headerOpen}`;
   }
   if (scrollPosition > 50) {
     headerClasses += ` ${classes.headerShadow}`;
   }
+
+  const close = () => {
+    setOpenMenu(false);
+  };
   return (
     <header className={headerClasses}>
       <div className="grow">
@@ -111,11 +116,12 @@ export default function LandingPageHeader() {
               `}
             >
               <div className="h-[100%] md:h-[auto] flex flex-col md:flex-row md:items-center justify-end md:space-x-6 font-manrope">
-                <ul className="md:flex md:space-x-5">
+                <ul className={`md:flex md:space-x-5 ${classes.navList}`}>
                   {navLinks.map((navLink, index) => {
                     if (navLink.path && navLink.type === "link")
                       return (
                         <NavLink
+                          onClick={close}
                           active={pathName === navLink.path}
                           name={navLink.name}
                           path={navLink.path}
@@ -123,15 +129,19 @@ export default function LandingPageHeader() {
                         />
                       );
                     if (navLink.type === "dropdown") {
-                      return <NavDropdown item={navLink} key={index} />;
+                      return (
+                        <NavDropdown close={close} item={navLink} key={index} />
+                      );
                     }
                   })}
                 </ul>
-                <span
-                  className={`${classes.downloadButton} text-base font-poppins`}
+                <Link
+                  onClick={close}
+                  href={ROUTES.DOWNLOAD}
+                  className={`${classes.downloadButton} py-5 text-center text-lg  md:text-base font-poppins`}
                 >
                   Download the app
-                </span>
+                </Link>
               </div>
             </div>
 

@@ -1,13 +1,15 @@
 import Image from "next/image";
 import Link from "next/link";
+import { useState } from "react";
 import { arrowDownIcon } from "../../../../../public/icons";
 import { INavDropdownProps } from "./interface";
 import classes from "./style.module.css";
 
 const NavDropdown = (props: INavDropdownProps) => {
+  const [open, setOpen] = useState(false);
   return (
     <li
-      className={`md:h-[100px] px-3 py-4 text-xl flex cursor-pointer items-center justify-between md:justify-center md:text-base text-textPrimary ${classes.dropdown}`}
+      className={`md:h-[100px] px-3 py-4 text-xl font-semibold md:font-normal md:flex cursor-pointer items-center justify-between md:justify-center md:text-base text-textPrimary ${classes.dropdown}`}
     >
       {props.item.name}
       <Image
@@ -16,19 +18,23 @@ const NavDropdown = (props: INavDropdownProps) => {
         alt="arrow down"
       />
       <div
-        className={`${classes.dropdownMenu} fixed bg-white w-[100%] left-[0px] top-[100px]`}
+        className={`${classes.dropdownMenu} md:fixed bg-white w-[100%] md:left-[0px] md:top-[100px] ${classes.dropdownMenuOpen}`}
       >
-        <div className="container mx-auto py-4 grid grid-cols-3 gap-4">
+        <div className="md:container md:mx-auto md:py-4 md:grid md:grid-cols-3 md:gap-4">
           {props.item.children?.map((subLink, index) => {
             return (
               <Link
+                onClick={() => {
+                  setOpen(false);
+                  props.close();
+                }}
                 key={index}
                 className="group cursor-pointer flex gap-2 p-2"
                 href={subLink.path}
               >
                 <div>
                   <Image
-                    className="w-8 h-8"
+                    className="hidden md:block w-8 h-8"
                     src={subLink.icon}
                     alt={subLink.name}
                   />
@@ -37,7 +43,7 @@ const NavDropdown = (props: INavDropdownProps) => {
                   <div className="font-poppins text-base font-semibold text-textPrimary group-hover:underline">
                     {subLink.name}
                   </div>
-                  <div className="font-poppins font-normal text-sm mt-2 text-textSecondary">
+                  <div className="hidden md:block font-poppins font-normal text-sm mt-2 text-textSecondary">
                     {subLink.description}
                   </div>
                 </div>

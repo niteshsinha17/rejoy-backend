@@ -6,7 +6,7 @@ const CardItem = (props) => {
 
 const Consequences = () => {
   return (
-    <Section>
+    <Section noBottomPadding>
       <Container>
         <h2 className="heading-2 text-center">
           Understanding Musculoskeletal{" "}
@@ -20,7 +20,7 @@ const Consequences = () => {
           Additionally, they impose a significant burden on productivity and
           healthcare costs.
         </p>
-        <div className="grid grid-cols-3 mt-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 mt-6">
           <CardItem>
             <h5 className="heading-5 font-medium text-base font-manrope">
               $874 Billion Economic Burden
