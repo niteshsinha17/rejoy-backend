@@ -9,16 +9,23 @@ const NavDropdown = (props: INavDropdownProps) => {
   const [open, setOpen] = useState(false);
   return (
     <li
+      onClick={() => setOpen(!open)}
       className={`md:h-[100px] px-3 py-4 text-xl font-semibold md:font-normal md:flex cursor-pointer items-center justify-between md:justify-center md:text-base text-textPrimary ${classes.dropdown}`}
     >
       {props.item.name}
       <Image
-        className={`ml-2 w-2 ${classes.arrowIcon}`}
+        className={`ml-2 w-2 ${classes.arrowIcon} ${
+          open ? classes.arrowIconOpen : ""
+        }`}
         src={arrowDownIcon}
         alt="arrow down"
       />
       <div
-        className={`${classes.dropdownMenu} md:fixed bg-white w-[100%] md:left-[0px] md:top-[100px] ${classes.dropdownMenuOpen}`}
+        className={`${
+          classes.dropdownMenu
+        } md:fixed bg-white w-[100%] md:left-[0px] md:top-[100px] ${
+          open ? classes.dropdownMenuOpen : classes.dropdownMenuClose
+        }`}
       >
         <div className="md:container md:mx-auto md:py-4 md:grid md:grid-cols-3 md:gap-4">
           {props.item.children?.map((subLink, index) => {

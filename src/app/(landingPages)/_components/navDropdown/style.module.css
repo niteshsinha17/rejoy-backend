@@ -2,17 +2,13 @@
   border-bottom: 2px solid transparent;
 }
 
-.dropdown:hover {
-  border-bottom: 2px solid var(--primary-color);
-}
+
 
 .arrowIcon {
   transition: all 0.2s linear;
 }
 
-.dropdown:hover .arrowIcon {
-  transform: rotate(-180deg);
-}
+
 
 @media (min-width: 960px) {
   .dropdown:hover .dropdownMenu {
@@ -25,6 +21,13 @@
     overflow: hidden;
   }
 
+  .dropdown:hover {
+    border-bottom: 2px solid var(--primary-color);
+  }
+
+  .dropdown:hover .arrowIcon {
+    transform: rotate(-180deg);
+  }
 }
 
 @media (max-width:960px) {
@@ -32,11 +35,21 @@
     height: auto;
   }
 
+  .arrowIconOpen {
+    transform: rotate(-180deg);
+  }
+
+
   .arrowIcon {
     float: right;
   }
 
   .dropdownMenu {
     padding-top: 20px;
+  }
+
+  .dropdownMenuClose {
+    height: 0px;
+    overflow: hidden;
   }
 }
