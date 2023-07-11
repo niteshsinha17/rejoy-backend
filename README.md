@@ -1,6 +1,7 @@
 
 # Build commands
 
+Not in use do to staic page generation.
 
 ```bash
 docker build -t rejoy-web .
