@@ -1,5 +1,0 @@
-{
-  "/(landingPages)/page": "app/(landingPages)/page.js",
-  "/(landingPages)/academy/page": "app/(landingPages)/academy/page.js",
-  "/(landingPages)/mindful-meditation/page": "app/(landingPages)/mindful-meditation/page.js"
-}
