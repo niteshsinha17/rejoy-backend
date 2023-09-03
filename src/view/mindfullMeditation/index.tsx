@@ -6,8 +6,8 @@ const MindfullMeditationPage = () => {
   return (
     <>
       <Hero />
-      <Why />
       <Form />
+      <Why />
     </>
   );
 };
