@@ -1,0 +1,58 @@
+{
+  "pages": {
+    "/(landingPages)/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(landingPages)/page.css",
+      "static/chunks/app/(landingPages)/page.js"
+    ],
+    "/(landingPages)/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(landingPages)/layout.css",
+      "static/chunks/app/(landingPages)/layout.js"
+    ],
+    "/(landingPages)/download/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(landingPages)/download/page.css",
+      "static/chunks/app/(landingPages)/download/page.js"
+    ],
+    "/(landingPages)/digital-physical-therapy/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(landingPages)/digital-physical-therapy/page.css",
+      "static/chunks/app/(landingPages)/digital-physical-therapy/page.js"
+    ],
+    "/(landingPages)/in-center-visits/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(landingPages)/in-center-visits/page.css",
+      "static/chunks/app/(landingPages)/in-center-visits/page.js"
+    ],
+    "/(landingPages)/mindful-meditation/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(landingPages)/mindful-meditation/page.css",
+      "static/chunks/app/(landingPages)/mindful-meditation/page.js"
+    ],
+    "/(landingPages)/musculoskeletal/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(landingPages)/musculoskeletal/page.css",
+      "static/chunks/app/(landingPages)/musculoskeletal/page.js"
+    ],
+    "/(landingPages)/on-call/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(landingPages)/on-call/page.css",
+      "static/chunks/app/(landingPages)/on-call/page.js"
+    ],
+    "/(landingPages)/academy/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(landingPages)/academy/page.css",
+      "static/chunks/app/(landingPages)/academy/page.js"
+    ]
+  }
+}

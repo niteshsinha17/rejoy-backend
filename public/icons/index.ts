@@ -5,6 +5,7 @@ import facebookIcon from "./facebook.svg";
 import houseCallIcon from "./house-call.svg";
 import instagramIcon from "./instagram.svg";
 import linkedInIcon from "./linkedin.svg";
+import meditationIcon from "./meditation.svg";
 import MenuIcon from "./menu.svg";
 import motionIcon from "./motion.svg";
 import moveIcon from "./move.svg";
@@ -24,6 +25,7 @@ export {
   houseCallIcon,
   instagramIcon,
   linkedInIcon,
+  meditationIcon,
   motionIcon,
   moveIcon,
   musculoskeletalIcon,

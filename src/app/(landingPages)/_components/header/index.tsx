@@ -11,6 +11,7 @@ import {
   MenuIcon,
   academyIcon,
   houseCallIcon,
+  meditationIcon,
   motionIcon,
   moveIcon,
   musculoskeletalIcon,
@@ -80,6 +81,13 @@ const navLinks: INavItem[] = [
           "Your ultimate pain relief companion, offering comprehensive resources and ChatGPT-powered guidance for a pain-free life",
         path: ROUTES.ACADEMY,
         icon: academyIcon,
+      },
+      {
+        name: "Mindful Meditation",
+        description:
+          "Rejoy’s Mindful Meditation program is designed to help you reduce stress, improve sleep, and increase your overall well-being",
+        path: ROUTES.MINDFULL_MEDITATION,
+        icon: meditationIcon,
       },
     ],
   },

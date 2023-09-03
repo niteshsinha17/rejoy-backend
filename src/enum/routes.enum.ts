@@ -5,6 +5,7 @@ export enum ROUTES {
   MUSCULOSKELETAL = "/musculoskeletal",
   IN_CENTER_VISITS = "/in-center-visits",
   DIGITAL_PHYSICAL_THERAPY = "/digital-physical-therapy",
+  MINDFULL_MEDITATION = "/mindful-meditation",
   ON_CALL = "/on-call",
   MOVE = "/move",
   ACADEMY = "/academy",

@@ -1,0 +1,1373 @@
+{
+  "ssrModuleMapping": {
+    "(app-client)/./node_modules/next/dist/client/components/app-router.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/components/app-router.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/components/error-boundary.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/components/error-boundary.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/components/redirect-boundary.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/components/redirect-boundary.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/components/router-reducer/fetch-server-response.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/components/router-reducer/fetch-server-response.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/components/layout-router.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/components/layout-router.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/components/render-from-template-context.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/components/render-from-template-context.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/academy.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/academy.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/arrow-down.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/arrow-down.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/close.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/close.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/facebook.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/facebook.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/house-call.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/house-call.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/instagram.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/instagram.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/linkedin.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/linkedin.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/meditation.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/meditation.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/menu.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/menu.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/motion.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/motion.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/move.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/move.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/musculoskeletal.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/musculoskeletal.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/on-call.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/on-call.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/therapy.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/therapy.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/tiktok.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/tiktok.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/twitter.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/twitter.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/youtube.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/youtube.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/app-store.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/app-store.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/google-play.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/google-play.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/home/digital-therapy.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/home/digital-therapy.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/home/dots.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/home/dots.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/home/looking-figure.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/home/looking-figure.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/home/move.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/home/move.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/home/musculoskeletal.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/home/musculoskeletal.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/home/on-call.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/home/on-call.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/logo.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/logo.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/image.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/image.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/link.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/link.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/shared/lib/head.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/app/(landingPages)/_components/header/index.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/(landingPages)/_components/header/index.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/components/accordion/index.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/components/accordion/index.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/script.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/script.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/provider/ga.provider.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/provider/ga.provider.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/digital-tharapy/data-collection.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/digital-tharapy/data-collection.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/digital-tharapy/motion-sensor.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/digital-tharapy/motion-sensor.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/digital-tharapy/realtime-feedback.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/digital-tharapy/realtime-feedback.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/digital-tharapy/step-xs.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/digital-tharapy/step-xs.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/digital-tharapy/steps-md.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/digital-tharapy/steps-md.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/digital-tharapy/therapist.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/digital-tharapy/therapist.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/in-center-visits/patient-getting-treatment-massage.jpg": {
+      "*": {
+        "id": "(sc_client)/./public/images/in-center-visits/patient-getting-treatment-massage.jpg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/mindfull/expert.jpg": {
+      "*": {
+        "id": "(sc_client)/./public/images/mindfull/expert.jpg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/mindfull/levels.jpg": {
+      "*": {
+        "id": "(sc_client)/./public/images/mindfull/levels.jpg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/mindfull/total-wellness.jpg": {
+      "*": {
+        "id": "(sc_client)/./public/images/mindfull/total-wellness.jpg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/mindfull/video-content.jpg": {
+      "*": {
+        "id": "(sc_client)/./public/images/mindfull/video-content.jpg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/musculoskeletal/area-of-pain.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/musculoskeletal/area-of-pain.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/musculoskeletal/back.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/musculoskeletal/back.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/musculoskeletal/cost-saving.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/musculoskeletal/cost-saving.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/musculoskeletal/feedback.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/musculoskeletal/feedback.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/musculoskeletal/hip-knee.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/musculoskeletal/hip-knee.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/musculoskeletal/neck.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/musculoskeletal/neck.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/musculoskeletal/reduce-surgery-intent.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/musculoskeletal/reduce-surgery-intent.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/musculoskeletal/spot-pain.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/musculoskeletal/spot-pain.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/musculoskeletal/wrist-hand.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/musculoskeletal/wrist-hand.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/on-call/appointment.svg": {
+      "*": {
+        "id": "(sc_client)/./public/images/on-call/appointment.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/on-call/cost-savings.svg": {
+      "*": {
+        "id": "(sc_client)/./public/images/on-call/cost-savings.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/on-call/immediate-action.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/on-call/immediate-action.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/on-call/specialists.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/on-call/specialists.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/on-call/text-based-com.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/on-call/text-based-com.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/on-call/waiting.svg": {
+      "*": {
+        "id": "(sc_client)/./public/images/on-call/waiting.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/academy/chatbot.svg": {
+      "*": {
+        "id": "(sc_client)/./public/images/academy/chatbot.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/academy/engaging.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/academy/engaging.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/academy/expert.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/academy/expert.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/academy/recommendations.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/academy/recommendations.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/academy/video-content.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/academy/video-content.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    }
+  },
+  "edgeSSRModuleMapping": {},
+  "clientModules": {
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/node_modules/next/dist/client/components/app-router.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
+      "name": "*",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/node_modules/next/dist/esm/client/components/app-router.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
+      "name": "*",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/node_modules/next/dist/client/components/error-boundary.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
+      "name": "*",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/node_modules/next/dist/esm/client/components/error-boundary.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
+      "name": "*",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/node_modules/next/dist/client/components/redirect-boundary.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/redirect-boundary.js",
+      "name": "*",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/node_modules/next/dist/esm/client/components/redirect-boundary.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/redirect-boundary.js",
+      "name": "*",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/node_modules/next/dist/client/components/router-reducer/fetch-server-response.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/router-reducer/fetch-server-response.js",
+      "name": "*",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/node_modules/next/dist/esm/client/components/router-reducer/fetch-server-response.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/router-reducer/fetch-server-response.js",
+      "name": "*",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/node_modules/next/dist/shared/lib/app-router-context.js": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/app-router-context.js",
+      "name": "*",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/node_modules/next/dist/esm/shared/lib/app-router-context.js": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/app-router-context.js",
+      "name": "*",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/node_modules/next/dist/shared/lib/hooks-client-context.js": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/hooks-client-context.js",
+      "name": "*",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/node_modules/next/dist/esm/shared/lib/hooks-client-context.js": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/hooks-client-context.js",
+      "name": "*",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/node_modules/next/dist/shared/lib/server-inserted-html.js": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/server-inserted-html.js",
+      "name": "*",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/node_modules/next/dist/esm/shared/lib/server-inserted-html.js": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/server-inserted-html.js",
+      "name": "*",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/node_modules/next/dist/client/components/layout-router.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/layout-router.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/node_modules/next/dist/esm/client/components/layout-router.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/layout-router.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/node_modules/next/dist/client/components/render-from-template-context.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/render-from-template-context.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/node_modules/next/dist/esm/client/components/render-from-template-context.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/render-from-template-context.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/node_modules/next/dist/esm/client/components/static-generation-searchparams-bailout-provider.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/icons/academy.svg": {
+      "id": "(app-client)/./public/icons/academy.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/icons/arrow-down.svg": {
+      "id": "(app-client)/./public/icons/arrow-down.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/icons/close.svg": {
+      "id": "(app-client)/./public/icons/close.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/icons/facebook.svg": {
+      "id": "(app-client)/./public/icons/facebook.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/icons/house-call.svg": {
+      "id": "(app-client)/./public/icons/house-call.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/icons/instagram.svg": {
+      "id": "(app-client)/./public/icons/instagram.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/icons/linkedin.svg": {
+      "id": "(app-client)/./public/icons/linkedin.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/icons/meditation.svg": {
+      "id": "(app-client)/./public/icons/meditation.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/icons/menu.svg": {
+      "id": "(app-client)/./public/icons/menu.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/icons/motion.svg": {
+      "id": "(app-client)/./public/icons/motion.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/icons/move.svg": {
+      "id": "(app-client)/./public/icons/move.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/icons/musculoskeletal.svg": {
+      "id": "(app-client)/./public/icons/musculoskeletal.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/icons/on-call.svg": {
+      "id": "(app-client)/./public/icons/on-call.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/icons/therapy.svg": {
+      "id": "(app-client)/./public/icons/therapy.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/icons/tiktok.svg": {
+      "id": "(app-client)/./public/icons/tiktok.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/icons/twitter.svg": {
+      "id": "(app-client)/./public/icons/twitter.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/icons/youtube.svg": {
+      "id": "(app-client)/./public/icons/youtube.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/app-store.png": {
+      "id": "(app-client)/./public/images/app-store.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/google-play.png": {
+      "id": "(app-client)/./public/images/google-play.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/home/digital-therapy.png": {
+      "id": "(app-client)/./public/images/home/digital-therapy.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/page:static/chunks/app/(landingPages)/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/home/dots.png": {
+      "id": "(app-client)/./public/images/home/dots.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/home/looking-figure.png": {
+      "id": "(app-client)/./public/images/home/looking-figure.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/page:static/chunks/app/(landingPages)/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/home/move.png": {
+      "id": "(app-client)/./public/images/home/move.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/page:static/chunks/app/(landingPages)/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/home/musculoskeletal.png": {
+      "id": "(app-client)/./public/images/home/musculoskeletal.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/page:static/chunks/app/(landingPages)/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/home/on-call.png": {
+      "id": "(app-client)/./public/images/home/on-call.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/page:static/chunks/app/(landingPages)/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/logo.png": {
+      "id": "(app-client)/./public/images/logo.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/node_modules/next/dist/client/image.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/image.js",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/node_modules/next/dist/esm/client/image.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/image.js",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/node_modules/next/dist/client/link.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/link.js",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/node_modules/next/dist/esm/client/link.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/link.js",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/node_modules/next/dist/shared/lib/head.js": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/node_modules/next/dist/esm/shared/lib/head.js": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/_components/header/index.tsx": {
+      "id": "(app-client)/./src/app/(landingPages)/_components/header/index.tsx",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/components/accordion/index.tsx": {
+      "id": "(app-client)/./src/components/accordion/index.tsx",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/node_modules/next/dist/client/script.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/script.js",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/layout:static/chunks/app/(landingPages)/layout.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/node_modules/next/dist/esm/client/script.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/script.js",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/layout:static/chunks/app/(landingPages)/layout.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/provider/ga.provider.tsx": {
+      "id": "(app-client)/./src/provider/ga.provider.tsx",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/layout:static/chunks/app/(landingPages)/layout.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/digital-tharapy/data-collection.png": {
+      "id": "(app-client)/./public/images/digital-tharapy/data-collection.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/digital-physical-therapy/page:static/chunks/app/(landingPages)/digital-physical-therapy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/digital-tharapy/motion-sensor.png": {
+      "id": "(app-client)/./public/images/digital-tharapy/motion-sensor.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/digital-physical-therapy/page:static/chunks/app/(landingPages)/digital-physical-therapy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/digital-tharapy/realtime-feedback.png": {
+      "id": "(app-client)/./public/images/digital-tharapy/realtime-feedback.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/digital-physical-therapy/page:static/chunks/app/(landingPages)/digital-physical-therapy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/digital-tharapy/step-xs.png": {
+      "id": "(app-client)/./public/images/digital-tharapy/step-xs.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/digital-physical-therapy/page:static/chunks/app/(landingPages)/digital-physical-therapy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/digital-tharapy/steps-md.png": {
+      "id": "(app-client)/./public/images/digital-tharapy/steps-md.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/digital-physical-therapy/page:static/chunks/app/(landingPages)/digital-physical-therapy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/digital-tharapy/therapist.png": {
+      "id": "(app-client)/./public/images/digital-tharapy/therapist.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/digital-physical-therapy/page:static/chunks/app/(landingPages)/digital-physical-therapy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/in-center-visits/patient-getting-treatment-massage.jpg": {
+      "id": "(app-client)/./public/images/in-center-visits/patient-getting-treatment-massage.jpg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/in-center-visits/page:static/chunks/app/(landingPages)/in-center-visits/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/mindfull/expert.jpg": {
+      "id": "(app-client)/./public/images/mindfull/expert.jpg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/mindful-meditation/page:static/chunks/app/(landingPages)/mindful-meditation/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/mindfull/levels.jpg": {
+      "id": "(app-client)/./public/images/mindfull/levels.jpg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/mindful-meditation/page:static/chunks/app/(landingPages)/mindful-meditation/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/mindfull/total-wellness.jpg": {
+      "id": "(app-client)/./public/images/mindfull/total-wellness.jpg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/mindful-meditation/page:static/chunks/app/(landingPages)/mindful-meditation/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/mindfull/video-content.jpg": {
+      "id": "(app-client)/./public/images/mindfull/video-content.jpg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/mindful-meditation/page:static/chunks/app/(landingPages)/mindful-meditation/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/musculoskeletal/area-of-pain.png": {
+      "id": "(app-client)/./public/images/musculoskeletal/area-of-pain.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/musculoskeletal/page:static/chunks/app/(landingPages)/musculoskeletal/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/musculoskeletal/back.png": {
+      "id": "(app-client)/./public/images/musculoskeletal/back.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/musculoskeletal/page:static/chunks/app/(landingPages)/musculoskeletal/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/musculoskeletal/cost-saving.png": {
+      "id": "(app-client)/./public/images/musculoskeletal/cost-saving.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/musculoskeletal/page:static/chunks/app/(landingPages)/musculoskeletal/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/musculoskeletal/feedback.png": {
+      "id": "(app-client)/./public/images/musculoskeletal/feedback.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/musculoskeletal/page:static/chunks/app/(landingPages)/musculoskeletal/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/musculoskeletal/hip-knee.png": {
+      "id": "(app-client)/./public/images/musculoskeletal/hip-knee.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/musculoskeletal/page:static/chunks/app/(landingPages)/musculoskeletal/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/musculoskeletal/neck.png": {
+      "id": "(app-client)/./public/images/musculoskeletal/neck.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/musculoskeletal/page:static/chunks/app/(landingPages)/musculoskeletal/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/musculoskeletal/reduce-surgery-intent.png": {
+      "id": "(app-client)/./public/images/musculoskeletal/reduce-surgery-intent.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/musculoskeletal/page:static/chunks/app/(landingPages)/musculoskeletal/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/musculoskeletal/spot-pain.png": {
+      "id": "(app-client)/./public/images/musculoskeletal/spot-pain.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/musculoskeletal/page:static/chunks/app/(landingPages)/musculoskeletal/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/musculoskeletal/wrist-hand.png": {
+      "id": "(app-client)/./public/images/musculoskeletal/wrist-hand.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/musculoskeletal/page:static/chunks/app/(landingPages)/musculoskeletal/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/on-call/appointment.svg": {
+      "id": "(app-client)/./public/images/on-call/appointment.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/on-call/page:static/chunks/app/(landingPages)/on-call/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/on-call/cost-savings.svg": {
+      "id": "(app-client)/./public/images/on-call/cost-savings.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/on-call/page:static/chunks/app/(landingPages)/on-call/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/on-call/immediate-action.png": {
+      "id": "(app-client)/./public/images/on-call/immediate-action.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/on-call/page:static/chunks/app/(landingPages)/on-call/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/on-call/specialists.png": {
+      "id": "(app-client)/./public/images/on-call/specialists.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/on-call/page:static/chunks/app/(landingPages)/on-call/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/on-call/text-based-com.png": {
+      "id": "(app-client)/./public/images/on-call/text-based-com.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/on-call/page:static/chunks/app/(landingPages)/on-call/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/on-call/waiting.svg": {
+      "id": "(app-client)/./public/images/on-call/waiting.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/on-call/page:static/chunks/app/(landingPages)/on-call/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/academy/chatbot.svg": {
+      "id": "(app-client)/./public/images/academy/chatbot.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/academy/engaging.png": {
+      "id": "(app-client)/./public/images/academy/engaging.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/academy/expert.png": {
+      "id": "(app-client)/./public/images/academy/expert.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/academy/recommendations.png": {
+      "id": "(app-client)/./public/images/academy/recommendations.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/public/images/academy/video-content.png": {
+      "id": "(app-client)/./public/images/academy/video-content.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/academy/page:static/chunks/app/(landingPages)/academy/page.js"
+      ],
+      "async": false
+    }
+  },
+  "entryCSSFiles": {
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/page": {
+      "modules": [
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/_components/header/style.module.css",
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/_components/navDropdown/style.module.css",
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/_components/navLink/style.module.css"
+      ],
+      "files": [
+        "static/css/app/(landingPages)/page.css"
+      ]
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/layout": {
+      "modules": [
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/global.css",
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/_components/header/style.module.css",
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/_components/navDropdown/style.module.css",
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/_components/navLink/style.module.css"
+      ],
+      "files": [
+        "static/css/app/(landingPages)/layout.css"
+      ]
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/download/page": {
+      "modules": [
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/_components/header/style.module.css",
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/_components/navDropdown/style.module.css",
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/_components/navLink/style.module.css"
+      ],
+      "files": [
+        "static/css/app/(landingPages)/download/page.css"
+      ]
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/digital-physical-therapy/page": {
+      "modules": [
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/_components/header/style.module.css",
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/_components/navDropdown/style.module.css",
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/_components/navLink/style.module.css"
+      ],
+      "files": [
+        "static/css/app/(landingPages)/digital-physical-therapy/page.css"
+      ]
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/in-center-visits/page": {
+      "modules": [
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/_components/header/style.module.css",
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/_components/navDropdown/style.module.css",
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/_components/navLink/style.module.css"
+      ],
+      "files": [
+        "static/css/app/(landingPages)/in-center-visits/page.css"
+      ]
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/mindful-meditation/page": {
+      "modules": [
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/_components/header/style.module.css",
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/_components/navDropdown/style.module.css",
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/_components/navLink/style.module.css"
+      ],
+      "files": [
+        "static/css/app/(landingPages)/mindful-meditation/page.css"
+      ]
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/musculoskeletal/page": {
+      "modules": [
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/_components/header/style.module.css",
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/_components/navDropdown/style.module.css",
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/_components/navLink/style.module.css"
+      ],
+      "files": [
+        "static/css/app/(landingPages)/musculoskeletal/page.css"
+      ]
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/on-call/page": {
+      "modules": [
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/_components/header/style.module.css",
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/_components/navDropdown/style.module.css",
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/_components/navLink/style.module.css",
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/view/on-call/whyMatters.module.css"
+      ],
+      "files": [
+        "static/css/app/(landingPages)/on-call/page.css"
+      ]
+    },
+    "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/academy/page": {
+      "modules": [
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/_components/header/style.module.css",
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/_components/navDropdown/style.module.css",
+        "/Users/niteshsinha/Work/FrontEnds/rejoy_next/src/app/(landingPages)/_components/navLink/style.module.css"
+      ],
+      "files": [
+        "static/css/app/(landingPages)/academy/page.css"
+      ]
+    }
+  }
+}
