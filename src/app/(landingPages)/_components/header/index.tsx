@@ -85,7 +85,7 @@ const navLinks: INavItem[] = [
       {
         name: "Mindful Meditation",
         description:
-          "Rejoy’s Mindful Meditation program is designed to help you reduce stress, improve sleep, and increase your overall well-being",
+          "Guided meditations help you reduce stress-related pain, stress & anxiety associated with the rehabilitation process",
         path: ROUTES.MINDFULL_MEDITATION,
         icon: meditationIcon,
       },

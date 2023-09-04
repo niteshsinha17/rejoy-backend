@@ -24,15 +24,11 @@ export const Hero = () => {
       <TopBanner>
         <Container>
           <h1 className="text-center heading-1 text-textPrimary">
-            Elevate Your Well-being with <br />
-            <span>Mindful Meditation</span>
+            Reduce Stress, Anxiety and Improve Pain Management
           </h1>
           <p className="text-center max-w-xl mx-auto body-1 mt-4">
-            At Rejoy Health, we are dedicated to guiding you on a path to
-            holistic health. True well-being encompasses not just physical
-            fitness but also a serene mind and emotional equilibrium. Our
-            revolutionary feature, Mindful Meditation, is designed to help you
-            achieve this balance effortlessly.
+          Guided meditations help you reduce stress-related pain, stress and
+           anxiety associated with the rehabilitation process.
           </p>
 
           <div className="flex justify-center mt-4 space-x-4">
