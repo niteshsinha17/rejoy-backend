@@ -10,6 +10,7 @@ export enum ROUTES {
   MOVE = "/move",
   ACADEMY = "/academy",
   PRIVACY_POLICY = "/privacy-policy",
+  TERMS_OF_SERVIVE = "terms-of-service",
   PRECISION_MOTION_TECHNOLOGY = "/precision-motion-technology",
   DOWNLOAD = "/download",
 
