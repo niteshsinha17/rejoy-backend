@@ -7,7 +7,7 @@ import DigitalTherapy from "../../../public/images/home/digital-therapy.png";
 import Move from "../../../public/images/home/move.png";
 import Musculoskeletal from "../../../public/images/home/musculoskeletal.png";
 import OnCall from "../../../public/images/home/on-call.png";
-
+import PreciseMotion from "../../../public/images/home/precise-motion.png";
 const ButtonLink = (props) => {
   return (
     <Link
@@ -41,7 +41,7 @@ const OurSolutions = () => {
               />
             </div>
           }
-          img={Move}
+          img={PreciseMotion}
           imgAlt="Precision Motion Technology"
         />
 
