@@ -14,6 +14,6 @@ export enum ROUTES {
   PRECISION_MOTION_TECHNOLOGY = "/precision-motion-technology",
   DOWNLOAD = "/download",
 
-  GOOGLE_PLAY = "https://play.google.com/store/apps/details?id=com.rhealth_app",
+  GOOGLE_PLAY = "https://play.google.com/store/apps/details?id=com.rejoyhealth",
   APPLE_STORE = "https://apps.apple.com/us/app/rejoy-health/id1551791871",
 }
