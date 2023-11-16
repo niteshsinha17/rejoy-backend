@@ -32,7 +32,7 @@ const OurSolutions = () => {
         </p>
         <LeftImageSection
           heading="Precision Motion Technology"
-          para="Precision Motion Technology, powered by RejoyMotion™, establishes an unprecedented benchmark in joint and muscle care. Move recognizes that precise movement is crucial for optimal well-being. By integrating RejoyMotion™ technology, they deliver unrivaled accuracy and effectiveness in their programs. This advanced technology enhances joint and muscle care, enabling individuals to achieve their health goals with unparalleled precision. Move's commitment to incorporating TrueMotion™ technology sets them apart in providing exceptional care for joint and muscle health."
+          para="Precision Motion Technology, powered by RejoyMotion™, establishes an unprecedented benchmark in joint and muscle care. We recognize that precise movement is crucial for optimal recovery and well-being. By integrating RejoyMotion™ technology, we deliver unrivaled accuracy and effectiveness in our programs. This advanced technology enhances joint and muscle care, enabling individuals to achieve their health goals with unparalleled precision. Our commitment to incorporating RejoyMotion™ technology sets us apart in providing exceptional care for joint and muscle health."
           custom={
             <div className="mt-4">
               <ButtonLink
@@ -47,7 +47,7 @@ const OurSolutions = () => {
 
         <RightImageSection
           heading="Digital Physical Therapy"
-          para="Rejoy Health's Digital Therapist leverages sensor technology to provide real-time feedback, making movement an effective form of medicine. By capturing detailed movement data, the therapist can customize the program based on actual performance, eliminating guesswork and maximizing relief."
+          para="Rejoy Health's Digital Therapist leverages artificial intelligence to provide real-time feedback, making movement an effective form of medicine. By capturing detailed movement data, the therapist can customize the program based on actual performance, eliminating guesswork and maximizing relief."
           custom={
             <div className="mt-4">
               <ButtonLink
@@ -82,8 +82,8 @@ const OurSolutions = () => {
           imgAlt="On Call"
         />
         <LeftImageSection
-          heading="Move"
-          para="Move understands that movement is integral to promoting longevity, well-being, and a life free from discomfort. By harnessing wearable technology and partnering with certified personal trainers, Move is revolutionizing exercise. Their programs are designed to enhance and sustain physical health, mitigate health risks, and empower individuals to achieve their personal fitness objectives. Move ensures exercise is not only more effective but also easily accessible to all."
+          heading="Move more and get rewared"
+          para="About half of musculoskeletal (MSK) pain can be attributed to insufficient physical activity, with 80% of adults falling short of the recommended daily minimum of 20-25 minutes. This underscores a fundamental factor contributing to the global epidemic of physical pain. Movement is integral for promoting longevity, well-being, and a life free from discomfort. Our move program is designed to enhance and sustain physical health and prevent health risks."
           custom={
             <div className="mt-4">
               <ButtonLink href={ROUTES.MOVE_AND_EARN} text="Learn More" />

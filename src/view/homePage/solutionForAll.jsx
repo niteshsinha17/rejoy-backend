@@ -14,7 +14,7 @@ const SolutionForAll = () => {
             <div className="grid grid-cols-1 md:grid-cols-2">
               <div className="py-[40px] px-[20px] md:px-[80px]">
                 <div className="mb-2 mx-auto text-base bg-primary text-white inline-block p-1 px-4 rounded-full">
-                  For Employers
+                  For Providers
                 </div>
 
                 <div className="my-[50px]">

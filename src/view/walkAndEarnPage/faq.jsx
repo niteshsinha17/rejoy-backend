@@ -13,8 +13,8 @@ const Faq = () => {
           </div>
           <div>
             <Accordion
-              heading="In which state you guys live?"
-              content="We live only in california"
+              heading="Which states are you currently operating in?"
+              content="We currently serves memebers in california for this move program"
             />
             <Accordion
               heading="What insurance companies do you work with?"
@@ -26,7 +26,7 @@ const Faq = () => {
             />
             <Accordion
               heading="What is the gauranteedof payment?"
-              content="50 cents per 10,000 steps"
+              content="50 cents for hitting 10,000 steps"
             />
           </div>
         </div>
