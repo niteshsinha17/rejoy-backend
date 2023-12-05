@@ -6,18 +6,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
-import {
-  CloseIcon,
-  MenuIcon,
-  academyIcon,
-  houseCallIcon,
-  meditationIcon,
-  motionIcon,
-  moveIcon,
-  musculoskeletalIcon,
-  onCallIcon,
-  therapyIcon,
-} from "../../../../../public/icons";
+import { CloseIcon, MenuIcon } from "../../../../../public/icons";
 import BrandLogo from "../brandLogo";
 import NavDropdown from "../navDropdown";
 import NavLink from "../navLink";
@@ -29,67 +18,6 @@ const navLinks: INavItem[] = [
     name: "Home",
     path: ROUTES.HOME,
     type: "link",
-  },
-  {
-    name: "Solutions",
-    type: "dropdown",
-    children: [
-      {
-        name: "Precision Motion Technology",
-        description:
-          "Discover a groundbreaking approach to joint and muscle care with our state-of-the-art RejoyMotion™ technology",
-        path: ROUTES.PRECISION_MOTION_TECHNOLOGY,
-        icon: motionIcon,
-      },
-      {
-        name: "Digital Physical Therapy",
-        description:
-          "Computer Vision powered physical therapy from the comfort of your home",
-        path: ROUTES.DIGITAL_PHYSICAL_THERAPY,
-        icon: therapyIcon,
-      },
-      {
-        name: "Musculoskeletal Care",
-        description:
-          "Physical therapists with advanced computer vision and AI to provide customized treatment plans that can be accessed from the comfort of your own home",
-        path: ROUTES.MUSCULOSKELETAL,
-        icon: musculoskeletalIcon,
-      },
-      {
-        name: "On Call",
-        description: "Your 24/7 on-demand access to Specialists",
-        path: ROUTES.ON_CALL,
-        icon: onCallIcon,
-      },
-      {
-        name: "In-Center Visits",
-        description:
-          "Experience exceptional care that complements the convenience of digital accessibility with the personalized touch of in-person visits",
-        path: ROUTES.IN_CENTER_VISITS,
-        icon: houseCallIcon,
-      },
-      {
-        name: "Move and Earn",
-        description:
-          "Rejoy empowers you to embrace the value of daily movement by rewarding your every step",
-        path: ROUTES.MOVE_AND_EARN,
-        icon: moveIcon,
-      },
-      {
-        name: "Academy",
-        description:
-          "Your ultimate pain relief companion, offering comprehensive resources and ChatGPT-powered guidance for a pain-free life",
-        path: ROUTES.ACADEMY,
-        icon: academyIcon,
-      },
-      {
-        name: "Mindful Meditation",
-        description:
-          "Guided meditations help you reduce stress-related pain, stress & anxiety associated with the rehabilitation process",
-        path: ROUTES.MINDFULL_MEDITATION,
-        icon: meditationIcon,
-      },
-    ],
   },
 ];
 
@@ -168,3 +96,67 @@ export default function LandingPageHeader() {
     </header>
   );
 }
+
+/*
+ {
+    name: "Solutions",
+    type: "dropdown",
+    children: [
+      {
+        name: "Precision Motion Technology",
+        description:
+          "Discover a groundbreaking approach to joint and muscle care with our state-of-the-art RejoyMotion™ technology",
+        path: ROUTES.PRECISION_MOTION_TECHNOLOGY,
+        icon: motionIcon,
+      },
+      {
+        name: "Digital Physical Therapy",
+        description:
+          "Computer Vision powered physical therapy from the comfort of your home",
+        path: ROUTES.DIGITAL_PHYSICAL_THERAPY,
+        icon: therapyIcon,
+      },
+      {
+        name: "Musculoskeletal Care",
+        description:
+          "Physical therapists with advanced computer vision and AI to provide customized treatment plans that can be accessed from the comfort of your own home",
+        path: ROUTES.MUSCULOSKELETAL,
+        icon: musculoskeletalIcon,
+      },
+      {
+        name: "On Call",
+        description: "Your 24/7 on-demand access to Specialists",
+        path: ROUTES.ON_CALL,
+        icon: onCallIcon,
+      },
+      {
+        name: "In-Center Visits",
+        description:
+          "Experience exceptional care that complements the convenience of digital accessibility with the personalized touch of in-person visits",
+        path: ROUTES.IN_CENTER_VISITS,
+        icon: houseCallIcon,
+      },
+      {
+        name: "Move and Earn",
+        description:
+          "Rejoy empowers you to embrace the value of daily movement by rewarding your every step",
+        path: ROUTES.MOVE_AND_EARN,
+        icon: moveIcon,
+      },
+      {
+        name: "Academy",
+        description:
+          "Your ultimate pain relief companion, offering comprehensive resources and ChatGPT-powered guidance for a pain-free life",
+        path: ROUTES.ACADEMY,
+        icon: academyIcon,
+      },
+      {
+        name: "Mindful Meditation",
+        description:
+          "Guided meditations help you reduce stress-related pain, stress & anxiety associated with the rehabilitation process",
+        path: ROUTES.MINDFULL_MEDITATION,
+        icon: meditationIcon,
+      },
+    ],
+  },
+  */

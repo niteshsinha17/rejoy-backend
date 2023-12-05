@@ -24,13 +24,12 @@ export const Hero = () => {
       <TopBanner>
         <Container>
           <h1 className="text-center heading-1 text-textPrimary">
-            Physical Therapy: Anytime, Anywhere
+          Back and Joint Pain Care with Artificial Intelligence
           </h1>
           <p className="text-center max-w-xl mx-auto body-1 mt-4">
-            Experience the future of physical therapy with Rejoy&apos;s
-            AI-powered platform. Achieve optimal recovery and wellness with
-            personalized, convenient, and effective therapy sessions right from
-            the comfort of your home.
+          Are you ready to embark on a journey towards better health and pain-free living?
+           Rejoy Health is your dedicated partner, utilizing state-of-the-art AI technology
+            to guide you through a personalized wellness experience.
           </p>
 
           <div className="flex justify-center mt-4 space-x-4">

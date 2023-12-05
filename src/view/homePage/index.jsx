@@ -9,8 +9,8 @@ export const HomePageView = () => {
   return (
     <div>
       <Hero />
-      <WhyUs />
       <OurSolutions />
+      <WhyUs />
       <SolutionForAll />
       <Video />
       <WalkAndEarn />

@@ -125,10 +125,13 @@ const Footer = () => {
                 </FooterLink>
               </div>
               <div>
-                <Heading>Solutions</Heading>
+                <Heading>Our Technology</Heading>
                 <FooterLink path={ROUTES.PRECISION_MOTION_TECHNOLOGY}>
                   Precision Motion Technology
                 </FooterLink>
+              </div>
+              <div>
+                <Heading>Solutions</Heading>
                 <FooterLink path={ROUTES.DIGITAL_PHYSICAL_THERAPY}>
                   Digital Physical Therapy
                 </FooterLink>
@@ -136,13 +139,16 @@ const Footer = () => {
                   Musculoskeletal Care
                 </FooterLink>
                 <FooterLink path={ROUTES.ON_CALL}>On Call</FooterLink>
-                <FooterLink path={ROUTES.MOVE_AND_EARN}>
-                  Move and Earn
-                </FooterLink>
                 <FooterLink path={ROUTES.IN_CENTER_VISITS}>
                   In-Center Visits
                 </FooterLink>
+              </div>
+              <div>
+                <Heading>Resources</Heading>
                 <FooterLink path={ROUTES.ACADEMY}>Academy</FooterLink>
+                <FooterLink path={ROUTES.MOVE_AND_EARN}>
+                  Move and Earn
+                </FooterLink>
               </div>
               <div>
                 <Heading>Term and Conditions</Heading>

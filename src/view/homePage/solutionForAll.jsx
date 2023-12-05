@@ -34,7 +34,7 @@ const SolutionForAll = () => {
               <div className="border-l-primaryBoder border-l-2 py-[40px] px-[20px] md:px-[80px]">
                 <div>
                   <div className="mb-2 mx-auto text-base bg-primary text-white inline-block p-1 px-4 rounded-full">
-                    For Health Plans
+                    For Employers and Health Plans
                   </div>
                   <div className="my-[50px]">
                     <h3 className="heading-5">

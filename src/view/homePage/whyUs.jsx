@@ -15,21 +15,21 @@ const WhyUs = () => {
   return (
     <Section>
       <h2 className="xs:pt-[60px] heading-2 text-center">
-        Why you need
+        Why Choose
         <span className="text-primary"> Rejoy Health?</span>
       </h2>
       <div className="grid grid-cols-1 lg:grid-cols-3 lg:space-x-5 mt-2 sm:mt-6 text-center">
         <Card
-          title="Targeted Musculoskeletal Care"
-          description="Receive specialized attention and effective strategies to manage musculoskeletal conditions and improve mobility."
+          title="Precision"
+          description="Our AI ensures your guidance and services are tailored to your unique needs."
         />
         <Card
-          title="Proven Efficacy"
-          description="Join the thousands who have already improved their lives with our next-gen AI-powered solutions."
+          title="Connection"
+          description="Bridge the gap between information and professional support seamlessly."
         />
         <Card
-          title="Rewards for Healthy Choices"
-          description="Earn incentives for making positive changes to your daily routine and adopting healthier movement habits."
+          title="Empowerment"
+          description="Take charge of your health with intuitive tools designed for your convenience."
         />
       </div>
       <Image
