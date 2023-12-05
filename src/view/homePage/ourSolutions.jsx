@@ -59,7 +59,7 @@ const OurSolutions = () => {
         />
         <LeftImageSection
           heading="Handy Tools for Personalized Wellness"
-          para="Take control of your health with our user-friendly tools to Track pain levels,Computre Vision powered monitoring movements, tracking steps and access personalized services that adapt to your individual health journey."
+          para="Take control of your health with our user-friendly tools to Track pain levels, Movement monitoring with computer vision, tracking steps and access personalized services that adapt to your individual health journey."
           custom={
             <div className="mt-4">
               <ButtonLink href={ROUTES.MUSCULOSKELETAL} text="Learn More" />
