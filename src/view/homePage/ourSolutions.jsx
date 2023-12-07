@@ -3,9 +3,10 @@ import LeftImageSection from "@/components/leftImageSection";
 import RightImageSection from "@/components/rightImageSection";
 import { ROUTES } from "@/enum";
 import Link from "next/link";
+import AiChat from "../../../public/images/home/ai-chatbot.png";
 import DigitalTherapy from "../../../public/images/home/digital-therapy.png";
-import Musculoskeletal from "../../../public/images/home/musculoskeletal.png";
-import PreciseMotion from "../../../public/images/home/precise-motion.png";
+import Providers from "../../../public/images/home/providers.png";
+
 const ButtonLink = (props) => {
   return (
     <Link
@@ -39,8 +40,8 @@ const OurSolutions = () => {
               />
             </div>
           }
-          img={PreciseMotion}
-          imgAlt="Precision Motion Technology"
+          img={AiChat}
+          imgAlt="Smart Guidance with AI Chatbot"
         />
 
         <RightImageSection
@@ -54,8 +55,8 @@ const OurSolutions = () => {
               />
             </div>
           }
-          img={DigitalTherapy}
-          imgAlt="Digital Physical Therapy"
+          img={Providers}
+          imgAlt="Seamless Care Connections"
         />
         <LeftImageSection
           heading="Handy Tools for Personalized Wellness"
@@ -65,8 +66,8 @@ const OurSolutions = () => {
               <ButtonLink href={ROUTES.MUSCULOSKELETAL} text="Learn More" />
             </div>
           }
-          img={Musculoskeletal}
-          imgAlt="Targeted Musculoskeletal Care"
+          img={DigitalTherapy}
+          imgAlt="Handy Tools for Personalized Wellness"
         />
       </Container>
     </Section>
