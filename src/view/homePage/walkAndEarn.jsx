@@ -19,11 +19,11 @@ export const WalkAndEarn = () => {
         <div className="py-6 px-5 bg-primary rounded-xl text-white flex shadow-lg">
           <div className="md:w-7/12">
             <h2 className="heading-3">
-              Empower your members, patients and employees
-              <span className="text-secondary"> Today!</span>
+            Download now and embark on a journey of empowered health decisions, tailored just for you
+              !
             </h2>
             <p className="body-2 mt-4 text-white">
-            We collaborate with you to enhance back and joint pain care for your employees, patients, and members.
+             Experience the precision of Rejoy Health: Your go-to source for accurate health insights at your fingertips
             </p>
 
             <div className="flex space-x-4 mt-6">

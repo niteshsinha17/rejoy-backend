@@ -80,9 +80,9 @@ const Footer = () => {
             <div className="max-w-md">
               <Heading>Company</Heading>
               <Para>
-                Rejoy Health offers next-gen digital Digital musculoskeletal
-                care/ Digital MSK health solutions that helped 10,000+ people
-                improve their lives.
+                Your trusted health companion, delivering personalized and
+                precise answers in real-time, ensuring informed decisions for a
+                healthier you
               </Para>
             </div>
 
