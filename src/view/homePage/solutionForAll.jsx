@@ -1,5 +1,10 @@
 import { Container, Section } from "@/components";
 
+/**
+ * @deprecated
+ * This component is deprecated and just kept here for reference.
+ *
+ */
 const SolutionForAll = () => {
   return (
     <div className="bg-[#eaf4f7]">

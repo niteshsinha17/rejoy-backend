@@ -1,11 +1,12 @@
 import { Container, Section } from "@/components";
 import LeftImageSection from "@/components/leftImageSection";
 import RightImageSection from "@/components/rightImageSection";
-import { ROUTES } from "@/enum";
 import Link from "next/link";
 import AiChat from "../../../public/images/home/ai-chatbot.png";
-import DigitalTherapy from "../../../public/images/home/digital-therapy.png";
+import Personalized from "../../../public/images/home/personalized.png";
 import Providers from "../../../public/images/home/providers.png";
+import SayNo from "../../../public/images/home/say-no.png";
+import Trusted from "../../../public/images/home/trusted.png";
 
 const ButtonLink = (props) => {
   return (
@@ -30,44 +31,35 @@ const OurSolutions = () => {
           addressing physical health needs
         </p>
         <LeftImageSection
-          heading="Smart Guidance with AI Chatbot"
-          para="Say goodbye to generic advice! Our AI chatbot provides personalized insights tailored to your unique health needs. Input your condition and symptoms to receive expert guidance that speaks directly to you."
-          custom={
-            <div className="mt-4">
-              <ButtonLink
-                href={ROUTES.PRECISION_MOTION_TECHNOLOGY}
-                text="Learn More"
-              />
-            </div>
-          }
-          img={AiChat}
-          imgAlt="Smart Guidance with AI Chatbot"
+          heading="Trusted and Accurate Answers"
+          para="We directly answer your question in a conversational format,  citing sources for its information. This allows you to verify the facts and assess the credibility of the answer yourself."
+          img={Trusted}
+          imgAlt="Trusted"
         />
-
         <RightImageSection
-          heading="Seamless Care Connections"
-          para="Rejoy Health goes beyond information—it connects you with trusted healthcare providers, including expert Physical Therapists. Choose virtual consultations or find nearby outpatient clinics effortlessly through our platform."
-          custom={
-            <div className="mt-4">
-              <ButtonLink
-                href={ROUTES.DIGITAL_PHYSICAL_THERAPY}
-                text="Learn More"
-              />
-            </div>
-          }
-          img={Providers}
-          imgAlt="Seamless Care Connections"
+          heading="Focus on Unbiased Information"
+          para="There is no bias in our answer. We present a wider range of perspectives, unlike to search engines and websites that serve SEO-optimized pages, potentially compromising the quality and relevance of health information."
+          img={SayNo}
+          imgAlt="Say No"
         />
         <LeftImageSection
-          heading="Handy Tools for Personalized Wellness"
-          para="Take control of your health with our user-friendly tools to Track pain levels, Movement monitoring with computer vision, tracking steps and access personalized services that adapt to your individual health journey."
-          custom={
-            <div className="mt-4">
-              <ButtonLink href={ROUTES.MUSCULOSKELETAL} text="Learn More" />
-            </div>
-          }
-          img={DigitalTherapy}
-          imgAlt="Handy Tools for Personalized Wellness"
+          heading="Personalized Answers"
+          para="Wave goodbye to sifting through countless webpages and in the end getting generic answers! Experience personalized solutions tailored precisely to your individual health requirements. Input your condition, symptoms, and questions, and receive expert guidance customized to your needs. Trust in accurate, reliable answers that are crafted just for you."
+          img={Personalized}
+          imgAlt="Real-Time answers"
+        />
+        <RightImageSection
+          heading="Real-Time answers"
+          para="Whether it's breakthrough medical discoveries, ongoing health events, or emerging treatments, stay ahead of the curve with prompt and reliable information at your fingertips."
+          img={AiChat}
+          imgAlt="Real-Time answers"
+        />
+
+        <LeftImageSection
+          heading="Seamless Care Connections"
+          para="Inquire further, discover, and learn more about a diverse array of healthcare providers, pharmaceutical products, wellness solutions, and even health-conscious food options."
+          img={Providers}
+          imgAlt="Seamless Care Connections"
         />
       </Container>
     </Section>

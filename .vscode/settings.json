@@ -1,7 +1,7 @@
 {
   "editor.formatOnSave": true,
   "editor.tabSize": 2,
-  "workbench.editor.showTabs": true,
+  "workbench.editor.showTabs": "multiple",
   "editor.quickSuggestions": {
     "other": true,
     "comments": true,
@@ -9,10 +9,10 @@
   },
   "editor.parameterHints.enabled": true,
   "editor.codeActionsOnSave": {
-    "source.organizeImports": true,
-    "source.fixAll": true,
-    "fixAll.eslint": true,
-    "addMissingImports": true
+    "source.organizeImports": "explicit",
+    "source.fixAll": "explicit",
+    "fixAll.eslint": "explicit",
+    "addMissingImports": "explicit"
   },
   "editor.formatOnSaveMode": "file",
   "typescript.format.enable": true,
