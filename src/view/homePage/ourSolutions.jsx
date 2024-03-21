@@ -24,11 +24,10 @@ const OurSolutions = () => {
     <Section>
       <Container>
         <h2 className="heading-2 text-center">
-          Rejoy <span className="text-primary">Health Care Center</span>
+          <span className="text-primary">Comprehensive Health Information Hub</span>
         </h2>
         <p className="body-1 mt-4 text-center">
-          We offer a holistic approach to improving health and well-being by
-          addressing physical health needs
+        We offer trusted, accurate, and personalized health information with direct answers, unbiased perspectives, real-time updates, and seamless connections to healthcare resources
         </p>
         <LeftImageSection
           heading="Trusted and Accurate Answers"

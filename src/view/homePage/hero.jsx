@@ -24,15 +24,12 @@ export const Hero = () => {
       <TopBanner>
         <Container>
           <h1 className="text-center heading-1 text-textPrimary">
-            Back and Joint Pain Care with
+          Your Trusted Health Companion
             <br />
-            <span className="text-primary">Artificial Intelligence</span>
+            <span className="text-primary">Available 24x7 to provide answers</span>
           </h1>
           <p className="text-center max-w-xl mx-auto body-1 mt-4">
-            Are you ready to embark on a journey towards better health and
-            pain-free living? Rejoy Health is your dedicated partner, utilizing
-            state-of-the-art AI technology to guide you through a personalized
-            wellness experience.
+          Whether you have questions about symptoms, treatments, or general wellness, simply ask, and receive verified answers you can trust
           </p>
 
           <div className="flex justify-center mt-4 space-x-4">

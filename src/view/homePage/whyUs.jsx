@@ -21,15 +21,15 @@ const WhyUs = () => {
       <div className="grid grid-cols-1 lg:grid-cols-3 lg:space-x-5 mt-2 sm:mt-6 text-center">
         <Card
           title="Precision"
-          description="Our AI ensures your guidance and services are tailored to your unique needs."
+          description="Precise information through advanced AI and verified sources"
         />
         <Card
           title="Connection"
-          description="Bridge the gap between information and professional support seamlessly."
+          description="Bridge the gap between information and professional support seamlessly"
         />
         <Card
           title="Empowerment"
-          description="Take charge of your health with intuitive tools designed for your convenience."
+          description="Take charge of your health with intuitive tools"
         />
       </div>
       <Image
