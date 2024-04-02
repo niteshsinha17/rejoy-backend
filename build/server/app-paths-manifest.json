@@ -1,4 +1,0 @@
-{
-  "/(landingPages)/page": "app/(landingPages)/page.js",
-  "/(landingPages)/download/page": "app/(landingPages)/download/page.js"
-}
