@@ -145,7 +145,7 @@ const Footer = () => {
               </div> */}
               <div>
                 <Heading>Resources</Heading>
-                <FooterLink path={ROUTES.ACADEMY}>Academy</FooterLink>
+                {/* <FooterLink path={ROUTES.ACADEMY}>Academy</FooterLink>*/}
                 <FooterLink path={ROUTES.MOVE_AND_EARN}>
                   Move and Earn
                 </FooterLink>
