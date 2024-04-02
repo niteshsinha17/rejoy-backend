@@ -10,7 +10,7 @@ const Video = () => {
         <div className="pb-[56.25%] relative overflow-hidden">
           <iframe
             className="absolute top-0 left-0 w-full h-full"
-            src="https://www.youtube.com/embed/loy8vDHiPis"
+            src="https://www.youtube.com/embed/pHEwlUtHO7M"
             title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

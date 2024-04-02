@@ -5,8 +5,8 @@ import Footer from "./_components/footer";
 import "./global.css";
 
 export const metadata = {
-  title: "Back and Joint Pain Care with Artificial Intelligence",
-  description: "Back and Joint Pain Care with Artificial Intelligence",
+  title: "Access expert healthcare information 24x7 at your fingertips",
+  description: "Access expert healthcare information 24x7 at your fingertips",
 };
 
 export default function RootLayout(props: ILayoutProps) {

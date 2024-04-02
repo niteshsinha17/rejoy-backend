@@ -27,10 +27,9 @@ export const Hero = () => {
             Elevate Your Well-being with Rejoy: Download Now!
           </h1>
           <p className="text-center max-w-xl mx-auto body-1 mt-4">
-            Elevate your well-being with Rejoy. Experience precision motion
-            technology, digital physical therapy, and personalized
-            musculoskeletal care, all in the palm of your hand. Download now to
-            move, earn rewards, and access expert care anytime, anywhere.
+          Elevate your well-being with Rejoy.
+          Access the latest and most accurate healthcare information right at your fingertips.
+          Download now for expert guidance wherever and whenever you need it.
           </p>
 
           <div className="flex justify-center mt-4 space-x-4">
