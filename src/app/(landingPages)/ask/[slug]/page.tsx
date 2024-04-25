@@ -49,7 +49,14 @@ export default function QuestionPage({ params }: any) {
             ? question.answer
             : "The answer is not available at the moment"}
         </p>
-        <DownloadButtons />
+        <div className="pt-6">
+          <p className="text-center heading-2">
+            To get more personalized answers, <br /> download now
+          </p>
+          <div className="flex justify-center mt-4 space-x-4">
+            <DownloadButtons />
+          </div>
+        </div>
       </Container>
     </TopBanner>
   );
