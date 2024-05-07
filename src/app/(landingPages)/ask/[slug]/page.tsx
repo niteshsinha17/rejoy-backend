@@ -269,15 +269,15 @@ export default function QuestionPage({ params }: any) {
             <DownloadButtons />
           </div>
         </div>
-        <div className="mt-6 text-center heading-2 ">
+        <div className="mt-6 text-center heading-4 ">
           Explore Related Articles for Deeper Insights
         </div>
-        <div className="grid mt-4 grid-cols-3 gap-4">
+        <div className="grid mt-4 md:grid-cols-3 gap-4">
           {suggestions.map((item, index) => (
             <div key={index}>
-              <div className="h-[250px] flex flex-col justify-between border rounded-md border-primaryBoder p-4">
+              <div className="md:h-[250px] max-w-[600px] mx-auto flex flex-col gap-3 justify-between border rounded-md border-primaryBoder p-4">
                 <div className="space-y-2">
-                  <div className="text-base font-semibold">{item.question}</div>
+                  <div className="text-lg font-semibold">{item.question}</div>
                   <div className="text-sm text-textSecondary">
                     {item.answer.substring(0, 100)}...
                   </div>
