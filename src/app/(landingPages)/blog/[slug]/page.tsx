@@ -4,31 +4,23 @@ import { getPageMetaData } from "@/utils/common";
 import { PostOrPage } from "@tryghost/content-api";
 import Link from "next/link";
 import { DownloadButtons, TopBanner } from "../../_components";
-
-function generateRandomNumbers(min: number, max: number) {
-  if (max - min + 1 < 3) {
-    throw new Error("Range is too small to generate 3 unique numbers.");
-  }
-
-  var result: number[] = [];
-
-  while (result.length < 3) {
-    var randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
-    if (!result.includes(randomNum)) {
-      result.push(randomNum);
-    }
-  }
-
-  return result;
-}
+export const dynamicParams = true;
 
 const getRandomThreeItemList = (posts: PostOrPage[]) => {
   const randomList: PostOrPage[] = [];
-  const randomNumbers = generateRandomNumbers(0, posts.length - 1);
 
-  randomNumbers.forEach((num) => {
-    randomList.push(posts[num]);
-  });
+  let count = 0;
+
+  for (let post of posts) {
+    count++;
+    if (count <= 3) {
+      randomList.push(post);
+    } else {
+      if (Math.random() * count < 1) {
+        randomList[Math.floor(Math.random() * 3)] = post;
+      }
+    }
+  }
 
   return randomList;
 };
@@ -47,14 +39,16 @@ export default async function QuestionPage({ params }: any) {
     limit: "all",
   });
   const post = await ghostContentApi.posts.read({ slug: params.slug });
-  const suggestions = getRandomThreeItemList(posts);
+  const suggestions = getRandomThreeItemList(
+    posts.filter((p) => p.slug !== post.slug)
+  );
 
   return (
     <TopBanner>
       <Container>
         <h1 className="text-center heading-1 text-textPrimary">
           <span className="text-primary whitespace-pre-wrap">
-            {post?.title || "Question not found"}
+            {post?.title || "Blog not found"}
           </span>
         </h1>
         <p className="max-w-screen-md mx-auto body-1 mt-4 whitespace-pre-wrap">
@@ -81,14 +75,14 @@ export default async function QuestionPage({ params }: any) {
             <div key={index}>
               <div className="md:h-[250px] max-w-[600px] mx-auto flex flex-col gap-3 justify-between border rounded-md border-primaryBoder p-4">
                 <div className="space-y-2">
-                  <div className="text-lg font-semibold">{post.title}</div>
+                  <div className="text-lg font-semibold">{item.title}</div>
                   <div className="text-sm text-textSecondary">
                     {item.excerpt?.substring(0, 100)}...
                   </div>
                 </div>
                 <Link
                   className="text-sm text-primary"
-                  href={`/ask/${item.slug}`}
+                  href={`/post/${item.slug}`}
                 >
                   View{" "}
                 </Link>
