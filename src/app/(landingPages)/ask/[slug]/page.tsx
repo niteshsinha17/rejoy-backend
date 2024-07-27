@@ -1,5 +1,4 @@
 import { Container } from "@/components";
-import { ghostContentApi } from "@/services/ghost";
 import Link from "next/link";
 import { DownloadButtons, TopBanner } from "../../_components";
 
@@ -8,6 +7,7 @@ interface IQuestion {
   question: string;
   answer: string;
 }
+
 const questions: IQuestion[] = [
   {
     slug: "what-is-inflammation",
@@ -248,27 +248,18 @@ export default async function QuestionPage({ params }: any) {
   const question = questions.find((q) => q.slug === params.slug);
 
   const suggestions = getRandomThreeItemList();
-  const post = !question
-    ? await ghostContentApi.posts.read({ slug: params.slug })
-    : null;
 
   return (
     <TopBanner>
       <Container>
         <h1 className="text-center heading-1 text-textPrimary">
           <span className="text-primary whitespace-pre-wrap">
-            {question?.question || post?.title || "Question not found"}
+            {question?.question || "Question not found"}
           </span>
         </h1>
         <p className="max-w-screen-md mx-auto body-1 mt-4 whitespace-pre-wrap">
           {question && question.answer}
-          {!question && !post && "The answer is not available at the moment"}
-          {post && post?.html && (
-            <div
-              suppressHydrationWarning
-              dangerouslySetInnerHTML={{ __html: post.html }}
-            ></div>
-          )}
+          {!question && "The answer is not available at the moment"}
         </p>
         <div className="pt-6">
           <p className="text-center heading-2">
@@ -307,16 +298,7 @@ export default async function QuestionPage({ params }: any) {
 }
 
 export async function generateStaticParams() {
-  const posts = await ghostContentApi.posts.browse({
-    limit: "all",
-  });
-  const postSlugs = posts.map(({ slug }) => slug);
-  return [
-    ...questions.map(({ slug }) => ({
-      slug,
-    })),
-    ...postSlugs.map((slug) => ({
-      slug,
-    })),
-  ];
+  return questions.map(({ slug }) => ({
+    slug,
+  }));
 }
