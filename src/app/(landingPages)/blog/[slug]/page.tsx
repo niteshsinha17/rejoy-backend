@@ -82,7 +82,7 @@ export default async function QuestionPage({ params }: any) {
                 </div>
                 <Link
                   className="text-sm text-primary"
-                  href={`/post/${item.slug}`}
+                  href={`/blog/${item.slug}`}
                 >
                   View{" "}
                 </Link>
