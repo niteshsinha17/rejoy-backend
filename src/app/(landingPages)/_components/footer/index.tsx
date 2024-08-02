@@ -149,6 +149,7 @@ const Footer = () => {
                 <FooterLink path={ROUTES.MOVE_AND_EARN}>
                   Move and Earn
                 </FooterLink>
+                <FooterLink path={ROUTES.BLOG}>Blogs</FooterLink>
               </div>
               <div>
                 <Heading>Term and Conditions</Heading>

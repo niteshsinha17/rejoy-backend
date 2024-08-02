@@ -13,6 +13,7 @@ export enum ROUTES {
   TERMS_OF_SERVIVE = "terms-of-service",
   PRECISION_MOTION_TECHNOLOGY = "/precision-motion-technology",
   DOWNLOAD = "/download",
+  BLOG = "/blog",
 
   GOOGLE_PLAY = "https://play.google.com/store/apps/details?id=com.rejoyhealth",
   APPLE_STORE = "https://apps.apple.com/us/app/rejoy-health/id1551791871",
