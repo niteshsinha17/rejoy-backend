@@ -97,7 +97,7 @@ export default async function QuestionPage({ params }: any) {
 
 export async function generateStaticParams() {
   const posts = await ghostContentApi.posts.browse({
-    limit: "all",
+    limit: 200,
   });
   return posts.map((post) => ({
     slug: post.slug,
