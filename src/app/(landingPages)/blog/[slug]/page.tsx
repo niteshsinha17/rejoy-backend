@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: any) {
 
 export default async function QuestionPage({ params }: any) {
   const posts = await ghostContentApi.posts.browse({
-    limit: "all",
+    limit: 200,
   });
   const post = await ghostContentApi.posts.read({ slug: params.slug });
   const suggestions = getRandomThreeItemList(

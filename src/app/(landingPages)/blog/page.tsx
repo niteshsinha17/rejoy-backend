@@ -8,7 +8,7 @@ export const metadata = getPageMetaData({ title: "Blog | Rejoy Health" });
 
 const BlogListPage = async () => {
   const blogs = await ghostContentApi.posts.browse({
-    limit: 200,
+    limit: 300,
   });
 
   return (
