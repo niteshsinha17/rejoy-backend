@@ -3,12 +3,13 @@ import { ghostContentApi } from "@/services/ghost";
 import { getPageMetaData } from "@/utils/common";
 import Image from "next/image";
 import { TopBanner } from "../_components";
+export const dynamicParams = true;
 
 export const metadata = getPageMetaData({ title: "Blog | Rejoy Health" });
 
 const BlogListPage = async () => {
   const blogs = await ghostContentApi.posts.browse({
-    limit: 300,
+    limit: 400,
   });
 
   return (
