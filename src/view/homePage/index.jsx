@@ -1,15 +1,20 @@
 import Hero from "./hero";
-import OurSolutions from "./ourSolutions";
+import ModelMetric from "./modelMetric";
+import QNA from "./qna";
+import Testimonials from "./testimonials";
+import Trust from "./trust";
 import Video from "./video";
 import WalkAndEarn from "./walkAndEarn";
-import WhyUs from "./whyUs";
+
 
 export const HomePageView = () => {
   return (
     <div>
       <Hero />
-      <OurSolutions />
-      <WhyUs />
+      <ModelMetric/>
+      <Trust/>
+      <QNA/>
+      <Testimonials/>
       <Video />
       <WalkAndEarn />
     </div>

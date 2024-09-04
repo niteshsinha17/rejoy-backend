@@ -2,7 +2,9 @@ import { TopBanner } from "@/app/(landingPages)/_components";
 import AppleStoreButton from "@/app/(landingPages)/_components/appleStoreButton";
 import GooglePlayButton from "@/app/(landingPages)/_components/googlePlayButton";
 import { Container } from "@/components";
-import Dots from "../../../public/images/home/dots.png";
+import Dots from "../../../public/images/home/dots-final.png";
+import QuestionBar from "@/app/(landingPages)/_components/questionBar";
+import { HeroButtons } from "@/app/(landingPages)/_components/heroButtons";
 
 const ButtonLink = (props) => {
   return <div>{props.children}</div>;
@@ -28,10 +30,12 @@ export const Hero = () => {
             <br />
             <span className="text-primary">Available 24x7 to provide answers</span>
           </h1>
+          <QuestionBar/>
           <p className="text-center max-w-xl mx-auto body-1 mt-4">
           Whether you have questions about symptoms, treatments, or general wellness, simply ask, and receive verified answers you can trust
           </p>
-
+          
+          <HeroButtons/>
           <div className="flex justify-center mt-4 space-x-4">
             <ButtonLink>
               <GooglePlayButton />

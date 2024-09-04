@@ -1,0 +1,22 @@
+{
+  "pages": {
+    "/(landingPages)/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(landingPages)/page.css",
+      "static/chunks/app/(landingPages)/page.js"
+    ],
+    "/(landingPages)/layout": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(landingPages)/layout.css",
+      "static/chunks/app/(landingPages)/layout.js"
+    ],
+    "/(landingPages)/move-walk-run-and-earn/page": [
+      "static/chunks/webpack.js",
+      "static/chunks/main-app.js",
+      "static/css/app/(landingPages)/move-walk-run-and-earn/page.css",
+      "static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+    ]
+  }
+}

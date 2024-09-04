@@ -1,0 +1,832 @@
+{
+  "ssrModuleMapping": {
+    "(app-client)/./node_modules/next/dist/client/components/app-router.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/components/app-router.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/components/error-boundary.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/components/error-boundary.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/components/redirect-boundary.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/components/redirect-boundary.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/components/router-reducer/fetch-server-response.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/components/router-reducer/fetch-server-response.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/components/layout-router.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/components/layout-router.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/components/render-from-template-context.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/components/render-from-template-context.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/academy.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/academy.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/arrow-down.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/arrow-down.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/close.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/close.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/facebook.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/facebook.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/house-call.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/house-call.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/instagram.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/instagram.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/linkedin.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/linkedin.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/meditation.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/meditation.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/menu.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/menu.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/motion.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/motion.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/move.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/move.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/musculoskeletal.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/musculoskeletal.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/on-call.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/on-call.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/therapy.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/therapy.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/tiktok.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/tiktok.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/twitter.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/twitter.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/icons/youtube.svg": {
+      "*": {
+        "id": "(sc_client)/./public/icons/youtube.svg",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/app-store.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/app-store.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/google-play.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/google-play.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/home/dots-final.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/home/dots-final.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/logo.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/logo.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/image.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/image.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/link.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/link.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/shared/lib/head.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/shared/lib/head.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/app/(landingPages)/_components/header/index.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/app/(landingPages)/_components/header/index.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/components/accordion/index.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/components/accordion/index.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./node_modules/next/dist/client/script.js": {
+      "*": {
+        "id": "(sc_client)/./node_modules/next/dist/client/script.js",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./src/provider/ga.provider.tsx": {
+      "*": {
+        "id": "(sc_client)/./src/provider/ga.provider.tsx",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/home/dots.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/home/dots.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/walk-and-earn/earn.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/walk-and-earn/earn.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/walk-and-earn/how-much.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/walk-and-earn/how-much.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/walk-and-earn/install.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/walk-and-earn/install.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/walk-and-earn/walk.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/walk-and-earn/walk.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    },
+    "(app-client)/./public/images/walk-and-earn/why.png": {
+      "*": {
+        "id": "(sc_client)/./public/images/walk-and-earn/why.png",
+        "name": "*",
+        "chunks": [],
+        "async": false
+      }
+    }
+  },
+  "edgeSSRModuleMapping": {},
+  "clientModules": {
+    "/Users/saketranjan/Desktop/final/rejoy_next/node_modules/next/dist/client/components/app-router.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
+      "name": "*",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/node_modules/next/dist/esm/client/components/app-router.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/app-router.js",
+      "name": "*",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/node_modules/next/dist/client/components/error-boundary.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
+      "name": "*",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/node_modules/next/dist/esm/client/components/error-boundary.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/error-boundary.js",
+      "name": "*",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/node_modules/next/dist/client/components/redirect-boundary.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/redirect-boundary.js",
+      "name": "*",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/node_modules/next/dist/esm/client/components/redirect-boundary.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/redirect-boundary.js",
+      "name": "*",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/node_modules/next/dist/client/components/router-reducer/fetch-server-response.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/router-reducer/fetch-server-response.js",
+      "name": "*",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/node_modules/next/dist/esm/client/components/router-reducer/fetch-server-response.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/router-reducer/fetch-server-response.js",
+      "name": "*",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/node_modules/next/dist/shared/lib/app-router-context.js": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/app-router-context.js",
+      "name": "*",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/node_modules/next/dist/esm/shared/lib/app-router-context.js": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/app-router-context.js",
+      "name": "*",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/node_modules/next/dist/shared/lib/hooks-client-context.js": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/hooks-client-context.js",
+      "name": "*",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/node_modules/next/dist/esm/shared/lib/hooks-client-context.js": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/hooks-client-context.js",
+      "name": "*",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/node_modules/next/dist/shared/lib/server-inserted-html.js": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/server-inserted-html.js",
+      "name": "*",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/node_modules/next/dist/esm/shared/lib/server-inserted-html.js": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/server-inserted-html.js",
+      "name": "*",
+      "chunks": [
+        "webpack:static/chunks/webpack.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/node_modules/next/dist/client/components/layout-router.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/layout-router.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/node_modules/next/dist/esm/client/components/layout-router.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/layout-router.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/node_modules/next/dist/client/components/render-from-template-context.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/render-from-template-context.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/node_modules/next/dist/esm/client/components/render-from-template-context.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/render-from-template-context.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/node_modules/next/dist/esm/client/components/static-generation-searchparams-bailout-provider.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/components/static-generation-searchparams-bailout-provider.js",
+      "name": "*",
+      "chunks": [
+        "app-client-internals:static/chunks/app-client-internals.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/public/icons/academy.svg": {
+      "id": "(app-client)/./public/icons/academy.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/public/icons/arrow-down.svg": {
+      "id": "(app-client)/./public/icons/arrow-down.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/public/icons/close.svg": {
+      "id": "(app-client)/./public/icons/close.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/public/icons/facebook.svg": {
+      "id": "(app-client)/./public/icons/facebook.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/public/icons/house-call.svg": {
+      "id": "(app-client)/./public/icons/house-call.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/public/icons/instagram.svg": {
+      "id": "(app-client)/./public/icons/instagram.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/public/icons/linkedin.svg": {
+      "id": "(app-client)/./public/icons/linkedin.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/public/icons/meditation.svg": {
+      "id": "(app-client)/./public/icons/meditation.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/public/icons/menu.svg": {
+      "id": "(app-client)/./public/icons/menu.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/public/icons/motion.svg": {
+      "id": "(app-client)/./public/icons/motion.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/public/icons/move.svg": {
+      "id": "(app-client)/./public/icons/move.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/public/icons/musculoskeletal.svg": {
+      "id": "(app-client)/./public/icons/musculoskeletal.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/public/icons/on-call.svg": {
+      "id": "(app-client)/./public/icons/on-call.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/public/icons/therapy.svg": {
+      "id": "(app-client)/./public/icons/therapy.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/public/icons/tiktok.svg": {
+      "id": "(app-client)/./public/icons/tiktok.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/public/icons/twitter.svg": {
+      "id": "(app-client)/./public/icons/twitter.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/public/icons/youtube.svg": {
+      "id": "(app-client)/./public/icons/youtube.svg",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/public/images/app-store.png": {
+      "id": "(app-client)/./public/images/app-store.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/public/images/google-play.png": {
+      "id": "(app-client)/./public/images/google-play.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/public/images/home/dots-final.png": {
+      "id": "(app-client)/./public/images/home/dots-final.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/page:static/chunks/app/(landingPages)/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/public/images/logo.png": {
+      "id": "(app-client)/./public/images/logo.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/node_modules/next/dist/client/image.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/image.js",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/node_modules/next/dist/esm/client/image.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/image.js",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/node_modules/next/dist/client/link.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/link.js",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/node_modules/next/dist/esm/client/link.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/link.js",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/node_modules/next/dist/shared/lib/head.js": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/node_modules/next/dist/esm/shared/lib/head.js": {
+      "id": "(app-client)/./node_modules/next/dist/shared/lib/head.js",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/src/app/(landingPages)/_components/header/index.tsx": {
+      "id": "(app-client)/./src/app/(landingPages)/_components/header/index.tsx",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/src/components/accordion/index.tsx": {
+      "id": "(app-client)/./src/components/accordion/index.tsx",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/node_modules/next/dist/client/script.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/script.js",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/layout:static/chunks/app/(landingPages)/layout.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/node_modules/next/dist/esm/client/script.js": {
+      "id": "(app-client)/./node_modules/next/dist/client/script.js",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/layout:static/chunks/app/(landingPages)/layout.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/src/provider/ga.provider.tsx": {
+      "id": "(app-client)/./src/provider/ga.provider.tsx",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/layout:static/chunks/app/(landingPages)/layout.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/public/images/home/dots.png": {
+      "id": "(app-client)/./public/images/home/dots.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/public/images/walk-and-earn/earn.png": {
+      "id": "(app-client)/./public/images/walk-and-earn/earn.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/public/images/walk-and-earn/how-much.png": {
+      "id": "(app-client)/./public/images/walk-and-earn/how-much.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/public/images/walk-and-earn/install.png": {
+      "id": "(app-client)/./public/images/walk-and-earn/install.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/public/images/walk-and-earn/walk.png": {
+      "id": "(app-client)/./public/images/walk-and-earn/walk.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/public/images/walk-and-earn/why.png": {
+      "id": "(app-client)/./public/images/walk-and-earn/why.png",
+      "name": "*",
+      "chunks": [
+        "app/(landingPages)/move-walk-run-and-earn/page:static/chunks/app/(landingPages)/move-walk-run-and-earn/page.js"
+      ],
+      "async": false
+    }
+  },
+  "entryCSSFiles": {
+    "/Users/saketranjan/Desktop/final/rejoy_next/src/app/(landingPages)/page": {
+      "modules": [
+        "/Users/saketranjan/Desktop/final/rejoy_next/src/app/(landingPages)/_components/header/style.module.css",
+        "/Users/saketranjan/Desktop/final/rejoy_next/src/app/(landingPages)/_components/navDropdown/style.module.css",
+        "/Users/saketranjan/Desktop/final/rejoy_next/src/app/(landingPages)/_components/navLink/style.module.css"
+      ],
+      "files": [
+        "static/css/app/(landingPages)/page.css"
+      ]
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/src/app/(landingPages)/layout": {
+      "modules": [
+        "/Users/saketranjan/Desktop/final/rejoy_next/src/app/(landingPages)/global.css",
+        "/Users/saketranjan/Desktop/final/rejoy_next/src/app/(landingPages)/_components/header/style.module.css",
+        "/Users/saketranjan/Desktop/final/rejoy_next/src/app/(landingPages)/_components/navDropdown/style.module.css",
+        "/Users/saketranjan/Desktop/final/rejoy_next/src/app/(landingPages)/_components/navLink/style.module.css"
+      ],
+      "files": [
+        "static/css/app/(landingPages)/layout.css"
+      ]
+    },
+    "/Users/saketranjan/Desktop/final/rejoy_next/src/app/(landingPages)/move-walk-run-and-earn/page": {
+      "modules": [
+        "/Users/saketranjan/Desktop/final/rejoy_next/src/app/(landingPages)/_components/header/style.module.css",
+        "/Users/saketranjan/Desktop/final/rejoy_next/src/app/(landingPages)/_components/navDropdown/style.module.css",
+        "/Users/saketranjan/Desktop/final/rejoy_next/src/app/(landingPages)/_components/navLink/style.module.css"
+      ],
+      "files": [
+        "static/css/app/(landingPages)/move-walk-run-and-earn/page.css"
+      ]
+    }
+  }
+}
