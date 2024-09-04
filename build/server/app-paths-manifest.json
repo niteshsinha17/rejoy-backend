@@ -1,4 +1,0 @@
-{
-  "/(landingPages)/page": "app/(landingPages)/page.js",
-  "/(landingPages)/move-walk-run-and-earn/page": "app/(landingPages)/move-walk-run-and-earn/page.js"
-}
