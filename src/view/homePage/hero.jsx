@@ -2,9 +2,9 @@ import { TopBanner } from "@/app/(landingPages)/_components";
 import AppleStoreButton from "@/app/(landingPages)/_components/appleStoreButton";
 import GooglePlayButton from "@/app/(landingPages)/_components/googlePlayButton";
 import { Container } from "@/components";
-import Dots from "../../../public/images/home/dots-final.png";
-import QuestionBar from "@/app/(landingPages)/_components/questionBar";
-import { HeroButtons } from "@/app/(landingPages)/_components/heroButtons";
+import Dots from "../../../public/images/home/dots.png";
+import QuestionBar from "@/view/homePage/questionBar";
+import HeroButtons from "@/view/homePage/heroButtons";
 
 const ButtonLink = (props) => {
   return <div>{props.children}</div>;

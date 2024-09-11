@@ -15,6 +15,8 @@ import therapyIcon from "./therapy.svg";
 import tiktokIcon from "./tiktok.svg";
 import twitterIcon from "./twitter.svg";
 import youTubeIcon from "./youtube.svg";
+import searchIcon from "./search.svg";
+import whatsAppIcon from "./whatsApp.svg"
 
 export {
   CloseIcon,
@@ -34,4 +36,6 @@ export {
   tiktokIcon,
   twitterIcon,
   youTubeIcon,
+  searchIcon,
+  whatsAppIcon
 };
