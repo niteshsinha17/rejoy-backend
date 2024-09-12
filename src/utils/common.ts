@@ -1,6 +1,9 @@
 import { nconf } from "@/conf";
 import { ROUTES } from "@/enum";
+import clsx from "clsx";
+import { ClassValue } from "cva/dist/types";
 import { Metadata } from "next";
+import { twMerge } from "tailwind-merge";
 
 export const getPageMetaData = (data?: Metadata, route?: ROUTES): Metadata => {
   return {
@@ -19,3 +22,5 @@ export const getPageMetaData = (data?: Metadata, route?: ROUTES): Metadata => {
     },
   };
 };
+
+export const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
