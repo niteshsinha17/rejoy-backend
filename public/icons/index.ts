@@ -16,7 +16,19 @@ import tiktokIcon from "./tiktok.svg";
 import twitterIcon from "./twitter.svg";
 import youTubeIcon from "./youtube.svg";
 import searchIcon from "./search.svg";
-import whatsAppIcon from "./whatsApp.svg"
+import whatsAppIcon from "./whatsApp.svg";
+import locationIcon from "./location.svg";
+import filledStarIcon from "./filledStar.svg";
+import emptyStarIcon from "./emptyStar.svg"
+import phoneIcon from "./phone.svg";
+import sparkleAI from "./sparkleAI.svg";
+import overviewIcon from "./overview.svg";
+import horizontalLineIcon from "./horizontalLine.svg";
+import patientIcon from "./patients.svg";
+import doctorIcon from "./doctor.svg";
+import stethoscopeIcon from "./stethoscope.svg";
+import hospitalIcon from "./hospital.svg"
+import capIcon from "./cap.svg";
 
 export {
   CloseIcon,
@@ -37,5 +49,17 @@ export {
   twitterIcon,
   youTubeIcon,
   searchIcon,
-  whatsAppIcon
+  whatsAppIcon,
+  locationIcon,
+  filledStarIcon,
+  emptyStarIcon,
+  phoneIcon,
+  sparkleAI,
+  overviewIcon,
+  horizontalLineIcon,
+  patientIcon,
+  doctorIcon,
+  stethoscopeIcon,
+  hospitalIcon,
+  capIcon
 };
