@@ -29,6 +29,7 @@ import doctorIcon from "./doctor.svg";
 import stethoscopeIcon from "./stethoscope.svg";
 import hospitalIcon from "./hospital.svg"
 import capIcon from "./cap.svg";
+import healthInsuranceIcon from "./healthInsurance.svg"
 
 export {
   CloseIcon,
@@ -61,5 +62,6 @@ export {
   doctorIcon,
   stethoscopeIcon,
   hospitalIcon,
-  capIcon
+  capIcon,
+  healthInsuranceIcon
 };

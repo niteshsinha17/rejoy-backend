@@ -9,21 +9,18 @@ import Insurance from "@/view/doctorProfile/insurance";
 
 const DoctorProfile = () => {
   return (
-    <div className="mx-5">
+    <div className="mx-6">
       <DoctorDetail
         name="Dr. Victor Katz"
         specialties={["Sports Medicine", "Orthopedic Surgery"]}
-        rating={4.0}
-        totalRatings={57}
         practiceName="Gotto Medical Care Pc"
         address="2523 Kings Hwy Ste 1D, Brooklyn, NY, 11229"
-        otherLocations={9}
         phoneNumber="(718) 336 - 2258"
         imageUrl="images/home/DrVictorKatz.webp"
       />
 
       <Overview description="Dr. Victor Katz is an orthopedic surgeon in Mineola, New York and is affiliated with multiple hospitals in the area, including Mercy Medical Center and NYU Winthrop Hospital. He received his medical degree from Stony Brook University School of Medicine and has been in practice for more than 20 years. He is one of 103 doctors at Mercy Medical Center and one of 57 at NYU Winthrop Hospital who specialize in Orthopedic Surgery." />
-      
+      <div className="w-2/3">
       <DetailCard iconSrc={patientIcon} 
                   heading="CONDITIONS TREATED" 
                   description={["Fractures, Dislocations, Derangement, and Sprains",
@@ -58,6 +55,7 @@ const DoctorProfile = () => {
                   heading="HOSPITAL AFFILIATED"
                   description={["Maimonides Midwood Community Hospital"]}
       />
+      </div>
     </div>
   );
 };

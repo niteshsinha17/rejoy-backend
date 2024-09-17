@@ -1,7 +1,5 @@
 import Image from "next/image";
 import {
-  emptyStarIcon,
-  filledStarIcon,
   locationIcon,
   phoneIcon,
   sparkleAI,
@@ -9,11 +7,8 @@ import {
 interface DoctorDetailProps {
   name: string;
   specialties: string[];
-  rating: number;
-  totalRatings: number;
   practiceName: string;
   address: string;
-  otherLocations: number;
   phoneNumber: string;
   imageUrl: string;
 }
@@ -21,11 +16,8 @@ interface DoctorDetailProps {
 const DoctorDetail = ({
   name,
   specialties,
-  rating,
-  totalRatings,
   practiceName,
   address,
-  otherLocations,
   phoneNumber,
   imageUrl,
 }: DoctorDetailProps) => {
@@ -39,40 +31,9 @@ const DoctorDetail = ({
       />
       <div>
         <div className="flex justify-between items-start ">
-          <div>
+          <div className="my-3">
             <h2 className="text-4xl font-bold">{name}</h2>
             <p className="">{specialties.join(" • ")}</p>
-          </div>
-        </div>
-
-        <div className="md:flex my-4 overflow-hidden">
-          <div className="flex mr-2">
-            <span className="font-bold mr-3">{rating.toFixed(1)}</span>
-            {[...Array(rating)].map((_, i) => (
-              <Image
-                src={filledStarIcon}
-                alt="star"
-                key={i}
-                className="w-4 h-4"
-              />
-            ))}
-            {[...Array(5 - rating)].map((_, i) => (
-              <Image
-                src={emptyStarIcon}
-                alt="star"
-                key={i}
-                className="w-4 h-4"
-              />
-            ))}
-          </div>
-
-          <div>
-            <span className=" text-primary hover:underline cursor-pointer">
-              ({totalRatings} Ratings)
-            </span>
-            <button className="ml-4 text-primary hover:underline">
-              Leave a review
-            </button>
           </div>
         </div>
 
@@ -86,9 +47,6 @@ const DoctorDetail = ({
             </div>
             <div>
               <p>{address}</p>
-              <p className="text-blue-500 hover:underline text-primary cursor-pointer">
-                {otherLocations} other locations
-              </p>
             </div>
           </div>
         </div>
