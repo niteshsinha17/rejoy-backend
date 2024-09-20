@@ -17,4 +17,8 @@ export enum ROUTES {
 
   GOOGLE_PLAY = "https://play.google.com/store/apps/details?id=com.rejoyhealth",
   APPLE_STORE = "https://apps.apple.com/us/app/rejoy-health/id1551791871",
+  LOGIN = "/auth/login",
+  REGISTER = "/auth/register",
+  DASHBOARD = "/auth/forgot-password",
+
 }

@@ -24,3 +24,17 @@ export const getPageMetaData = (data?: Metadata, route?: ROUTES): Metadata => {
 };
 
 export const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
+
+export const formikFieldConfig = (formik: any) => {
+  return (fieldName: string) => {
+    const fieldProps = formik.getFieldProps(fieldName);
+    const helpersProps = formik.getFieldMeta(fieldName);
+
+    return {
+      ...fieldProps,
+      name: fieldName,
+      setValue: formik.setFieldValue,
+      error: helpersProps.touched ? helpersProps.error : undefined,
+    };
+  };
+};
