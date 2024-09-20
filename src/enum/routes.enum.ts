@@ -19,8 +19,6 @@ export enum ROUTES {
   APPLE_STORE = "https://apps.apple.com/us/app/rejoy-health/id1551791871",
   LOGIN = "/auth/login",
   REGISTER = "/auth/register",
-  FORGOT_PASSWORD = "/auth/forgot-password",
+  DASHBOARD = "/auth/forgot-password",
 
-  // auathenticated
-  MANAGE_AGENTS = "/dashboard/manage-agents",
 }

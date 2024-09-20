@@ -67,7 +67,7 @@ const LoginView = () => {
             />
             <div className="flex items-center justify-end">
               <Button
-                href={ROUTES.FORGOT_PASSWORD}
+                href={ROUTES.DASHBOARD}
                 variant="text"
                 color="danger"
               >
