@@ -1,5 +1,5 @@
 "use client";
-import { Routes } from "@/enum";
+import { AppRoutes, Routes } from "@/enum";
 import { IErrorResponse } from "@/models";
 import { ICreateUserServiceErrorResponse } from "@/models/auth";
 import { authApi } from "@/services";
@@ -81,7 +81,7 @@ const RegisterView = () => {
             />
             <div className="flex items-center justify-end">
               <Button
-                href={Routes.DASHBOARD}
+                href={AppRoutes.FORGOT_PASSWORD}
                 variant="text"
                 color="danger"
               >
@@ -110,7 +110,7 @@ const RegisterView = () => {
             <div className="flex items-center">
               <div className="text-base">Already have an account? </div>
               <Button
-                href={Routes.LOGIN}
+                href={AppRoutes.LOGIN}
                 variant="text"
               >
                 Sign in
