@@ -15,8 +15,7 @@ interface IGetEmailProps {
   handleNext: (email: string) => void;
 }
 const GetEmail = (props: IGetEmailProps) => {
-  const [sendVerificationCode, sendVerificationCodeState] =
-    authApi.useSendEmailVerificationOtpMutation();
+  const [sendVerificationCode, sendVerificationCodeState] = authApi.useSendEmailVerificationOtpMutation();
   const form = useFormik({
     initialValues: {
       email: "",
@@ -50,8 +49,7 @@ const GetEmail = (props: IGetEmailProps) => {
           >
             <div className="p-4 space-y-3">
               <div className="text-md font-medium font-manrope">
-                Enter your email address to get a verification code on your
-                email to reset your password.
+                Enter your email address to get a verification code on your email to reset your password.
               </div>
               <TextInput
                 placeholder="Enter your email address"

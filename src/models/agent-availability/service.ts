@@ -11,7 +11,6 @@ export interface TimeResponse {
 }
 export type AvailabilityMapResponse = Record<WeekDay, TimeResponse[]>;
 
-export interface IUpdateAgentAvailabilitySettingServicePayload
-  extends Omit<IAgentAvailabilitySettingResponse, "is_active"> {
+export interface IUpdateAgentAvailabilitySettingServicePayload extends Omit<IAgentAvailabilitySettingResponse, "is_active"> {
   agent_id: string;
 }

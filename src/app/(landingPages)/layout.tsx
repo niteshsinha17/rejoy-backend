@@ -11,7 +11,10 @@ export const metadata = {
 
 export default function RootLayout(props: ILayoutProps) {
   return (
-    <html lang="en" className="text-sm sm:text-lg">
+    <html
+      lang="en"
+      className="text-sm sm:text-lg"
+    >
       <body suppressHydrationWarning={true}>
         <GaProvider></GaProvider>
         <LandingPageHeader />

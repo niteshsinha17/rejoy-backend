@@ -29,11 +29,9 @@ export const Hero = () => {
             <br /> Setting a New Standard for Joint and Muscle Care
           </h1>
           <p className="text-center max-w-3xl mx-auto body-1 mt-4">
-            Discover a groundbreaking approach to joint and muscle care with our
-            state-of-the-art RejoyMotion™ technology. We have redefined exercise
-            therapy, providing our members with real-time guidance that delivers
-            exceptional outcomes. Say goodbye to conventional methods and
-            embrace the future of pain management.
+            Discover a groundbreaking approach to joint and muscle care with our state-of-the-art RejoyMotion™ technology. We have redefined
+            exercise therapy, providing our members with real-time guidance that delivers exceptional outcomes. Say goodbye to conventional
+            methods and embrace the future of pain management.
           </p>
 
           <div className="flex justify-center mt-4 space-x-4">

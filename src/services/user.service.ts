@@ -1,10 +1,4 @@
-import {
-  apiObject,
-  baseApiQuery,
-  baseQuery,
-  getApi,
-  postApi,
-} from "@/middlewares";
+import { apiObject, baseApiQuery, baseQuery, getApi, postApi } from "@/middlewares";
 import {
   ILoggedInUser,
   ILoggedInUserProfile,
@@ -16,14 +10,11 @@ import {
 import { createApi } from "@reduxjs/toolkit/query/react";
 import { toast } from "react-toastify";
 import { userTransformer } from "../transformer";
-export const getUserDataService = () =>
-  baseApiQuery<ILoggedInUserResponse>(apiObject("user/data/"));
+export const getUserDataService = () => baseApiQuery<ILoggedInUserResponse>(apiObject("user/data/"));
 
 // export const getUserPublicLinkTreeProfile = () => getApi;
 
-export const getUserProfileService = async (): Promise<
-  ILoggedInUserProfile | undefined
-> => {
+export const getUserProfileService = async (): Promise<ILoggedInUserProfile | undefined> => {
   const res = await getApi<ILoggedInUserProfileResponse>({
     endpoint: "api/v1/user/profile",
   });
@@ -114,10 +105,7 @@ export const verifyEmailOtpService = async (otp: string) => {
   return res;
 };
 
-export const updatePasswordService = async (
-  oldPassword: string,
-  newPassword: string
-) => {
+export const updatePasswordService = async (oldPassword: string, newPassword: string) => {
   const res = await postApi<ILoginServiceResponse>({
     endpoint: "api/v1/auth/update-password",
     data: {
@@ -160,11 +148,7 @@ export const forgotPasswordService = async (username: string) => {
   return res;
 };
 
-export const verifyForgotPasswordOtpService = (
-  otp: string,
-  new_password: string,
-  username: string
-) => {
+export const verifyForgotPasswordOtpService = (otp: string, new_password: string, username: string) => {
   const res = postApi({
     endpoint: "api/v1/auth/forgot-password/verify-otp",
     data: {
@@ -193,10 +177,7 @@ export const userApi = createApi({
       query: (token) => apiObject("user/data/").token(token).doNotRedirect(),
       transformResponse: userTransformer.selfUserResToJsFormat,
     }),
-    updateUserDetail: builder.mutation<
-      ILoggedInUser,
-      IUpdateUserDetailServicePayload
-    >({
+    updateUserDetail: builder.mutation<ILoggedInUser, IUpdateUserDetailServicePayload>({
       query: ({ token, ...data }) =>
         apiObject("user/update/")
           .put(data)

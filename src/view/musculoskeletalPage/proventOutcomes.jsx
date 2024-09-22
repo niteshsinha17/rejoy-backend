@@ -9,7 +9,11 @@ import SpotPainReduction from "../../../public/images/musculoskeletal/spot-pain.
 const Card = (props) => {
   return (
     <div className="p-5 text-center">
-      <Image className="w-[150px] mx-auto" src={props.image} alt={props.alt} />
+      <Image
+        className="w-[150px] mx-auto"
+        src={props.image}
+        alt={props.alt}
+      />
 
       <div className="text-xl font-bold mt-4 text-primary">{props.text1}</div>
       <div className="text-xl mt-2 font-medium">{props.text2}</div>
@@ -26,10 +30,8 @@ const ProvenOutcomes = () => {
         </h2>
 
         <p className="body-1 mt-4 text-center">
-          Not only do our at-home and automated physical therapy produce better
-          outcomes, it also offers increased convenience and accessibility for
-          patients, as well as the ability to be more consistent with treatment.
-          In addition, it is more cost-effective.
+          Not only do our at-home and automated physical therapy produce better outcomes, it also offers increased convenience and
+          accessibility for patients, as well as the ability to be more consistent with treatment. In addition, it is more cost-effective.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-5 gap-5 mt-6">

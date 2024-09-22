@@ -14,35 +14,19 @@ const PasswordCheck = (props: IPasswordCheckProps) => {
   return (
     <ul className="flex flex-col gap-1 text-sm font-medium">
       <li className="flex items-center gap-1">
-        {check1 ? (
-          <CheckCircleOutlineIcon className="text-success icon-md" />
-        ) : (
-          <XCircleOutlineIcon className="text-danger icon-md" />
-        )}
-        8 characters minimum
+        {check1 ? <CheckCircleOutlineIcon className="text-success icon-md" /> : <XCircleOutlineIcon className="text-danger icon-md" />}8
+        characters minimum
       </li>
       <li className="flex items-center gap-1">
-        {check2 ? (
-          <CheckCircleOutlineIcon className="text-success icon-md" />
-        ) : (
-          <XCircleOutlineIcon className="text-danger icon-md" />
-        )}
+        {check2 ? <CheckCircleOutlineIcon className="text-success icon-md" /> : <XCircleOutlineIcon className="text-danger icon-md" />}
         At least one uppercase letter
       </li>
       <li className="flex items-center gap-1">
-        {check3 ? (
-          <CheckCircleOutlineIcon className="text-success icon-md" />
-        ) : (
-          <XCircleOutlineIcon className="text-danger icon-md" />
-        )}
+        {check3 ? <CheckCircleOutlineIcon className="text-success icon-md" /> : <XCircleOutlineIcon className="text-danger icon-md" />}
         At least one lowercase letter
       </li>
       <li className="flex items-center gap-1">
-        {check4 ? (
-          <CheckCircleOutlineIcon className="text-success icon-md" />
-        ) : (
-          <XCircleOutlineIcon className="text-danger icon-md" />
-        )}
+        {check4 ? <CheckCircleOutlineIcon className="text-success icon-md" /> : <XCircleOutlineIcon className="text-danger icon-md" />}
         At least one number
       </li>
     </ul>

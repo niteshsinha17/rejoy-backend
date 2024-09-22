@@ -3,9 +3,7 @@ import { IApiRequestData, IApiRequestOutput } from "@/models/rest.inerface";
 import { localStorageTransaction } from "@/utils";
 import axios from "axios";
 
-export const getApi = async <D, E = string>(
-  data: IApiRequestData
-): Promise<IApiRequestOutput<D, E>> => {
+export const getApi = async <D, E = string>(data: IApiRequestData): Promise<IApiRequestOutput<D, E>> => {
   let token = null;
 
   if (typeof window !== "undefined") {
@@ -33,22 +31,16 @@ export const getApi = async <D, E = string>(
     });
 };
 
-export const postApi = async <D, E = string>(
-  data: IApiRequestData
-): Promise<IApiRequestOutput<D, E>> => {
+export const postApi = async <D, E = string>(data: IApiRequestData): Promise<IApiRequestOutput<D, E>> => {
   const token = localStorageTransaction.getItem("userToken");
 
   return await axios
-    .post(
-      `${data.baseUrl || nconf.get("BACK_END_HOST")}/${data.endpoint}`,
-      data.data,
-      {
-        headers: {
-          ...data.headers,
-          Authorization: `Token ${token}`,
-        },
-      }
-    )
+    .post(`${data.baseUrl || nconf.get("BACK_END_HOST")}/${data.endpoint}`, data.data, {
+      headers: {
+        ...data.headers,
+        Authorization: `Token ${token}`,
+      },
+    })
     .then((res) => {
       return {
         success: true,
@@ -63,22 +55,16 @@ export const postApi = async <D, E = string>(
     });
 };
 
-export const putApi = async <D, E = string>(
-  data: IApiRequestData
-): Promise<IApiRequestOutput<D, E>> => {
+export const putApi = async <D, E = string>(data: IApiRequestData): Promise<IApiRequestOutput<D, E>> => {
   const token = localStorageTransaction.getItem("userToken");
 
   return await axios
-    .put(
-      `${data.baseUrl || nconf.get("BACK_END_HOST")}/${data.endpoint}`,
-      data.data,
-      {
-        headers: {
-          ...data.headers,
-          Authorization: `Token ${token}`,
-        },
-      }
-    )
+    .put(`${data.baseUrl || nconf.get("BACK_END_HOST")}/${data.endpoint}`, data.data, {
+      headers: {
+        ...data.headers,
+        Authorization: `Token ${token}`,
+      },
+    })
     .then((res) => {
       return {
         success: true,
@@ -93,9 +79,7 @@ export const putApi = async <D, E = string>(
     });
 };
 
-export const delApi = async <D, E = string>(
-  data: IApiRequestData
-): Promise<IApiRequestOutput<D, E>> => {
+export const delApi = async <D, E = string>(data: IApiRequestData): Promise<IApiRequestOutput<D, E>> => {
   const token = localStorageTransaction.getItem("userToken");
 
   return await axios

@@ -17,13 +17,9 @@ const GenericCircularLoader = (props: IGenericCircularLoaderProps) => {
               width: props.size || "1rem",
             }
           : {
-              border: `${props.borderWidth || "2px"} solid ${
-                props.color || "var(--primary-color)"
-              }`,
+              border: `${props.borderWidth || "2px"} solid ${props.color || "var(--primary-color)"}`,
 
-              borderTop: `${props.borderWidth || "2px"} solid ${
-                props.borderTopColor || "white"
-              }`,
+              borderTop: `${props.borderWidth || "2px"} solid ${props.borderTopColor || "white"}`,
               height: props.size || "1rem",
               width: props.size || "1rem",
             }

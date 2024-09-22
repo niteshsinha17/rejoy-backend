@@ -14,16 +14,12 @@ const NavDropdown = (props: INavDropdownProps) => {
     >
       {props.item.name}
       <Image
-        className={`ml-2 w-2 ${classes.arrowIcon} ${
-          open ? classes.arrowIconOpen : ""
-        }`}
+        className={`ml-2 w-2 ${classes.arrowIcon} ${open ? classes.arrowIconOpen : ""}`}
         src={arrowDownIcon}
         alt="arrow down"
       />
       <div
-        className={`${
-          classes.dropdownMenu
-        } md:fixed bg-white w-[100%] md:left-[0px] md:top-[100px] ${
+        className={`${classes.dropdownMenu} md:fixed bg-white w-[100%] md:left-[0px] md:top-[100px] ${
           open ? classes.dropdownMenuOpen : classes.dropdownMenuClose
         }`}
       >
@@ -47,12 +43,8 @@ const NavDropdown = (props: INavDropdownProps) => {
                   />
                 </div>
                 <div className="flex-1">
-                  <div className="font-poppins text-base font-semibold text-textPrimary group-hover:underline">
-                    {subLink.name}
-                  </div>
-                  <div className="hidden md:block font-poppins font-normal text-sm mt-2 text-textSecondary">
-                    {subLink.description}
-                  </div>
+                  <div className="font-poppins text-base font-semibold text-textPrimary group-hover:underline">{subLink.name}</div>
+                  <div className="hidden md:block font-poppins font-normal text-sm mt-2 text-textSecondary">{subLink.description}</div>
                 </div>
               </Link>
             );

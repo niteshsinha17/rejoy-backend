@@ -78,10 +78,7 @@ const Form = () => {
         custom={
           <form onSubmit={handleSubmit}>
             <h2 className="heading-2">Join the next live event</h2>
-            <p className="body-1">
-              Fill the given form and we will send the next event invitation
-              before the event.
-            </p>
+            <p className="body-1">Fill the given form and we will send the next event invitation before the event.</p>
 
             <div className="flex flex-col gap-2 mt-2">
               <Input

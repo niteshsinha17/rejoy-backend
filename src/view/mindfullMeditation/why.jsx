@@ -4,9 +4,9 @@ import RightImageSection from "@/components/rightImageSection";
 import { ROUTES } from "@/enum";
 import Link from "next/link";
 import Expert from "../../../public/images/mindfull/expert.jpg";
-import Video from "../../../public/images/mindfull/video-content.jpg";
 import Levels from "../../../public/images/mindfull/levels.jpg";
 import TotalWellness from "../../../public/images/mindfull/total-wellness.jpg";
+import Video from "../../../public/images/mindfull/video-content.jpg";
 
 const ButtonLink = (props) => {
   return (
@@ -28,10 +28,8 @@ const Why = () => {
           <span className="text-primary">for Mindful Meditation?</span>
         </h2>
         <p className="body-1 mt-4 text-center">
-          At Rejoy Health, we understand that the journey to mindfulness and
-          well-being is deeply personal. That's why we've crafted a mindful
-          meditation experience that stands out. Here's why you should choose
-          us:
+          At Rejoy Health, we understand that the journey to mindfulness and well-being is deeply personal. That's why we've crafted a
+          mindful meditation experience that stands out. Here's why you should choose us:
         </p>
         <LeftImageSection
           heading="Expert Instructors"

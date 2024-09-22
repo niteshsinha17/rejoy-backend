@@ -1,14 +1,6 @@
 export type Size = "xs" | "sm" | "md" | "lg" | "xl";
 
-export type Color =
-  | "primary"
-  | "secondary"
-  | "danger"
-  | "muted"
-  | "accent"
-  | "black"
-  | "white"
-  | "current";
+export type Color = "primary" | "secondary" | "danger" | "muted" | "accent" | "black" | "white" | "current";
 
 export enum KeyboardKey {
   ENTER = "Enter",

@@ -20,19 +20,13 @@ const SpotLight = (props) => {
           <div className="md:w-7/12">
             <h2 className="heading-2">
               ReJoy Spotlight:
-              <span className="text-secondary">
-                {" "}
-                Building an ROI-Positive MSK Strategy
-              </span>
+              <span className="text-secondary"> Building an ROI-Positive MSK Strategy</span>
             </h2>
             <p className="body-2 mt-6 text-white">
-              Unlock the power of ReJoy's comprehensive care and improve member
-              outcomes with our hybrid care model. Join us to learn how our
-              digital Musculoskeletal (MSK) solution has produced a remarkable
-              2.4x ROI for employers. Our new hybrid model bridges the care
-              divide by bringing clinically complete digital convenience and
-              personalized in-center visits to your members. Discover the impact
-              ReJoy can have on your organization's MSK strategy.
+              Unlock the power of ReJoy's comprehensive care and improve member outcomes with our hybrid care model. Join us to learn how
+              our digital Musculoskeletal (MSK) solution has produced a remarkable 2.4x ROI for employers. Our new hybrid model bridges the
+              care divide by bringing clinically complete digital convenience and personalized in-center visits to your members. Discover
+              the impact ReJoy can have on your organization's MSK strategy.
             </p>
 
             <div className="text-center flex flex-col sm:flex-row mt-4  sm:space-x-4">

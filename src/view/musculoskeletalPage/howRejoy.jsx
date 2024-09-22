@@ -5,16 +5,13 @@ export const HowRejoy = () => {
     <Section noBottomPadding>
       <Container>
         <h2 className="heading-2 text-center">
-          Empowering{" "}
-          <span className="text-primary">Musculoskeletal Health</span>
+          Empowering <span className="text-primary">Musculoskeletal Health</span>
         </h2>
 
         <p className="body-1 mt-4 text-center">
-          Rejoy is a groundbreaking solution designed to address the challenges
-          faced by individuals with musculoskeletal conditions. By providing
-          personalized exercise programs tailored to the specific areas of
-          discomfort, Rejoy aims to alleviate pain, enhance mobility, and
-          improve overall musculoskeletal health.
+          Rejoy is a groundbreaking solution designed to address the challenges faced by individuals with musculoskeletal conditions. By
+          providing personalized exercise programs tailored to the specific areas of discomfort, Rejoy aims to alleviate pain, enhance
+          mobility, and improve overall musculoskeletal health.
         </p>
 
         <div className="mt-4">

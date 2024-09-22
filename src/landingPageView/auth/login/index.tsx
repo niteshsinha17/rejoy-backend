@@ -74,12 +74,19 @@ const LoginView = () => {
                 Forgot Password?
               </Button>
             </div>
-            <Button type="submit" loading={loading} fullWidth>
+            <Button
+              type="submit"
+              loading={loading}
+              fullWidth
+            >
               Sign in
             </Button>
             <div className="flex items-center">
               <div className="text-base">Don&apos;t have an account? </div>
-              <Button href={ROUTES.REGISTER} variant="text">
+              <Button
+                href={ROUTES.REGISTER}
+                variant="text"
+              >
                 Sign up
               </Button>
             </div>

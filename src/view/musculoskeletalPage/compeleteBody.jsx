@@ -33,15 +33,26 @@ const CompleteBody = () => {
             </h2>
 
             <p className="body-2 text-center mt-2 max-w-md mx-auto">
-              Where are you experiencing pain? Our personalized exercise program
-              focuses on the specific areas where you feel discomfort
+              Where are you experiencing pain? Our personalized exercise program focuses on the specific areas where you feel discomfort
             </p>
 
             <div className="md:absolute left-[0px] w-[100%] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mt-6">
-              <Card img={Back.src} text="Back" />
-              <Card img={HipAndKnee.src} text="Hip & Knee" />
-              <Card img={WristAndHand.src} text="Wrist, Hand, Ancle & Foot" />
-              <Card img={Neck.src} text="Neck, Shoulder & Elbow" />
+              <Card
+                img={Back.src}
+                text="Back"
+              />
+              <Card
+                img={HipAndKnee.src}
+                text="Hip & Knee"
+              />
+              <Card
+                img={WristAndHand.src}
+                text="Wrist, Hand, Ancle & Foot"
+              />
+              <Card
+                img={Neck.src}
+                text="Neck, Shoulder & Elbow"
+              />
             </div>
           </Container>
         </div>

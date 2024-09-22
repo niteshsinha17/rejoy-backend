@@ -7,9 +7,7 @@ import classes from "./whyMatters.module.css";
 
 const CardItem = (props) => {
   return (
-    <div
-      className={`relative border mb-4 md:mb-[0px] mx-auto max-w-3xl border-[#ccc] py-6 px-4 rounded-lg ${classes.mainBody}`}
-    >
+    <div className={`relative border mb-4 md:mb-[0px] mx-auto max-w-3xl border-[#ccc] py-6 px-4 rounded-lg ${classes.mainBody}`}>
       <div
         className={`absolute top-[0px] translate-y-[-50%] translate-x-[-50%] left-[50%] flex items-center justify-center bg-[#aceefe] rounded-full h-[70px] w-[70px] ${classes.iconWrapper}`}
       >
@@ -22,9 +20,7 @@ const CardItem = (props) => {
       </div>
       <h5 className="heading-5 text-center">{props.heading}</h5>
       <p className="body-2 text-center mt-2 max-w-md mx-auto">{props.text}</p>
-      <div
-        className={`${classes.cardImg} absolute h-[100%] w-[100%] left-[0px] top-[0px] z-[-1]`}
-      >
+      <div className={`${classes.cardImg} absolute h-[100%] w-[100%] left-[0px] top-[0px] z-[-1]`}>
         <Image
           src={props.img}
           height={150}
@@ -45,10 +41,8 @@ const WhyMatters = () => {
         </h2>
 
         <p className="text-center max-w-3xl mx-auto body-1 mt-4">
-          No more waiting for specialists and enduring prolonged pain. With
-          Rejoy, you get instant access to the best-in-class Clinical Pain
-          Specialists without the hassle of unnecessary appointments or
-          redundant x-rays and medications. Save your time, energy, and money
+          No more waiting for specialists and enduring prolonged pain. With Rejoy, you get instant access to the best-in-class Clinical Pain
+          Specialists without the hassle of unnecessary appointments or redundant x-rays and medications. Save your time, energy, and money
           with Rejoy's convenient and efficient on-call service.
         </p>
 

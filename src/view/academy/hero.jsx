@@ -27,10 +27,8 @@ export const Hero = () => {
             <span>The Academy</span>
           </h1>
           <p className="text-center max-w-xl mx-auto body-1 mt-4">
-            Welcome to Rejoy, your comprehensive resource for achieving a
-            pain-free life. We believe that everyone deserves to live without
-            the burden of pain, and we're here to help you on your journey
-            towards optimal physical health and well-being.
+            Welcome to Rejoy, your comprehensive resource for achieving a pain-free life. We believe that everyone deserves to live without
+            the burden of pain, and we're here to help you on your journey towards optimal physical health and well-being.
           </p>
 
           <div className="flex justify-center mt-4 space-x-4">

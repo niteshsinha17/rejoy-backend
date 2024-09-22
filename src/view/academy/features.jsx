@@ -26,10 +26,8 @@ const Features = () => {
           Rejoy Free <span className="text-primary">Resources</span>
         </h2>
         <p className="body-1 mt-4 text-center max-w-4xl mx-auto">
-          The Academy at Rejoy provides the highest quality physical health
-          education and resources. Our goal is to empower you with knowledge,
-          enabling you to prevent injuries, understand the root causes of pain,
-          reduce your risks, and build healthy habits.
+          The Academy at Rejoy provides the highest quality physical health education and resources. Our goal is to empower you with
+          knowledge, enabling you to prevent injuries, understand the root causes of pain, reduce your risks, and build healthy habits.
         </p>
 
         <LeftImageSection

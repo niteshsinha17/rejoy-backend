@@ -1,5 +1,5 @@
 import { Dialog } from "@mui/material";
-import { CSSProperties } from "react";
+import React, { CSSProperties } from "react";
 
 interface IGenericDialogProps {
   children: React.ReactNode;

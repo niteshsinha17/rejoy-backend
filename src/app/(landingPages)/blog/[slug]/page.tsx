@@ -11,7 +11,7 @@ const getRandomThreeItemList = (posts: PostOrPage[]) => {
 
   let count = 0;
 
-  for (let post of posts) {
+  for (const post of posts) {
     count++;
     if (count <= 3) {
       randomList.push(post);
@@ -39,17 +39,13 @@ export default async function QuestionPage({ params }: any) {
     limit: 200,
   });
   const post = await ghostContentApi.posts.read({ slug: params.slug });
-  const suggestions = getRandomThreeItemList(
-    posts.filter((p) => p.slug !== post.slug)
-  );
+  const suggestions = getRandomThreeItemList(posts.filter((p) => p.slug !== post.slug));
 
   return (
     <TopBanner>
       <Container>
         <h1 className="text-center heading-1 text-textPrimary">
-          <span className="text-primary whitespace-pre-wrap">
-            {post?.title || "Blog not found"}
-          </span>
+          <span className="text-primary whitespace-pre-wrap">{post?.title || "Blog not found"}</span>
         </h1>
         <p className="max-w-screen-md mx-auto body-1 mt-4 whitespace-pre-wrap">
           {post && post?.html && (
@@ -67,18 +63,14 @@ export default async function QuestionPage({ params }: any) {
             <DownloadButtons />
           </div>
         </div>
-        <div className="mt-6 text-center heading-4 ">
-          Explore Related Articles for Deeper Insights
-        </div>
+        <div className="mt-6 text-center heading-4 ">Explore Related Articles for Deeper Insights</div>
         <div className="grid mt-4 md:grid-cols-3 gap-4">
           {suggestions.map((item, index) => (
             <div key={index}>
               <div className="md:h-[250px] max-w-[600px] mx-auto flex flex-col gap-3 justify-between border rounded-md border-primaryBoder p-4">
                 <div className="space-y-2">
                   <div className="text-lg font-semibold">{item.title}</div>
-                  <div className="text-sm text-textSecondary">
-                    {item.excerpt?.substring(0, 100)}...
-                  </div>
+                  <div className="text-sm text-textSecondary">{item.excerpt?.substring(0, 100)}...</div>
                 </div>
                 <Link
                   className="text-sm text-primary"

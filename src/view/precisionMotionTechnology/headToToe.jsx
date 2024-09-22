@@ -27,21 +27,30 @@ const HeadToToe = () => {
     <div className="bg-[#eaf4f7]">
       <Section>
         <Container>
-          <h2 className="text-center heading-2 text-textPrimary">
-            From Head to Toe, We've Got It Covered
-          </h2>
+          <h2 className="text-center heading-2 text-textPrimary">From Head to Toe, We've Got It Covered</h2>
 
           <p className="text-center max-w-3xl mx-auto body-1 mt-4">
-            No matter which area of your body requires attention, Rejoy is here
-            to support you. Our targeted care addresses various regions,
+            No matter which area of your body requires attention, Rejoy is here to support you. Our targeted care addresses various regions,
             including:
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 mt-6">
-            <Card img={Back.src} heading="Back & Spine" />
-            <Card img={HipAndKnee.src} heading="Hips & Knee" />
-            <Card img={WristAndHand.src} heading="Hand and Wrist" />
-            <Card img={Neck.src} heading="Neck & joints" />
+            <Card
+              img={Back.src}
+              heading="Back & Spine"
+            />
+            <Card
+              img={HipAndKnee.src}
+              heading="Hips & Knee"
+            />
+            <Card
+              img={WristAndHand.src}
+              heading="Hand and Wrist"
+            />
+            <Card
+              img={Neck.src}
+              heading="Neck & joints"
+            />
           </div>
         </Container>
       </Section>

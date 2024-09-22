@@ -19,9 +19,9 @@
   "eslint.alwaysShowStatus": true,
   "eslint.enable": true,
   "eslint.lintTask.options": ".",
-  "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+  "editor.defaultFormatter": "biomejs.biome",
   "[typescript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "biomejs.biome"
   },
   "typescript.autoClosingTags": true,
   "typescript.inlayHints.variableTypes.enabled": false,
@@ -29,9 +29,9 @@
   "typescript.implementationsCodeLens.enabled": true,
   "typescript.updateImportsOnFileMove.enabled": "always",
   "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+    "editor.defaultFormatter": "biomejs.biome"
   },
   "[css]": {
-    "editor.defaultFormatter": "vscode.css-language-features"
+    "editor.defaultFormatter": "biomejs.biome"
   }
 }

@@ -135,15 +135,13 @@ This article has two key aspects to explore of which one is “what are the top 
     answer: `The most commonly used indicator for analyzing mortality is life expectancy at birth, i.e. the mean number of years that a person can expect to live at birth subjected to current mortality conditions throughout the rest of their lives. Life expectancy originates from demography but is an often-used summary measure of mortality also in epidemiology and public health in general. (https://ec.europa.eu/eurostat/statistics-explained/index.php?title=Mortality_and_life_expectancy_statistics) `,
   },
   {
-    question:
-      "What are the top causes of mortality and reduced life expectancy?",
+    question: "What are the top causes of mortality and reduced life expectancy?",
     slug: "what-are-the-top-causes-of-mortality-and-reduced-life-expectancy",
     answer: `The top global causes of death, in order of total number of lives lost are associated with three broad topics: cardiovascular (ischemic heart disease, stroke), respiratory (chronic obstructive pulmonary disease, lower respiratory infections) and neonatal conditions which includes birth asphyxia, birth trauma, neonatal sepsis and preterm birth complications. 
 The world's biggest killer is ischemic heart disease, responsible for 16% of the world's total deaths. This is followed by stroke which accounts for 11% and chronic obstructive pulmonary disease which accounts for 6% of total deaths (https://www.who.int/news-room/fact-sheets/detail/the-top-10-causes-of-death). It is important to know why people die to improve how people live. Measuring annual mortality helps to assess the effectiveness of our health systems and direct resources to where they are needed the most. While there are preventable measures to reduce mortality rates, we will focus on the role of exercise or physical activity in lowering mortality. `,
   },
   {
-    question:
-      "How does exercise or active lifestyle impact mortality, thus life expectancy?",
+    question: "How does exercise or active lifestyle impact mortality, thus life expectancy?",
     slug: "how-does-exercise-or-active-lifestyle-impact-mortality-thus-life-expectancy",
     answer: `Regular physical activity reduces many major mortality risk factors including arterial hypertension, diabetes mellitus type 2, dyslipidemia, coronary heart disease, stroke and cancer (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1402378/). The relative risk of death is approximately 20% to 35% lower in physically active and fit persons compared to that in inactive and unfit persons. Physical inactivity represents a major independent risk factor for mortality accounting for up to 10% of all deaths in the European region (https://pubmed.ncbi.nlm.nih.gov/21181084/). Hence, because a 40% lower mortality rate corresponds to an approximately 5-year higher life expectancy one would expect an approximately 3.5-4.0-year higher life expectancy in physically active persons compared to that in inactive persons. (https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3395188/#:~:text=All%20studies%20reported%20a%20higher,%3A%203.9%20%C2%B1%201.8%20years)
 Exercise makes your muscles work and burn calories. Exercises are activities designed to improve physical fitness, enhance health and prepare the body to meet the demands of life. Physical activities like running, swimming, walking, jogging and dancing are often used synonymously with exercise. 
@@ -223,7 +221,7 @@ function generateRandomNumbers(min: number, max: number) {
   var result: number[] = [];
 
   while (result.length < 3) {
-    var randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+    const randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
     if (!result.includes(randomNum)) {
       result.push(randomNum);
     }
@@ -233,7 +231,7 @@ function generateRandomNumbers(min: number, max: number) {
 }
 
 const getRandomThreeItemList = () => {
-  let randomList: IQuestion[] = [];
+  const randomList: IQuestion[] = [];
 
   const randomNumbers = generateRandomNumbers(0, questions.length - 1);
 
@@ -253,9 +251,7 @@ export default async function QuestionPage({ params }: any) {
     <TopBanner>
       <Container>
         <h1 className="text-center heading-1 text-textPrimary">
-          <span className="text-primary whitespace-pre-wrap">
-            {question?.question || "Question not found"}
-          </span>
+          <span className="text-primary whitespace-pre-wrap">{question?.question || "Question not found"}</span>
         </h1>
         <p className="max-w-screen-md mx-auto body-1 mt-4 whitespace-pre-wrap">
           {question && question.answer}
@@ -269,18 +265,14 @@ export default async function QuestionPage({ params }: any) {
             <DownloadButtons />
           </div>
         </div>
-        <div className="mt-6 text-center heading-4 ">
-          Explore Related Articles for Deeper Insights
-        </div>
+        <div className="mt-6 text-center heading-4 ">Explore Related Articles for Deeper Insights</div>
         <div className="grid mt-4 md:grid-cols-3 gap-4">
           {suggestions.map((item, index) => (
             <div key={index}>
               <div className="md:h-[250px] max-w-[600px] mx-auto flex flex-col gap-3 justify-between border rounded-md border-primaryBoder p-4">
                 <div className="space-y-2">
                   <div className="text-lg font-semibold">{item.question}</div>
-                  <div className="text-sm text-textSecondary">
-                    {item.answer.substring(0, 100)}...
-                  </div>
+                  <div className="text-sm text-textSecondary">{item.answer.substring(0, 100)}...</div>
                 </div>
                 <Link
                   className="text-sm text-primary"

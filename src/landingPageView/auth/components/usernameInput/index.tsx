@@ -1,6 +1,7 @@
 import { usernameMaxLength } from "@/contants";
 import { cn } from "@/utils";
-import {trim} from "lodash"
+import { trim } from "lodash";
+import React from "react";
 import classes from "./style.module.css";
 
 interface IUsernameInputProps {
@@ -42,11 +43,7 @@ const UsernameInput = (props: IUsernameInputProps) => {
           autoFocus={props.autoFocus}
         />
       </div>
-      {hasError && (
-        <div className={cn("text-xs text-danger pl-2 my-1 h-5")}>
-          {props.error}
-        </div>
-      )}
+      {hasError && <div className={cn("text-xs text-danger pl-2 my-1 h-5")}>{props.error}</div>}
     </div>
   );
 };

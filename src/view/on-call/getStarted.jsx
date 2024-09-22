@@ -5,13 +5,10 @@ const GetStarted = () => {
     <div className="bg-primary text-center">
       <Section>
         <Container>
-          <h2 className="text-center heading-2 text-white">
-            Get started with Rejoy today
-          </h2>
+          <h2 className="text-center heading-2 text-white">Get started with Rejoy today</h2>
 
           <p className="text-center max-w-3xl mx-auto body-1 mt-4 text-white">
-            Take the first step towards a life free of pain and movement
-            limitations. Join Rejoy today and experience the difference our
+            Take the first step towards a life free of pain and movement limitations. Join Rejoy today and experience the difference our
             on-demand access to Clinical Pain Specialists can make in your life.
           </p>
 

@@ -5,7 +5,10 @@ import { appStore } from "../../../../../public/images";
 
 const AppleStoreButton = () => {
   return (
-    <Link href={ROUTES.APPLE_STORE} className="apple-store-button">
+    <Link
+      href={ROUTES.APPLE_STORE}
+      className="apple-store-button"
+    >
       <Image
         className="h-[50px] w-[150px] sm:h-[60px] sm:w-[180px]"
         src={appStore}

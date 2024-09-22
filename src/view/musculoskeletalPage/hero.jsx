@@ -28,10 +28,8 @@ export const Hero = () => {
             <br /> Anywhere
           </h1>
           <p className="text-center max-w-lg mx-auto body-1 mt-4">
-            Our innovative approach combines the expertise of physical
-            therapists with advanced computer vision and AI to provide
-            customized treatment plans that can be accessed from the comfort of
-            your own home.
+            Our innovative approach combines the expertise of physical therapists with advanced computer vision and AI to provide customized
+            treatment plans that can be accessed from the comfort of your own home.
           </p>
 
           <div className="flex justify-center mt-4 space-x-4">

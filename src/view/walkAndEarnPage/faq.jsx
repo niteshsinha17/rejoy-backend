@@ -7,8 +7,7 @@ const Faq = () => {
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div>
             <h2 className="heading-2">
-              Frequently Asked <br />{" "}
-              <span className="text-primary">Questions</span>
+              Frequently Asked <br /> <span className="text-primary">Questions</span>
             </h2>
           </div>
           <div>

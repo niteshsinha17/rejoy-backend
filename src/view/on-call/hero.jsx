@@ -24,16 +24,11 @@ export const Hero = () => {
       ></div>
       <TopBanner>
         <Container>
-          <h1 className="text-center heading-1 text-textPrimary">
-            On-Demand Pain Relief and Movement Improvement
-          </h1>
+          <h1 className="text-center heading-1 text-textPrimary">On-Demand Pain Relief and Movement Improvement</h1>
           <p className="text-center max-w-4xl mx-auto body-1 mt-4">
-            Welcome to Rejoy, your 24/7 on-demand access to Clinical Pain
-            Specialists. Say goodbye to suffering in silence, as immediate help
-            for your pain is now just a click away. Through text-based
-            communication, you can connect with our team of expert Clinical Pain
-            Specialists who are ready to provide you with answers and immediate
-            action.
+            Welcome to Rejoy, your 24/7 on-demand access to Clinical Pain Specialists. Say goodbye to suffering in silence, as immediate
+            help for your pain is now just a click away. Through text-based communication, you can connect with our team of expert Clinical
+            Pain Specialists who are ready to provide you with answers and immediate action.
           </p>
 
           <div className="flex justify-center mt-4 space-x-4">

@@ -20,5 +20,4 @@ export enum ROUTES {
   LOGIN = "/auth/login",
   REGISTER = "/auth/register",
   DASHBOARD = "/auth/forgot-password",
-
 }

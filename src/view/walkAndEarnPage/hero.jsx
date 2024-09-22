@@ -28,9 +28,8 @@ export const Hero = () => {
             <br /> every time you walk!
           </h1>
           <p className="text-center max-w-lg mx-auto body-1 mt-4">
-            Rejoy rewards you for your daily movement. Walking is essentially
-            for every. Think if you are being paid for every single steps. How
-            intersting it will be. Being healthy while making money.
+            Rejoy rewards you for your daily movement. Walking is essentially for every. Think if you are being paid for every single steps.
+            How intersting it will be. Being healthy while making money.
           </p>
 
           <div className="flex justify-center mt-4 space-x-4">

@@ -2,9 +2,9 @@ import { TopBanner } from "@/app/(landingPages)/_components";
 import AppleStoreButton from "@/app/(landingPages)/_components/appleStoreButton";
 import GooglePlayButton from "@/app/(landingPages)/_components/googlePlayButton";
 import { Container } from "@/components";
-import Dots from "../../../public/images/home/dots.png";
-import QuestionBar from "@/view/homePage/questionBar";
 import HeroButtons from "@/view/homePage/heroButtons";
+import QuestionBar from "@/view/homePage/questionBar";
+import Dots from "../../../public/images/home/dots.png";
 
 const ButtonLink = (props) => {
   return <div>{props.children}</div>;
@@ -26,16 +26,17 @@ export const Hero = () => {
       <TopBanner>
         <Container>
           <h1 className="text-center heading-1 text-textPrimary">
-          Your Trusted Health Companion
+            Your Trusted Health Companion
             <br />
             <span className="text-primary">Available 24x7 to provide answers</span>
           </h1>
-          <QuestionBar/>
+          <QuestionBar />
           <p className="text-center max-w-xl mx-auto body-1 mt-4">
-          Whether you have questions about symptoms, treatments, or general wellness, simply ask, and receive verified answers you can trust
+            Whether you have questions about symptoms, treatments, or general wellness, simply ask, and receive verified answers you can
+            trust
           </p>
-          
-          <HeroButtons/>
+
+          <HeroButtons />
           <div className="flex justify-center mt-4 space-x-4">
             <ButtonLink>
               <GooglePlayButton />

@@ -27,7 +27,8 @@ const OurSolutions = () => {
           <span className="text-primary">Comprehensive Health Information Hub</span>
         </h2>
         <p className="body-1 mt-4 text-center">
-        We offer trusted, accurate, and personalized health information with direct answers, unbiased perspectives, real-time updates, and seamless connections to healthcare resources
+          We offer trusted, accurate, and personalized health information with direct answers, unbiased perspectives, real-time updates, and
+          seamless connections to healthcare resources
         </p>
         <LeftImageSection
           heading="Trusted and Accurate Answers"

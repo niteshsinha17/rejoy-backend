@@ -31,10 +31,8 @@ export const Hero = () => {
             </span>
           </h1>
           <p className="text-center max-w-2xl mx-auto body-1 mt-4">
-            We understand that your health and well-being are of utmost
-            importance, and we are here to provide you with the highest quality
-            care, combining the best of digital convenience and the personal
-            touch of in-center visits.
+            We understand that your health and well-being are of utmost importance, and we are here to provide you with the highest quality
+            care, combining the best of digital convenience and the personal touch of in-center visits.
           </p>
 
           <div className="flex justify-center mt-4 space-x-4">

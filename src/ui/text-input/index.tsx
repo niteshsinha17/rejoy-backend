@@ -1,6 +1,7 @@
 import { BoxLoader } from "@/components";
 import { InputLabel } from "@/ui";
 import { cn } from "@/utils";
+import React from "react";
 
 interface TextInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   required?: boolean;
@@ -31,24 +32,29 @@ const TextInput = ({
 
   return (
     <div className={cn("space-y-1", className)}>
-      {label && <InputLabel label={label} required={required} htmlFor={name} />}
+      {label && (
+        <InputLabel
+          label={label}
+          required={required}
+          htmlFor={name}
+        />
+      )}
       {props.isLoading ? (
-        <BoxLoader height={42} width="100%" />
+        <BoxLoader
+          height={42}
+          width="100%"
+        />
       ) : (
         <input
           name={name}
           type="text"
-          className={cn(
-            "p-2 w-full border rounded-md font-manrope text-base focus:border-primary",
-            {
-              "border-danger": hasError,
-            }
-          )}
+          className={cn("p-2 w-full border rounded-md font-manrope text-base focus:border-primary", {
+            "border-danger": hasError,
+          })}
           value={value}
           onChange={(e) => {
             e.stopPropagation();
-            if (props.validationFn && !props.validationFn(e.target.value))
-              return;
+            if (props.validationFn && !props.validationFn(e.target.value)) return;
             if (setValue) setValue(name, e.target.value);
           }}
           onKeyDown={(e) => {
@@ -59,9 +65,7 @@ const TextInput = ({
       )}
       <div className="flex justify-between mt-1 pr-1">
         {hasError && <div className="text-xs text-red-400">{error}</div>}
-        {!hasError && helpText && (
-          <div className="text-xs text-gray-500">{helpText}</div>
-        )}
+        {!hasError && helpText && <div className="text-xs text-gray-500">{helpText}</div>}
 
         {showLengthInformation && props.maxLength && (
           <p className="text-xs text-gray-500">

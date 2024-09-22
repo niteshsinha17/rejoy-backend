@@ -16,9 +16,7 @@ const Section3 = () => {
           <span className="text-primary"> Rejoy&apos;s Digital Therapist</span>
         </h2>
 
-        <p className="body-1 mt-4 text-center">
-          Cutting-Edge Technology for Effective Rehabilitation
-        </p>
+        <p className="body-1 mt-4 text-center">Cutting-Edge Technology for Effective Rehabilitation</p>
 
         <div className="mt-4">
           <LeftImageSection

@@ -25,7 +25,10 @@ const MiddleSection = () => {
           para="Taking care of your health has many benefits, not just for yourself but also for society.By being healthy, you are more productive and contribute to saving billions of dollars in healthcare costs."
           custom={
             <div className="mt-4">
-              <ButtonLink href="#" text="Get Started" />
+              <ButtonLink
+                href="#"
+                text="Get Started"
+              />
             </div>
           }
           img={Why}
@@ -36,7 +39,10 @@ const MiddleSection = () => {
           para="At Rejoy Health, we believe in rewarding your efforts and helping you stay motivated on your fitness journey. That's why we offer a unique earning system based on the number of steps you take. For every 10,000 steps you track, you will earn a total of 100 cents. But that's not all – we have even more ways for you to increase your earnings and maximize your rewards."
           custom={
             <div className="mt-4">
-              <ButtonLink href="#" text="Start Earning now" />
+              <ButtonLink
+                href="#"
+                text="Start Earning now"
+              />
             </div>
           }
           img={HowMuch}

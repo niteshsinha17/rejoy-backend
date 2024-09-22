@@ -6,7 +6,6 @@
   z-index: 1200;
 }
 
-
 .headerShadow,
 .header:hover {
   border-bottom: 1px solid var(--primary-border-color);
@@ -28,7 +27,6 @@
     height: 0px;
     overflow: hidden;
     padding: 0px 20px;
-
   }
 
   .navList {
@@ -39,7 +37,6 @@
   .headerOpen {
     background-color: #fff;
     border-bottom: 1px solid var(--primary-border-color);
-
   }
 
   .headerOpen .nav {

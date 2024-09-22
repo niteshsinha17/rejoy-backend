@@ -2,13 +2,9 @@
   border-bottom: 2px solid transparent;
 }
 
-
-
 .arrowIcon {
   transition: all 0.2s linear;
 }
-
-
 
 @media (min-width: 960px) {
   .dropdown:hover .dropdownMenu {
@@ -30,7 +26,7 @@
   }
 }
 
-@media (max-width:960px) {
+@media (max-width: 960px) {
   .dropdownMenuOpen {
     height: auto;
   }
@@ -38,7 +34,6 @@
   .arrowIconOpen {
     transform: rotate(-180deg);
   }
-
 
   .arrowIcon {
     float: right;

@@ -4,12 +4,14 @@ import Link from "next/link";
 import { IButtonProps, useButtonProps } from "./use-button";
 
 const Button = (props: IButtonProps) => {
-  const { spinnerPlacement, spinnerSize, getButtonProps } =
-    useButtonProps(props);
+  const { spinnerPlacement, spinnerSize, getButtonProps } = useButtonProps(props);
 
   if (props.href) {
     return (
-      <Link href={props.href} {...getButtonProps()}>
+      <Link
+        href={props.href}
+        {...getButtonProps()}
+      >
         {spinnerPlacement === "start" && props.loading && (
           // <Spinner color="current" size={spinnerSize} />
           <></>
@@ -26,7 +28,10 @@ const Button = (props: IButtonProps) => {
   }
 
   return (
-    <button type={props.type || "button"} {...getButtonProps()}>
+    <button
+      type={props.type || "button"}
+      {...getButtonProps()}
+    >
       {spinnerPlacement === "start" && props.loading && (
         // <Spinner color="current" size={spinnerSize} />
         <></>

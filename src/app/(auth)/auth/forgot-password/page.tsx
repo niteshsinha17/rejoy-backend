@@ -8,7 +8,5 @@ export const metadata = getPageMetaData({
 });
 
 export default function FP() {
-  return (
-      <ForgetPasswordView />
-  );
+  return <ForgetPasswordView />;
 }

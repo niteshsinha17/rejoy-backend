@@ -6,15 +6,14 @@ import Trust from "./trust";
 import Video from "./video";
 import WalkAndEarn from "./walkAndEarn";
 
-
 export const HomePageView = () => {
   return (
     <div>
       <Hero />
-      <ModelMetric/>
-      <Trust/>
-      <QNA/>
-      <Testimonials/>
+      <ModelMetric />
+      <Trust />
+      <QNA />
+      <Testimonials />
       <Video />
       <WalkAndEarn />
     </div>

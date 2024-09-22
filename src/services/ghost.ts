@@ -8,9 +8,7 @@ export const ghostContentApi = new GhostContentAPI({
   makeRequest: ({ url, method, params, headers }) => {
     const apiUrl = new URL(url);
 
-    Object.keys(params).map((key) =>
-      apiUrl.searchParams.set(key, encodeURIComponent(params[key]))
-    );
+    Object.keys(params).map((key) => apiUrl.searchParams.set(key, encodeURIComponent(params[key])));
 
     return fetch(apiUrl.toString(), { method, headers })
       .then(async (res) => {

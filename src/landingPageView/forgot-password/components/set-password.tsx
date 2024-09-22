@@ -9,14 +9,7 @@ import { useRouter } from "next/navigation";
 import * as yup from "yup";
 
 const schema = yup.object().shape({
-  password: yup
-    .string()
-    .required("Password is required")
-    .test(
-      "validate-password",
-      "Password is not strong enough",
-      validatePassword
-    ),
+  password: yup.string().required("Password is required").test("validate-password", "Password is not strong enough", validatePassword),
   verificationCode: yup.string().required("Verification code is required"),
 });
 
@@ -26,10 +19,8 @@ interface IGetEmailProps {
 }
 
 const SetPassword = (props: IGetEmailProps) => {
-  const [resetPassword, resetPasswordState] =
-    authApi.useResetPasswordMutation();
-  const [sendVerificationCode, sendVerificationCodeState] =
-    authApi.useSendEmailVerificationOtpMutation();
+  const [resetPassword, resetPasswordState] = authApi.useResetPasswordMutation();
+  const [sendVerificationCode, sendVerificationCodeState] = authApi.useSendEmailVerificationOtpMutation();
   const router = useRouter();
   const form = useFormik({
     initialValues: {
@@ -82,8 +73,7 @@ const SetPassword = (props: IGetEmailProps) => {
           >
             <div className="p-4 space-y-3">
               <div className="text-md font-medium font-manrope">
-                Enter Verification Code sent to your email address{" "}
-                <b>{props.email}</b> and set a new password.
+                Enter Verification Code sent to your email address <b>{props.email}</b> and set a new password.
               </div>
               <TextInput
                 placeholder="Enter Verification Code"

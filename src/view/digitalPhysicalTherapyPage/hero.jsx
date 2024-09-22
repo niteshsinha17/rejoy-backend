@@ -28,8 +28,7 @@ export const Hero = () => {
             <br /> Optimal Physical Well-being
           </h1>
           <p className="text-center max-w-lg mx-auto body-1 mt-4">
-            Rejoy Health offers next-gen digital health solutions that helped
-            10,000+ people improve their lives.
+            Rejoy Health offers next-gen digital health solutions that helped 10,000+ people improve their lives.
           </p>
 
           <div className="flex justify-center mt-4 space-x-4">

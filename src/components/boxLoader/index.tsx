@@ -13,10 +13,7 @@ const BoxLoader = (props: ITextLoaderProps) => {
         width: props.width || "100%",
         height: props.height || "50px",
       }}
-      className={cn(
-        "bg-slate-200 animate-pulse rounded-md h-2",
-        props.className
-      )}
+      className={cn("bg-slate-200 animate-pulse rounded-md h-2", props.className)}
     ></div>
   );
 };

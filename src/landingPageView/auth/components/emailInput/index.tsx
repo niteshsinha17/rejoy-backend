@@ -1,4 +1,5 @@
 import { cn } from "@/utils";
+import React from "react";
 import classes from "./style.module.css";
 
 interface IEmailInputProps {
@@ -28,11 +29,7 @@ const EmailInput = (props: IEmailInputProps) => {
           value={props.value}
         />
       </div>
-      {hasError && (
-        <div className={cn("text-xs text-danger pl-2 my-1 h-5")}>
-          {props.error}
-        </div>
-      )}
+      {hasError && <div className={cn("text-xs text-danger pl-2 my-1 h-5")}>{props.error}</div>}
     </div>
   );
 };

@@ -1,7 +1,7 @@
 "use client";
 import { ROUTES } from "@/enum";
-import { ICreateUserServiceErrorResponse } from "@/models/auth";
 import { IErrorResponse } from "@/models";
+import { ICreateUserServiceErrorResponse } from "@/models/auth";
 import { authApi } from "@/services";
 import { Button } from "@/ui";
 import { formikFieldConfig, validatePassword, validateUsername } from "@/utils";
@@ -18,14 +18,7 @@ import EnterOptView from "./enter-otp";
 const validationSchema = yup.object().shape({
   username: yup.string().required("Username is required"),
   email: yup.string().email("Invalid email").required("Email is required"),
-  password: yup
-    .string()
-    .required("Password is required")
-    .test(
-      "validate-password",
-      "Password is not strong enough",
-      validatePassword
-    ),
+  password: yup.string().required("Password is required").test("validate-password", "Password is not strong enough", validatePassword),
 });
 
 const RegisterView = () => {
@@ -51,13 +44,13 @@ const RegisterView = () => {
             password: "",
           };
           if (response.errors.username) {
-            errors["username"] = response.errors.username[0];
+            errors.username = response.errors.username[0];
           }
           if (response.errors.email) {
-            errors["email"] = response.errors.email[0];
+            errors.email = response.errors.email[0];
           }
           if (response.errors.password) {
-            errors["password"] = response.errors.password[0];
+            errors.password = response.errors.password[0];
           }
           form.setErrors(errors);
         });
@@ -97,7 +90,11 @@ const RegisterView = () => {
             </div>
             <div>Password Checks:</div>
             <PasswordCheck password={form.values.password} />
-            <Button fullWidth loading={createUserState.isLoading} type="submit">
+            <Button
+              fullWidth
+              loading={createUserState.isLoading}
+              type="submit"
+            >
               Sign up
             </Button>
             <div className="text-sm">
@@ -112,7 +109,10 @@ const RegisterView = () => {
             </div>
             <div className="flex items-center">
               <div className="text-base">Already have an account? </div>
-              <Button href={ROUTES.LOGIN} variant="text">
+              <Button
+                href={ROUTES.LOGIN}
+                variant="text"
+              >
                 Sign in
               </Button>
             </div>

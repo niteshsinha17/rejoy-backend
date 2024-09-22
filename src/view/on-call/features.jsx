@@ -10,8 +10,7 @@ const Features = () => {
     <Section noBottomPadding>
       <Container>
         <h2 className="text-center heading-2">
-          Immediate help,{" "}
-          <span className="text-primary">at your fingertips.</span>
+          Immediate help, <span className="text-primary">at your fingertips.</span>
         </h2>
 
         <LeftImageSection

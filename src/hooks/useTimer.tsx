@@ -9,9 +9,7 @@ interface IUserTimerProps {
 const getFormattedTime = (timeInSecond: number): string => {
   const minutes = Math.floor(timeInSecond / 60);
   const seconds = timeInSecond - minutes * 60;
-  return `${minutes < 10 ? "0" + minutes : minutes}:${
-    seconds < 10 ? "0" + seconds : seconds
-  }`;
+  return `${minutes < 10 ? "0" + minutes : minutes}:${seconds < 10 ? "0" + seconds : seconds}`;
 };
 
 const useTimer = (props: IUserTimerProps) => {

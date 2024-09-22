@@ -19,8 +19,7 @@ export const validateOtp = (otp: string) => {
 const ForgetPasswordView = () => {
   const [step, setStep] = useState<STEPS>(STEPS.ENTER_EMAIL);
   const email = useRef<string>("");
-  const [resendTimeLeft, setResendTimeLeft] =
-    useState<number>(DEFAULT_RESEND_TIME);
+  const [resendTimeLeft, setResendTimeLeft] = useState<number>(DEFAULT_RESEND_TIME);
   const resendTimer = useRef<NodeJS.Timeout | null>(null);
 
   if (step == STEPS.ENTER_EMAIL)

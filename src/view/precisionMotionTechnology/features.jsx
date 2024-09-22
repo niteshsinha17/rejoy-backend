@@ -10,9 +10,7 @@ const Features = () => {
   return (
     <Section>
       <Container>
-        <h2 className="text-center heading-2">
-          Features of Precision Motion Technology
-        </h2>
+        <h2 className="text-center heading-2">Features of Precision Motion Technology</h2>
         <div className={classes.motionTracking}>
           <LeftImageSection
             heading="Motion Tracking"

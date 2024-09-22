@@ -23,12 +23,9 @@ export const Hero = () => {
       ></div>
       <TopBanner>
         <Container>
-          <h1 className="text-center heading-1 text-textPrimary">
-            Reduce Stress, Anxiety and Improve Pain Management
-          </h1>
+          <h1 className="text-center heading-1 text-textPrimary">Reduce Stress, Anxiety and Improve Pain Management</h1>
           <p className="text-center max-w-xl mx-auto body-1 mt-4">
-          Guided meditations help you reduce stress-related pain, stress and
-           anxiety associated with the rehabilitation process.
+            Guided meditations help you reduce stress-related pain, stress and anxiety associated with the rehabilitation process.
           </p>
 
           <div className="flex justify-center mt-4 space-x-4">

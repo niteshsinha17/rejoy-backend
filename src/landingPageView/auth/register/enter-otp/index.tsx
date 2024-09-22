@@ -7,7 +7,7 @@ import { authApi } from "@/services";
 import { Button, TextInput } from "@/ui";
 import { Toast } from "@/utils";
 import { IconButton } from "@mui/material";
-import { useState } from "react";
+import React, { useState } from "react";
 
 const isNumber = (value: string) => {
   return /^\d+$/.test(value);
@@ -43,7 +43,11 @@ const EnterOptView = (props: IEnterOptViewProps) => {
   };
 
   return (
-    <GenericDialog open width="90%" maxWidth="400">
+    <GenericDialog
+      open
+      width="90%"
+      maxWidth="400"
+    >
       <div>
         <div className="p-3 px-6 border-b">
           <div className="flex justify-between items-center">
@@ -53,7 +57,10 @@ const EnterOptView = (props: IEnterOptViewProps) => {
             </IconButton>
           </div>
         </div>
-        <form onSubmit={handleSubmit} className="p-3 px-6 space-y-3">
+        <form
+          onSubmit={handleSubmit}
+          className="p-3 px-6 space-y-3"
+        >
           <div className="text-slate-500 text-sm">
             Enter the Verification Code sent to your email address <br />
             <b>{props.email}</b>
@@ -62,7 +69,7 @@ const EnterOptView = (props: IEnterOptViewProps) => {
             <TextInput
               name="otp"
               value={otp}
-              setValue={(_, value) => setOtp(value)}
+              // setValue={(_, value) => setOtp(value)}
               type="text"
               validationFn={isNumber}
               maxLength={4}

@@ -9,7 +9,7 @@ export class ApiObject {
   _data: AxiosRequestConfig["data"] = {};
   _params: AxiosRequestConfig["params"] = {};
   _headers: AxiosRequestConfig["headers"] = {};
-  _url: string = "";
+  _url = "";
   _baseUrl: string = nconf.get("BACK_END_HOST") || "";
   _routeParams: Record<string, string> = {};
   _doNotRedirect = false;
@@ -82,8 +82,7 @@ export class ApiObject {
     if (!this._url) throw new Error("url is not defined");
     let token = this._token;
     if (!token) {
-      if (!isServer())
-        token = localStorageTransaction.getItem("userToken") || "";
+      if (!isServer()) token = localStorageTransaction.getItem("userToken") || "";
     }
 
     return {

@@ -46,6 +46,7 @@ export const baseQuery = async <D = any, E = any>(apiObject: ApiObject) => {
           }
           window.location.assign(ROUTES.LOGIN);
         }
+        break;
       }
       default:
         break;

@@ -66,7 +66,11 @@ export default function LandingPageHeader() {
                       );
                     if (navLink.type === "dropdown") {
                       return (
-                        <NavDropdown close={close} item={navLink} key={index} />
+                        <NavDropdown
+                          close={close}
+                          item={navLink}
+                          key={index}
+                        />
                       );
                     }
                   })}

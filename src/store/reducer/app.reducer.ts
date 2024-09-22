@@ -3,7 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState: IAppState = {
   isSidebarOpen: true,
-  isChatSidebarOpen: true
+  isChatSidebarOpen: true,
 };
 
 const appSlice = createSlice({

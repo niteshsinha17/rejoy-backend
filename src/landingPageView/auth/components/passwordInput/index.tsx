@@ -1,7 +1,7 @@
 import { VisibilityOffSolidIcon, VisibilitySolidIcon } from "@/icons";
 import { Button } from "@/ui";
 import clsx from "clsx";
-import { useState } from "react";
+import React, { useState } from "react";
 import classes from "./style.module.css";
 
 export interface IPasswordInputProps {
@@ -40,11 +40,7 @@ const PasswordInput = (props: IPasswordInputProps) => {
           {showPassword ? <VisibilitySolidIcon /> : <VisibilityOffSolidIcon />}
         </Button>
       </div>
-      {hasError && (
-        <div className={clsx("text-xs text-danger pl-2 my-1 h-5")}>
-          {props.error}
-        </div>
-      )}
+      {hasError && <div className={clsx("text-xs text-danger pl-2 my-1 h-5")}>{props.error}</div>}
     </div>
   );
 };

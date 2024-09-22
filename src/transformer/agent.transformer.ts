@@ -16,9 +16,7 @@ import {
 } from "@/models/chat";
 
 export const agentTransformer = {
-  agentListItemResToJsFormat: (
-    agentListItemRes: IAgentListItemResponse
-  ): IAgentListItem => ({
+  agentListItemResToJsFormat: (agentListItemRes: IAgentListItemResponse): IAgentListItem => ({
     id: agentListItemRes.id,
     name: agentListItemRes.name,
     conversationCount: agentListItemRes.conversation_count,
@@ -26,16 +24,10 @@ export const agentTransformer = {
     agentType: agentListItemRes.agent_type,
     createdAt: agentListItemRes.created_at,
   }),
-  agentListResToJsFormat: (
-    agentListRes: IAgentListItemResponse[]
-  ): IAgentListItem[] => {
-    return agentListRes.map((agentListItemRes) =>
-      agentTransformer.agentListItemResToJsFormat(agentListItemRes)
-    );
+  agentListResToJsFormat: (agentListRes: IAgentListItemResponse[]): IAgentListItem[] => {
+    return agentListRes.map((agentListItemRes) => agentTransformer.agentListItemResToJsFormat(agentListItemRes));
   },
-  agentDetailResToJsFormat: (
-    agentData: IAgentDetailResponse
-  ): IAgentDetail => ({
+  agentDetailResToJsFormat: (agentData: IAgentDetailResponse): IAgentDetail => ({
     id: agentData.id,
     name: agentData.name,
     description: agentData.description || "",
@@ -47,9 +39,7 @@ export const agentTransformer = {
     agentType: agentData.agent_type,
     disabledResponse: agentData.disabled_response,
   }),
-  agentPublicDetailResToJsFormat: (
-    agentData: IAgentPublicDetailResponse
-  ): IAgentPublicDetail => ({
+  agentPublicDetailResToJsFormat: (agentData: IAgentPublicDetailResponse): IAgentPublicDetail => ({
     id: agentData.id,
     agentType: agentData.agent_type,
     companyLogo: agentData.company_logo,
@@ -57,9 +47,7 @@ export const agentTransformer = {
     name: agentData.name,
     disabledResponse: agentData.disabled_response,
   }),
-  agentDetailJsToResFormat: (
-    agentData: IAgentDetail
-  ): IAgentDetailResponse => ({
+  agentDetailJsToResFormat: (agentData: IAgentDetail): IAgentDetailResponse => ({
     id: agentData.id,
     name: agentData.name,
     description: agentData.description,
@@ -70,25 +58,17 @@ export const agentTransformer = {
     prompt: agentData.prompt,
     agent_type: agentData.agentType,
   }),
-  agentMessagesResToJsFormat: (
-    agentMessagesRes: IAgentChatMessageResponse
-  ): IAgentChatMessage => ({
+  agentMessagesResToJsFormat: (agentMessagesRes: IAgentChatMessageResponse): IAgentChatMessage => ({
     id: agentMessagesRes.id,
     message: agentMessagesRes.text,
     isAgentResponse: agentMessagesRes.is_agent_response,
     source: agentMessagesRes.source,
     createdAt: agentMessagesRes.created_at,
   }),
-  agentMessagesListResToJsFormat: (
-    agentMessagesListRes: IAgentChatMessageResponse[]
-  ): IAgentChatMessage[] => {
-    return agentMessagesListRes.map((agentMessagesRes) =>
-      agentTransformer.agentMessagesResToJsFormat(agentMessagesRes)
-    );
+  agentMessagesListResToJsFormat: (agentMessagesListRes: IAgentChatMessageResponse[]): IAgentChatMessage[] => {
+    return agentMessagesListRes.map((agentMessagesRes) => agentTransformer.agentMessagesResToJsFormat(agentMessagesRes));
   },
-  agentConversationListItemResToJsFormat: (
-    item: IAgentConversationListItemResponse
-  ): IAgentConversationListItem => ({
+  agentConversationListItemResToJsFormat: (item: IAgentConversationListItemResponse): IAgentConversationListItem => ({
     id: item.id,
     username: item.username,
     lastMessage: item.last_message,
@@ -99,16 +79,10 @@ export const agentTransformer = {
     existingUser: item.existing_user,
     autoReplayDisabled: item.auto_replay_disabled,
   }),
-  agentConversationListResToJsFormat: (
-    list: IAgentConversationListItemResponse[]
-  ): IAgentConversationListItem[] => {
-    return list.map((item) =>
-      agentTransformer.agentConversationListItemResToJsFormat(item)
-    );
+  agentConversationListResToJsFormat: (list: IAgentConversationListItemResponse[]): IAgentConversationListItem[] => {
+    return list.map((item) => agentTransformer.agentConversationListItemResToJsFormat(item));
   },
-  scheduledAppointmentJsToResFormat: (
-    appointment: IScheduleAppointmentResponse
-  ): IScheduleAppointment => ({
+  scheduledAppointmentJsToResFormat: (appointment: IScheduleAppointmentResponse): IScheduleAppointment => ({
     user: {
       name: appointment.user.name,
       email: appointment.user.email,
@@ -124,11 +98,7 @@ export const agentTransformer = {
     intakePerson: appointment.intake_person,
     duration: appointment.duration,
   }),
-  scheduledAppointmentListJsToResFormat: (
-    list: IScheduleAppointmentResponse[]
-  ): IScheduleAppointment[] => {
-    return list.map((appointment) =>
-      agentTransformer.scheduledAppointmentJsToResFormat(appointment)
-    );
+  scheduledAppointmentListJsToResFormat: (list: IScheduleAppointmentResponse[]): IScheduleAppointment[] => {
+    return list.map((appointment) => agentTransformer.scheduledAppointmentJsToResFormat(appointment));
   },
 };
