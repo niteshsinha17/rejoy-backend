@@ -1,11 +1,11 @@
 import { nconf } from "@/conf";
-import { ROUTES } from "@/enum";
+import { Routes } from "@/enum";
 import clsx from "clsx";
 import { ClassValue } from "cva/dist/types";
 import { Metadata } from "next";
 import { twMerge } from "tailwind-merge";
 
-export const getPageMetaData = (data?: Metadata, route?: ROUTES): Metadata => {
+export const getPageMetaData = (data?: Metadata, route?: Routes): Metadata => {
   return {
     ...data,
     openGraph: {

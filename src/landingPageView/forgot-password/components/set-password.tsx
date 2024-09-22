@@ -1,4 +1,4 @@
-import { ROUTES } from "@/enum";
+import { Routes } from "@/enum";
 import useTimer from "@/hooks/useTimer";
 import PasswordCheck from "@/landingPageView/auth/components/passwordChecks";
 import { authApi } from "@/services";
@@ -38,7 +38,7 @@ const SetPassword = (props: IGetEmailProps) => {
         .unwrap()
         .then(() => {
           Toast.success("Password reset successfully!");
-          router.push(ROUTES.LOGIN);
+          router.push(Routes.LOGIN);
         })
         .catch((err) => {
           if (err.message) {

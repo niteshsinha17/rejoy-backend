@@ -1,8 +1,8 @@
-import { ROUTES } from "@/enum";
+import { Routes } from "@/enum";
 
 export interface INavItem {
   name: string;
-  path?: ROUTES;
+  path?: Routes;
   type: "link" | "dropdown";
   children?: INavDropdown[];
 }
@@ -11,5 +11,5 @@ export interface INavDropdown {
   name: string;
   description: string;
   icon: string;
-  path: ROUTES;
+  path: Routes;
 }

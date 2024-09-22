@@ -1,5 +1,5 @@
 "use client";
-import { ROUTES } from "@/enum";
+import { Routes } from "@/enum";
 import { IErrorResponse } from "@/models";
 import { ICreateUserServiceErrorResponse } from "@/models/auth";
 import { authApi } from "@/services";
@@ -81,7 +81,7 @@ const RegisterView = () => {
             />
             <div className="flex items-center justify-end">
               <Button
-                href={ROUTES.DASHBOARD}
+                href={Routes.DASHBOARD}
                 variant="text"
                 color="danger"
               >
@@ -100,7 +100,7 @@ const RegisterView = () => {
             <div className="text-sm">
               By signing up, you agree to our{" "}
               <Link
-                href={ROUTES.PRIVACY_POLICY}
+                href={Routes.PRIVACY_POLICY}
                 target="_blank"
                 className="text-primary"
               >
@@ -110,7 +110,7 @@ const RegisterView = () => {
             <div className="flex items-center">
               <div className="text-base">Already have an account? </div>
               <Button
-                href={ROUTES.LOGIN}
+                href={Routes.LOGIN}
                 variant="text"
               >
                 Sign in

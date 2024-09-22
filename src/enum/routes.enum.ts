@@ -1,5 +1,4 @@
-export enum ROUTES {
-  // landing page routes
+export enum Routes {
   HOME = "/",
   MOVE_AND_EARN = "/move-walk-run-and-earn",
   MUSCULOSKELETAL = "/musculoskeletal",
@@ -14,10 +13,13 @@ export enum ROUTES {
   PRECISION_MOTION_TECHNOLOGY = "/precision-motion-technology",
   DOWNLOAD = "/download",
   BLOG = "/blog",
-
   GOOGLE_PLAY = "https://play.google.com/store/apps/details?id=com.rejoyhealth",
   APPLE_STORE = "https://apps.apple.com/us/app/rejoy-health/id1551791871",
-  LOGIN = "/auth/login",
-  REGISTER = "/auth/register",
-  DASHBOARD = "/auth/forgot-password",
+}
+
+export enum AppRoutes {
+  DASHBOARD = "/dashboard",
+  LOGIN = "/login",
+  REGISTER = "/register",
+  FORGOT_PASSWORD = "/forgot-password",
 }

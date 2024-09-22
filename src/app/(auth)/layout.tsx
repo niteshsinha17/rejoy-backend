@@ -6,21 +6,14 @@ import "@/styles/global.css";
 
 export default function RootLayout({ children }: ILayoutProps) {
   return (
-    <html
-      className="h-full"
-      lang="en"
-    >
+    <html lang="en">
       <GaProvider />
-      <body
-        className=" landing-page-typography h-full"
-        suppressHydrationWarning={true}
-      >
+      <body>
         <ReduxProvider>
           <ToastProvider>
-            <div>Header</div>
-            <div>
-              <div className="flex-1 overflow-auto ">{children}</div>
-            </div>
+            <div className="h-[70px] flex justify-center items-center">Header will be replaced</div>
+            <div className="min-h-screen">{children}</div>
+            {/* <LandingPageFooter /> */}
           </ToastProvider>
         </ReduxProvider>
       </body>

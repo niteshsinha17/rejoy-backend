@@ -1,5 +1,5 @@
 "use client";
-import { ROUTES } from "@/enum";
+import { AppRoutes } from "@/enum";
 import { useAuth } from "@/provider";
 import { loginWithCredentialsService } from "@/services";
 import { Button } from "@/ui";
@@ -19,6 +19,7 @@ const validationSchema = yup.object().shape({
 const LoginView = () => {
   const { login } = useAuth();
   const [loading, setLoading] = useState(false);
+
   const form = useFormik({
     initialValues: {
       username: "",
@@ -46,34 +47,40 @@ const LoginView = () => {
     },
     validationSchema,
   });
+
   const fieldConfig = formikFieldConfig(form);
 
   return (
-    <div className="bg-accent flex h-full justify-center p-3 items-center overflow-y-auto">
-      <div className="bg-white rounded-lg shadow-md w-full max-w-screen-sm p-6">
-        <div className="text-2xl font-semibold">Log in to your account</div>
-        <div className="max-w-none">
-          <form
-            onSubmit={form.handleSubmit}
-            className=" mx-auto mt-4 space-y-3"
-          >
+    <div className="flex h-full justify-center p-4 items-center">
+      <div className="w-full max-w-screen-sm p-6 border rounded-3xl shadow-sm">
+        <form
+          onSubmit={form.handleSubmit}
+          className="space-y-5"
+        >
+          <div className="text-2xl font-semibold text-center">Login</div>
+          <div className="space-y-3">
             <UsernameInput
               placeholder="Username or Email"
               {...fieldConfig("username")}
             />
-            <PasswordInput
-              placeholder="Password"
-              {...fieldConfig("password")}
-            />
-            <div className="flex items-center justify-end">
-              <Button
-                href={ROUTES.DASHBOARD}
-                variant="text"
-                color="danger"
-              >
-                Forgot Password?
-              </Button>
+            <div>
+              <PasswordInput
+                placeholder="Password"
+                {...fieldConfig("password")}
+              />
+              <div className="flex items-center justify-end">
+                <Button
+                  href={AppRoutes.FORGOT_PASSWORD}
+                  variant="text"
+                  color="danger"
+                  size="sm"
+                >
+                  Forgot Password?
+                </Button>
+              </div>
             </div>
+          </div>
+          <div className="space-y-3">
             <Button
               type="submit"
               loading={loading}
@@ -81,17 +88,18 @@ const LoginView = () => {
             >
               Sign in
             </Button>
-            <div className="flex items-center">
-              <div className="text-base">Don&apos;t have an account? </div>
+            <div className="text-sm text-center">
+              <div>Don&apos;t have an account? </div>
               <Button
-                href={ROUTES.REGISTER}
+                href={AppRoutes.REGISTER}
                 variant="text"
+                size="sm"
               >
                 Sign up
               </Button>
             </div>
-          </form>
-        </div>
+          </div>
+        </form>
       </div>
     </div>
   );

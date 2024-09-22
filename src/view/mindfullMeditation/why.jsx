@@ -1,7 +1,6 @@
 import { Container, Section } from "@/components";
 import LeftImageSection from "@/components/leftImageSection";
 import RightImageSection from "@/components/rightImageSection";
-import { ROUTES } from "@/enum";
 import Link from "next/link";
 import Expert from "../../../public/images/mindfull/expert.jpg";
 import Levels from "../../../public/images/mindfull/levels.jpg";

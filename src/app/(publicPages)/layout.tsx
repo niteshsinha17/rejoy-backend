@@ -7,10 +7,7 @@ export default function RootLayout({ children }: ILayoutProps) {
       className="h-full"
       lang="en"
     >
-      <body
-        className="h-full"
-        suppressHydrationWarning={true}
-      >
+      <body className="h-full">
         <div className="h-full flex flex-col">
           <div className="h-10">Header</div>
           <div className="flex-1 overflow-hidden">{children}</div>

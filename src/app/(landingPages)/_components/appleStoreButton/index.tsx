@@ -1,4 +1,4 @@
-import { ROUTES } from "@/enum";
+import { Routes } from "@/enum";
 import Image from "next/image";
 import Link from "next/link";
 import { appStore } from "../../../../../public/images";
@@ -6,7 +6,7 @@ import { appStore } from "../../../../../public/images";
 const AppleStoreButton = () => {
   return (
     <Link
-      href={ROUTES.APPLE_STORE}
+      href={Routes.APPLE_STORE}
       className="apple-store-button"
     >
       <Image

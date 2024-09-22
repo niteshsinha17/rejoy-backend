@@ -1,8 +1,8 @@
-import { ROUTES } from "@/enum";
+import { Routes } from "@/enum";
 
 export interface INavLinkProps {
   name: string;
-  path: ROUTES;
+  path: Routes;
   active: boolean;
   onClick: () => void;
 }

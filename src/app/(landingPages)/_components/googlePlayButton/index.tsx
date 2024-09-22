@@ -1,4 +1,4 @@
-import { ROUTES } from "@/enum";
+import { Routes } from "@/enum";
 import Image from "next/image";
 import Link from "next/link";
 import { googlePlay } from "../../../../../public/images";
@@ -6,7 +6,7 @@ import { googlePlay } from "../../../../../public/images";
 const GooglePlayButton = () => {
   return (
     <Link
-      href={ROUTES.GOOGLE_PLAY}
+      href={Routes.GOOGLE_PLAY}
       target="_blank"
     >
       <Image

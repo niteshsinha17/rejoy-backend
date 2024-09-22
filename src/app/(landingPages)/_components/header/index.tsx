@@ -1,6 +1,6 @@
 "use client";
 import { Container } from "@/components";
-import { ROUTES } from "@/enum";
+import { Routes } from "@/enum";
 import useScrollPosition from "@/hooks/scrollPosition";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,7 +16,7 @@ import classes from "./style.module.css";
 const navLinks: INavItem[] = [
   {
     name: "Home",
-    path: ROUTES.HOME,
+    path: Routes.HOME,
     type: "link",
   },
 ];
@@ -77,7 +77,7 @@ export default function LandingPageHeader() {
                 </ul>
                 <Link
                   onClick={close}
-                  href={ROUTES.DOWNLOAD}
+                  href={Routes.DOWNLOAD}
                   className={`${classes.downloadButton} py-5 text-center text-lg  md:text-base font-poppins`}
                 >
                   Download the app

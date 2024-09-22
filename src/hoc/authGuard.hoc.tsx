@@ -1,6 +1,6 @@
 "use client";
 import GenericCircularLoader from "@/components/genericCircularLoader";
-import { ROUTES } from "@/enum";
+import { Routes } from "@/enum";
 import { IChildrenProps } from "@/models";
 import { useAuth } from "@/provider";
 import { useRouter } from "next/navigation";
@@ -14,7 +14,7 @@ interface IAuthGuardProps extends IChildrenProps {
 
 const AuthGuard = (props: IAuthGuardProps) => {
   const noRedirect = props.noRedirect || false;
-  const redirectUrl = props.redirectUrl || ROUTES.LOGIN;
+  const redirectUrl = props.redirectUrl || Routes.LOGIN;
   const mountChild = props.mountChild || false;
   const router = useRouter();
   const { auth, checkAuth } = useAuth();
