@@ -42,7 +42,7 @@ const GetEmail = (props: IGetEmailProps) => {
   return (
     <div className="container">
       <div className="section">
-        <h2 className="text-center">Forgot Password</h2>
+        <h1 className="text-center">Forgot Password</h1>
         <div className="max-w-2xl mx-auto mt-4">
           <form
             onSubmit={form.handleSubmit}
