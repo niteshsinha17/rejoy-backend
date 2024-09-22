@@ -4,6 +4,7 @@ const CONF = {
   GHOST_CONTENT_API_KEY: process.env.NEXT_PUBLIC_GHOST_CONTENT_API_KEY,
   GHOST_ADMIN_API_KEY: process.env.GHOST_ADMIN_API_KEY,
   BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
+  BACK_END_HOST: process.env.NEXT_PUBLIC_BACK_END_HOST,
 };
 
 export const nconf = {
