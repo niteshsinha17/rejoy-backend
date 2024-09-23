@@ -6,3 +6,4 @@ export * from "./user-reducer.interface";
 export * from "./auth-reducer.interface";
 export * from "./rest.inerface";
 export * from "./user-service.interface";
+export * from "./publications"

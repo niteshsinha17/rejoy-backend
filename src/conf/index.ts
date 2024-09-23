@@ -1,6 +1,7 @@
 export const IS_DEV = process.env.NODE_ENV === "development";
 
 const CONF = {
+  ELEVENLABS_API_KEY: process.env.NEXT_PUBLIC_ELEVENLABS_API_KEY,
   GHOST_CONTENT_API_KEY: process.env.NEXT_PUBLIC_GHOST_CONTENT_API_KEY,
   GHOST_ADMIN_API_KEY: process.env.GHOST_ADMIN_API_KEY,
   BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
