@@ -1,5 +1,5 @@
 import { isServer } from "@/conf";
-import { HttpResponseStatus, Routes } from "@/enum";
+import { AppRoutes, HttpResponseStatus } from "@/enum";
 import axios, { AxiosError } from "axios";
 import { toast } from "react-toastify";
 import { ApiObject } from ".";
@@ -44,7 +44,7 @@ export const baseQuery = async <D = any, E = any>(apiObject: ApiObject) => {
             toast.error("Session Expired");
             localStorage.removeItem("token");
           }
-          window.location.assign(Routes.LOGIN);
+          window.location.assign(AppRoutes.LOGIN);
         }
         break;
       }

@@ -1,3 +1,9 @@
+import {
+  IBookAttachment,
+  IChatMessage,
+  IGoogleDriveAttachment,
+  IYoutubeVideoAttachment,
+} from "./reducer";
 export interface IAgentChatMessage {
   id: string;
   message: string;
@@ -16,4 +22,16 @@ export interface IAgentConversationListItem {
   phoneNumber: string;
   existingUser: boolean;
   autoReplayDisabled: boolean;
+}
+
+export interface IChatState {
+  initialized: boolean;
+  isChatMenuOpen: boolean;
+  selectedAttachment:
+    | IGoogleDriveAttachment
+    | IYoutubeVideoAttachment
+    | IBookAttachment
+    | null;
+  conversationMessages: Record<string, IChatMessage[]>;
+  autoPlay: boolean;
 }

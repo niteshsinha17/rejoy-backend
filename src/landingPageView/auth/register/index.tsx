@@ -59,14 +59,14 @@ const RegisterView = () => {
   const fieldConfig = formikFieldConfig(form);
 
   return (
-    <div className="bg-accent flex h-full justify-center p-3 items-center overflow-y-auto">
-      <div className="bg-white rounded-lg shadow-md w-full max-w-screen-sm p-6">
-        <div className="text-2xl font-semibold">Create an account</div>
-        <div className="max-w-none">
-          <form
+    <div className="flex h-full justify-center p-4 items-center">
+      <div className="w-full max-w-screen-sm p-6 border rounded-3xl shadow-sm">
+      <form
             onSubmit={form.handleSubmit}
-            className="max-w-2xl mx-auto mt-4 flex flex-col gap-4"
+            className="space-y-5"
           >
+        <div className="text-2xl font-semibold text-center">Create an account</div>
+          <div className="space-y-3">
             <UsernameInput
               {...fieldConfig("username")}
               validateFn={(value) => {
@@ -74,19 +74,24 @@ const RegisterView = () => {
                 return validateUsername(value);
               }}
             />
-            <EmailInput {...fieldConfig("email")} />
-            <PasswordInput
-              {...fieldConfig("password")}
-              placeholder="Password"
-            />
-            <div className="flex items-center justify-end">
-              <Button
-                href={AppRoutes.FORGOT_PASSWORD}
-                variant="text"
-                color="danger"
-              >
-                Forgot Password?
-              </Button>
+            <div>
+              <div className="space-y-3">
+                <EmailInput {...fieldConfig("email")} />
+                <PasswordInput
+                {...fieldConfig("password")}
+                placeholder="Password"
+                />
+              </div>             
+              <div className="flex items-center justify-end">
+                <Button
+                  href={AppRoutes.FORGOT_PASSWORD}
+                  variant="text"
+                  color="danger"
+                  size="sm"
+                >
+                  Forgot Password?
+                </Button>
+              </div>
             </div>
             <div>Password Checks:</div>
             <PasswordCheck password={form.values.password} />
@@ -97,7 +102,7 @@ const RegisterView = () => {
             >
               Sign up
             </Button>
-            <div className="text-sm">
+            <div className="text-sm text-center">
               By signing up, you agree to our{" "}
               <Link
                 href={Routes.PRIVACY_POLICY}
@@ -107,16 +112,17 @@ const RegisterView = () => {
                 Privacy Policy
               </Link>
             </div>
-            <div className="flex items-center">
+            <div className="text-sm text-center">
               <div className="text-base">Already have an account? </div>
               <Button
                 href={AppRoutes.LOGIN}
                 variant="text"
+                size="sm"
               >
                 Sign in
               </Button>
             </div>
-          </form>
+          
           {validateOTPStep && (
             <EnterOptView
               email={form.values.email}
@@ -126,6 +132,7 @@ const RegisterView = () => {
             />
           )}
         </div>
+        </form>
       </div>
     </div>
   );
