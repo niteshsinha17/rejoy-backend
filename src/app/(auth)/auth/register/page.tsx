@@ -1,3 +1,3 @@
-import RegisterView from "@/landingPageView/auth/register";
+import RegisterView from "@/views/auth/register";
 
 export default RegisterView;

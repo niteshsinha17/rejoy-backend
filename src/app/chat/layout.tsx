@@ -1,11 +1,11 @@
-import { ReduxProvider } from "@/hoc"
-import { ToastProvider } from "@/hoc/toast.hoc"
-import { TextToSpeechProvider } from "@/view/chat-view/context/speek-context"
+import { ReduxProvider } from "@/hoc";
+import { ToastProvider } from "@/hoc/toast.hoc";
+import { TextToSpeechProvider } from "@/views/chat-view/context/speek-context";
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -21,5 +21,5 @@ export default function RootLayout({
         </ReduxProvider>
       </body>
     </html>
-  )
+  );
 }

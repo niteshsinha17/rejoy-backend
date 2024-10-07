@@ -3,6 +3,7 @@ import { Routes } from "@/enum";
 import clsx from "clsx";
 import { ClassValue } from "cva/dist/types";
 import { Metadata } from "next";
+import { SyntheticEvent } from "react";
 import { twMerge } from "tailwind-merge";
 
 export const getPageMetaData = (data?: Metadata, route?: Routes): Metadata => {
@@ -33,4 +34,25 @@ export const formikFieldConfig = (formik: any) => {
       error: helpersProps.touched ? helpersProps.error : undefined,
     };
   };
+};
+
+export const getFilledRoutes = (route: string, pathParams: Record<string, string>) => {
+  let path: string = route;
+  Object.keys(pathParams).forEach((key) => {
+    path = path.replace(":" + key, pathParams[key]);
+  });
+
+  return path;
+};
+
+export const baseMatchRoute = (route: string, pathname: string, exact: boolean) => {
+  if (exact) {
+    return route === pathname;
+  } else {
+    return pathname?.startsWith(route);
+  }
+};
+
+export const stopPropagation = (e: SyntheticEvent) => {
+  e.stopPropagation();
 };

@@ -1,4 +1,4 @@
-import { IAuthState, LoginPayload } from "@/models";
+import { IAuthState } from "@/models/auth";
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 const initialState: IAuthState = {
@@ -6,7 +6,6 @@ const initialState: IAuthState = {
   token: null,
   isLoading: false,
   isAuthenticated: false,
-  authCheckDone: false,
 };
 
 const authSlice = createSlice({
@@ -14,20 +13,23 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     logOut: () => initialState,
-    login: (state, action: PayloadAction<LoginPayload>) => {
+    login: (
+      state,
+      action: PayloadAction<{
+        token: string;
+      }>
+    ) => {
       return {
         ...state,
         isAuthenticated: true,
         token: action.payload.token,
         initialized: true,
         isLoading: false,
-        authCheckDone: true,
       };
     },
     initialize: (state) => {
       return {
         ...state,
-        initialized: true,
         isLoading: true,
       };
     },
@@ -46,5 +48,4 @@ const authSlice = createSlice({
 });
 
 export const authActions = authSlice.actions;
-
-export default authSlice.reducer;
+export const authReducer = authSlice.reducer;

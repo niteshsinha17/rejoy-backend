@@ -52,10 +52,10 @@ html {
   }
 
   .body-1 {
-    @apply font-poppins text-lg text-textSecondary;
+    @apply font-poppins text-lg;
   }
 
   .body-2 {
-    @apply font-poppins text-base text-textSecondary;
+    @apply font-poppins text-base;
   }
 }

@@ -9,7 +9,7 @@ import {
   ISendToMessageResponse,
   ISendToNumberPayload,
 } from "@/models/chat";
-import { IPaginatedResponse } from "@/models/common-service.interface";
+import { IPaginatedResponse } from "@/models/common/service";
 import { agentTransformer } from "@/transformer";
 import { localStorageTransaction } from "@/utils";
 import { createApi } from "@reduxjs/toolkit/dist/query/react";

@@ -1,0 +1,11 @@
+
+
+[Messages Control]
+disable = missing-module-docstring
+disable = missing-class-docstring
+
+[Format]
+max-line-length = 120
+
+[REPORTS]
+reports=reference,text

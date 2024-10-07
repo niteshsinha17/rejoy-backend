@@ -1,3 +1,3 @@
-import LoginView from "@/landingPageView/auth/login";
+import LoginView from "@/views/auth/login";
 
 export default LoginView;

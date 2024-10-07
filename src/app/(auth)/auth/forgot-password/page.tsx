@@ -1,5 +1,5 @@
-import ForgetPasswordView from "@/landingPageView/forgot-password";
 import { getPageMetaData } from "@/utils";
+import ForgetPasswordView from "@/views/forgot-password";
 
 export const metadata = getPageMetaData({
   title: "Forget Password - RejoyHealth",

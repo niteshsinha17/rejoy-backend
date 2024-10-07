@@ -4,7 +4,7 @@ import { type VariantProps, cva } from "cva";
 import React, { CSSProperties, ReactNode } from "react";
 
 const buttonVariants = cva(
-  "inline-flex gap-2 no-underline items-center justify-center text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background",
+  "inline-flex py-2 font-medium gap-2 no-underline items-center justify-center text-sm transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:opacity-50 disabled:pointer-events-none ring-offset-background",
   {
     variants: {
       variant: {
@@ -21,11 +21,11 @@ const buttonVariants = cva(
         xl: "text-lg",
       },
       size: {
-        xs: "px-4 py-1 text-xs",
-        sm: "px-2 py-1 text-sm",
-        md: "px-3 py-2 text-base sm:text-base",
-        lg: "px-4 py-3 text-base sm:text-lg",
-        xl: "px-6 py-3 text-base sm:text-lg",
+        xs: "h-8 px-4 text-xs",
+        sm: "h-10 px-2 text-sm",
+        md: "h-12 px-3 text-base sm:text-base",
+        lg: "h-14 px-4 text-base sm:text-lg",
+        xl: "h-16 px-6 text-base sm:text-lg",
       },
       borderType: {
         circle: "rounded-full",
@@ -120,7 +120,7 @@ const buttonVariants = cva(
       {
         variant: "outline",
         color: "black",
-        className: "text-black border-black",
+        className: "text-black border-[#c9c9cd] hover:bg-[#f3f3f3]",
       },
       {
         variant: "outline",

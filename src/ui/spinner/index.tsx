@@ -11,8 +11,8 @@ const sizeMap: Record<Size, string> = {
   xs: "0.5rem",
   sm: "0.75rem",
   md: "1rem",
-  lg: "1.25rem",
-  xl: "1.5rem",
+  lg: "1.5rem",
+  xl: "2rem",
 };
 
 const colorMap: Record<Color, string> = {

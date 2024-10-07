@@ -1,4 +1,4 @@
-import { IAppState } from "@/models";
+import { IAppState } from "@/models/app";
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState: IAppState = {
@@ -22,7 +22,5 @@ const appSlice = createSlice({
   },
 });
 
-export const { toggleSidebar, toggleChatSidebar } = appSlice.actions;
 export const appActions = appSlice.actions;
-
-export default appSlice.reducer;
+export const appReducer = appSlice.reducer;

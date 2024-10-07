@@ -1,4 +1,4 @@
-import OnCallPage from "@/view/on-call";
+import OnCallPage from "@/views/on-call";
 
 const OnCall = () => {
   return <OnCallPage />;

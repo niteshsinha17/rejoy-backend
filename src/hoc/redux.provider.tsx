@@ -1,6 +1,6 @@
 "use client";
 
-import { IChildrenProps } from "@/models";
+import { IChildrenProps } from "@/models/common/other";
 import { store } from "@/store";
 import { Provider } from "react-redux";
 

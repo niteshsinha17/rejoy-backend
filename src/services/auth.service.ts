@@ -1,33 +1,26 @@
-import { apiObject, baseApiQuery, baseQuery } from "@/middlewares";
-import { ICreateGuestUserServicePayload, ILoginServiceErrorResponse, ILoginServiceResponse } from "@/models";
+import { apiObject, baseQuery } from "@/middlewares";
 import {
   IActivateUserServicePayload,
-  ICreatedUserServicePayload,
+  ICreatedDoctorUserServicePayload,
+  ILoginServiceResponse,
   IResetPasswordServicePayload,
   ISendPhoneVerificationOtpServicePayload,
   IVerifyPhoneVerificationOtpServicePayload,
 } from "@/models/auth";
 import { createApi } from "@reduxjs/toolkit/dist/query/react";
 
-export const authenticateTokenService = () => baseApiQuery<ILoginServiceResponse>(apiObject("auth/check-auth/").doNotRedirect());
-
-export const loginWithCredentialsService = (username: string, password: string) =>
-  baseApiQuery<ILoginServiceResponse, ILoginServiceErrorResponse>(apiObject("auth/login/").post({ username, password }));
-
-export const createUser = (username: string, password: string) =>
-  baseApiQuery<ILoginServiceResponse>(apiObject("auth/create-user/").post({ username, password }));
-
-export const isUsernameAvailableService = (username: string) => baseApiQuery(apiObject("auth/is-username-available/").post({ username }));
-
 export const authApi = createApi({
   baseQuery: baseQuery,
   reducerPath: "authApi",
   endpoints: (builder) => ({
-    createGuestUser: builder.mutation<ILoginServiceResponse, ICreateGuestUserServicePayload>({
-      query: (payload) => apiObject("auth/create-guest-user/").post(payload),
+    authenticateToken: builder.mutation<ILoginServiceResponse, void>({
+      query: () => apiObject("auth/check-auth/").doNotRedirect(),
     }),
-    createUser: builder.mutation<undefined, ICreatedUserServicePayload>({
-      query: (payload) => apiObject("auth/create-user/").post(payload),
+    createDoctorUser: builder.mutation<undefined, ICreatedDoctorUserServicePayload>({
+      query: (payload) => apiObject("auth/create-doctor-user/").post(payload),
+    }),
+    loginWithCredentials: builder.mutation<ILoginServiceResponse, { email: string; password: string }>({
+      query: (payload) => apiObject("auth/login/").post(payload),
     }),
     activateUser: builder.mutation<ILoginServiceResponse, IActivateUserServicePayload>({
       query: (payload) => apiObject("auth/activate-user/").post(payload),
@@ -46,5 +39,3 @@ export const authApi = createApi({
     }),
   }),
 });
-
-export const { useCreateGuestUserMutation, useSendPhoneVerificationOtpMutation, useVerifyPhoneOtpMutation } = authApi;

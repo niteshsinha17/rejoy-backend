@@ -1,4 +1,4 @@
-import DigitalPhysicalTherapyPage from "@/view/digitalPhysicalTherapyPage";
+import DigitalPhysicalTherapyPage from "@/views/digitalPhysicalTherapyPage";
 
 const DigitalPhysicalTherapy = () => {
   return <DigitalPhysicalTherapyPage />;

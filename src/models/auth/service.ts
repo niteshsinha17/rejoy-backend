@@ -1,5 +1,6 @@
-export interface ICreatedUserServicePayload {
-  username: string;
+export interface ICreatedDoctorUserServicePayload {
+  first_name: string;
+  last_name: string;
   email: string;
   password: string;
 }
@@ -11,7 +12,6 @@ export interface ICreateUserServiceErrorResponse {
 }
 
 export interface IActivateUserServicePayload {
-  username: string;
   email: string;
   otp: string;
 }
@@ -33,4 +33,8 @@ export interface IResetPasswordServicePayload {
   email: string;
   otp: string;
   password: string;
+}
+
+export interface ILoginServiceResponse {
+  token: string;
 }

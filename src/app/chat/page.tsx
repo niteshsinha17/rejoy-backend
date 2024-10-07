@@ -1,5 +1,5 @@
 import { getPageMetaData } from "@/utils";
-import ChatView from "@/view/chat-view";
+import ChatView from "@/views/chat-view";
 
 export const metadata = getPageMetaData();
 export default ChatView;

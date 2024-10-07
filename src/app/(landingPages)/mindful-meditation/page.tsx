@@ -1,4 +1,4 @@
-import MindfullMeditationPage from "@/view/mindfullMeditation";
+import MindfullMeditationPage from "@/views/mindfullMeditation";
 
 const MindfullMeditation = () => {
   return <MindfullMeditationPage />;

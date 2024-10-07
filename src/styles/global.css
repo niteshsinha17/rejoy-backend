@@ -59,7 +59,19 @@
 }
 
 @layer base {
+  body {
+    @apply text-slate-600;
+  }
+
   svg {
+    @apply h-4 w-4;
+  }
+
+  .icon-sm {
+    @apply h-4 w-4;
+  }
+
+  .icon-md {
     @apply h-6 w-6;
   }
 }
