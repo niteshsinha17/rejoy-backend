@@ -1,3 +1,3 @@
-export default function Home() {
-  return <>Home Page</>;
-}
+import HomePageView from "@/views/home-page";
+
+export default HomePageView;

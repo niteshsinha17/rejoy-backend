@@ -1,4 +1,5 @@
 import { Container, Section } from "@/components";
+import { Button } from "@/ui";
 import Link from "next/link";
 
 const ButtonLink = (props) => {
@@ -16,18 +17,22 @@ export const WalkAndEarn = () => {
   return (
     <Section>
       <Container>
-        <div className="py-6 px-5 bg-primary rounded-xl text-white flex shadow-lg">
-          <div className="md:w-7/12">
-            <h2 className="heading-3">Download now and embark on a journey of empowered health decisions, tailored just for you !</h2>
-            <p className="body-2 mt-4 text-white">
+        <div className="p-6 bg-primary rounded-3xl text-white flex">
+          <div>
+            <div className="text-4xl font-semibold">
+              Download now and embark on a journey of empowered <br /> health decisions, tailored just for you !
+            </div>
+            <p className="mt-5">
               Experience the precision of Rejoy Health: Your go-to source for accurate health insights at your fingertips
             </p>
 
             <div className="flex space-x-4 mt-6">
-              <ButtonLink
+              <Button
                 href="mailto:hello@rejoyhealth.com"
-                text="Contact Us Now"
-              />
+                color="white"
+              >
+                Contact Us Now
+              </Button>
             </div>
           </div>
         </div>

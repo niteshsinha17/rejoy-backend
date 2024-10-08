@@ -1,4 +1,4 @@
-import { INavItem } from "../header/interface";
+import { INavItem } from "../interface";
 
 export interface INavDropdownProps {
   item: INavItem;

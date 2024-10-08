@@ -1,24 +1,22 @@
-"use client";
+import { FacebookIcon, InstagramIcon, LinkedInIcon, TiktokIcon, TwitterIcon, YouTubeIcon } from "@/../public/icons";
 import { Container } from "@/components";
 import { Routes } from "@/enum";
-import Image from "next/image";
 import Link from "next/link";
-import { facebookIcon, instagramIcon, linkedInIcon, tiktokIcon, twitterIcon, youTubeIcon } from "../../../public/icons";
 import BrandLogo from "../../app/(landingPages)/_components/brandLogo";
 
 const Heading = (props: { children: string }) => {
-  return <h5 className="font-poppins font-semibold text-lg">{props.children}</h5>;
+  return <h5 className="font-medium text-lg text-black">{props.children}</h5>;
 };
 
 const Para = (props: { children: string }) => {
-  return <p className="font-manrope font-normal text-base mt-2 leading-loose text-textSecondary">{props.children}</p>;
+  return <p className="text-sm mt-2">{props.children}</p>;
 };
 
 const FooterLink = (props: { children: string; path: Routes | string }) => {
   return (
     <Link
       href={props.path}
-      className="font-poppins block font-normal  text-base mt-3 decoration-solid hover:underline text-textSecondary"
+      className="text-sm block mt-3 decoration-solid hover:underline"
     >
       {props.children}
     </Link>
@@ -28,32 +26,32 @@ const FooterLink = (props: { children: string; path: Routes | string }) => {
 const soicalLinks = [
   {
     name: "Facebook",
-    icon: facebookIcon,
+    icon: <FacebookIcon className="icon-xs" />,
     url: "https://www.facebook.com/RejoyHealthUSA",
   },
   {
     name: "Twitter",
-    icon: twitterIcon,
+    icon: <TwitterIcon className="icon-xs" />,
     url: "https://twitter.com/rejoyhealth",
   },
   {
     name: "Linkedin",
-    icon: linkedInIcon,
+    icon: <LinkedInIcon className="icon-xs" />,
     url: "https://www.linkedin.com/company/rejoyhealth",
   },
   {
     name: "Instagram",
-    icon: instagramIcon,
+    icon: <InstagramIcon className="icon-xs" />,
     url: "https://www.instagram.com/rejoyhealthusa/",
   },
   {
     name: "Youtube",
-    icon: youTubeIcon,
+    icon: <YouTubeIcon className="icon-xs" />,
     url: "https://www.youtube.com/@rejoyhealthusa",
   },
   {
     name: "Tiktok",
-    icon: tiktokIcon,
+    icon: <TiktokIcon className="icon-xs" />,
     url: "https://www.tiktok.com/@rejoyhealth",
   },
 ];
@@ -82,20 +80,14 @@ const Footer = () => {
                     target="_blank"
                     rel="noreferrer"
                     style={{
-                      minHeight: "30px",
-                      minWidth: "30px",
-                      maxHeight: "30px",
-                      maxWidth: "30px",
+                      minHeight: "40px",
+                      minWidth: "40px",
+                      maxHeight: "40px",
+                      maxWidth: "40px",
                     }}
                     className="group bg-[#e4e4e4] hover:bg-yellow flex items-center justify-center rounded-full"
                   >
-                    <Image
-                      src={link.icon}
-                      alt={link.name}
-                      width={20}
-                      height={20}
-                      className="h-[16px] w-[16px]"
-                    />
+                    {link.icon}
                   </Link>
                 );
               })}

@@ -1,16 +1,12 @@
 "use client";
-import { Container } from "@/components";
 import { Routes } from "@/enum";
-import useScrollPosition from "@/hooks/scrollPosition";
-import Image from "next/image";
-import Link from "next/link";
+import { Button } from "@/ui";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
-import { CloseIcon, MenuIcon } from "../../../../../public/icons";
-import BrandLogo from "../brandLogo";
-import NavDropdown from "../navDropdown";
-import NavLink from "../navLink";
+import { useEffect, useRef, useState } from "react";
+import Header from "../base";
 import { INavItem } from "./interface";
+import NavDropdown from "./navDropdown";
+import NavLink from "./navLink";
 import classes from "./style.module.css";
 
 const navLinks: INavItem[] = [
@@ -19,39 +15,48 @@ const navLinks: INavItem[] = [
     path: Routes.HOME,
     type: "link",
   },
+  {
+    name: "Move & Earn",
+    path: Routes.MOVE_AND_EARN,
+    type: "link",
+  },
+  {
+    name: "Blogs",
+    path: Routes.BLOG,
+    type: "link",
+  },
 ];
 
-export default function LandingPageHeader() {
+const HeaderMain = () => {
   const pathName = usePathname();
-  const scrollPosition = useScrollPosition();
-
   const [openMenu, setOpenMenu] = useState(false);
-  let headerClasses = `${classes.header} flex justify-center items-center fixed bg-white h-[100px] md:h-[auto]`;
+  // let headerClasses = `${classes.header} flex justify-center items-center fixed bg-white h-[100px] md:h-[auto]`;
 
-  if (openMenu) {
-    headerClasses += ` ${classes.headerOpen}`;
-  }
-  if (scrollPosition > 50) {
-    headerClasses += ` ${classes.headerShadow}`;
-  }
+  // if (openMenu) {
+  //   headerClasses += ` ${classes.headerOpen}`;
+  // }
+  // if (scrollPosition > 50) {
+  //   headerClasses += ` ${classes.headerShadow}`;
+  // }
 
   const close = () => {
     setOpenMenu(false);
   };
+
   return (
-    <header className={headerClasses}>
-      <div className="grow">
-        <Container>
-          <div className="flex justify-between items-center">
-            <div className="">
-              <BrandLogo />
-            </div>
+    <div className="border-b transition-all duration-300 ease">
+      <div className="max-w-screen-lg mx-auto">
+        <Header>
+          <Header.Left>
+            <Header.Logo />
+          </Header.Left>
+          <Header.Middle>
             <div
               className={`fixed md:relative top-[100px] md:top-[0px] bg-white md:bg-[transparent] flex-1
               md:h-[auto] w-[100%] md:w-[auto] left-[0px] ${classes.nav}
               `}
             >
-              <div className="h-[100%] md:h-[auto] flex flex-col md:flex-row md:items-center justify-end md:space-x-6 font-manrope">
+              <div className="h-[100%] md:h-[auto] flex flex-col md:flex-row md:items-center md:space-x-6 font-manrope">
                 <ul className={`md:flex md:space-x-5 ${classes.navList}`}>
                   {navLinks.map((navLink, index) => {
                     if (navLink.path && navLink.type === "link")
@@ -75,29 +80,72 @@ export default function LandingPageHeader() {
                     }
                   })}
                 </ul>
-                <Link
-                  onClick={close}
-                  href={Routes.DOWNLOAD}
-                  className={`${classes.downloadButton} py-5 text-center text-lg  md:text-base font-poppins`}
-                >
-                  Download the app
-                </Link>
               </div>
             </div>
-
-            <div className="md:hidden">
-              <button onClick={() => setOpenMenu(!openMenu)}>
-                <Image
-                  className="h-3 w-3"
-                  src={openMenu ? CloseIcon : MenuIcon}
-                  alt="toggle"
-                />
-              </button>
-            </div>
-          </div>
-        </Container>
+          </Header.Middle>
+          <Header.Right>
+            {/* <Button href={Routes.DOWNLOAD}>Download App</Button> */}
+            <Button
+              variant="outline"
+              color="black"
+              href={Routes.DOWNLOAD}
+            >
+              Provider Login
+            </Button>
+          </Header.Right>
+        </Header>
       </div>
-    </header>
+    </div>
+  );
+};
+
+const StickyHeader = () => {
+  const header = useRef<HTMLDivElement>(null);
+  const lastScrolledPosition = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = (e: Event) => {
+      const target = e.currentTarget as Document;
+      const headerEl = header.current;
+      if (headerEl && target) {
+        const scrollTop = target.documentElement.scrollTop;
+        if (scrollTop > lastScrolledPosition.current) {
+          if (scrollTop > 50) {
+            headerEl.style.top = "0px";
+            headerEl.style.opacity = "1";
+          } else {
+            headerEl.style.top = "-100px";
+            headerEl.style.opacity = "0";
+          }
+        } else if (scrollTop < lastScrolledPosition.current) {
+          headerEl.style.top = "-100px";
+          headerEl.style.opacity = "0";
+        }
+        lastScrolledPosition.current = scrollTop;
+      }
+    };
+    document.addEventListener("scroll", handleScroll);
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  return (
+    <div
+      ref={header}
+      className="fixed top-[100px] w-full transition-all duration-300 ease-in z-[1300] shadow-md bg-white opacity-0"
+    >
+      <HeaderMain />
+    </div>
+  );
+};
+
+export default function LandingPageHeader() {
+  return (
+    <>
+      <HeaderMain />
+      <StickyHeader />
+    </>
   );
 }
 

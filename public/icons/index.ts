@@ -1,41 +1,32 @@
 import academyIcon from "./academy.svg";
 import arrowDownIcon from "./arrow-down.svg";
 import CloseIcon from "./close.svg";
-import facebookIcon from "./facebook.svg";
+import FacebookIcon from "./facebook.svg";
 import houseCallIcon from "./house-call.svg";
-import instagramIcon from "./instagram.svg";
-import linkedInIcon from "./linkedin.svg";
+import InstagramIcon from "./instagram.svg";
+import LinkedInIcon from "./linkedin.svg";
 import meditationIcon from "./meditation.svg";
 import MenuIcon from "./menu.svg";
 import motionIcon from "./motion.svg";
 import moveIcon from "./move.svg";
 import musculoskeletalIcon from "./musculoskeletal.svg";
 import onCallIcon from "./on-call.svg";
-import therapyIcon from "./therapy.svg";
-import tiktokIcon from "./tiktok.svg";
-import twitterIcon from "./twitter.svg";
-import youTubeIcon from "./youtube.svg";
 import searchIcon from "./search.svg";
-import whatsAppIcon from "./whatsApp.svg"
+import therapyIcon from "./therapy.svg";
+import TiktokIcon from "./tiktok.svg";
+import TwitterIcon from "./twitter.svg";
+import whatsAppIcon from "./whatsApp.svg";
+import YouTubeIcon from "./youtube.svg";
 
 export {
-  CloseIcon,
-  MenuIcon,
-  academyIcon,
-  arrowDownIcon,
-  facebookIcon,
-  houseCallIcon,
-  instagramIcon,
-  linkedInIcon,
-  meditationIcon,
+  CloseIcon, FacebookIcon, InstagramIcon,
+  LinkedInIcon, MenuIcon, TiktokIcon,
+  TwitterIcon,
+  YouTubeIcon, academyIcon,
+  arrowDownIcon, houseCallIcon, meditationIcon,
   motionIcon,
   moveIcon,
   musculoskeletalIcon,
-  onCallIcon,
-  therapyIcon,
-  tiktokIcon,
-  twitterIcon,
-  youTubeIcon,
-  searchIcon,
-  whatsAppIcon
+  onCallIcon, searchIcon, therapyIcon, whatsAppIcon
 };
+

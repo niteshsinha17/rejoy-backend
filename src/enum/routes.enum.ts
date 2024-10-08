@@ -19,7 +19,7 @@ export enum Routes {
 
 export enum AppRoutes {
   DASHBOARD = "/dashboard",
-  LOGIN = "/auth/login",
-  REGISTER = "/auth/register",
-  FORGOT_PASSWORD = "/auth/forgot-password",
+  LOGIN = "/provider/login",
+  REGISTER = "/provider/register",
+  FORGOT_PASSWORD = "/provider/forgot-password",
 }

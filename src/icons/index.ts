@@ -5,6 +5,7 @@ import ChevronLeft from "./chevron-left.svg";
 import CloseIcon from "./close.svg";
 import CheckCircleOutlineIcon from "./heroicons-outline/check-circle.svg";
 import DashboardOutlineIcon from "./heroicons-outline/dashboard.svg";
+import SearchOutlineIcon from "./heroicons-outline/search.svg";
 import XCircleOutlineIcon from "./heroicons-outline/x-circle.svg";
 import PlayIcon from "./play.svg";
 import SpeakerWaveIcon from "./speaker-wave.svg";
@@ -21,6 +22,7 @@ export {
   CloseIcon,
   DashboardOutlineIcon,
   PlayIcon,
+  SearchOutlineIcon,
   SpeakerWaveIcon,
   SpeakerXMarkIcon,
   VisibilityOffSolidIcon,

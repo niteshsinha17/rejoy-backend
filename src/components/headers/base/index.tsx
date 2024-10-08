@@ -10,7 +10,7 @@ interface IBaseHeaderProps {
 }
 
 const Header = (props: IBaseHeaderProps) => {
-  return <div className="flex justify-between items-center h-[80px] px-6">{props.children}</div>;
+  return <div className="header flex justify-between items-center h-[80px] px-6 gap-6">{props.children}</div>;
 };
 
 const HeaderLeft = (props: IBaseHeaderProps) => {
@@ -18,7 +18,7 @@ const HeaderLeft = (props: IBaseHeaderProps) => {
 };
 
 const HeaderRight = (props: IBaseHeaderProps) => {
-  return <div className="flex items-center">{props.children}</div>;
+  return <div className="flex items-center gap-2">{props.children}</div>;
 };
 
 const HeaderMiddle = (props: IBaseHeaderProps) => {
@@ -44,7 +44,7 @@ const HeaderLogo = () => {
   return (
     <Link href="/">
       <Image
-        className="h-[40px] w-auto"
+        className="h-[50px] w-auto"
         src={Logo}
         alt="rejoy-heath-logo"
         height={50}

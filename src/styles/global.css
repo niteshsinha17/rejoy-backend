@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -55,7 +55,8 @@
 }
 
 * {
-  font-family: "Poppins", sans-serif;
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
 }
 
 @layer base {
@@ -67,6 +68,10 @@
     @apply h-4 w-4;
   }
 
+  .icon-xs {
+    @apply h-3 w-3;
+  }
+
   .icon-sm {
     @apply h-4 w-4;
   }
@@ -74,10 +79,30 @@
   .icon-md {
     @apply h-6 w-6;
   }
+
+  h1 {
+    @apply text-6xl font-bold;
+    line-height: 1.2;
+  }
+
+  h2 {
+    @apply text-5xl font-bold;
+    line-height: 1.2;
+  }
 }
 
 @layer utilities {
   .truncate {
     @apply overflow-hidden whitespace-nowrap text-ellipsis;
   }
+}
+
+.sticky-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: var(--background);
+  box-shadow: 0 2px 4px 0 var(--border);
 }

@@ -4,15 +4,14 @@ const Video = () => {
   return (
     <Section>
       <Container>
-        <h2 className="text-center heading-2 text-textPrimary mb-4">See it in action</h2>
-        <div className="pb-[56.25%] relative overflow-hidden">
+        <h2 className="text-center text-black mb-6">See it in action</h2>
+        <div className="relative overflow-hidden aspect-video border-[8px] border-gray-700 bg-gray-700 rounded-2xl">
           <iframe
-            className="absolute top-0 left-0 w-full h-full"
+            className="top-0 left-0 w-full h-full rounded-2xl"
             src="https://www.youtube.com/embed/pCo5vtkRhL0"
             title="YouTube video player"
-            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
         </div>
       </Container>

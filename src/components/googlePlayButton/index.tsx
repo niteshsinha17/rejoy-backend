@@ -1,7 +1,7 @@
 import { Routes } from "@/enum";
 import Image from "next/image";
 import Link from "next/link";
-import { googlePlay } from "../../../../../public/images";
+import { googlePlay } from "../../../public/images";
 
 const GooglePlayButton = () => {
   return (
@@ -10,7 +10,7 @@ const GooglePlayButton = () => {
       target="_blank"
     >
       <Image
-        className="h-[50px] w-[150px] sm:h-[60px] sm:w-[180px]"
+        className="h-[50px] w-auto"
         src={googlePlay}
         alt="google-play-button"
       />

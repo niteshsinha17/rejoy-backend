@@ -1,7 +1,7 @@
 import { TopBanner } from "@/app/(landingPages)/_components";
-import AppleStoreButton from "@/app/(landingPages)/_components/appleStoreButton";
-import GooglePlayButton from "@/app/(landingPages)/_components/googlePlayButton";
 import { Container } from "@/components";
+import AppleStoreButton from "@/components/appleStoreButton";
+import GooglePlayButton from "@/components/googlePlayButton";
 import Dots from "../../../public/images/home/dots.png";
 
 const ButtonLink = (props) => {

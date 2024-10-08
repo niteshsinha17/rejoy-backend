@@ -40,6 +40,7 @@ const buttonVariants = cva(
         accent: "",
         black: "",
         success: "",
+        white: "",
       },
       disabled: {
         true: "cursor-not-allowed opacity-50 pointer-events-none",
@@ -50,8 +51,8 @@ const buttonVariants = cva(
     },
     defaultVariants: {
       variant: "solid",
-      fontSize: "md",
-      size: "md",
+      fontSize: "sm",
+      size: "sm",
       borderType: "rounded",
       color: "primary",
       fullWidth: false,
@@ -91,6 +92,11 @@ const buttonVariants = cva(
         variant: "solid",
         color: "success",
         className: "bg-success text-white hover:bg-success/90",
+      },
+      {
+        variant: "solid",
+        color: "white",
+        className: "bg-white text-black hover:bg-gray-100",
       },
       {
         variant: "outline",
