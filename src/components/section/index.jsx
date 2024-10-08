@@ -1,10 +1,6 @@
 const Section = (props) => {
   return (
-    <div
-      className={`section py-[80px] sm:py-[120px] relative ${
-        props.noBottomPadding ? "py:pb-[0px] sm:pb-[0px]" : ""
-      }`}
-    >
+    <div className={`section py-[80px] sm:py-[120px] relative ${props.noBottomPadding ? "py:pb-[0px] sm:pb-[0px]" : ""}`}>
       {props.children}
     </div>
   );

@@ -19,15 +19,9 @@ const LeftImageSection = (props: {
         />
       </div>
       <div>
-        {props.heading && (
-          <h3 className="heading-4 text-textPrimary">{props.heading}</h3>
-        )}
+        {props.heading && <h3 className="heading-4 text-textPrimary">{props.heading}</h3>}
 
-        {props.para && (
-          <p className="body-1 mt-2 max-w-2xl text-textSecondary">
-            {props.para}
-          </p>
-        )}
+        {props.para && <p className="body-1 mt-2 max-w-2xl text-textSecondary">{props.para}</p>}
 
         {props.custom && props.custom}
       </div>

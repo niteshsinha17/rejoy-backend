@@ -1,32 +1,20 @@
+"use client";
 import { Container } from "@/components";
-import { ROUTES } from "@/enum";
+import { Routes } from "@/enum";
 import Image from "next/image";
 import Link from "next/link";
-import {
-  facebookIcon,
-  instagramIcon,
-  linkedInIcon,
-  tiktokIcon,
-  twitterIcon,
-  youTubeIcon,
-} from "../../../../../public/icons";
-import BrandLogo from "../brandLogo";
+import { facebookIcon, instagramIcon, linkedInIcon, tiktokIcon, twitterIcon, youTubeIcon } from "../../../public/icons";
+import BrandLogo from "../../app/(landingPages)/_components/brandLogo";
 
 const Heading = (props: { children: string }) => {
-  return (
-    <h5 className="font-poppins font-semibold text-lg">{props.children}</h5>
-  );
+  return <h5 className="font-poppins font-semibold text-lg">{props.children}</h5>;
 };
 
 const Para = (props: { children: string }) => {
-  return (
-    <p className="font-manrope font-normal text-base mt-2 leading-loose text-textSecondary">
-      {props.children}
-    </p>
-  );
+  return <p className="font-manrope font-normal text-base mt-2 leading-loose text-textSecondary">{props.children}</p>;
 };
 
-const FooterLink = (props: { children: string; path: ROUTES | string }) => {
+const FooterLink = (props: { children: string; path: Routes | string }) => {
   return (
     <Link
       href={props.path}
@@ -80,8 +68,7 @@ const Footer = () => {
             <div className="max-w-md">
               <Heading>Company</Heading>
               <Para>
-                Your trusted health companion, delivering personalized and
-                precise answers in real-time, ensuring informed decisions for a
+                Your trusted health companion, delivering personalized and precise answers in real-time, ensuring informed decisions for a
                 healthier you
               </Para>
             </div>
@@ -120,9 +107,7 @@ const Footer = () => {
                 <Heading>Contact</Heading>
                 <Para>600 California St,</Para>
                 <Para>San Francisco, CA 94108</Para>
-                <FooterLink path="mailto:hello@rejoyhealth.com">
-                  hello@rejoyhealth.com
-                </FooterLink>
+                <FooterLink path="mailto:hello@rejoyhealth.com">hello@rejoyhealth.com</FooterLink>
               </div>
               {/* <div>
                 <Heading>Our Technology</Heading>
@@ -146,19 +131,13 @@ const Footer = () => {
               <div>
                 <Heading>Resources</Heading>
                 {/* <FooterLink path={ROUTES.ACADEMY}>Academy</FooterLink>*/}
-                <FooterLink path={ROUTES.MOVE_AND_EARN}>
-                  Move and Earn
-                </FooterLink>
-                <FooterLink path={ROUTES.BLOG}>Blogs</FooterLink>
+                <FooterLink path={Routes.MOVE_AND_EARN}>Move and Earn</FooterLink>
+                <FooterLink path={Routes.BLOG}>Blogs</FooterLink>
               </div>
               <div>
                 <Heading>Term and Conditions</Heading>
-                <FooterLink path={ROUTES.PRIVACY_POLICY}>
-                  Privacy policy
-                </FooterLink>
-                <FooterLink path={ROUTES.TERMS_OF_SERVIVE}>
-                  Terms of Service
-                </FooterLink>
+                <FooterLink path={Routes.PRIVACY_POLICY}>Privacy policy</FooterLink>
+                <FooterLink path={Routes.TERMS_OF_SERVIVE}>Terms of Service</FooterLink>
               </div>
             </div>
           </div>

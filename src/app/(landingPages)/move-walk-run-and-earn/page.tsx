@@ -1,4 +1,4 @@
-import WalkAndEarnPage from "@/view/walkAndEarnPage";
+import WalkAndEarnPage from "@/views/walkAndEarnPage";
 
 export default function MoveAndEarn() {
   return <WalkAndEarnPage />;

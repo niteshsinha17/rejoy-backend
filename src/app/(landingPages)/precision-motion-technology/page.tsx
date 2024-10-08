@@ -1,4 +1,4 @@
-import PrecisionMotionTechnologyPage from "@/view/precisionMotionTechnology";
+import PrecisionMotionTechnologyPage from "@/views/precisionMotionTechnology";
 
 const PrecisionMotionTechnology = () => {
   return <PrecisionMotionTechnologyPage />;

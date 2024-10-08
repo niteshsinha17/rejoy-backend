@@ -9,7 +9,10 @@ const GaProvider = () => {
         src="https://www.googletagmanager.com/gtag/js?id=G-8BWBGYX6S0"
         strategy="afterInteractive"
       />
-      <Script id="google-analytics" strategy="afterInteractive">
+      <Script
+        id="google-analytics"
+        strategy="afterInteractive"
+      >
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
@@ -22,7 +25,10 @@ const GaProvider = () => {
         async
         src="https://www.googletagmanager.com/gtag/js?id=AW-11138323301"
       />
-      <Script id="google-add" strategy="afterInteractive">
+      <Script
+        id="google-add"
+        strategy="afterInteractive"
+      >
         {`
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}

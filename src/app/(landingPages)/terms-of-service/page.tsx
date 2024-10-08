@@ -55,10 +55,9 @@ export default function LandingPages() {
           <p className="para-1">
             Last updated: February 19, 2021 <br />
             Thank you for shopping at Rejoy Health. <br />
-            If, for any reason, You are not completely satisfied with a purchase
-            We invite You to review our policy on refunds and returns. <br />
-            The following terms are applicable for any products that You
-            purchased with Us.
+            If, for any reason, You are not completely satisfied with a purchase We invite You to review our policy on refunds and returns.{" "}
+            <br />
+            The following terms are applicable for any products that You purchased with Us.
           </p>
         </Container>
       </div>

@@ -15,9 +15,7 @@ const BlogListPage = async () => {
   return (
     <div>
       <TopBanner>
-        <h1 className="text-center heading-1 text-textPrimary">
-          Find our Blogs
-        </h1>
+        <h1 className="text-center heading-1 text-textPrimary">Find our Blogs</h1>
       </TopBanner>
       <Container>
         <Section>
@@ -25,9 +23,7 @@ const BlogListPage = async () => {
             {blogs.map((blog) => (
               <div key={blog.id}>
                 <div className="bg-white shadow-md rounded-lg max-w-screen-sm mx-auto">
-                  <h2 className="text-base font-semibold text-textPrimary p-2">
-                    {blog.title}
-                  </h2>
+                  <h2 className="text-base font-semibold text-textPrimary p-2">{blog.title}</h2>
                   {blog.feature_image && (
                     <Image
                       src={blog.feature_image}
@@ -37,9 +33,7 @@ const BlogListPage = async () => {
                       className="w-full h-[200px] object-cover"
                     />
                   )}
-                  <p className="mt-3 text-xs p-2 text-textPrimary">
-                    {blog.excerpt}
-                  </p>
+                  <p className="mt-3 text-xs p-2 text-textPrimary">{blog.excerpt}</p>
                   <div className="p-2">
                     <a
                       href={`/blog/${blog.slug}`}

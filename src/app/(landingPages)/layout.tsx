@@ -1,8 +1,8 @@
-import { ILayoutProps } from "@/models";
+import { ILayoutProps } from "@/models/common";
 import GaProvider from "@/provider/ga.provider";
+import "@/styles/global.css";
+import Footer from "../../components/footer";
 import { LandingPageHeader } from "./_components";
-import Footer from "./_components/footer";
-import "./global.css";
 
 export const metadata = {
   title: "Access expert healthcare information 24x7 at your fingertips",
@@ -11,12 +11,12 @@ export const metadata = {
 
 export default function RootLayout(props: ILayoutProps) {
   return (
-    <html lang="en" className="text-sm sm:text-lg">
-      <body suppressHydrationWarning={true}>
-        <GaProvider></GaProvider>
+    <html lang="en">
+      <body suppressHydrationWarning>
         <LandingPageHeader />
         {props.children}
         <Footer />
+        <GaProvider />
       </body>
     </html>
   );

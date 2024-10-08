@@ -1,4 +1,4 @@
-import AcademyPage from "@/view/academy";
+import AcademyPage from "@/views/academy";
 
 export default function Academy() {
   return <AcademyPage />;

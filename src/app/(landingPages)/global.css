@@ -14,7 +14,6 @@
   --primary-color: #145eeb;
   --primary-active-color: #1233a4;
   --danger-color: #ff0000;
-
   --primary-border-color: #edeff2;
   --secondary-text-color: #6c757d;
 }
@@ -27,9 +26,7 @@ html {
   cursor: pointer;
 }
 
-
 @layer components {
-
   .heading-1 {
     @apply font-poppins text-5xl font-bold leading-relaxed;
   }
@@ -46,21 +43,19 @@ html {
     @apply font-poppins text-2xl font-semibold leading-relaxed;
   }
 
-
   .heading-5 {
     @apply font-poppins text-xl font-semibold leading-relaxed;
   }
-
 
   .heading-4 {
     @apply font-poppins text-2xl font-semibold leading-relaxed;
   }
 
   .body-1 {
-    @apply font-poppins text-lg text-textSecondary
+    @apply font-poppins text-lg;
   }
 
   .body-2 {
-    @apply font-poppins text-base text-textSecondary
+    @apply font-poppins text-base;
   }
 }

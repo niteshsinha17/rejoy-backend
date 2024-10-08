@@ -1,0 +1,29 @@
+{
+  "python.analysis.typeCheckingMode": "basic",
+  "python.analysis.autoFormatStrings": true,
+  "python.analysis.diagnosticSeverityOverrides": {
+    "reportMissingImports": "information",
+    "reportMissingModuleSource": "information",
+    "reportUnusedClass": "information",
+    "reportUnusedFunction": "information",
+    "reportUnusedImport": "information",
+    "reportUnusedVariable": "information",
+    "reportConstantRedefinition": "information"
+  },
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit",
+    "source.fixAll": "explicit",
+    "source.fixAll.eslint": "explicit",
+    "source.unusedImports": "always"
+  },
+  "editor.suggest.showReferences": true,
+  "editor.suggestSelection": "first",
+  "editor.formatOnSave": true,
+  "[python]": {
+    "diffEditor.ignoreTrimWhitespace": false,
+    "editor.wordBasedSuggestions": "off",
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "isort.args": ["--profile", "black"],
+  "python.jediEnabled": true
+}
