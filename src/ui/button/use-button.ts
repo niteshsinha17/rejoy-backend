@@ -11,7 +11,7 @@ const buttonVariants = cva(
         solid: "border border-transparent",
         outline: "border border-currentcolor",
         text: "",
-        icon: "",
+        icon: "border icon-button p-0 flex justify-center items-center text-slate-400",
       },
       fontSize: {
         xs: "text-xs",
@@ -171,12 +171,12 @@ const buttonVariants = cva(
       {
         variant: "icon",
         size: "xs",
-        className: "p-1",
+        className: "h-[32px] w-[32px] p-0 rounded-lg",
       },
       {
         variant: "icon",
         size: "sm",
-        className: "p-1",
+        className: "h-[36px] w-[36px] p-0 icon-button-sm rounded-lg",
       },
       {
         variant: "icon",
@@ -201,6 +201,7 @@ export interface IButtonProps extends VariantProps<typeof buttonVariants> {
   href?: string;
   loading?: boolean;
   spinnerPlacement?: "start" | "end";
+  target?: "_blank" | "_self" | "_parent" | "_top";
   startIcon?: React.ReactNode;
   endIcon?: React.ReactNode;
   children?: React.ReactNode;

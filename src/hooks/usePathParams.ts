@@ -2,9 +2,9 @@
 import { useParams } from "next/navigation";
 
 export const usePathParams = () => {
-  const { conversationId } = useParams();
+  const { username } = useParams();
 
   return {
-    conversationId: conversationId as string,
+    username: username as string,
   };
 };

@@ -57,6 +57,7 @@
 * {
   font-family: "Plus Jakarta Sans", sans-serif;
   font-optical-sizing: auto;
+  border-color: var(--border);
 }
 
 @layer base {
@@ -105,4 +106,14 @@
   z-index: 1000;
   background-color: var(--background);
   box-shadow: 0 2px 4px 0 var(--border);
+}
+
+.icon-button-sm svg {
+  height: 18px !important;
+  width: 18px !important;
+  transition: all 0.2s ease-in-out;
+}
+
+.icon-button:hover svg {
+  color: black;
 }

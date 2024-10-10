@@ -79,3 +79,13 @@ class CreateUserService:
             email=email,
             phone_number=phone_number,
         )
+
+
+class AgentService:
+
+    def __init__(self, username: str):
+        self.user = User.objects.get(username=username)
+        self.doctor_detail = DoctorProfile.objects.get(user=self.user)
+
+    def get_response(self, message_history):
+        pass

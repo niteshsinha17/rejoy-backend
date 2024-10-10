@@ -10,6 +10,8 @@ class User(AbstractUser):
     is_email_verified = models.BooleanField(default=False)
     is_doctor = models.BooleanField(default=False)
     image = models.TextField(null=True, blank=True)
+    overview = models.TextField(null=True, blank=True)
+    address = models.TextField(null=True, blank=True)
 
     @property
     def full_name(self):
@@ -18,3 +20,15 @@ class User(AbstractUser):
 
 class DoctorProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
+    specialties = models.JSONField(
+        default=list,
+    )
+    conditions_treated = models.JSONField(
+        default=list,
+    )
+    procedures_performed = models.JSONField(
+        default=list,
+    )
+    insurance_accepted = models.JSONField(
+        default=list,
+    )

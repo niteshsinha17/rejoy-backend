@@ -1,7 +1,6 @@
 "use client";
 import { ArrowCircleUpMark } from "@/icons";
 import { TextareaAutosize } from "@mui/material";
-// import { TextAreaAutoSizeInput } from "@/ui";
 import { useState } from "react";
 
 interface IChatInputProps {
@@ -25,14 +24,12 @@ const ChatInput = (props: IChatInputProps) => {
         disabled={props.isLoading}
         autoFocus
         onChange={(e) => setInput(e.target.value)}
-        // setValue={(value) => setInput(value)}
-        // handleSubmit={handleSubmit}
         onKeyDown={(e) => {
           if (e.key === "Enter" && !e.shiftKey) {
             handleSubmit();
           }
         }}
-        placeholder="Message John Mearsheimer"
+        placeholder="Type a message..."
         className="w-full bg-transparent border- px-3 outline-none resize-none text-base"
       />
       <button
@@ -40,7 +37,13 @@ const ChatInput = (props: IChatInputProps) => {
         disabled={props.isLoading}
         onClick={handleSubmit}
       >
-        <ArrowCircleUpMark />
+        <ArrowCircleUpMark
+          className="text-black"
+          style={{
+            height: 30,
+            width: 30,
+          }}
+        />
       </button>
     </div>
   );

@@ -2,7 +2,9 @@ import { authApi } from "@/services/auth.service";
 import { userApi } from "@/services/user.service";
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
-import { appReducer, authReducer } from "./reducer";
+import { appReducer } from "./reducer/app";
+import { authReducer } from "./reducer/auth";
+import { chatReducer } from "./reducer/chat";
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +12,7 @@ export const store = configureStore({
     [userApi.reducerPath]: userApi.reducer,
     app: appReducer,
     auth: authReducer,
+    chat: chatReducer,
   },
   devTools: true,
   middleware(getDefaultMiddleware) {

@@ -4,6 +4,7 @@ import { CSSProperties } from "react";
 export interface ITextLoaderProps {
   width?: CSSProperties["width"];
   height?: CSSProperties["height"];
+  maxWidth?: CSSProperties["maxWidth"];
   className?: string;
 }
 const BoxLoader = (props: ITextLoaderProps) => {
@@ -12,6 +13,7 @@ const BoxLoader = (props: ITextLoaderProps) => {
       style={{
         width: props.width || "100%",
         height: props.height || "50px",
+        maxWidth: props.maxWidth || "100%",
       }}
       className={cn("bg-slate-200 animate-pulse rounded-md h-2", props.className)}
     ></div>

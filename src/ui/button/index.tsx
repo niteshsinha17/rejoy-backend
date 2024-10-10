@@ -11,6 +11,7 @@ const Button = (props: IButtonProps) => {
     return (
       <Link
         href={props.href}
+        target={props.target}
         {...getButtonProps()}
       >
         {spinnerPlacement === "start" && props.loading && (

@@ -26,7 +26,6 @@ export const formikFieldConfig = (formik: any) => {
   return (fieldName: string) => {
     const fieldProps = formik.getFieldProps(fieldName);
     const helpersProps = formik.getFieldMeta(fieldName);
-
     return {
       ...fieldProps,
       name: fieldName,

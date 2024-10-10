@@ -1,10 +1,10 @@
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.generics import GenericAPIView
-from rest_framework.permissions import AllowAny, IsAuthenticated
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
-from rest_framework.status import HTTP_400_BAD_REQUEST, HTTP_200_OK
+from rest_framework.status import HTTP_200_OK, HTTP_400_BAD_REQUEST
 
-from core.models import User
+from core.models import DoctorProfile, User
 
 
 class ResponseMessageMixin:
@@ -32,6 +32,9 @@ class BaseApi(GenericAPIView, ResponseMessageMixin):
 
     def get_user(self) -> User:
         return self.request.user  # type: ignore
+
+    def get_doctor_profile(self):
+        return DoctorProfile.objects.get(user=self.get_user())
 
     def get_response_400(self):
         return Response(

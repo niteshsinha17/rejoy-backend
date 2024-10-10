@@ -123,7 +123,7 @@ const Footer = () => {
               <div>
                 <Heading>Resources</Heading>
                 {/* <FooterLink path={ROUTES.ACADEMY}>Academy</FooterLink>*/}
-                <FooterLink path={Routes.MOVE_AND_EARN}>Move and Earn</FooterLink>
+                {/* <FooterLink path={Routes.MOVE_AND_EARN}>Move and Earn</FooterLink> */}
                 <FooterLink path={Routes.BLOG}>Blogs</FooterLink>
               </div>
               <div>

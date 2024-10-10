@@ -22,10 +22,13 @@ export default function RootLayout({ children }: ILayoutProps) {
           <AuthProvider>
             <AuthGuard>
               <ToastProvider>
-                <div className="min-h-full flex">
+                <div className="h-full flex">
                   <SideNavigationMenu />
                   <div className="flex-1 overflow-hidden">
-                    <div className="flex flex-col h-full overflow-y-auto">
+                    <div
+                      id="app-scrollable-view"
+                      className="flex flex-col h-full overflow-y-auto"
+                    >
                       <AppPageHeader />
                       <div>
                         <div className="max-w-screen-lg mx-auto p-4 px-6">{children}</div>

@@ -1,16 +1,13 @@
 "use client";
+import { IDoctorProfile } from "@/models/doctor";
 import Messages from "./messages";
-import SelectedAttachment from "./selected-attachment";
 
-const ChatView = () => {
-  return (
-    <div className="flex h-full">
-      <div className="flex-1 overflow-hidden">
-        <Messages />
-      </div>
-      <SelectedAttachment />
-    </div>
-  );
+interface IChatViewProps {
+  doctorProfile: IDoctorProfile;
+}
+
+const ChatView = (props: IChatViewProps) => {
+  return <Messages doctorProfile={props.doctorProfile} />;
 };
 
 export default ChatView;

@@ -5,6 +5,7 @@ const EmailInput = (props: ITextInputProps) => {
     <TextInput
       placeholder="Email"
       {...props}
+      type="email"
     />
   );
 };

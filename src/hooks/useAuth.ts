@@ -2,7 +2,7 @@
 import { AppRoutes } from "@/enum";
 import { authApi } from "@/services/auth.service";
 import { useAppDispatcher, useAppUseSelector } from "@/store";
-import { authActions } from "@/store/reducer";
+import { authActions } from "@/store/reducer/auth";
 import { localStorageTransaction } from "@/utils";
 
 export const useAuth = () => {

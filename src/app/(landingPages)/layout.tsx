@@ -1,3 +1,5 @@
+import AuthProvider from "@/hoc/auth-provider";
+import { ReduxProvider } from "@/hoc/redux.provider";
 import { ILayoutProps } from "@/models/common";
 import GaProvider from "@/provider/ga.provider";
 import "@/styles/global.css";
@@ -13,10 +15,14 @@ export default function RootLayout(props: ILayoutProps) {
   return (
     <html lang="en">
       <body suppressHydrationWarning>
-        <LandingPageHeader />
-        {props.children}
-        <Footer />
-        <GaProvider />
+        <ReduxProvider>
+          <AuthProvider>
+            <LandingPageHeader />
+            {props.children}
+            <Footer />
+            <GaProvider />
+          </AuthProvider>
+        </ReduxProvider>
       </body>
     </html>
   );

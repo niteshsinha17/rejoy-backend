@@ -1,5 +1,7 @@
 "use client";
 import useNavState from "@/hooks/useNavState";
+import { ArrowLeftIcon } from "@/icons";
+import { Button } from "@/ui";
 import { cn, stopPropagation } from "@/utils";
 import { HTMLAttributes } from "react";
 import Header from "../headers/base";
@@ -45,8 +47,13 @@ export const NavigationSidebar = (props: INavigationSidebarProps) => {
 
 export const NavigationHeader = () => {
   return (
-    <div className="h-[80px] w-full flex items-center px-3">
+    <div className="h-[80px] w-full flex items-center px-3 relative">
       <Header.Logo />
+      <span className="absolute right-[-18px] bg-white cursor-pointer z-10">
+        <Button variant="icon">
+          <ArrowLeftIcon />
+        </Button>
+      </span>
     </div>
   );
 };

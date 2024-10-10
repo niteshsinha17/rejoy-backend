@@ -22,4 +22,6 @@ export enum AppRoutes {
   LOGIN = "/provider/login",
   REGISTER = "/provider/register",
   FORGOT_PASSWORD = "/provider/forgot-password",
+  DOCTOR_PROFILE = "/:username",
+  DOCTOR_AGENT = "/chat/:username",
 }

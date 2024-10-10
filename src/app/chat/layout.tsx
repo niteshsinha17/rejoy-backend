@@ -1,23 +1,28 @@
-import { ReduxProvider } from "@/hoc";
+import AuthProvider from "@/hoc/auth-provider";
+import { ReduxProvider } from "@/hoc/redux.provider";
 import { ToastProvider } from "@/hoc/toast.hoc";
-import { TextToSpeechProvider } from "@/views/chat-view/context/speek-context";
+import "@/styles/global.css";
+import { ReactNode } from "react";
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode;
+  children: ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>
+    <html
+      lang="en"
+      className="h-full"
+    >
+      <body className="h-full">
         <ReduxProvider>
-          <ToastProvider>
-            <TextToSpeechProvider>
-              <div className="flex h-full">
-                <div className="flex-1 overflow-hidden">{children}</div>
-              </div>
-            </TextToSpeechProvider>
-          </ToastProvider>
+          <AuthProvider>
+            <ToastProvider>
+              {/* <TextToSpeechProvider> */}
+              {children}
+              {/* </TextToSpeechProvider> */}
+            </ToastProvider>
+          </AuthProvider>
         </ReduxProvider>
       </body>
     </html>

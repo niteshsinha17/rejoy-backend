@@ -4,8 +4,9 @@ import { Avatar as MuiAvatar } from "@mui/material";
 
 interface IGenericAvatarProps {
   image?: string;
-  size?: Size;
+  size?: Size | "auto";
   name?: string;
+  fontSize?: string;
   isOnline?: boolean;
   showOffline?: boolean;
   showOnlineStatus?: boolean;
@@ -13,12 +14,13 @@ interface IGenericAvatarProps {
   onClick?: () => void;
 }
 
-const avatarSizeClassMap: Record<Size, string> = {
+const avatarSizeClassMap: Record<Size | "auto", string> = {
   xs: "h-[20px] w-[20px] text-xs",
   sm: "h-[30px] w-[30px] text-[10px]",
   md: "h-[40px] w-[40px] text-sm",
   lg: "h-[70px] w-[70px] text-base",
   xl: "h-[100px] w-[100px] text-xl",
+  auto: "h-full w-full",
 };
 
 const charToColorMap: Record<string, string> = {
@@ -70,7 +72,9 @@ const Avatar = (props: IGenericAvatarProps) => {
           height: "100%",
           background: charToColorMap[char],
           visibility: props.isLoading ? "hidden" : "visible",
-          fontSize: "unset",
+          fontSize: props.fontSize,
+          maxWidth: props.size === "auto" ? "100%" : 100,
+          maxHeight: props.size === "auto" ? "100%" : 100,
         }}
       >
         {char.toUpperCase()}

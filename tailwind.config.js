@@ -42,6 +42,13 @@ module.exports = {
           foreground: "var(--success-foreground)",
         },
       },
+      height: {
+        xs: "24px",
+        sm: "28px",
+        md: "36px",
+        lg: "48px",
+        xl: "64px",
+      },
     },
     fontFamily: {
       poppins: ["Poppins", "sans-serif"],
@@ -55,6 +62,7 @@ module.exports = {
       xl: "1920px",
     },
     spacing: {
+      0: "0px",
       1: "8px",
       2: "12px",
       3: "16px",

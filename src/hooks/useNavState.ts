@@ -1,5 +1,5 @@
 import { useAppDispatcher, useAppUseSelector } from "@/store";
-import { appActions } from "@/store/reducer";
+import { appActions } from "@/store/reducer/app";
 
 const useNavState = () => {
   const isOpen = useAppUseSelector((state) => state.app.isSidebarOpen);

@@ -23,33 +23,30 @@ const NavigationLink = (props: INavigationLinkProps) => {
         }}
         href={props.redirectTo}
         className={cn(
-          "flex items-center gap-3 hover:bg-accent hover:text-primary p-2 py-1 font-medium rounded-lg cursor-pointer sm:justify-center lg:justify-normal",
+          "flex items-center gap-3 hover:text-primary p-2 font-medium rounded-lg cursor-pointer sm:justify-center lg:justify-normal",
           {
-            "bg-accent text-primary bg-opacity-50": props.isActive,
+            "text-primary bg-opacity-50": props.isActive,
           }
         )}
       >
-        {props.icon}
-        <div>{props.name}</div>
+        <span
+          className={cn("text-slate-400", {
+            "text-primary": props.isActive,
+          })}
+        >
+          {props.icon}
+        </span>
+        <div className="font-semibold">{props.name}</div>
       </Link>
     );
   }
   return (
     <div
-      className={cn(
-        "flex items-center gap-3 hover:bg-secondary p-2 rounded-lg cursor-pointer sm:justify-center lg:justify-normal"
-        // props.collapsedSidebar && "lg:justify-center"
-      )}
+      className={cn("flex items-center gap-3 hover:text-primary p-2 rounded-lg cursor-pointer sm:justify-center lg:justify-normal")}
       onClick={props.action}
     >
-      {props.icon}
-      <div
-        className={cn("sm:hidden lg:block max-sm:text-base text-slate-600", {
-          // "lg:hidden": props.collapsedSidebar,
-        })}
-      >
-        {props.name}
-      </div>
+      <span className="text-slate-400">{props.icon}</span>
+      <div className="font-semibold">{props.name}</div>
     </div>
   );
 };

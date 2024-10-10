@@ -4,6 +4,7 @@ import { Button } from "@/ui";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import Header from "../base";
+import AuthPanel from "./auth-panel";
 import { INavItem } from "./interface";
 import NavDropdown from "./navDropdown";
 import NavLink from "./navLink";
@@ -15,11 +16,11 @@ const navLinks: INavItem[] = [
     path: Routes.HOME,
     type: "link",
   },
-  {
-    name: "Move & Earn",
-    path: Routes.MOVE_AND_EARN,
-    type: "link",
-  },
+  // {
+  //   name: "Move & Earn",
+  //   path: Routes.MOVE_AND_EARN,
+  //   type: "link",
+  // },
   {
     name: "Blogs",
     path: Routes.BLOG,
@@ -92,6 +93,7 @@ const HeaderMain = () => {
             >
               Provider Login
             </Button>
+            <AuthPanel />
           </Header.Right>
         </Header>
       </div>

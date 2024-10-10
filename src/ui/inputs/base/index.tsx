@@ -1,41 +1,47 @@
-import { Size } from "@/enum";
 import { cn } from "@/utils";
-import { InputHTMLAttributes, ReactNode } from "react";
+import { ReactNode } from "react";
+import { IBaseInputProps } from "./interface";
+import useInput from "./useInput";
 
-interface IBaseInputProps extends Omit<InputHTMLAttributes<HTMLInputElement>, "size"> {
-  name: string;
-  size?: Size;
-  setValue: (name: string, value: string) => void;
-  validateFn?: (value: string) => boolean;
-  validateRegex?: RegExp;
-}
+export const BaseInput = (props: IBaseInputProps<HTMLInputElement>) => {
+  const inputProps = useInput(props);
 
-export const BaseInput = ({ className, size = "sm", value, ...props }: IBaseInputProps) => {
-  const inputSizeClass: Record<Size, string> = {
-    xs: "h-8 text-xs",
-    sm: "h-10 text-sm",
-    md: "h-12 text-base",
-    lg: "h-14 text-lg",
-    xl: "h-16 text-xl",
-  };
+  if (inputProps.readOnly) {
+    return <div className={inputProps.className}>{inputProps.value || "-"}</div>;
+  }
 
+  return <input {...inputProps} />;
+};
+
+export const BaseTextArea = (props: IBaseInputProps<HTMLTextAreaElement>) => {
+  const inputProps = useInput(props);
+  if (inputProps.readOnly) {
+    return <div className={inputProps.className}>{inputProps.value || "-"}</div>;
+  }
   return (
-    <input
-      onChange={(e) => {
-        if (props.validateFn && !props.validateFn(e.target.value)) return;
-        if (props.validateRegex && !props.validateRegex.test(e.target.value)) return;
-        props.setValue(props.name, e.target.value);
+    <textarea
+      rows={4}
+      {...inputProps}
+      style={{
+        height: "auto",
       }}
-      type="text"
-      value={value}
-      className={cn("outline-none border-none w-full bg-transparent", inputSizeClass[size], className)}
-      {...props}
     />
   );
 };
 
-export const InputLabel = () => {
-  return <></>;
+interface IInputLabelProps {
+  children: ReactNode;
+  htmlFor?: string;
+}
+export const InputLabel = (props: IInputLabelProps) => {
+  return (
+    <label
+      className="text-sm font-semibold"
+      htmlFor={props.htmlFor}
+    >
+      {props.children}
+    </label>
+  );
 };
 
 interface IInputWrapperProps {
@@ -43,12 +49,23 @@ interface IInputWrapperProps {
   error?: string;
   leadingVisual?: ReactNode;
   trailingVisual?: ReactNode;
+  readOnly?: boolean;
+  label?: string;
+  variant?: "outline" | "filled";
 }
 
-export const InputWrapper = (props: IInputWrapperProps) => {
+export const InputWrapper = ({ variant = "filled", ...props }: IInputWrapperProps) => {
   return (
-    <div>
-      <div className="flex items-center gap-3 bg-[#f2f2f2] rounded-lg p-2 px-3 border-2 border-transparent focus-within:border-black">
+    <div className="flex flex-col">
+      {!!props.label && <InputLabel>{props.label}</InputLabel>}
+      <div
+        className={cn("flex items-center gap-3 rounded-lg", {
+          "px-3 border-2 border-transparent focus-within:border-black": !props.readOnly,
+          "bg-[#f2f2f2]": variant === "filled",
+          "border-border": variant === "outline",
+          "mt-1": !props.readOnly && !!props.label,
+        })}
+      >
         {props.leadingVisual}
         {props.children}
         {props.trailingVisual}
@@ -58,4 +75,6 @@ export const InputWrapper = (props: IInputWrapperProps) => {
   );
 };
 
-export interface IInputProps extends Omit<IBaseInputProps, "children">, Omit<IInputWrapperProps, "children"> {}
+export interface IInputProps
+  extends Omit<IBaseInputProps<HTMLInputElement | HTMLTextAreaElement>, "children">,
+    Omit<IInputWrapperProps, "children"> {}

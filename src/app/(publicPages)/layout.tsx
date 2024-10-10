@@ -1,17 +1,21 @@
+import AuthProvider from "@/hoc/auth-provider";
+import { ReduxProvider } from "@/hoc/redux.provider";
 import { ILayoutProps } from "@/models/common";
+import GaProvider from "@/provider/ga.provider";
 import "@/styles/global.css";
+import { LandingPageHeader } from "../(landingPages)/_components";
 
 export default function RootLayout({ children }: ILayoutProps) {
   return (
-    <html
-      className="h-full"
-      lang="en"
-    >
-      <body className="h-full">
-        <div className="h-full flex flex-col">
-          <div className="h-10">Header</div>
-          <div className="flex-1 overflow-auto bg-[rgb(242,244,246)]">{children}</div>
-        </div>
+    <html lang="en">
+      <body>
+        <ReduxProvider>
+          <AuthProvider>
+            <LandingPageHeader />
+            {children}
+            <GaProvider />
+          </AuthProvider>
+        </ReduxProvider>
       </body>
     </html>
   );
