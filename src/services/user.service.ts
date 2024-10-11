@@ -1,4 +1,5 @@
 import { apiObject, baseQuery } from "@/middlewares";
+import { IChatMessage } from "@/models/chat";
 import { IDoctorProfile } from "@/models/doctor";
 import { IUser } from "@/models/user";
 import { userTransformer } from "@/transformer/user";
@@ -22,6 +23,20 @@ export const userApi = createApi({
     updateDoctorProfile: builder.mutation<IDoctorProfile, IDoctorProfile>({
       query: (payload) => apiObject("user/doctor-profile/update/").put(userTransformer.convertDoctorProfileToPayload(payload)),
       invalidatesTags: ["DoctorProfile"],
+    }),
+    generateUserResponse: builder.mutation<
+      string,
+      {
+        message: string;
+        username: string;
+        history: IChatMessage[];
+      }
+    >({
+      query: ({ username, message, history }) =>
+        apiObject(`user/${username}/generate-response/`).post({
+          message,
+          history,
+        }),
     }),
   }),
 });

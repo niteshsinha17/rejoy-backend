@@ -1,6 +1,6 @@
 import { AppRoutes } from "@/enum";
 import useTimer from "@/hooks/useTimer";
-import { authApis } from "@/services";
+import { authApi } from "@/services/auth.service";
 import { Button, TextInput } from "@/ui";
 import { Toast, formikFieldConfig, validatePassword } from "@/utils";
 import PasswordCheck from "@/views/auth/components/passwordChecks";
@@ -19,8 +19,8 @@ interface IGetEmailProps {
 }
 
 const SetPassword = (props: IGetEmailProps) => {
-  const [resetPassword, resetPasswordState] = authApis.useResetPasswordMutation();
-  const [sendVerificationCode, sendVerificationCodeState] = authApis.useSendEmailVerificationOtpMutation();
+  const [resetPassword, resetPasswordState] = authApi.useResetPasswordMutation();
+  const [sendVerificationCode, sendVerificationCodeState] = authApi.useSendEmailVerificationOtpMutation();
   const router = useRouter();
   const form = useFormik({
     initialValues: {

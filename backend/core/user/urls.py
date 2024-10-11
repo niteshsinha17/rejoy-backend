@@ -3,6 +3,7 @@ from django.urls import path
 from core.user.apis import (
     DoctorProfileApi,
     DoctorPublicProfile,
+    GenerateAgentResponse,
     UpdateDoctorProfileApi,
     UserBasicDetailApi,
 )
@@ -19,5 +20,10 @@ urlpatterns = [
         "<str:username>/doctor-profile/",
         DoctorPublicProfile.as_view(),
         name="doctor-public-profile",
+    ),
+    path(
+        "<str:username>/generate-response/",
+        GenerateAgentResponse.as_view(),
+        name="generate-agent-response",
     ),
 ]

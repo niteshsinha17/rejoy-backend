@@ -23,9 +23,12 @@ const ChatInput = (props: IChatInputProps) => {
         value={input}
         disabled={props.isLoading}
         autoFocus
-        onChange={(e) => setInput(e.target.value)}
+        onChange={(e) => {
+          setInput(e.target.value);
+        }}
         onKeyDown={(e) => {
           if (e.key === "Enter" && !e.shiftKey) {
+            e.preventDefault();
             handleSubmit();
           }
         }}
@@ -40,8 +43,8 @@ const ChatInput = (props: IChatInputProps) => {
         <ArrowCircleUpMark
           className="text-black"
           style={{
-            height: 30,
-            width: 30,
+            height: 34,
+            width: 34,
           }}
         />
       </button>

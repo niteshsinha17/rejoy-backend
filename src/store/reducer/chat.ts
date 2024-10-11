@@ -6,6 +6,7 @@ import * as yup from "yup";
 const initialState: IChatState = {
   initialized: false,
   conversationMessages: [],
+  hasHistory: false,
 };
 
 const chatMessageSchema = yup.object().shape({
@@ -24,9 +25,12 @@ const chatSlice = createSlice({
       state.initialized = true;
       const messages = localStorageTransaction.getItem("conversationMessages") ?? "";
       try {
-        const parsedMessages = JSON.parse(messages);
+        const parsedMessages = JSON.parse(messages) as IChatMessage[];
         if (messagesListSchema.isValidSync(parsedMessages)) {
-          state.conversationMessages = parsedMessages as IChatMessage[];
+          state.conversationMessages = parsedMessages;
+          if (parsedMessages.length > 0) {
+            state.hasHistory = true;
+          }
         }
       } catch (_) {
         localStorageTransaction.removeItem("conversationMessages");
@@ -47,6 +51,7 @@ const chatSlice = createSlice({
     clearMessages(state) {
       state.conversationMessages = [];
       localStorageTransaction.removeItem("conversationMessages");
+      state.hasHistory = false;
     },
   },
 });

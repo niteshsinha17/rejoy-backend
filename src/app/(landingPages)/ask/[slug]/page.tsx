@@ -1,6 +1,7 @@
 import { Container } from "@/components";
+import DownloadButtons from "@/components/downloadButtons";
+import TopBanner from "@/components/topBanner";
 import Link from "next/link";
-import { DownloadButtons, TopBanner } from "../../_components";
 
 interface IQuestion {
   slug: string;

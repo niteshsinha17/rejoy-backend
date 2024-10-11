@@ -10,5 +10,6 @@ export interface IAgentChatMessage {
 
 export interface IChatState {
   initialized: boolean;
+  hasHistory: boolean;
   conversationMessages: IChatMessage[];
 }

@@ -1,9 +1,10 @@
 import { Container } from "@/components";
+import DownloadButtons from "@/components/downloadButtons";
+import TopBanner from "@/components/topBanner";
 import { ghostContentApi } from "@/services/ghost";
 import { getPageMetaData } from "@/utils/common";
 import { PostOrPage } from "@tryghost/content-api";
 import Link from "next/link";
-import { DownloadButtons, TopBanner } from "../../_components";
 export const dynamicParams = true;
 
 const getRandomThreeItemList = (posts: PostOrPage[]) => {

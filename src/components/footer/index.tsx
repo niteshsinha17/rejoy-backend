@@ -2,7 +2,7 @@ import { FacebookIcon, InstagramIcon, LinkedInIcon, TiktokIcon, TwitterIcon, You
 import { Container } from "@/components";
 import { Routes } from "@/enum";
 import Link from "next/link";
-import BrandLogo from "../../app/(landingPages)/_components/brandLogo";
+import Header from "../headers/base";
 
 const Heading = (props: { children: string }) => {
   return <h5 className="font-medium text-lg text-black">{props.children}</h5>;
@@ -60,7 +60,7 @@ const Footer = () => {
   return (
     <div className="py-[60px] md:py-[120px]">
       <Container>
-        <BrandLogo />
+        <Header.Logo />
         <div className="mt-[30px] flex flex-col gap-5 lg:flex-row md:gap-[100px]">
           <div className="w-12/12 md:w-3/12">
             <div className="max-w-md">

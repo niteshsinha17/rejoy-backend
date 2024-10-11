@@ -1,6 +1,17 @@
 import uuid
 
 from django.forms import ValidationError
+from langchain.agents import AgentExecutor, Tool, create_openai_functions_agent
+from langchain.prompts import MessagesPlaceholder, PromptTemplate
+from langchain_community.callbacks import get_openai_callback
+from langchain_community.utilities import GoogleSerperAPIWrapper
+from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
+from langchain_core.prompts import (
+    ChatPromptTemplate,
+    HumanMessagePromptTemplate,
+    PromptTemplate,
+)
+from langchain_openai import ChatOpenAI
 
 from authentication.exceptions import EmailAlreadyExistsException
 from core.models import DoctorProfile, User
@@ -83,9 +94,70 @@ class CreateUserService:
 
 class AgentService:
 
-    def __init__(self, username: str):
-        self.user = User.objects.get(username=username)
-        self.doctor_detail = DoctorProfile.objects.get(user=self.user)
+    def __init__(self, user: User):
+        self.user = user
+        self.doctor_detail = DoctorProfile.objects.get(user=user)
 
-    def get_response(self, message_history):
-        pass
+    def _format_chat_history(self, chat_history: list):
+        messages = []
+        for message in chat_history:
+            is_agent_response = message["sender"] == "agent"
+            if is_agent_response:
+                messages.append(AIMessage(content=message["message"]))
+            else:
+                messages.append(HumanMessage(content=message["message"]))
+        return messages
+
+    def get_response(self, message_history, message):
+
+        template = f"""
+You are Dr. {self.user.get_full_name()} AI. You have been provided details of {self.user.get_full_name()}. Understand the Doctor's profile and provide the response
+to user's query in order to help him/her with medical queries in a professional manner. Do not let user know you are using tool. Use tool when you don't know the answer.
+
+Doctor's Profile:
+Overview: {self.user.overview}
+Address: {self.user.address}
+Phone Number: {self.user.phone_number}
+Specialties: {", ".join(self.doctor_detail.specialties)}
+Conditions Treated: {", ".join(self.doctor_detail.conditions_treated)}
+Procedures Performed: {", ".join(self.doctor_detail.procedures_performed)}
+Insurance Accepted: {", ".join(self.doctor_detail.insurance_accepted)}
+
+
+Format Instructions:
+Always return a string response to the user's query.
+
+"""
+        search = GoogleSerperAPIWrapper()
+
+        tools = [
+            Tool(
+                name="google_search",
+                func=search.run,
+                description="Useful for when you need to search for medical information on the web.",
+            )
+        ]
+
+        formatted_messages = self._format_chat_history(message_history)
+        prompt = ChatPromptTemplate.from_messages(
+            [
+                SystemMessage(content=template),
+                MessagesPlaceholder(variable_name="chat_history"),
+                HumanMessagePromptTemplate(
+                    prompt=PromptTemplate(input_variables=["input"], template="{input}")
+                ),
+                MessagesPlaceholder(variable_name="agent_scratchpad"),
+            ]
+        )
+
+        llm = ChatOpenAI(temperature=0, verbose=True, model="gpt-4")
+        agent = create_openai_functions_agent(llm, tools, prompt)
+        agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
+        with get_openai_callback() as callback:
+            output = agent_executor.invoke(
+                {
+                    "chat_history": formatted_messages,
+                    "input": message,
+                },
+            )
+        return output["output"]

@@ -26,7 +26,7 @@ const MessageSuggestion = (props: IMessageSuggestionProps) => {
   return (
     <div className={cn("bg-white w-full flex flex-col")}>
       <div className="flex justify-center flex-col items-center">
-        <div className="py-6 text-4xl text-center font-serif">
+        <div className="py-6 text-4xl text-center text-black">
           Hello, I’m Dr. {props.doctorProfile.basicDetail.firstName + " " + props.doctorProfile.basicDetail.lastName}’s AI. <br /> What
           would you like to discuss today?
         </div>

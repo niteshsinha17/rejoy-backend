@@ -1,6 +1,6 @@
 "use client";
 import { AppRoutes } from "@/enum";
-import { IErrorResponse } from "@/models";
+import { IErrorResponse } from "@/models/common";
 import { authApi } from "@/services/auth.service";
 import { Button } from "@/ui";
 import { PasswordInput, TextInput } from "@/ui/inputs";

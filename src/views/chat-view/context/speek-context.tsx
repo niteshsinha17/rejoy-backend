@@ -1,6 +1,6 @@
 "use client";
 import { nconf } from "@/conf";
-import { IChildrenProps } from "@/models";
+import { IChildrenProps } from "@/models/common";
 import axios from "axios";
 import { createContext, useContext, useRef, useState } from "react";
 

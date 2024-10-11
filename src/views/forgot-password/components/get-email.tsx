@@ -1,7 +1,7 @@
 "use client";
 
 import { IErrorResponse } from "@/models/common/service";
-import { authApis } from "@/services";
+import { authApi } from "@/services/auth.service";
 import { Button, TextInput } from "@/ui";
 import { Toast, formikFieldConfig } from "@/utils";
 import { useFormik } from "formik";
@@ -15,7 +15,7 @@ interface IGetEmailProps {
   handleNext: (email: string) => void;
 }
 const GetEmail = (props: IGetEmailProps) => {
-  const [sendVerificationCode, sendVerificationCodeState] = authApis.useSendEmailVerificationOtpMutation();
+  const [sendVerificationCode, sendVerificationCodeState] = authApi.useSendEmailVerificationOtpMutation();
   const form = useFormik({
     initialValues: {
       email: "",

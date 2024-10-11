@@ -1,8 +1,12 @@
 "use client";
+import { usePathParams } from "@/hooks";
 import { useAppDispatch, useAppSelector } from "@/hooks/reducer";
+import { TrashOutlineIcon } from "@/icons";
 import { IDoctorProfile } from "@/models/doctor";
-import chatApi from "@/services/chat-service/chat";
-import { useRouter } from "next/navigation";
+import { userApi } from "@/services/user.service";
+import { chatActions } from "@/store/reducer/chat";
+import { Button } from "@/ui";
+import { cn } from "@/utils";
 import { useEffect, useRef } from "react";
 import { v1 } from "uuid";
 import AiMessage from "../ai-message";
@@ -14,63 +18,45 @@ import UserMessage from "../user-message";
 interface IMessageProps {
   doctorProfile: IDoctorProfile;
 }
+
 const Messages = (props: IMessageProps) => {
   const messages = useAppSelector((state) => state.chat.conversationMessages);
-  const [getAgentResponse, { isLoading }] = chatApi.useGetAgentResponseMutation();
+  const initialized = useAppSelector((state) => state.chat.initialized);
+  const hasHistory = useAppSelector((state) => state.chat.hasHistory);
+  const [getAgentResponse, { isLoading }] = userApi.useGenerateUserResponseMutation();
   const lastMessageCount = useRef(0);
+  const { username } = usePathParams();
   const dispatch = useAppDispatch();
   const chatContainer = useRef<HTMLDivElement>(null);
-  const router = useRouter();
 
   const handleCreateReply = (userMsg: string) => {
     const last4Messages = messages.slice(-4);
-    const fakeId = v1();
-    // getAgentResponse({
-    //   conversationId: covId === "new" ? undefined : covId,
-    //   message: userMsg,
-    //   chatHistory: last4Messages,
-    // })
-    //   .unwrap()
-    //   .then((response) => {
-    //     if (autoPlayRef.current) {
-    //       console.log("autoPlayRef.current", autoPlayRef.current);
-    //       speak(response.agentResponse.message, response.agentResponse.id.toString());
-    //     }
-    //     dispatch(
-    //       chatActions.handleAgentResponse({
-    //         fakeUserMessageId: fakeId,
-    //         userMessage: response.userMessage || {
-    //           id: fakeId,
-    //           message: userMsg,
-    //           sender: "user",
-    //         },
-    //         agentResponse: response.agentResponse,
-    //         conversationId: response.conversationId || covId,
-    //       })
-    //     );
-    //     if (response.conversationId && response.conversationId != covId) {
-    //       dispatch(
-    //         chatApi.util.prefetch(
-    //           "conversationList",
-    //           { limit: 10000, offset: 0 },
-    //           {
-    //             force: true,
-    //           }
-    //         )
-    //       );
-    //     }
-    //     if (response.conversationId) router.push(`/${response.conversationId}`);
-    //   });
-    // dispatch(
-    //   chatActions.addMessage({
-    //     conversationId: covId,
-    //     message: {
-    //       id: fakeId,
-    //       message: userMsg,
-    //       sender: "user",
-    //     },
-    //   })
-    // );
+    getAgentResponse({
+      message: userMsg,
+      history: last4Messages,
+      username: username,
+    })
+      .unwrap()
+      .then((response) => {
+        dispatch(
+          chatActions.addMessage({
+            message: {
+              id: v1(),
+              message: response,
+              sender: "agent",
+            },
+          })
+        );
+      });
+    dispatch(
+      chatActions.addMessage({
+        message: {
+          id: v1(),
+          message: userMsg,
+          sender: "user",
+        },
+      })
+    );
   };
 
   useEffect(() => {
@@ -85,8 +71,25 @@ const Messages = (props: IMessageProps) => {
     lastMessageCount.current = messages.length;
   }, [messages]);
 
+  useEffect(() => {
+    dispatch(chatActions.initialize());
+  }, []);
+
   return (
     <div className="flex flex-col h-full relative">
+      <div className="flex justify-end p-2">
+        <Button
+          variant="outline"
+          color="black"
+          size="xs"
+          onClick={() => {
+            dispatch(chatActions.clearMessages());
+          }}
+          startIcon={<TrashOutlineIcon className="icon-xs" />}
+        >
+          Clear Chat
+        </Button>
+      </div>
       <div className="flex-1 overflow-hidden">
         <div className="h-full relative">
           <div
@@ -101,9 +104,10 @@ const Messages = (props: IMessageProps) => {
                 if (message.sender == "agent")
                   return (
                     <AiMessage
-                      withoutImage={index === 1}
+                      withoutImage={index === 1 && !hasHistory}
                       message={message}
                       key={message.id}
+                      doctorProfile={props.doctorProfile}
                     />
                   );
                 return (
@@ -113,18 +117,29 @@ const Messages = (props: IMessageProps) => {
                   />
                 );
               })}
-              {isLoading && <AiMessageLoader showImage={messages.length > 2} />}
+              {isLoading && (
+                <AiMessageLoader
+                  doctorProfile={props.doctorProfile}
+                  showImage={messages.length > 2}
+                />
+              )}
             </div>
           </div>
-          <FirstMessage
-            hide={false}
-            doctorProfile={props.doctorProfile}
-            animate={messages.length > 0}
-            handleSubmit={handleCreateReply}
-          />
+          {!hasHistory && (
+            <FirstMessage
+              hide={messages.length >= 1}
+              doctorProfile={props.doctorProfile}
+              animate={messages.length > 0}
+              handleSubmit={handleCreateReply}
+            />
+          )}
         </div>
       </div>
-      <div className="w-full p-4">
+      <div
+        className={cn("w-full p-4", {
+          "pointer-events-none": !initialized,
+        })}
+      >
         <ChatInput
           isLoading={isLoading}
           handleSubmit={handleCreateReply}

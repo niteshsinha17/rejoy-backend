@@ -33,6 +33,14 @@ const FirstMessage = (props: IFirstMessageProps) => {
     if (props.animate) {
       setAnimated(true);
       animateImageToLocation();
+    } else {
+      // reset
+      if (freeImage.current) {
+        freeImage.current.classList.remove("profile-image-in-container");
+        freeImage.current.style.left = "calc(50% - 100px)";
+        freeImage.current.style.right = "100px";
+      }
+      setAnimated(false);
     }
   }, [props.animate]);
 
@@ -53,7 +61,10 @@ const FirstMessage = (props: IFirstMessageProps) => {
           handleSubmit={props.handleSubmit}
         />
       </div>
-      <div className="profile-image z-30 flex">
+      <div
+        ref={freeImage}
+        className="profile-image z-30 flex"
+      >
         <Avatar
           size="auto"
           fontSize="20px"

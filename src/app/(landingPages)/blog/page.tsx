@@ -1,8 +1,8 @@
 import { Container, Section } from "@/components";
+import TopBanner from "@/components/topBanner";
 import { ghostContentApi } from "@/services/ghost";
 import { getPageMetaData } from "@/utils/common";
 import Image from "next/image";
-import { TopBanner } from "../_components";
 export const dynamicParams = true;
 
 export const metadata = getPageMetaData({ title: "Blog | Rejoy Health" });

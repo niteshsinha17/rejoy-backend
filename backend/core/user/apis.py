@@ -1,10 +1,12 @@
 from django.shortcuts import get_object_or_404
+from rest_framework import serializers
 from rest_framework.response import Response
 from rest_framework.status import HTTP_200_OK
 
 from common.apis import BaseApi, OpenApi
-from core.models import DoctorProfile
+from core.models import DoctorProfile, User
 from core.user.serializers import DoctorProfileSerializer, UserBasicDetailSerializer
+from core.user.services import AgentService
 
 
 class UserBasicDetailApi(BaseApi):
@@ -51,5 +53,30 @@ class DoctorPublicProfile(OpenApi):
         serializer = DoctorProfileSerializer(doctor_profile)
         return Response(
             data=serializer.data,
+            status=HTTP_200_OK,
+        )
+
+
+class MessageSerializer(serializers.Serializer):
+    message = serializers.CharField()
+    sender = serializers.ChoiceField(choices=["user", "agent"])
+
+
+class GenerateAgentResponse(OpenApi):
+
+    class InputSerializer(serializers.Serializer):
+        message = serializers.CharField()
+        history = serializers.ListField(child=MessageSerializer())
+
+    input_serializer_class = InputSerializer
+
+    def post(self, request, *args, **kwargs):
+        doctor_username = kwargs["username"]
+        data = self.validate_input_data()
+        user = get_object_or_404(User, username=doctor_username)
+        service = AgentService(user)
+        res = service.get_response(data["history"], data["message"])
+        return Response(
+            data=res,
             status=HTTP_200_OK,
         )

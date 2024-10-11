@@ -1,5 +1,5 @@
 "use client";
-import { Routes } from "@/enum";
+import { AppRoutes, Routes } from "@/enum";
 import { Button } from "@/ui";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -89,7 +89,7 @@ const HeaderMain = () => {
             <Button
               variant="outline"
               color="black"
-              href={Routes.DOWNLOAD}
+              href={AppRoutes.LOGIN}
             >
               Provider Login
             </Button>

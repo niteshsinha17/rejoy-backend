@@ -1,9 +1,9 @@
+import LandingPageHeader from "@/components/headers/landing-page-header";
 import AuthProvider from "@/hoc/auth-provider";
+import GaProvider from "@/hoc/ga.provider";
 import { ReduxProvider } from "@/hoc/redux.provider";
 import { ILayoutProps } from "@/models/common";
-import GaProvider from "@/provider/ga.provider";
 import "@/styles/global.css";
-import { LandingPageHeader } from "../(landingPages)/_components";
 
 export default function RootLayout({ children }: ILayoutProps) {
   return (

@@ -15,7 +15,7 @@ const Page = async (props: {
   const result = await baseQuery<IDoctorProfileResponse>(apiObject(`user/${username}/doctor-profile/`));
 
   if ("error" in result) {
-    return { notFound: true };
+    return <div></div>;
   }
 
   return <ChatView doctorProfile={userTransformer.convertDoctorProfileResponseToJSFormat(result.data)} />;

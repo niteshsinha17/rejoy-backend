@@ -1,10 +1,10 @@
+import LandingPageHeader from "@/components/headers/landing-page-header";
 import AuthProvider from "@/hoc/auth-provider";
+import GaProvider from "@/hoc/ga.provider";
 import { ReduxProvider } from "@/hoc/redux.provider";
 import { ILayoutProps } from "@/models/common";
-import GaProvider from "@/provider/ga.provider";
 import "@/styles/global.css";
 import Footer from "../../components/footer";
-import { LandingPageHeader } from "./_components";
 
 export const metadata = {
   title: "Access expert healthcare information 24x7 at your fingertips",
