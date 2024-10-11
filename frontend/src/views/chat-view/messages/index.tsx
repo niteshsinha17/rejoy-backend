@@ -104,7 +104,6 @@ const Messages = (props: IMessageProps) => {
                 if (message.sender == "agent")
                   return (
                     <AiMessage
-                      withoutImage={index === 1 && !hasHistory}
                       message={message}
                       key={message.id}
                       doctorProfile={props.doctorProfile}

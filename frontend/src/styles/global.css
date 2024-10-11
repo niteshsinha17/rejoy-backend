@@ -90,6 +90,11 @@
     @apply text-5xl font-bold;
     line-height: 1.2;
   }
+
+  h3 {
+    @apply text-3xl font-semibold;
+    line-height: 1.2;
+  }
 }
 
 @layer utilities {

@@ -3,6 +3,7 @@ import { userApi } from "@/services/user.service";
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
 import { appReducer } from "./reducer/app";
+import { askReducer } from "./reducer/ask";
 import { authReducer } from "./reducer/auth";
 import { chatReducer } from "./reducer/chat";
 
@@ -13,6 +14,7 @@ export const store = configureStore({
     app: appReducer,
     auth: authReducer,
     chat: chatReducer,
+    ask: askReducer,
   },
   devTools: true,
   middleware(getDefaultMiddleware) {

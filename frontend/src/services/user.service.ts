@@ -38,5 +38,19 @@ export const userApi = createApi({
           history,
         }),
     }),
+    // TODO: Move to separate service file
+    ask: builder.mutation<
+      string,
+      {
+        message: string;
+        history: IChatMessage[];
+      }
+    >({
+      query: ({ message, history }) =>
+        apiObject(`user/ask/`).post({
+          message,
+          history,
+        }),
+    }),
   }),
 });

@@ -6,6 +6,7 @@ import { useState } from "react";
 interface IChatInputProps {
   handleSubmit: (input: string) => void;
   isLoading: boolean;
+  placeholder?: string;
 }
 
 const ChatInput = (props: IChatInputProps) => {
@@ -18,7 +19,7 @@ const ChatInput = (props: IChatInputProps) => {
   };
 
   return (
-    <div className="bg-[#F3F3F3] py-2 max-w-screen-md mx-auto rounded-[24px] flex items-center px-2">
+    <div className="bg-[#F3F3F3] py-1 max-w-screen-md mx-auto rounded-[24px] flex items-center px-2">
       <TextareaAutosize
         value={input}
         disabled={props.isLoading}
@@ -26,13 +27,14 @@ const ChatInput = (props: IChatInputProps) => {
         onChange={(e) => {
           setInput(e.target.value);
         }}
+        maxRows={4}
         onKeyDown={(e) => {
           if (e.key === "Enter" && !e.shiftKey) {
             e.preventDefault();
             handleSubmit();
           }
         }}
-        placeholder="Type a message..."
+        placeholder={props.placeholder ?? "Type a message..."}
         className="w-full bg-transparent border- px-3 outline-none resize-none text-base"
       />
       <button

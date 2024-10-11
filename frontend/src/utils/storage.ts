@@ -1,4 +1,4 @@
-type IStorageKey = "userToken" | "guestUserToken" | "conversationMessages";
+type IStorageKey = "userToken" | "guestUserToken" | "conversationMessages" | "askMessages";
 
 export const localStorageTransaction = {
   getItem(key: IStorageKey) {

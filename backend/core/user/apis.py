@@ -62,7 +62,7 @@ class MessageSerializer(serializers.Serializer):
     sender = serializers.ChoiceField(choices=["user", "agent"])
 
 
-class GenerateAgentResponse(OpenApi):
+class GenerateAgentResponseApi(OpenApi):
 
     class InputSerializer(serializers.Serializer):
         message = serializers.CharField()
@@ -74,6 +74,25 @@ class GenerateAgentResponse(OpenApi):
         doctor_username = kwargs["username"]
         data = self.validate_input_data()
         user = get_object_or_404(User, username=doctor_username)
+        service = AgentService(user)
+        res = service.get_response(data["history"], data["message"])
+        return Response(
+            data=res,
+            status=HTTP_200_OK,
+        )
+
+
+class AskApi(BaseApi):
+
+    class InputSerializer(serializers.Serializer):
+        message = serializers.CharField()
+        history = serializers.ListField(child=MessageSerializer())
+
+    input_serializer_class = InputSerializer
+
+    def post(self, request, *args, **kwargs):
+        data = self.validate_input_data()
+        user = self.get_user()
         service = AgentService(user)
         res = service.get_response(data["history"], data["message"])
         return Response(

@@ -19,6 +19,7 @@ export enum Routes {
 
 export enum AppRoutes {
   DASHBOARD = "/dashboard",
+  ASK = "/ask",
   LOGIN = "/provider/login",
   REGISTER = "/provider/register",
   FORGOT_PASSWORD = "/provider/forgot-password",

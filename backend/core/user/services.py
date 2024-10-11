@@ -134,7 +134,67 @@ Always return a string response to the user's query.
             Tool(
                 name="google_search",
                 func=search.run,
-                description="Useful for when you need to search for medical information on the web.",
+                description="Don not use this tool",
+            )
+        ]
+
+        formatted_messages = self._format_chat_history(message_history)
+        prompt = ChatPromptTemplate.from_messages(
+            [
+                SystemMessage(content=template),
+                MessagesPlaceholder(variable_name="chat_history"),
+                HumanMessagePromptTemplate(
+                    prompt=PromptTemplate(input_variables=["input"], template="{input}")
+                ),
+                MessagesPlaceholder(variable_name="agent_scratchpad"),
+            ]
+        )
+
+        llm = ChatOpenAI(temperature=0, verbose=True, model="gpt-4")
+        agent = create_openai_functions_agent(llm, tools, prompt)
+        agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
+        with get_openai_callback() as callback:
+            output = agent_executor.invoke(
+                {
+                    "chat_history": formatted_messages,
+                    "input": message,
+                },
+            )
+        return output["output"]
+
+
+class AskService:
+
+    def __init__(self, user: User):
+        self.user = user
+
+    def _format_chat_history(self, chat_history: list):
+        messages = []
+        for message in chat_history:
+            is_agent_response = message["sender"] == "agent"
+            if is_agent_response:
+                messages.append(AIMessage(content=message["message"]))
+            else:
+                messages.append(HumanMessage(content=message["message"]))
+        return messages
+
+    def get_response(self, message_history, message):
+
+        template = f"""
+You are Rejoy AI. You need to help doctor {self.user.full_name} with medical related queries. Your response should be more researched based.
+
+
+Format Instructions:
+Always return a string response to the user's query.
+
+"""
+        search = GoogleSerperAPIWrapper()
+
+        tools = [
+            Tool(
+                name="google_search",
+                func=search.run,
+                description="Don not use this tool",
             )
         ]
 

@@ -27,7 +27,7 @@ export default function RootLayout({ children }: ILayoutProps) {
                   <div className="flex-1 overflow-hidden">
                     <div
                       id="app-scrollable-view"
-                      className="flex flex-col h-full overflow-y-auto"
+                      className="flex flex-col h-full overflow-y-auto relative"
                     >
                       <AppPageHeader />
                       <div>
