@@ -1,6 +1,7 @@
 import Avatar from "@/ui/avatar";
 import { memo } from "react";
 import "./style.css";
+import { LogoMini } from "../../../../public/images";
 
 const AIMessageLoader = () => {
   return (
@@ -11,7 +12,7 @@ const AIMessageLoader = () => {
       >
         <div className="h-[70px] w-[70px]">
           <Avatar
-            image=""
+            image={LogoMini.src}
             name="Rejoy"
             size="auto"
           />

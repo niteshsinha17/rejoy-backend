@@ -1,6 +1,6 @@
 "use client";
 import useNavState from "@/hooks/useNavState";
-import { ArrowLeftIcon } from "@/icons";
+import { ArrowLeftIcon, ArrowRightIcon } from "@/icons";
 import { Button } from "@/ui";
 import { cn, stopPropagation } from "@/utils";
 import { HTMLAttributes } from "react";
@@ -14,12 +14,13 @@ export const NavigationBackdrop = ({ className, ...props }: INavigationBackdropP
   return (
     <div
       className={cn(
-        "bg-[#00000050] z-1300",
+        "z-[1300]",
         "",
-        "max-sm:fixed max-sm:translate-x-[-600px] max-sm:top-0 max-sm:left-0 max-sm:h-full max-sm:w-full",
-        "transition-all duration-75 ease-in-out",
+        "max-md:fixed max-md:top-0 max-md:left-0 max-md:h-full max-md:w-full",
+        "transition-all duration-300 ease-in-out",
         {
-          "max-sm:translate-x-0": navigationMenu.isOpen,
+          "max-sm:translate-x-0 bg-[#0000007d]": navigationMenu.isOpen,
+          "md:bg-transparent max-md:pointer-events-none": !navigationMenu.isOpen,
         },
         className
       )}
@@ -37,21 +38,38 @@ export const NavigationSidebar = (props: INavigationSidebarProps) => {
   return (
     <div
       onClick={stopPropagation}
-      className={cn("h-full z-1400 bg-white flex flex-col", "border-r", "w-[70px] lg:w-[300px]", "max-sm:w-[280px]", {
-        // "sm:w-[70px] lg:w-[70px]": !navigationMenu.isOpen,
-      })}
+      className={cn(
+        "h-full z-1400 bg-white flex flex-col",
+        "border-r",
+        "w-[300px]",
+        "max-md:w-[280px]",
+        "transition-all duration-300 ease-in-out",
+        {
+          "ml-[-300px]": !navigationMenu.isOpen,
+        }
+      )}
       {...props}
     />
   );
 };
 
 export const NavigationHeader = () => {
+  const navigationMenu = useNavState();
+
   return (
     <div className="h-[80px] w-full flex items-center px-3 relative">
       <Header.Logo />
-      <span className="absolute right-[-18px] bg-white cursor-pointer z-10">
-        <Button variant="icon">
-          <ArrowLeftIcon />
+      <span
+        className={cn("absolute right-[-18px] bg-white cursor-pointer z-10", "transition-all duration-300 ease-in-out", {
+          "right-[-60px]": !navigationMenu.isOpen,
+          "max-md:opacity-0": navigationMenu.isOpen,
+        })}
+      >
+        <Button
+          onClick={navigationMenu.toggle}
+          variant="icon"
+        >
+          {navigationMenu.isOpen ? <ArrowLeftIcon /> : <ArrowRightIcon />}
         </Button>
       </span>
     </div>

@@ -6,8 +6,9 @@ const useNavState = () => {
   const dispatch = useAppDispatcher();
   const open = () => dispatch(appActions.toggleSidebar());
   const close = () => dispatch(appActions.toggleSidebar());
+  const toggle = () => dispatch(appActions.toggleSidebar());
 
-  return { isOpen, open, close };
+  return { isOpen, open, close, toggle };
 };
 
 export default useNavState;

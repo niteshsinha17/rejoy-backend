@@ -4,6 +4,7 @@ import ChevronRight from "./chevron-forward.svg";
 import ChevronLeft from "./chevron-left.svg";
 import CloseIcon from "./close.svg";
 import ArrowLeftIcon from "./heroicons-outline/arrow-left.svg";
+import ArrowRightIcon from "./heroicons-outline/arrow-right.svg";
 import ChatOutlineIcon from "./heroicons-outline/chat.svg";
 import CheckCircleOutlineIcon from "./heroicons-outline/check-circle.svg";
 import DashboardOutlineIcon from "./heroicons-outline/dashboard.svg";
@@ -25,6 +26,7 @@ export {
   AmazonLogo,
   ArrowCircleUpMark,
   ArrowLeftIcon,
+  ArrowRightIcon,
   ChatOutlineIcon,
   CheckCircleOutlineIcon,
   ChevronLeft,

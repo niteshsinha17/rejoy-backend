@@ -101,16 +101,22 @@ const AskAboutHealth = () => {
       <div
         className={cn({
           "flex flex-col gap-3 pt-6": messages.length === 0,
-          "absolute bottom-0 w-full max-w-screen-md h-[80px]": messages.length > 0,
+          "absolute bottom-0 w-full h-[80px] left-0": messages.length > 0,
         })}
       >
         {messages.length === 0 && <h3 className="text-center text-black">Ask anything about Health</h3>}
-        <div>
-          <ChatInput
-            isLoading={false}
-            handleSubmit={handleCreateReply}
-            placeholder="Ask here..."
-          />
+        <div
+          className={cn({
+            "max-w-screen-md mx-auto": messages.length > 0,
+          })}
+        >
+          <div>
+            <ChatInput
+              isLoading={false}
+              handleSubmit={handleCreateReply}
+              placeholder="Ask here..."
+            />
+          </div>
         </div>
         {messages.length === 0 && <p className="text-center">The leading AI-powered medical information platform.</p>}
       </div>

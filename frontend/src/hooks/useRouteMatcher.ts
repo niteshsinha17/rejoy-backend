@@ -1,7 +1,7 @@
+import { AppRoutes } from "@/enum";
 import { baseMatchRoute, getFilledRoutes } from "@/utils";
 import { usePathname } from "next/navigation";
 import { usePathParams } from "./usePathParams";
-import { AppRoutes } from "@/enum";
 
 /*
   This hook provides a function that tries to match the current route with the given route.

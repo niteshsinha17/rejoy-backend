@@ -1,8 +1,9 @@
-import { IChatMessage } from "@/models/chat";
 import Avatar from "@/ui/avatar";
 import { memo } from "react";
 import Markdown from "react-markdown";
 import "./style.css";
+import { IChatMessage } from "@/models/chat";
+import { LogoMini } from "../../../../public/images";
 
 interface IAIMessageProps {
   message: IChatMessage;
@@ -16,7 +17,7 @@ const AIMessage = ({ message, ...props }: IAIMessageProps) => {
         {!props.withoutImage && (
           <div className="h-[70px] w-[70px]">
             <Avatar
-              image=""
+              image={LogoMini.src}
               name="Rejoy"
               size="auto"
             />
