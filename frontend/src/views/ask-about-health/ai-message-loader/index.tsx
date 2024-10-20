@@ -1,13 +1,13 @@
 import Avatar from "@/ui/avatar";
 import { memo } from "react";
-import "./style.css";
 import { LogoMini } from "../../../../public/images";
+import "./style.css";
 
 const AIMessageLoader = () => {
   return (
     <div className="flex message">
       <div
-        className="w-[100px]"
+        className="max-sm:hidden w-[100px]"
         id="profile-image-container"
       >
         <div className="h-[70px] w-[70px]">

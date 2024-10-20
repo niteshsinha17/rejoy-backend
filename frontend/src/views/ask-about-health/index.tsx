@@ -49,16 +49,9 @@ const AskAboutHealth = () => {
   };
 
   useEffect(() => {
-    // const chatContainer = document;
-    //   if (lastMessageCount.current === 0 || messages.length - lastMessageCount.current == 1) {
-    //     chatContainer.scrollTo({
-    //       top: chatContainer.scrollHeight,
-    //       behavior: "smooth",
-    //     });
-    //   }
-    document.addEventListener("scroll", (e) => {
-      console.log(e);
-    });
+    const container = document.getElementById("app-scrollable-view");
+    if (!container) return;
+    container.scrollTop = container.scrollHeight;
     lastMessageCount.current = messages.length;
   }, [messages]);
 
@@ -99,7 +92,7 @@ const AskAboutHealth = () => {
       })}
       {isLoading && <AiMessageLoader />}
       <div
-        className={cn({
+        className={cn("bg-white", {
           "flex flex-col gap-3 pt-6": messages.length === 0,
           "absolute bottom-0 w-full h-[80px] left-0": messages.length > 0,
         })}

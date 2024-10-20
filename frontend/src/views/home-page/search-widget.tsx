@@ -8,7 +8,7 @@ const SearchWidget = () => {
           type="text"
           autoFocus
           placeholder="Search anything about health..."
-          className="flex-1 outline-none border-none px-2 text-lg"
+          className="flex-1 outline-none border-none px-2 max-sm:text-base text-lg"
         />
         <SearchOutlineIcon className="icon-sm" />
       </div>

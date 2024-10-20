@@ -19,7 +19,7 @@ const PublicLinks = () => {
         })}
         startIcon={<OpenInNewTabOutlineIcon />}
       >
-        Open Profile
+        Profile
       </Button>
 
       <Button
@@ -30,7 +30,7 @@ const PublicLinks = () => {
         })}
         startIcon={<OpenInNewTabOutlineIcon />}
       >
-        Open Chat bot
+        Agent
       </Button>
     </>
   );

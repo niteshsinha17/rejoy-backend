@@ -17,8 +17,8 @@ interface DoctorDetailProps {
 const DoctorDetail = (props: DoctorDetailProps) => {
   const { username } = usePathParams();
   return (
-    <div className="p-4 rounded-2xl">
-      <div className="flex gap-4">
+    <div className="p-2 sm:p-4 rounded-2xl">
+      <div className="sm:flex gap-4 max-sm:text-center">
         <Avatar
           image={props.image}
           name={props.name}
@@ -28,7 +28,7 @@ const DoctorDetail = (props: DoctorDetailProps) => {
         <div className="flex-1 overflow-hidden space-y-3">
           <div className="space-y-2">
             <h1 className="font-semibold text-2xl text-black">{props.name}</h1>
-            <div className="flex flex-wrap gap-2">
+            <div className="flex flex-wrap gap-2 max-sm:justify-center">
               {props.specialties.map((specialty, index) => (
                 <span
                   key={index}
@@ -47,9 +47,8 @@ const DoctorDetail = (props: DoctorDetailProps) => {
             </div>
             <div>{props.address ?? "-"}</div>
           </div>
-
           <div>
-            <div className="md:flex gap-2">
+            <div className="flex max-sm:flex-col gap-2">
               {props.phoneNumber && (
                 <Link
                   href="tel:+1234567890"

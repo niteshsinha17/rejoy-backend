@@ -120,7 +120,8 @@ Few studies show that smoking can raise triglycerides which also may contribute 
   {
     question: "What is the definition of \n “life expectancy”?",
     slug: "what-is-the-definition-of-life-expectancy",
-    answer: `The World health Organization defines “life expectancy” as the average number of years that a newborn could expect to live if he/she was to pass through life exposed to the sex-specific and age-specific death rates prevailing at the time of his/her birth for a specific year, in a given country, territory or a geographic area (https://www.who.int/data/gho/indicator-metadata-registry/imr-details/65). Life expectancy at birth reflects the overall mortality level of a population. It summarizes the mortality pattern that prevails across all age groups. `,
+    answer:
+      "The World health Organization defines “life expectancy” as the average number of years that a newborn could expect to live if he/she was to pass through life exposed to the sex-specific and age-specific death rates prevailing at the time of his/her birth for a specific year, in a given country, territory or a geographic area (https://www.who.int/data/gho/indicator-metadata-registry/imr-details/65). Life expectancy at birth reflects the overall mortality level of a population. It summarizes the mortality pattern that prevails across all age groups. ",
   },
   {
     question: "What are the determinants of life expectancy?",

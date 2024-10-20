@@ -7,6 +7,14 @@ const nextConfig = {
     });
     return config;
   },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "private-content.ghost.io",
+      },
+    ],
+  },
 };
 
 module.exports = nextConfig;

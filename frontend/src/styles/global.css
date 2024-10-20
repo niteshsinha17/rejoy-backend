@@ -81,25 +81,40 @@
     @apply h-6 w-6;
   }
 
-  h1 {
-    @apply text-6xl font-bold;
+  h1,
+  .heading-1 {
+    @apply text-3xl sm:text-5xl lg:text-6xl font-bold;
     line-height: 1.2;
   }
 
-  h2 {
-    @apply text-5xl font-bold;
+  h2,
+  .heading-2 {
+    @apply text-2xl sm:text-4xl lg:text-5xl font-bold;
     line-height: 1.2;
   }
 
-  h3 {
+  h3,
+  .heading-3 {
     @apply text-3xl font-semibold;
     line-height: 1.2;
+  }
+
+  .body-1 {
+    @apply font-poppins text-lg;
+  }
+
+  .body-2 {
+    @apply font-poppins text-base;
   }
 }
 
 @layer utilities {
   .truncate {
     @apply overflow-hidden whitespace-nowrap text-ellipsis;
+  }
+
+  .animate-marquee {
+    animation: marquee 30s linear infinite;
   }
 }
 
@@ -121,4 +136,13 @@
 
 .icon-button:hover svg {
   color: black;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }

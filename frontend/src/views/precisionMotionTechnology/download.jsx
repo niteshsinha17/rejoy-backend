@@ -1,5 +1,5 @@
-import { DownloadButtons } from "@/app/(landingPages)/_components";
 import { Container, Section } from "@/components";
+import DownloadButtons from "@/components/downloadButtons";
 
 const Download = () => {
   return (

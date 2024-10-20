@@ -12,7 +12,7 @@ const AIMessageLoader = (props: IAIMessageLoaderProps) => {
   return (
     <div className="flex message">
       <div
-        className="w-[100px]"
+        className="max-sm:hidden w-[100px]"
         id="profile-image-container"
       >
         {props.showImage && (

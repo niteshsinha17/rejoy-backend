@@ -1,7 +1,7 @@
-import { TopBanner } from "@/app/(landingPages)/_components";
 import { Container } from "@/components";
 import AppleStoreButton from "@/components/appleStoreButton";
 import GooglePlayButton from "@/components/googlePlayButton";
+import TopBanner from "@/components/topBanner";
 import Dots from "../../../public/images/home/dots.png";
 
 const ButtonLink = (props) => {
@@ -23,7 +23,7 @@ export const Hero = () => {
       ></div>
       <TopBanner>
         <Container>
-          <h1 className="text-center heading-1 text-textPrimary">
+          <h1 className="text-center">
             <span>The Academy</span>
           </h1>
           <p className="text-center max-w-xl mx-auto body-1 mt-4">

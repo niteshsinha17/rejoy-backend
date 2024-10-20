@@ -59,7 +59,7 @@ const RegisterView = () => {
           onSubmit={form.handleSubmit}
           className="space-y-5"
         >
-          <div className="text-2xl font-semibold text-center text-slate-900">Doctor Sign up</div>
+          <div className="text-2xl font-semibold text-center text-slate-900">Provider Sign up</div>
           <div className="space-y-3">
             <div className="grid grid-cols-2 gap-3">
               <TextInput

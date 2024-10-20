@@ -1,7 +1,7 @@
 import { Container, Section } from "@/components";
 
 const H3 = (props: { children: any }) => {
-  return <h3 className="heading-3 mb-2">{props.children}</h3>;
+  return <h3 className="mb-2">{props.children}</h3>;
 };
 
 const P = (props: { children: any }) => {
@@ -11,9 +11,9 @@ const P = (props: { children: any }) => {
 export default function LandingPages() {
   return (
     <>
-      <div className="bg-[#eaf4f7] pt-[210px] pb-[60px]">
+      <div className="bg-[#eaf4f7] pt-6 pb-6">
         <Container>
-          <h1 className="heading-1">Privacy Policy</h1>
+          <h1 className="text-black">Privacy Policy</h1>
           <p className="para-1">
             This is the privacy policy ("Privacy Policy") that governs how we, Rejoy Health AI ("Rejoy Health", "we", "our" or "us"), use
             Personal Information (defined below) that we collect, receive and store about you in connection with the use of: (i) the website

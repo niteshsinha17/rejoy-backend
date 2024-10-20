@@ -29,23 +29,44 @@ const Trust = () => {
     <Section>
       <Container>
         <div>
-          <h2 className="text-center text-black">
-            Trusted by Healthcare Professionals <br /> of Top Heath Systems
+          <h2 className="text-center text-black max-w-[400px] sm:max-w-[760px] lg:max-w-screen-md mx-auto">
+            Trusted by Healthcare Professionals of Top Heath Systems
           </h2>
-          <div className="grid grid-cols-1 items-center sm:grid-cols-2 md:grid-cols-4  mt-6 mx-6">
-            {images.map((image, index) => {
-              return (
-                <div key={index}>
-                  <Image
-                    src={image.src}
-                    alt={image.alt}
-                    width={200}
-                    height={200}
-                    className="w-[200px] h-auto mx-auto"
-                  />
-                </div>
-              );
-            })}
+          <div className="overflow-hidden mt-6">
+            <div className="flex w-full max-w-screen-md mx-auto justify-between max-md:animate-marquee">
+              {images.map((image, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="flex-shrink-0 w-[240px] flex justify-center"
+                  >
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={140}
+                      height={200}
+                      className="h-auto"
+                    />
+                  </div>
+                );
+              })}
+              {images.map((image, index) => {
+                return (
+                  <div
+                    key={index}
+                    className="flex-shrink-0 w-[240px] flex justify-center md:hidden"
+                  >
+                    <Image
+                      src={image.src}
+                      alt={image.alt}
+                      width={140}
+                      height={200}
+                      className="h-auto"
+                    />
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </Container>

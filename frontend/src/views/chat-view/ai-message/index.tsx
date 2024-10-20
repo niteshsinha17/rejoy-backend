@@ -13,7 +13,7 @@ interface IAIMessageProps {
 const AIMessage = ({ message, ...props }: IAIMessageProps) => {
   return (
     <div className="message flex">
-      <div className="w-[100px]">
+      <div className="max-sm:hidden w-[100px]">
         <div className="h-[70px] w-[70px]">
           <Avatar
             image={props.doctorProfile.basicDetail.image}
@@ -23,7 +23,7 @@ const AIMessage = ({ message, ...props }: IAIMessageProps) => {
         </div>
       </div>
       <div className="flex-1 overflow-hidden">
-        <div className="px-5 py-4 rounded-xl text-base whitespace-pre-wrap">
+        <div className="p-2 sm:px-5 sm:py-4 rounded-xl text-base whitespace-pre-wrap">
           <Markdown className="markdown">{message.message}</Markdown>
         </div>
       </div>

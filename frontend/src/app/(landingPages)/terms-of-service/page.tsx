@@ -49,7 +49,7 @@ const points = [
 export default function LandingPages() {
   return (
     <>
-      <div className="bg-[#eaf4f7] pt-[210px] pb-[60px]">
+      <div className="bg-[#eaf4f7] pt-6 pb-6">
         <Container>
           <h1 className="heading-1"> Terms of Service</h1>
           <p className="para-1">

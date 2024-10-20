@@ -9,7 +9,7 @@ const Testimonials = () => {
     <Section>
       <Container>
         <h2 className="text-center text-black">See What Our Users Say</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 mt-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-6 gap-6">
           <Testimonial
             rating={5}
             message="Rejoy Health is incredible! The AI chatbot makes healthcare information so easy to access, and I feel confident knowing I’m always up-to-date with the latest advancements."
@@ -32,7 +32,7 @@ const Testimonials = () => {
 
 const Testimonial = ({ message, imgSrc, name, about, rating }) => {
   return (
-    <div className="w-[500px] mx-auto rounded-3xl shadow-xl border p-4 py-6 border-slate-100">
+    <div className="w-[500px] max-w-full mx-auto rounded-3xl shadow-xl border p-4 py-6 border-slate-100">
       <Rating
         name="read-only"
         value={rating}
@@ -40,7 +40,7 @@ const Testimonial = ({ message, imgSrc, name, about, rating }) => {
         size="small"
         className="mb-2"
       />
-      <p className="mb-4">{message}</p>
+      <p className="mb-4 text-sm">{message}</p>
       <div className="flex items-center">
         <Image
           src={imgSrc}

@@ -38,7 +38,7 @@ const AppPageHeader = () => {
   return (
     <div
       ref={header}
-      className="sticky top-[0px] bg-white"
+      className="sticky top-[0px] bg-white z-10"
     >
       <div className="max-w-screen-lg mx-auto">
         <Header>
@@ -46,7 +46,7 @@ const AppPageHeader = () => {
             <HeaderLeft />
           </Header.Left>
           <Header.Right>
-            <div className="flex gap-3 items-center">
+            <div className="flex gap-2 items-center">
               <PublicLinks />
               <UserProfile />
             </div>

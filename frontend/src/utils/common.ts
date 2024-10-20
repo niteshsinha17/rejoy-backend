@@ -1,9 +1,8 @@
 import { nconf } from "@/conf";
-import { Routes } from "@/enum";
-import clsx from "clsx";
-import { ClassValue } from "cva/dist/types";
-import { Metadata } from "next";
-import { SyntheticEvent } from "react";
+import type { Routes } from "@/enum";
+import clsx, { type ClassValue } from "clsx";
+import type { Metadata } from "next";
+import type { SyntheticEvent } from "react";
 import { twMerge } from "tailwind-merge";
 
 export const getPageMetaData = (data?: Metadata, route?: Routes): Metadata => {
@@ -22,6 +21,7 @@ export const getPageMetaData = (data?: Metadata, route?: Routes): Metadata => {
 
 export const cn = (...inputs: ClassValue[]) => twMerge(clsx(inputs));
 
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
 export const formikFieldConfig = (formik: any) => {
   return (fieldName: string) => {
     const fieldProps = formik.getFieldProps(fieldName);
@@ -37,9 +37,9 @@ export const formikFieldConfig = (formik: any) => {
 
 export const getFilledRoutes = (route: string, pathParams: Record<string, string>) => {
   let path: string = route;
-  Object.keys(pathParams).forEach((key) => {
-    path = path.replace(":" + key, pathParams[key]);
-  });
+  for (const key of Object.keys(pathParams)) {
+    path = path.replace(`:${key}`, pathParams[key]);
+  }
 
   return path;
 };
@@ -47,9 +47,8 @@ export const getFilledRoutes = (route: string, pathParams: Record<string, string
 export const baseMatchRoute = (route: string, pathname: string, exact: boolean) => {
   if (exact) {
     return route === pathname;
-  } else {
-    return pathname?.startsWith(route);
   }
+  return pathname?.startsWith(route);
 };
 
 export const stopPropagation = (e: SyntheticEvent) => {

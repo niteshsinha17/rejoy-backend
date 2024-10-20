@@ -1,7 +1,20 @@
+"use client";
+
+import useNavState from "@/hooks/useNavState";
+import { ArrowRightIcon } from "@/icons";
+import { Button } from "@/ui";
+
 const HeaderLeft = () => {
+  const navigationMenu = useNavState();
+
   return (
-    <div>
-      <div className="font-semibold text-lg text-black"></div>
+    <div className="md:hidden">
+      <Button
+        onClick={navigationMenu.toggle}
+        variant="icon"
+      >
+        <ArrowRightIcon />
+      </Button>
     </div>
   );
 };

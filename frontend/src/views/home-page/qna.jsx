@@ -33,8 +33,8 @@ const QNA = () => {
 function Question({ question, answer }) {
   return (
     <div>
-      <div className="text-xl text-black font-medium">{question}</div>
-      <p className="mt-4">{answer}</p>
+      <div className="text-sm md:text-base text-black font-medium">{question}</div>
+      <p className="mt-4 text-sm">{answer}</p>
     </div>
   );
 }

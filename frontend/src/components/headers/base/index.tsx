@@ -10,7 +10,7 @@ interface IBaseHeaderProps {
 }
 
 const Header = (props: IBaseHeaderProps) => {
-  return <div className="header flex justify-between items-center h-[80px] px-6 gap-6">{props.children}</div>;
+  return <div className="header flex justify-between items-center h-[80px] px-2 md:px-6 gap-2 sm:gap-6">{props.children}</div>;
 };
 
 const HeaderLeft = (props: IBaseHeaderProps) => {

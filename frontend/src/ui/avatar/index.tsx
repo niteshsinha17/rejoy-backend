@@ -70,7 +70,7 @@ const Avatar = (props: IGenericAvatarProps) => {
         sx={{
           width: "100%",
           height: "100%",
-          background: props.image ? "var(--primary)": charToColorMap[char],
+          background: props.image ? "var(--primary)" : charToColorMap[char],
           visibility: props.isLoading ? "hidden" : "visible",
           fontSize: props.fontSize,
           maxWidth: props.size === "auto" ? "100%" : 100,

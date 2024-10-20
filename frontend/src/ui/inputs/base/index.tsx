@@ -16,7 +16,16 @@ export const BaseInput = (props: IBaseInputProps<HTMLInputElement>) => {
 export const BaseTextArea = (props: IBaseInputProps<HTMLTextAreaElement>) => {
   const inputProps = useInput(props);
   if (inputProps.readOnly) {
-    return <div className={inputProps.className}>{inputProps.value || "-"}</div>;
+    return (
+      <div
+        className={inputProps.className}
+        style={{
+          height: "auto",
+        }}
+      >
+        {inputProps.value || "-"}
+      </div>
+    );
   }
   return (
     <textarea

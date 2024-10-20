@@ -1,4 +1,4 @@
-import { isServer } from "@/conf";
+import { isServer, nconf } from "@/conf";
 import { ApiVersion, RestApiMethod } from "@/enum";
 import { localStorageTransaction } from "@/utils";
 import { AxiosRequestConfig } from "axios";
@@ -10,8 +10,7 @@ export class ApiObject {
   _params: AxiosRequestConfig["params"] = {};
   _headers: AxiosRequestConfig["headers"] = {};
   _url = "";
-  // _baseUrl: string = nconf.get("BACK_END_HOST") || "";
-  _baseUrl = "http://localhost:8000";
+  _baseUrl: string = nconf.get("BACK_END_HOST") || "";
   _routeParams: Record<string, string> = {};
   _doNotRedirect = false;
   _token: string | null = null;

@@ -24,14 +24,14 @@ export default function RootLayout({ children }: ILayoutProps) {
               <ToastProvider>
                 <div className="h-full flex">
                   <SideNavigationMenu />
-                  <div className="flex-1 overflow-hidden">
+                  <div className="flex-1 overflow-hidden relative">
                     <div
                       id="app-scrollable-view"
-                      className="flex flex-col h-full overflow-y-auto relative"
+                      className="flex flex-col h-full overflow-y-auto"
                     >
                       <AppPageHeader />
                       <div>
-                        <div className="max-w-screen-lg mx-auto p-4 px-6">{children}</div>
+                        <div className="max-w-screen-lg mx-auto p-3 sm:px-6">{children}</div>
                       </div>
                     </div>
                   </div>

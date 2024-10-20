@@ -13,7 +13,7 @@ export const useAuth = () => {
   const login = (token: string) => {
     localStorageTransaction.clear();
     localStorageTransaction.setItem("userToken", token);
-    window.location.assign(AppRoutes.DASHBOARD); // clears redux automatically
+    window.location.assign(AppRoutes.ASK); // clears redux automatically
   };
 
   const logout = () => {
@@ -24,7 +24,7 @@ export const useAuth = () => {
   const registerSuccess = async (token: string) => {
     localStorageTransaction.clear();
     localStorageTransaction.setItem("userToken", token);
-    window.location.assign(AppRoutes.DASHBOARD); // clears redux automatically
+    window.location.assign(AppRoutes.ASK); // clears redux automatically
   };
 
   const checkAuth = () => {

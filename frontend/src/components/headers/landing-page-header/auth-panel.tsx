@@ -13,7 +13,7 @@ const AuthPanel = () => {
     return (
       <UserProfile
         onClick={() => {
-          router.push(AppRoutes.DASHBOARD);
+          router.push(AppRoutes.PROFILE);
         }}
       />
     );

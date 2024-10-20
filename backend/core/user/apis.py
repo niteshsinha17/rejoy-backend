@@ -6,7 +6,7 @@ from rest_framework.status import HTTP_200_OK
 from common.apis import BaseApi, OpenApi
 from core.models import DoctorProfile, User
 from core.user.serializers import DoctorProfileSerializer, UserBasicDetailSerializer
-from core.user.services import AgentService
+from core.user.services import AgentService, AskService
 
 
 class UserBasicDetailApi(BaseApi):
@@ -93,7 +93,7 @@ class AskApi(BaseApi):
     def post(self, request, *args, **kwargs):
         data = self.validate_input_data()
         user = self.get_user()
-        service = AgentService(user)
+        service = AskService(user)
         res = service.get_response(data["history"], data["message"])
         return Response(
             data=res,

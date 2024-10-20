@@ -18,14 +18,12 @@ export const Hero = () => {
         }}
       ></div>
       <Container>
-        <div className="min-h-[1200px] flex justify-center items-center pt-6 text-black">
+        <div className="max-sm:py-6 max-md:py-[100px] md:min-h-[1200px] flex justify-center items-center pt-">
           <div>
-            <h1 className="text-center">
-              Your Trusted Health Companion
-              <br />
-              <span className="">available 24/7 to provide answers</span>
+            <h1 className="text-center text-black max-w-screen-md mx-auto">
+              Your Trusted Health Companion available 24/7 to provide answers
             </h1>
-            <p className="text-center mx-auto mt-4 text-xl md:max-w-[60%]">
+            <p className="text-center mx-auto mt-4 max-sm:text-base text-xl md:max-w-[60%]">
               Whether you have questions about symptoms, treatments, or general wellness, simply ask, and receive{" "}
               <strong>verified answers</strong> that you can <strong>trust</strong>.
             </p>
@@ -35,15 +33,21 @@ export const Hero = () => {
             <Image
               src={chatImg}
               alt="chat-image"
-              className="mx-auto block"
+              className="mx-auto block max-w-full"
               height={700}
               width={700}
             />
-            <div className="bg-gray-800 flex justify-evenly gap-5 py-4 text-gray-100 absolute w-full left-[0px]">
-              <div>AI Powered Services</div>
-              <div>Verified & Trusted Answers</div>
-              <div>24/7 Availability</div>
-              <div>Secure & Confidential</div>
+            <div className="bg-gray-800 py-4 text-gray-100 absolute w-full left-[0px] overflow-hidden">
+              <div className="flex justify-between items-center w-full max-w-screen-md max-md:animate-marquee text-base mx-auto">
+                <div className="flex-shrink-0 w-[240px] text-center">AI Powered Services</div>
+                <div className="flex-shrink-0 w-[240px] text-center">Verified & Trusted Answers</div>
+                <div className="flex-shrink-0 w-[240px] text-center">24/7 Availability</div>
+                <div className="flex-shrink-0 w-[240px] text-center">Secure & Confidential</div>
+                <div className="flex-shrink-0 w-[240px] text-center md:hidden">AI Powered Services</div>
+                <div className="flex-shrink-0 w-[240px] text-center md:hidden">Verified & Trusted Answers</div>
+                <div className="flex-shrink-0 w-[240px] text-center md:hidden">24/7 Availability</div>
+                <div className="flex-shrink-0 w-[240px] text-center md:hidden">Secure & Confidential</div>
+              </div>
             </div>
             {/* <div className="mt-4">
               <DownloadButtons />

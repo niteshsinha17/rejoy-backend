@@ -4,7 +4,7 @@ from django.forms import ValidationError
 from langchain.agents import AgentExecutor, Tool, create_openai_functions_agent
 from langchain.prompts import MessagesPlaceholder, PromptTemplate
 from langchain_community.callbacks import get_openai_callback
-from langchain_community.utilities import GoogleSerperAPIWrapper
+from langchain_community.utilities import GoogleSearchAPIWrapper
 from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
 from langchain_core.prompts import (
     ChatPromptTemplate,
@@ -128,14 +128,14 @@ Format Instructions:
 Always return a string response to the user's query.
 
 """
-        search = GoogleSerperAPIWrapper()
+        search = GoogleSearchAPIWrapper()
 
         tools = [
             Tool(
                 name="google_search",
                 func=search.run,
-                description="Don not use this tool",
-            )
+                description="Use Google Search to find the answer to the user's query",
+            ),
         ]
 
         formatted_messages = self._format_chat_history(message_history)
@@ -185,17 +185,17 @@ You are Rejoy AI. You need to help doctor {self.user.full_name} with medical rel
 
 
 Format Instructions:
-Always return a string response to the user's query.
+Always return a response in markdown format to the user's query. Add references [site links] to the response if possible.
 
 """
-        search = GoogleSerperAPIWrapper()
+        search = GoogleSearchAPIWrapper()
 
         tools = [
             Tool(
-                name="google_search",
+                name="google_search_results",
                 func=search.run,
-                description="Don not use this tool",
-            )
+                description="Use Google Search to find the answer to the user's query",
+            ),
         ]
 
         formatted_messages = self._format_chat_history(message_history)

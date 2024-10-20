@@ -21,7 +21,6 @@ const useInput = <T extends HTMLInputElement | HTMLTextAreaElement>({
   ...props
 }: IBaseInputProps<T>) => {
   const onChange = (e: ChangeEvent<T>) => {
-    console.log("onchange", name, props.value);
     if (validateFn && !validateFn(e.target.value)) return;
     if (validateRegex && !validateRegex.test(e.target.value)) return;
     setValue(name, e.target.value);

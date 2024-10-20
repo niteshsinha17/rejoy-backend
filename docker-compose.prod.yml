@@ -1,12 +1,4 @@
 services:
-  redis:
-    image: redis
-    volumes:
-      - "./redis-data:/data"
-    command: redis-server --appendonly yes
-    restart: on-failure
-    ports:
-      - "6379:6379"
   api:
     build:
       context: ./backend/
@@ -24,16 +16,6 @@ services:
       context: ./frontend/
     expose:
       - 3000
-
-  # celery beat
-  beat:
-    build:
-      context: ./backend/
-    command: bash -c "celery -A backend beat -l info"
-    volumes:
-      - ./backend/:/usr/src/app/backend/
-    env_file:
-      - ./backend/prod.env
 
   nginx:
     build:

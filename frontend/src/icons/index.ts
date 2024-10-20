@@ -15,6 +15,7 @@ import PencilOutlineIcon from "./heroicons-outline/pencil.svg";
 import PhoneOutlineIcon from "./heroicons-outline/phone.svg";
 import SearchOutlineIcon from "./heroicons-outline/search.svg";
 import TrashOutlineIcon from "./heroicons-outline/trash.svg";
+import UserOutlineIcon from "./heroicons-outline/user.svg";
 import XCircleOutlineIcon from "./heroicons-outline/x-circle.svg";
 import PlayIcon from "./play.svg";
 import SpeakerWaveIcon from "./speaker-wave.svg";
@@ -43,6 +44,7 @@ export {
   SpeakerWaveIcon,
   SpeakerXMarkIcon,
   TrashOutlineIcon,
+  UserOutlineIcon,
   VisibilityOffSolidIcon,
   VisibilitySolidIcon,
   XCircleOutlineIcon,

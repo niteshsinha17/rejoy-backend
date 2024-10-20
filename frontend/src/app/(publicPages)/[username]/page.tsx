@@ -3,6 +3,7 @@ import { IDoctorProfileResponse } from "@/models/doctor/service";
 import { userTransformer } from "@/transformer/user";
 import { getPageMetaData } from "@/utils";
 import DoctorProfile from "@/views/doctor-page";
+import { notFound } from "next/navigation";
 
 export const metadata = getPageMetaData();
 
@@ -15,7 +16,7 @@ const Page = async (props: {
   const result = await baseQuery<IDoctorProfileResponse>(apiObject(`user/${username}/doctor-profile/`));
 
   if ("error" in result) {
-    return { notFound: true };
+    notFound();
   }
 
   return <DoctorProfile doctorProfile={userTransformer.convertDoctorProfileResponseToJSFormat(result.data)} />;

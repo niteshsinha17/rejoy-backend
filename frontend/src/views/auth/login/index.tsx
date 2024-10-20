@@ -49,7 +49,7 @@ const LoginView = () => {
           onSubmit={form.handleSubmit}
           className="space-y-5"
         >
-          <div className="text-2xl font-semibold text-center">Doctor Login</div>
+          <div className="text-2xl font-semibold text-center">Provider Login</div>
           <div className="space-y-3">
             <EmailInput {...fieldConfig("email")} />
             <div>

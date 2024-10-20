@@ -8,7 +8,7 @@ export default function ModelMetric() {
         <div className="text-center">
           <div className="max-w-screen-sm mx-auto">
             <h2 className="text-black">The Best Health Care AI</h2>
-            <p className="mt-4 text-base ">
+            <p className="mt-4 text-sm md:text-base">
               Accuracy of models on the popular MedQA(USMLE) benchmark. MedQA is a dataset designed to evaluate question-answering system in
               medical domain, particularly focusing on question similar to USMLE
             </p>
@@ -45,12 +45,12 @@ function Bar({ label, percentage, golden }) {
         <div className="flex-1 overflow-hidden">
           <div className={`h-[36px] rounded-full bg-slate-200 flex-1`}>
             <div
-              className={cn("h-full bg-slate-700 rounded-full flex items-center", {
+              className={cn("h-full bg-slate-700 rounded-full flex items-center pl-3", {
                 "bg-yellow-500": golden,
               })}
               style={{ width: `${percentage}` }}
             >
-              <span className="text-white font-semibold text-sm ml-4 absolute left-0">{label}</span>
+              <span className="text-white font-medium text-sm">{label}</span>
             </div>
           </div>
         </div>

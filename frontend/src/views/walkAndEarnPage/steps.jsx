@@ -1,5 +1,5 @@
-import { DownloadButtons } from "@/app/(landingPages)/_components";
 import { Container, Section } from "@/components";
+import DownloadButtons from "@/components/downloadButtons";
 import Image from "next/image";
 import Earn from "../../../public/images/walk-and-earn/earn.png";
 import Install from "../../../public/images/walk-and-earn/install.png";

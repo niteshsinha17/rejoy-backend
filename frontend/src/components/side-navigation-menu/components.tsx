@@ -19,8 +19,8 @@ export const NavigationBackdrop = ({ className, ...props }: INavigationBackdropP
         "max-md:fixed max-md:top-0 max-md:left-0 max-md:h-full max-md:w-full",
         "transition-all duration-300 ease-in-out",
         {
-          "max-sm:translate-x-0 bg-[#0000007d]": navigationMenu.isOpen,
-          "md:bg-transparent max-md:pointer-events-none": !navigationMenu.isOpen,
+          "max-md:pointer-events-none": navigationMenu.isOpen,
+          "bg-[#0000007d]": !navigationMenu.isOpen,
         },
         className
       )}
@@ -45,7 +45,8 @@ export const NavigationSidebar = (props: INavigationSidebarProps) => {
         "max-md:w-[280px]",
         "transition-all duration-300 ease-in-out",
         {
-          "ml-[-300px]": !navigationMenu.isOpen,
+          "max-md:ml-[0px] md:ml-[-300px]": !navigationMenu.isOpen,
+          "max-md:ml-[-300px] md:ml-[0px]": navigationMenu.isOpen,
         }
       )}
       {...props}
@@ -61,7 +62,7 @@ export const NavigationHeader = () => {
       <Header.Logo />
       <span
         className={cn("absolute right-[-18px] bg-white cursor-pointer z-10", "transition-all duration-300 ease-in-out", {
-          "right-[-60px]": !navigationMenu.isOpen,
+          "right-[-60px] max-md:hidden": !navigationMenu.isOpen,
           "max-md:opacity-0": navigationMenu.isOpen,
         })}
       >

@@ -1,7 +1,7 @@
 "use client";
 import { AppRoutes } from "@/enum";
 import { useAuth } from "@/hooks";
-import { ChatOutlineIcon, DashboardOutlineIcon, LogoutOutlineIcon } from "@/icons";
+import { ChatOutlineIcon, LogoutOutlineIcon, UserOutlineIcon } from "@/icons";
 import { cn } from "@/utils";
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
@@ -16,18 +16,18 @@ const SideNavigationMenu = () => {
   const { navigationItems, actionButtons } = useMemo(() => {
     const navigationItems: INavigationItem[] = [
       {
-        name: "Dashboard",
-        type: "link",
-        icon: <DashboardOutlineIcon />,
-        redirectTo: AppRoutes.DASHBOARD,
-        isActive: currentPathname === AppRoutes.DASHBOARD,
-      },
-      {
         name: "Ask about Health",
         type: "link",
         icon: <ChatOutlineIcon />,
         redirectTo: AppRoutes.ASK,
         isActive: currentPathname === AppRoutes.ASK,
+      },
+      {
+        name: "Profile",
+        type: "link",
+        icon: <UserOutlineIcon />,
+        redirectTo: AppRoutes.PROFILE,
+        isActive: currentPathname === AppRoutes.PROFILE,
       },
     ];
 
