@@ -13,7 +13,7 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 # DEBUG = os.environ.get("ENVIRONMENT") == "development"
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 if not DEBUG:
     ALLOWED_HOSTS = [
