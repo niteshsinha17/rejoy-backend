@@ -10,7 +10,8 @@ load_dotenv("dev.env")
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
-DEBUG = os.environ.get("ENVIRONMENT") == "development"
+# DEBUG = os.environ.get("ENVIRONMENT") == "development"
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
