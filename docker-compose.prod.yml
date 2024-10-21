@@ -2,7 +2,7 @@ services:
   api:
     build:
       context: ./backend/
-    command: bash -c "python manage.py migrate && python manage.py collectstatic --noinput &&  python manage.py create_theme && daphne -b 0.0.0.0 -p 8000 backend.asgi:application"
+    command: bash -c "python manage.py migrate && python manage.py collectstatic --noinput && daphne -b 0.0.0.0 -p 8000 backend.asgi:application"
     volumes:
       - ./backend/:/usr/src/app/backend/
       - django_admin_static_files:/usr/src/app/backend/static
