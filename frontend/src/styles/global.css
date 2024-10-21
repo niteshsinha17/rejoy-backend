@@ -106,6 +106,10 @@
   .body-2 {
     @apply font-poppins text-base;
   }
+
+  .markdown a {
+    @apply text-primary;
+  }
 }
 
 @layer utilities {

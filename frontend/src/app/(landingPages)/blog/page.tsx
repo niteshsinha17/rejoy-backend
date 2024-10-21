@@ -2,7 +2,8 @@ import { Container, Section } from "@/components";
 import { ghostContentApi } from "@/services/ghost";
 import { getPageMetaData } from "@/utils/common";
 import Image from "next/image";
-export const dynamicParams = true;
+import Link from "next/link";
+export const revalidate = 60;
 
 export const metadata = getPageMetaData({ title: "Blog | Rejoy Health" });
 
@@ -32,12 +33,13 @@ const BlogListPage = async () => {
                   )}
                   <p className="mt-3 text-sm p-2">{blog.excerpt}</p>
                   <div className="p-2">
-                    <a
+                    <Link
+                      target="_blank"
                       href={`/blog/${blog.slug}`}
-                      className="text-center bg-green text-white py-1 rounded-sm text-sm block"
+                      className="text-center py-1 rounded-sm text-sm block font-semibold text-primary"
                     >
                       Read More
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>

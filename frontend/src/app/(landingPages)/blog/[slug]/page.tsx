@@ -5,7 +5,8 @@ import { ghostContentApi } from "@/services/ghost";
 import { getPageMetaData } from "@/utils/common";
 import { PostOrPage } from "@tryghost/content-api";
 import Link from "next/link";
-export const dynamicParams = true;
+
+export const revalidate = 60;
 
 const getRandomThreeItemList = (posts: PostOrPage[]) => {
   const randomList: PostOrPage[] = [];
@@ -40,6 +41,7 @@ export default async function QuestionPage({ params }: any) {
     limit: 200,
   });
   const post = await ghostContentApi.posts.read({ slug: params.slug });
+  console.log("post, ", post);
   const suggestions = getRandomThreeItemList(posts.filter((p) => p.slug !== post.slug));
 
   return (
@@ -48,14 +50,14 @@ export default async function QuestionPage({ params }: any) {
         <h1 className="text-center heading-1 text-textPrimary">
           <span className="text-primary whitespace-pre-wrap">{post?.title || "Blog not found"}</span>
         </h1>
-        <p className="max-w-screen-md mx-auto body-1 mt-4 whitespace-pre-wrap">
+        <div className="max-w-screen-md mx-auto body-1 mt-4 whitespace-pre-wrap">
           {post && post?.html && (
             <div
               suppressHydrationWarning
               dangerouslySetInnerHTML={{ __html: post.html }}
             ></div>
           )}
-        </p>
+        </div>
         <div className="pt-6">
           <p className="text-center heading-2">
             To get more personalized answers, <br /> download now

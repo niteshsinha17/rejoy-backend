@@ -3,6 +3,7 @@ import { IDoctorProfileResponse } from "@/models/doctor/service";
 import { userTransformer } from "@/transformer/user";
 import { getPageMetaData } from "@/utils";
 import ChatView from "@/views/chat-view";
+import { notFound } from "next/navigation";
 
 export const metadata = getPageMetaData();
 
@@ -15,7 +16,7 @@ const Page = async (props: {
   const result = await baseQuery<IDoctorProfileResponse>(apiObject(`user/${username}/doctor-profile/`));
 
   if ("error" in result) {
-    return <div></div>;
+    notFound();
   }
 
   return <ChatView doctorProfile={userTransformer.convertDoctorProfileResponseToJSFormat(result.data)} />;

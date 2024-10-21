@@ -1,5 +1,4 @@
 import { Container, Section } from "@/components";
-import Image from "next/image";
 import Appointment from "../../../public/images/on-call/appointment.svg";
 import CostSaving from "../../../public/images/on-call/cost-savings.svg";
 import Waiting from "../../../public/images/on-call/waiting.svg";
@@ -11,23 +10,11 @@ const CardItem = (props) => {
       <div
         className={`absolute top-[0px] translate-y-[-50%] translate-x-[-50%] left-[50%] flex items-center justify-center bg-[#aceefe] rounded-full h-[70px] w-[70px] ${classes.iconWrapper}`}
       >
-        <Image
-          width={50}
-          height={50}
-          src={props.img}
-          className="h-[50px] w-auto m-auto"
-        />
+        {props.img}
       </div>
       <h5 className="heading-5 text-center">{props.heading}</h5>
       <p className="body-2 text-center mt-2 max-w-md mx-auto">{props.text}</p>
-      <div className={`${classes.cardImg} absolute h-[100%] w-[100%] left-[0px] top-[0px] z-[-1]`}>
-        <Image
-          src={props.img}
-          height={150}
-          alt={props.heading}
-          className="opacity-5"
-        />
-      </div>
+      {/* <div className={`${classes.cardImg} absolute h-[100%] w-[100%] left-[0px] top-[0px] z-[-1]`}>{props.img}</div> */}
     </div>
   );
 };
@@ -49,17 +36,38 @@ const WhyMatters = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-[120px]">
           <CardItem
             heading="No More Waiting"
-            img={Waiting}
+            img={
+              <Waiting
+                style={{
+                  height: "30px",
+                  width: "30px",
+                }}
+              />
+            }
             text="Say goodbye to the frustrations of waiting for specialists. With Rejoy, you have immediate access to Clinical Pain Specialists who are ready to provide you with prompt assistance and relief. Don't let pain hold you back; get the help you need without unnecessary delays."
           />
           <CardItem
             heading="Streamlined Appointments"
-            img={Appointment}
+            img={
+              <Appointment
+                style={{
+                  height: "30px",
+                  width: "30px",
+                }}
+              />
+            }
             text="No more unnecessary appointments that eat up your valuable time. Rejoy eliminates the need for multiple visits by connecting you directly with Clinical Pain Specialists through our video and text based communication platform. Experience a streamlined process that puts your pain relief at the forefront."
           />
           <CardItem
             heading="Cost Savings"
-            img={CostSaving}
+            img={
+              <CostSaving
+                style={{
+                  height: "30px",
+                  width: "30px",
+                }}
+              />
+            }
             text="Stop wasting money on unnecessary x-rays and medications. With Rejoy, you have access to immediate assistance that helps you avoid unnecessary expenses. Our Clinical Pain Specialists focus on finding the most efficient and cost-effective solutions, saving you from wasted dollars on ineffective treatments."
           />
         </div>

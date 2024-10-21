@@ -1,6 +1,5 @@
 import { Container, Section } from "@/components";
-import Image from "next/image";
-import chatBot from "../../../public/images/academy/chatbot.svg";
+import ChatBot from "../../../public/images/academy/chatbot.svg";
 
 const Support = () => {
   return (
@@ -8,9 +7,11 @@ const Support = () => {
       <Section>
         <Container>
           <div className="flex justify-center items-center gap-2 flex-col">
-            <Image
-              src={chatBot}
-              alt="chatBot"
+            <ChatBot
+              style={{
+                height: "95px",
+                width: "95px",
+              }}
             />
 
             <h2 className="text-center heading-2 text-white">24/7 Support with our Bot</h2>
