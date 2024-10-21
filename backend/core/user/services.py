@@ -3,6 +3,8 @@ import uuid
 from django.forms import ValidationError
 from langchain.agents import AgentExecutor, Tool, create_openai_functions_agent
 from langchain.prompts import MessagesPlaceholder, PromptTemplate
+from langchain.pydantic_v1 import BaseModel, Field
+from langchain.tools import tool
 from langchain_community.callbacks import get_openai_callback
 from langchain_community.utilities import GoogleSearchAPIWrapper
 from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
@@ -92,6 +94,24 @@ class CreateUserService:
         )
 
 
+# custom tools
+
+
+class GetContextInputSchema(BaseModel):
+    query: str = Field(description="Anything that you want to know about.")
+
+
+@tool("get_reference_links", args_schema=GetContextInputSchema)
+def get_reference_links(query: str) -> str:
+    """
+    Get the reference links related to the input.
+    """
+    search = GoogleSearchAPIWrapper()
+    results = search.results(query, 3)
+
+    return "\n".join([f"[{result['title']}]({result['link']})" for result in results])
+
+
 class AgentService:
 
     def __init__(self, user: User):
@@ -134,8 +154,8 @@ Always return a string response to the user's query.
             Tool(
                 name="google_search",
                 func=search.run,
-                description="Use Google Search to find the answer to the user's query",
-            ),
+                description="Use Google Search to find the answer that you don't know.",
+            )
         ]
 
         formatted_messages = self._format_chat_history(message_history)
@@ -182,10 +202,11 @@ class AskService:
 
         template = f"""
 You are Rejoy AI. You need to help doctor {self.user.full_name} with medical related queries. Your response should be more researched based.
+You response should contain reference links to show the user.
 
 
 Format Instructions:
-Always return a response in markdown format to the user's query. Add references [site links] to the response if possible.
+Always return a response in markdown format to the user's query.
 
 """
         search = GoogleSearchAPIWrapper()
@@ -194,7 +215,12 @@ Always return a response in markdown format to the user's query. Add references 
             Tool(
                 name="google_search_results",
                 func=search.run,
-                description="Use Google Search to find the answer to the user's query",
+                description="Use Google Search to find the answer that you don't know.",
+            ),
+            Tool(
+                name="get_reference_links",
+                func=get_reference_links,
+                description="Get reference links related to show user in response.",
             ),
         ]
 
