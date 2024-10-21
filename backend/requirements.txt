@@ -16,3 +16,4 @@ tokenizers~=0.14
 tiktoken==0.5.2
 openai==1.14.2
 django-phonenumber-field==8.0.0
+daphne==3.0.0
