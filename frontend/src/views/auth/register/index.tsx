@@ -38,7 +38,6 @@ const RegisterView = () => {
     },
     validationSchema,
     onSubmit: async (values) => {
-      console.log("values", values);
       createUser(values)
         .unwrap()
         .then(() => {

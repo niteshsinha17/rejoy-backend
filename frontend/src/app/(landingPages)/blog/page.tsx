@@ -1,6 +1,6 @@
 import { Container, Section } from "@/components";
 import { ghostContentApi } from "@/services/ghost";
-import { getPageMetaData } from "@/utils/common";
+import { getPageMetaData } from "@/utils";
 import Image from "next/image";
 import Link from "next/link";
 export const revalidate = 60;
@@ -10,6 +10,7 @@ export const metadata = getPageMetaData({ title: "Blog | Rejoy Health" });
 const BlogListPage = async () => {
   const blogs = await ghostContentApi.posts.browse({
     limit: 400,
+    filter: "tag:RejoyHealth",
   });
 
   return (

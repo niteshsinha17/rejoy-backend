@@ -41,7 +41,6 @@ export default async function QuestionPage({ params }: any) {
     limit: 200,
   });
   const post = await ghostContentApi.posts.read({ slug: params.slug });
-  console.log("post, ", post);
   const suggestions = getRandomThreeItemList(posts.filter((p) => p.slug !== post.slug));
 
   return (
