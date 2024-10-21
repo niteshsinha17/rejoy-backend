@@ -1,0 +1,10 @@
+import os
+
+OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY") or ""
+FRONTEND_URL = os.environ.get("FRONTEND_URL") or ""
+TWILIO_ACCOUNT_SID = os.environ.get("TWILIO_ACCOUNT_SID") or ""
+TWILIO_AUTH_TOKEN = os.environ.get("TWILIO_AUTH_TOKEN") or ""
+TWILIO_PASSCODE = os.environ.get("TWILIO_PASSCODE") or ""
+TWILIO_VERIFICATION_NUMBER = os.environ.get("TWILIO_VERIFICATION_NUMBER") or ""
+TWILIO_VERIFICATION_NUMBER_SID = os.environ.get("TWILIO_VERIFICATION_NUMBER_SID") or ""
+NOTIFICATION_EMAIL = os.environ.get("NOTIFICATION_EMAIL") or ""

@@ -1,0 +1,33 @@
+services:
+  api:
+    build:
+      context: ./backend/
+    command: bash -c "python manage.py migrate && python manage.py collectstatic --noinput &&  python manage.py create_theme && daphne -b 0.0.0.0 -p 8000 backend.asgi:application"
+    volumes:
+      - ./backend/:/usr/src/app/backend/
+      - django_admin_static_files:/usr/src/app/backend/static
+    env_file:
+      - ./backend/prod.env
+    expose:
+      - 8000
+
+  web:
+    build:
+      context: ./frontend/
+    expose:
+      - 3000
+
+  nginx:
+    build:
+      context: ./nginx/
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./prod_conf.d/:/etc/nginx/conf.d/
+      - /etc/ssl/:/etc/ssl/
+      - /var/log/nginx/:/var/log/nginx/
+      - django_admin_static_files:/home/app/backend/static
+
+volumes:
+  django_admin_static_files:

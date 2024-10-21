@@ -1,0 +1,40 @@
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "workbench.editor.showTabs": "multiple",
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": true,
+    "strings": true
+  },
+  "editor.parameterHints.enabled": true,
+  "editor.codeActionsOnSave": {
+    "source.organizeImports": "explicit",
+    "source.fixAll": "explicit",
+    "fixAll.eslint": "explicit",
+    "addMissingImports": "explicit"
+  },
+  "editor.formatOnSaveMode": "file",
+  "typescript.format.enable": true,
+  "eslint.alwaysShowStatus": true,
+  "eslint.enable": true,
+  "eslint.lintTask.options": ".",
+  "editor.defaultFormatter": "biomejs.biome",
+  "[typescript]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "typescript.autoClosingTags": true,
+  "typescript.inlayHints.variableTypes.enabled": false,
+  "typescript.referencesCodeLens.enabled": true,
+  "typescript.implementationsCodeLens.enabled": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  },
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "biomejs.biome"
+  }
+}

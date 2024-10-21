@@ -1,8 +1,0 @@
-.navLink a {
-  border-bottom: 2px solid transparent;
-  transition: all 0.3s ease-in-out;
-}
-
-.navLink a:hover {
-  border-bottom: 2px solid var(--primary-color);
-}
