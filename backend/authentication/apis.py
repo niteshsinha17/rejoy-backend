@@ -50,15 +50,16 @@ class AuthCreateDoctorUserApi(OpenApi):
 
     def post(self, request, *args, **kwargs):
         data = self.validate_input_data()
+        email = str(data["email"]).lower()
         try:
             CreateUserService().create_user(
                 first_name=data["first_name"],
                 last_name=data["last_name"] or "",
                 password=data["password"],
-                email=data["email"],
+                email=email,
                 is_doctor=True,
             )
-            EmailVerificationService().send_email_otp(data["email"])
+            EmailVerificationService().send_email_otp(email)
         except EmailAlreadyExistsException:
             return Response(
                 data={
@@ -89,7 +90,7 @@ class AuthActivateUserApi(OpenApi):
 
     def post(self, request, *args, **kwargs):
         data = self.validate_input_data()
-        email = data["email"]
+        email = str(data["email"]).lower()
         otp = data["otp"]
         try:
             user = User.objects.get(email=email)

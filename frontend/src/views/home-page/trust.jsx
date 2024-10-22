@@ -1,7 +1,7 @@
 import JohnsHopkinsMedicine from "@/../public/images/home/JohnsHopkinsMedicine.jpg";
 import NLU from "@/../public/images/home/NLU.png";
-import Stanford from "@/../public/images/home/stanford.png";
 import Columbia from "@/../public/images/home/columbia.png";
+import Stanford from "@/../public/images/home/stanford.png";
 import { Container, Section } from "@/components";
 import Image from "next/image";
 
@@ -62,6 +62,9 @@ const Trust = () => {
                       width={140}
                       height={200}
                       className="h-auto"
+                      style={{
+                        height: "auto",
+                      }}
                     />
                   </div>
                 );

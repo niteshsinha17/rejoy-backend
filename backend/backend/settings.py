@@ -19,15 +19,15 @@ if not DEBUG:
     ALLOWED_HOSTS = [
         "www.google.com",
         "google.com",
-        "neuralityhealth.ai",
-        "www.neuralityhealth.ai",
+        "rejoy.ai",
+        "www.rejoy.ai",
     ]
 
     CSRF_TRUSTED_ORIGINS = [
         "https://google.com",
         "https://www.google.com",
-        "https://neuralityhealth.ai",
-        "https://www.neuralityhealth.ai",
+        "https://rejoy.com",
+        "https://www.rejoy.com",
     ]
 
 

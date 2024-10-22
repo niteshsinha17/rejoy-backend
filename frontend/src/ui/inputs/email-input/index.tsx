@@ -6,6 +6,9 @@ const EmailInput = (props: ITextInputProps) => {
       placeholder="Email"
       {...props}
       type="email"
+      setValue={(name, value) => {
+        props.setValue(name, value.toLowerCase());
+      }}
     />
   );
 };
