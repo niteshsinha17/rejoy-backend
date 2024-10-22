@@ -1,5 +1,4 @@
 "use client";
-import { nconf } from "@/conf";
 import { IChildrenProps } from "@/models/common";
 import axios from "axios";
 import { createContext, useContext, useRef, useState } from "react";
@@ -28,7 +27,7 @@ export const TextToSpeechProvider = ({ children }: IChildrenProps) => {
       {
         headers: {
           "Content-Type": "application/json",
-          "xi-api-key": nconf.get("ELEVENLABS_API_KEY"),
+          // "xi-api-key": nconf.get("ELEVENLABS_API_KEY"),
         },
         responseType: "arraybuffer",
       }
