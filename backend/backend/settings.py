@@ -19,15 +19,15 @@ if not DEBUG:
     ALLOWED_HOSTS = [
         "www.google.com",
         "google.com",
-        "rejoy.ai",
-        "www.rejoy.ai",
+        "rejoyhealth.com",
+        "www.rejoyhealth.com",
     ]
 
     CSRF_TRUSTED_ORIGINS = [
         "https://google.com",
         "https://www.google.com",
-        "https://rejoy.com",
-        "https://www.rejoy.com",
+        "https://rejoyhealth.com",
+        "https://www.rejoyhealth.com",
     ]
 
 
