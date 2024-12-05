@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 
 class CreatedModalMixin(models.Model):
@@ -20,3 +21,10 @@ class DeletedModalMixin(models.Model):
 
     class Meta:
         abstract = True
+
+    def soft_delete(self):
+        self.deleted_at = timezone.now()
+        self.save()
+
+    def hard_delete(self):
+        self.delete()

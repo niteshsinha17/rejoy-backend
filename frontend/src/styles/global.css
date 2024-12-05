@@ -58,6 +58,7 @@
   font-family: "Plus Jakarta Sans", sans-serif;
   font-optical-sizing: auto;
   border-color: var(--border);
+  scroll-behavior: smooth;
 }
 
 @layer base {
@@ -109,6 +110,18 @@
 
   .markdown a {
     @apply text-primary;
+  }
+
+  .message-container thead {
+    @apply bg-gray-100 border-b border-gray-200;
+  }
+
+  .message-container th {
+    @apply py-3 px-4 font-semibold text-gray-600 uppercase tracking-wider;
+  }
+
+  .message-container td {
+    @apply py-3 px-4 text-gray-700 border-b border-gray-200;
   }
 }
 

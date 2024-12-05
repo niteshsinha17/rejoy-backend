@@ -9,7 +9,6 @@ export interface IAgentChatMessage {
 }
 
 export interface IChatState {
-  initialized: boolean;
-  hasHistory: boolean;
-  conversationMessages: IChatMessage[];
+  messages: Record<string, IChatMessage[]>;
+  newThreadMessages: IChatMessage[];
 }

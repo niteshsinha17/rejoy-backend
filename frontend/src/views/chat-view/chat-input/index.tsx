@@ -19,7 +19,7 @@ const ChatInput = (props: IChatInputProps) => {
   };
 
   return (
-    <div className="bg-[#F3F3F3] py-1 max-w-screen-md mx-auto rounded-[24px] flex items-center px-2">
+    <div className="bg-slate-100 border max-w-screen-md mx-auto rounded-[24px] flex items-center py-1 px-2">
       <TextareaAutosize
         value={input}
         disabled={props.isLoading}
@@ -35,7 +35,7 @@ const ChatInput = (props: IChatInputProps) => {
           }
         }}
         placeholder={props.placeholder ?? "Type a message..."}
-        className="w-full bg-transparent border- px-3 outline-none resize-none text-base"
+        className="w-full bg-transparent border- px-3 outline-none resize-none py-1 text-sm"
       />
       <button
         className="self-end"

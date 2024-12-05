@@ -2,7 +2,6 @@ import { IChatMessage } from "@/models/chat";
 import { IDoctorProfile } from "@/models/doctor";
 import Avatar from "@/ui/avatar";
 import { memo } from "react";
-import Markdown from "react-markdown";
 import "./style.css";
 
 interface IAIMessageProps {
@@ -24,7 +23,7 @@ const AIMessage = ({ message, ...props }: IAIMessageProps) => {
       </div>
       <div className="flex-1 overflow-hidden">
         <div className="p-2 sm:px-5 sm:py-4 rounded-xl text-base whitespace-pre-wrap">
-          <Markdown className="markdown">{message.message}</Markdown>
+          {/* <Markdown className="markdown">{message.message}</Markdown> */}
         </div>
       </div>
     </div>

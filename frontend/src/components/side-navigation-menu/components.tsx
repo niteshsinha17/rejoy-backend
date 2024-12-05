@@ -32,7 +32,7 @@ export const NavigationBackdrop = ({ className, ...props }: INavigationBackdropP
 
 interface INavigationSidebarProps extends HTMLAttributes<HTMLDivElement> {}
 
-export const NavigationSidebar = (props: INavigationSidebarProps) => {
+export const NavigationSidebar = ({ className, ...props }: INavigationSidebarProps) => {
   const navigationMenu = useNavState();
 
   return (
@@ -47,7 +47,8 @@ export const NavigationSidebar = (props: INavigationSidebarProps) => {
         {
           "max-md:ml-[0px] md:ml-[-300px]": !navigationMenu.isOpen,
           "max-md:ml-[-300px] md:ml-[0px]": navigationMenu.isOpen,
-        }
+        },
+        className
       )}
       {...props}
     />
@@ -61,7 +62,7 @@ export const NavigationHeader = () => {
     <div className="h-[80px] w-full flex items-center px-3 relative">
       <Header.Logo />
       <span
-        className={cn("absolute right-[-18px] bg-white cursor-pointer z-10", "transition-all duration-300 ease-in-out", {
+        className={cn("absolute right-[-18px] cursor-pointer z-10", "transition-all duration-300 ease-in-out", {
           "right-[-60px] max-md:hidden": !navigationMenu.isOpen,
           "max-md:opacity-0": navigationMenu.isOpen,
         })}
@@ -69,17 +70,11 @@ export const NavigationHeader = () => {
         <Button
           onClick={navigationMenu.toggle}
           variant="icon"
+          className="bg-white"
         >
           {navigationMenu.isOpen ? <ArrowLeftIcon /> : <ArrowRightIcon />}
         </Button>
       </span>
     </div>
   );
-};
-
-interface INavigationFooterProps {
-  hideName: boolean;
-}
-export const NavigationFooter = (props: INavigationFooterProps) => {
-  <div></div>;
 };

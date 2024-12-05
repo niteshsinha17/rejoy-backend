@@ -1,5 +1,4 @@
 "use client";
-import { AppRoutes } from "@/enum";
 import { IErrorResponse } from "@/models/common";
 import { authApi } from "@/services/auth.service";
 import { Button } from "@/ui";
@@ -77,14 +76,14 @@ const RegisterView = () => {
                 <PasswordInput {...fieldConfig("password")} />
               </div>
               <div className="flex items-center justify-end">
-                <Button
+                {/* <Button
                   href={AppRoutes.FORGOT_PASSWORD}
                   variant="text"
                   color="danger"
                   size="sm"
                 >
                   Forgot Password?
-                </Button>
+                </Button> */}
               </div>
             </div>
             <div>

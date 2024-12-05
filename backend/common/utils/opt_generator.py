@@ -20,7 +20,6 @@ def create_4_digit_otp():
 
 
 def send_mail(subject, message, recipient_list):
-    print("send email", recipient_list, subject, message)
     django_send_mail(
         subject,
         message,

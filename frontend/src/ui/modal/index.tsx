@@ -1,10 +1,9 @@
 import { CloseIcon } from "@/icons";
-import { Dialog, IconButton } from "@mui/material";
-import { CSSProperties, HTMLAttributes, ReactNode } from "react";
+import { cn } from "@/utils";
+import { Dialog, DialogProps, IconButton } from "@mui/material";
+import { CSSProperties, HTMLAttributes } from "react";
 
-interface IModalProps {
-  children: ReactNode;
-  open: boolean;
+interface IModalProps extends Omit<DialogProps, "maxWidth"> {
   width?: CSSProperties["width"];
   maxWidth?: CSSProperties["maxWidth"];
   borderRadius?: CSSProperties["borderRadius"];
@@ -13,7 +12,6 @@ interface IModalProps {
 const Modal = ({ width = "90%", maxWidth = "600px", borderRadius = "16px", ...props }: IModalProps) => {
   return (
     <Dialog
-      open={props.open}
       sx={{
         "& .MuiDialog-paper": {
           borderRadius: borderRadius,
@@ -22,16 +20,15 @@ const Modal = ({ width = "90%", maxWidth = "600px", borderRadius = "16px", ...pr
         },
       }}
       fullWidth
-    >
-      {props.children}
-    </Dialog>
+      {...props}
+    />
   );
 };
 
-const Header = (props: HTMLAttributes<HTMLDivElement>) => {
+const Header = ({ className, ...props }: HTMLAttributes<HTMLDivElement>) => {
   return (
     <div
-      className="h-[60px] px-5 border-b flex justify-between items-center"
+      className={cn("h-[60px] px-5 border-b flex justify-between items-center", className)}
       {...props}
     />
   );

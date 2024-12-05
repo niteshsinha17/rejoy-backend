@@ -22,7 +22,7 @@ const PublicLinks = () => {
         Profile
       </Button>
 
-      <Button
+      {/* <Button
         variant="text"
         target="_blank"
         href={getFilledRoutes(AppRoutes.DOCTOR_AGENT, {
@@ -31,7 +31,7 @@ const PublicLinks = () => {
         startIcon={<OpenInNewTabOutlineIcon />}
       >
         Agent
-      </Button>
+      </Button> */}
     </>
   );
 };

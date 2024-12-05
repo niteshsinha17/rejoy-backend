@@ -2,9 +2,10 @@
 import { useParams } from "next/navigation";
 
 export const usePathParams = () => {
-  const { username } = useParams();
+  const { username, threadSlug } = useParams();
 
   return {
     username: username as string,
+    threadSlug: threadSlug as string,
   };
 };

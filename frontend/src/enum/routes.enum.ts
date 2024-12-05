@@ -19,7 +19,9 @@ export enum Routes {
 
 export enum AppRoutes {
   PROFILE = "/profile",
-  ASK = "/ask",
+  SEARCH = "/search",
+  SEARCH_PAGE = "/search/:threadSlug",
+  LIBRARY = "/library",
   LOGIN = "/provider/login",
   REGISTER = "/provider/register",
   FORGOT_PASSWORD = "/provider/forgot-password",

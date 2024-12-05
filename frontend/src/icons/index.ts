@@ -8,6 +8,7 @@ import ArrowRightIcon from "./heroicons-outline/arrow-right.svg";
 import ChatOutlineIcon from "./heroicons-outline/chat.svg";
 import CheckCircleOutlineIcon from "./heroicons-outline/check-circle.svg";
 import DashboardOutlineIcon from "./heroicons-outline/dashboard.svg";
+import ListOutlineIcon from "./heroicons-outline/list-bullet.svg";
 import LogoutOutlineIcon from "./heroicons-outline/logout.svg";
 import MapPinOutlineIcon from "./heroicons-outline/map-pin.svg";
 import OpenInNewTabOutlineIcon from "./heroicons-outline/open-in-new-tab.svg";
@@ -34,6 +35,7 @@ export {
   ChevronRight,
   CloseIcon,
   DashboardOutlineIcon,
+  ListOutlineIcon,
   LogoutOutlineIcon,
   MapPinOutlineIcon,
   OpenInNewTabOutlineIcon,

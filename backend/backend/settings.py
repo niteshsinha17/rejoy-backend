@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     "common",
     "core",
     "authentication",
+    "rejoy_ai",
 ]
 
 MIDDLEWARE = [

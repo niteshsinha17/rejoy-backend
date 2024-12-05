@@ -1,4 +1,5 @@
 import { authApi } from "@/services/auth.service";
+import { rejoyAiApi } from "@/services/rejoy-ai.service";
 import { userApi } from "@/services/user.service";
 import { configureStore } from "@reduxjs/toolkit";
 import { TypedUseSelectorHook, useDispatch, useSelector } from "react-redux";
@@ -11,6 +12,7 @@ export const store = configureStore({
   reducer: {
     [authApi.reducerPath]: authApi.reducer,
     [userApi.reducerPath]: userApi.reducer,
+    [rejoyAiApi.reducerPath]: rejoyAiApi.reducer,
     app: appReducer,
     auth: authReducer,
     chat: chatReducer,
@@ -18,7 +20,7 @@ export const store = configureStore({
   },
   devTools: true,
   middleware(getDefaultMiddleware) {
-    return getDefaultMiddleware().concat(authApi.middleware, userApi.middleware);
+    return getDefaultMiddleware().concat(authApi.middleware, userApi.middleware, rejoyAiApi.middleware);
   },
 });
 

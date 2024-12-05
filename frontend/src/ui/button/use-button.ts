@@ -29,7 +29,7 @@ const buttonVariants = cva(
       },
       borderType: {
         circle: "rounded-full",
-        rounded: "rounded-xl",
+        rounded: "rounded-lg",
         square: "rounded-none",
       },
       color: {
@@ -171,12 +171,12 @@ const buttonVariants = cva(
       {
         variant: "icon",
         size: "xs",
-        className: "h-[32px] w-[32px] p-0 rounded-lg",
+        className: "h-[32px] w-[32px] p-0",
       },
       {
         variant: "icon",
         size: "sm",
-        className: "h-[36px] w-[36px] p-0 icon-button-sm rounded-lg",
+        className: "h-[36px] w-[36px] p-0 icon-button-sm",
       },
       {
         variant: "icon",
@@ -230,7 +230,8 @@ export const useButtonProps = (props: IButtonProps) => {
           fontSize: props.fontSize,
           fullWidth: props.fullWidth,
           disabled: props.disabled,
-        })
+        }),
+        props.className
       ),
       style: {
         minWidth: props.minWidth,

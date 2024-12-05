@@ -1,9 +1,7 @@
 "use client";
-import { AppRoutes } from "@/enum";
 import { usePathParams } from "@/hooks";
-import { ChatOutlineIcon, MapPinOutlineIcon, PhoneOutlineIcon } from "@/icons";
+import { MapPinOutlineIcon, PhoneOutlineIcon } from "@/icons";
 import Avatar from "@/ui/avatar";
-import { getFilledRoutes } from "@/utils";
 import Link from "next/link";
 
 interface DoctorDetailProps {
@@ -59,7 +57,7 @@ const DoctorDetail = (props: DoctorDetailProps) => {
                 </Link>
               )}
 
-              <Link
+              {/* <Link
                 href={getFilledRoutes(AppRoutes.DOCTOR_AGENT, {
                   username: username,
                 })}
@@ -67,7 +65,7 @@ const DoctorDetail = (props: DoctorDetailProps) => {
               >
                 <ChatOutlineIcon />
                 AI Consultant
-              </Link>
+              </Link> */}
             </div>
           </div>
         </div>

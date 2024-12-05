@@ -22,7 +22,7 @@ const NavigationLink = (props: INavigationLinkProps) => {
           if (props.isActive) e.preventDefault();
         }}
         href={props.redirectTo}
-        className={cn("flex items-center gap-3 hover:text-primary p-2 font-medium rounded-lg cursor-pointer", {
+        className={cn("flex items-center gap-3 hover:text-primary p-1 font-medium rounded-lg cursor-pointer", {
           "text-primary bg-opacity-50": props.isActive,
         })}
       >
@@ -39,7 +39,7 @@ const NavigationLink = (props: INavigationLinkProps) => {
   }
   return (
     <div
-      className={cn("flex items-center gap-3 hover:text-primary p-2 rounded-lg cursor-pointer")}
+      className={cn("flex items-center gap-3 hover:text-primary p-1 rounded-lg cursor-pointer")}
       onClick={props.action}
     >
       <span className="text-slate-400">{props.icon}</span>

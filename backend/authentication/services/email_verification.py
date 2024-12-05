@@ -1,5 +1,6 @@
 from typing import Tuple
 
+from django.conf import settings
 from rest_framework.authtoken.models import Token
 
 from authentication.exceptions import (
@@ -22,7 +23,10 @@ class EmailVerificationService:
         otp = create_4_digit_otp()
         EmailVerificationOtp.objects.filter(email=email).delete()
         EmailVerificationOtp.objects.create(email=email, otp=otp)
-        self.send_email(email=email, otp=otp)
+        if settings.DEBUG:
+            print(otp)
+        else:
+            self.send_email(email, otp)
 
     def delete_old_otp(self, email: str):
         EmailVerificationOtp.objects.filter(email=email).delete()
@@ -55,11 +59,14 @@ Rejoy Health Team
         otp = create_4_digit_otp()
         EmailVerificationOtp.objects.filter(email=email).delete()
         EmailVerificationOtp.objects.create(email=email, otp=otp)
-        send_mail(
-            subject="Forgot Password OTP",
-            message=f"Please find the neurality forgot password OTP: {otp}",
-            recipient_list=[email],
-        )
+        if settings.DEBUG:
+            print(otp)
+        else:
+            send_mail(
+                subject="Forgot Password OTP",
+                message=f"Please find the neurality forgot password OTP: {otp}",
+                recipient_list=[email],
+            )
 
 
 class VerifyUserTokenService:

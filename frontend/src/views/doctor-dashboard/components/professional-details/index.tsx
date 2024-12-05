@@ -52,6 +52,7 @@ const ArrayField = ({ formHook, label, name }: IArrayFieldProps) => {
             <div className="flex-1">
               <TextInput
                 variant="outline"
+                autoFocus
                 readOnly={!formHook.editMode}
                 {...formHook.fieldConfig(`${name}.${index}`)}
               />

@@ -58,14 +58,14 @@ const LoginView = () => {
                 {...fieldConfig("password")}
               />
               <div className="flex items-center justify-end">
-                <Button
+                {/* <Button
                   href={AppRoutes.FORGOT_PASSWORD}
                   variant="text"
                   color="danger"
                   size="sm"
                 >
                   Forgot Password?
-                </Button>
+                </Button> */}
               </div>
             </div>
           </div>

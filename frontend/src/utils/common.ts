@@ -54,3 +54,13 @@ export const baseMatchRoute = (route: string, pathname: string, exact: boolean) 
 export const stopPropagation = (e: SyntheticEvent) => {
   e.stopPropagation();
 };
+
+export const getRandomNumberList = (min: number, max: number, size: number) => {
+  const randomList = [];
+
+  for (let i = 0; i < size; i++) {
+    randomList.push(Math.floor(Math.random() * (max - min + 1) + min));
+  }
+
+  return randomList;
+};
