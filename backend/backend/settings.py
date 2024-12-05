@@ -21,6 +21,7 @@ if not DEBUG:
         "google.com",
         "rejoyhealth.com",
         "www.rejoyhealth.com",
+        "44.245.172.17",
     ]
 
     CSRF_TRUSTED_ORIGINS = [
