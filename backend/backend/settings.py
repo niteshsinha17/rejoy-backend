@@ -22,6 +22,8 @@ if not DEBUG:
         "rejoyhealth.com",
         "www.rejoyhealth.com",
         "44.245.172.17",
+        "rejoy-copy.netlify.app",
+        "www.rejoy-copy.netlify.app",
     ]
 
     CSRF_TRUSTED_ORIGINS = [
@@ -29,6 +31,8 @@ if not DEBUG:
         "https://www.google.com",
         "https://rejoyhealth.com",
         "https://www.rejoyhealth.com",
+        "https://rejoy-copy.netlify.app",
+        "https://www.rejoy-copy.netlify.app",
     ]
 
 
