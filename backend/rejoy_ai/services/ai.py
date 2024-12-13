@@ -8,9 +8,6 @@ from langchain_openai import ChatOpenAI
 from rejoy_ai.enitty import RejoyAIResponse
 import os
 
-os.environ["HTTP_PROXY"] = "http://proxy.com:8080"
-os.environ["HTTPS_PROXY"] = "http://proxy.com:8080"
-
 
 class Source(BaseModel):
     title: str
@@ -191,8 +188,6 @@ User inputs history:
 Input: {input}
 """
         llm = ChatOpenAI(temperature=0.3, model="gpt-4o")
-        print("here")
         response = llm.invoke(template)
-        print(response)
         data = json.loads(output_parser.parse(str(response.content)).json())
         return data
