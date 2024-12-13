@@ -6,6 +6,10 @@ from langchain.pydantic_v1 import BaseModel, Field
 from langchain_openai import ChatOpenAI
 
 from rejoy_ai.enitty import RejoyAIResponse
+import os
+
+os.environ["HTTP_PROXY"] = "http://proxy.com:8080"
+os.environ["HTTPS_PROXY"] = "http://proxy.com:8080"
 
 
 class Source(BaseModel):
