@@ -14,7 +14,7 @@ langchain-openai==0.0.2
 chromadb==0.3.29
 tokenizers~=0.14
 tiktoken==0.5.2
-openai==1.14.2
+openai==1.56.1
 django-phonenumber-field==8.0.0
 daphne==3.0.0
 gunicorn==23.0.0
