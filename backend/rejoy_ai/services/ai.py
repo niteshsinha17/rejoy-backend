@@ -187,6 +187,8 @@ User inputs history:
 Input: {input}
 """
         llm = ChatOpenAI(temperature=0.3, model="gpt-4o")
+        print("here")
         response = llm.invoke(template)
+        print(response)
         data = json.loads(output_parser.parse(str(response.content)).json())
         return data
