@@ -1,3 +1,4 @@
+import Examples from "./examples";
 import Hero from "./hero";
 import ModelMetric from "./modelMetric";
 import QNA from "./qna";
@@ -11,6 +12,7 @@ export const HomePageView = () => {
     <div>
       <Hero />
       <ModelMetric />
+      <Examples />
       <Trust />
       <QNA />
       <Testimonials />

@@ -1,11 +1,15 @@
-import { IAuthState } from "@/models/auth";
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
+import type { IAuthState } from "@/models/auth";
+import type { IPermissionResponse } from "@/models/permission";
+import { type PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 const initialState: IAuthState = {
   initialized: false,
   token: null,
   isLoading: false,
   isAuthenticated: false,
+  permissions: {
+    can_access_dashboard: false,
+  },
 };
 
 const authSlice = createSlice({
@@ -17,6 +21,7 @@ const authSlice = createSlice({
       state,
       action: PayloadAction<{
         token: string;
+        permissions: IPermissionResponse;
       }>
     ) => {
       return {
@@ -25,6 +30,7 @@ const authSlice = createSlice({
         token: action.payload.token,
         initialized: true,
         isLoading: false,
+        permissions: action.payload.permissions,
       };
     },
     initialize: (state) => {

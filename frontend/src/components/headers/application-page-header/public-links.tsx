@@ -1,8 +1,4 @@
-import { AppRoutes } from "@/enum";
-import { OpenInNewTabOutlineIcon } from "@/icons";
 import { userApi } from "@/services/user.service";
-import { Button } from "@/ui";
-import { getFilledRoutes } from "@/utils";
 
 const PublicLinks = () => {
   const { data: userDetail } = userApi.useLoggedInUserQuery();
@@ -11,7 +7,7 @@ const PublicLinks = () => {
 
   return (
     <>
-      <Button
+      {/* <Button
         variant="text"
         target="_blank"
         href={getFilledRoutes(AppRoutes.DOCTOR_PROFILE, {
@@ -20,7 +16,7 @@ const PublicLinks = () => {
         startIcon={<OpenInNewTabOutlineIcon />}
       >
         Profile
-      </Button>
+      </Button> */}
 
       {/* <Button
         variant="text"

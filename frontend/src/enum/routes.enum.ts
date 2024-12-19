@@ -15,6 +15,12 @@ export enum Routes {
   BLOG = "/blog",
   GOOGLE_PLAY = "https://play.google.com/store/apps/details?id=com.rejoyhealth",
   APPLE_STORE = "https://apps.apple.com/us/app/rejoy-health/id1551791871",
+  RESEARCH_TOPIC = "/research-topic",
+  PREPARE_MOC_EXAMS = "/prepare-moc-exams",
+  WRITE_PATIENT_HANDOUT = "/write-patient-handout",
+  WRITE_HOME_CARE_INSTRUCTIONS = "/write-home-care-instructions",
+  ASK_FOR_EVIDENCE = "/ask-for-evidence",
+  ASK_LABS_TO_CONSIDER = "/ask-labs-to-consider",
 }
 
 export enum AppRoutes {

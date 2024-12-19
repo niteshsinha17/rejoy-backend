@@ -1,6 +1,4 @@
 "use client";
-import { AppRoutes, Routes } from "@/enum";
-import { Button } from "@/ui";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import Header from "../base";
@@ -11,21 +9,21 @@ import NavLink from "./navLink";
 import classes from "./style.module.css";
 
 const navLinks: INavItem[] = [
-  {
-    name: "Home",
-    path: Routes.HOME,
-    type: "link",
-  },
+  // {
+  //   name: "Home",
+  //   path: Routes.HOME,
+  //   type: "link",
+  // },
   // {
   //   name: "Move & Earn",
   //   path: Routes.MOVE_AND_EARN,
   //   type: "link",
   // },
-  {
-    name: "Blogs",
-    path: Routes.BLOG,
-    type: "link",
-  },
+  // {
+  //   name: "Blogs",
+  //   path: Routes.BLOG,
+  //   type: "link",
+  // },
 ];
 
 const HeaderMain = () => {
@@ -58,7 +56,7 @@ const HeaderMain = () => {
               `}
             >
               <div className="h-[100%] md:h-[auto] flex flex-col md:flex-row md:items-center md:space-x-6 font-manrope">
-                <ul className={`md:flex md:space-x-5 ${classes.navList}`}>
+                <ul className={`md:flex md:space-x-5 md:justify-center ${classes.navList}`}>
                   {navLinks.map((navLink, index) => {
                     if (navLink.path && navLink.type === "link")
                       return (
@@ -86,13 +84,7 @@ const HeaderMain = () => {
           </Header.Middle>
           <Header.Right>
             {/* <Button href={Routes.DOWNLOAD}>Download App</Button> */}
-            <Button
-              variant="outline"
-              color="black"
-              href={AppRoutes.LOGIN}
-            >
-              Provider Login
-            </Button>
+
             <AuthPanel />
           </Header.Right>
         </Header>

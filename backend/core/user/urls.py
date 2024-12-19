@@ -6,6 +6,7 @@ from core.user.apis import (
     DoctorPublicProfile,
     GenerateAgentResponseApi,
     UpdateDoctorProfileApi,
+    UpdateNpiNumberApi,
     UserBasicDetailApi,
 )
 
@@ -28,4 +29,5 @@ urlpatterns = [
         name="generate-agent-response",
     ),
     path("ask/", AskApi.as_view(), name="ask"),
+    path("doctor-profile/update-npi/", UpdateNpiNumberApi.as_view(), name="update-npi"),
 ]

@@ -33,8 +33,8 @@ export const useAuth = () => {
     if (token) {
       authenticateToken()
         .unwrap()
-        .then(() => {
-          dispatch(authActions.login({ token }));
+        .then((res) => {
+          dispatch(authActions.login({ token, permissions: res.permissions }));
         })
         .catch(() => {
           dispatch(authActions.authCheckFail());
@@ -48,6 +48,7 @@ export const useAuth = () => {
     isAuthenticated: auth.isAuthenticated,
     isLoading: auth.isLoading,
     initialized: auth.initialized,
+    permissions: auth.permissions,
     login,
     registerSuccess,
     logout,

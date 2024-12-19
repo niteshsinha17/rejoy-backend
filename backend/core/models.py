@@ -32,3 +32,4 @@ class DoctorProfile(models.Model):
     insurance_accepted = models.JSONField(
         default=list,
     )
+    npi_number = models.CharField(max_length=10, null=True, blank=True)

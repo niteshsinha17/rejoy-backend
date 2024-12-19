@@ -100,7 +100,8 @@
         "noUnsafeNegation": "error",
         "useGetterReturn": "error",
         "useNamespaceKeyword": "error",
-        "useValidTypeof": "error"
+        "useValidTypeof": "error",
+        "noArrayIndexKey": "off"
       }
     }
   },

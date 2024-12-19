@@ -1,7 +1,7 @@
 "use client";
 import { AppRoutes } from "@/enum";
 import { useAuth } from "@/hooks";
-import { ListOutlineIcon, SearchOutlineIcon, UserOutlineIcon } from "@/icons";
+import { ListOutlineIcon, SearchOutlineIcon } from "@/icons";
 import { cn } from "@/utils";
 import { usePathname } from "next/navigation";
 import { useMemo } from "react";
@@ -25,13 +25,13 @@ const SideNavigationMenu = () => {
         redirectTo: AppRoutes.SEARCH,
         isActive: currentPathname === AppRoutes.SEARCH,
       },
-      {
-        name: "Profile",
-        type: "link",
-        icon: <UserOutlineIcon />,
-        redirectTo: AppRoutes.PROFILE,
-        isActive: currentPathname === AppRoutes.PROFILE,
-      },
+      // {
+      //   name: "Profile",
+      //   type: "link",
+      //   icon: <UserOutlineIcon />,
+      //   redirectTo: AppRoutes.PROFILE,
+      //   isActive: currentPathname === AppRoutes.PROFILE,
+      // },
       {
         name: "Library",
         type: "link",

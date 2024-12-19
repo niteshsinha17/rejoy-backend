@@ -3,6 +3,7 @@ import { AppRoutes } from "@/enum";
 import { useAuth } from "@/hooks";
 import { IChildrenProps } from "@/models/common/other";
 import Spinner from "@/ui/spinner";
+import DoctorRegistrationIncompleteView from "@/views/doctor-registration-incomplete-view";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
 
@@ -19,6 +20,9 @@ const AuthGuard = (props: IAuthGuardProps) => {
   }, [auth.isAuthenticated, auth.isLoading, auth.initialized]);
 
   if (auth.isAuthenticated) {
+    if (!auth.permissions.can_access_dashboard) {
+      return <DoctorRegistrationIncompleteView />;
+    }
     return props.children;
   }
 

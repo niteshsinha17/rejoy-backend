@@ -24,6 +24,17 @@ export const userApi = createApi({
       query: (payload) => apiObject("user/doctor-profile/update/").put(userTransformer.convertDoctorProfileToPayload(payload)),
       invalidatesTags: ["DoctorProfile"],
     }),
+    updateDoctorNpiNumber: builder.mutation<
+      IDoctorProfile,
+      {
+        npi_number: string;
+        first_name: string;
+        last_name: string;
+      }
+    >({
+      query: (payload) => apiObject("user/doctor-profile/update-npi/").put(payload),
+      invalidatesTags: ["DoctorProfile"],
+    }),
     generateUserResponse: builder.mutation<
       string,
       {

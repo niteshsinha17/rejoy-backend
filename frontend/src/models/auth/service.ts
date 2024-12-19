@@ -1,3 +1,5 @@
+import { IPermissionResponse } from "../permission";
+
 export interface ICreatedDoctorUserServicePayload {
   first_name: string;
   last_name: string;
@@ -37,4 +39,5 @@ export interface IResetPasswordServicePayload {
 
 export interface ILoginServiceResponse {
   token: string;
+  permissions: IPermissionResponse;
 }

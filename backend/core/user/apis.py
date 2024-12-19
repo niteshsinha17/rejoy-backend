@@ -1,3 +1,4 @@
+import requests
 from django.shortcuts import get_object_or_404
 from rest_framework import serializers
 from rest_framework.response import Response
@@ -55,6 +56,46 @@ class DoctorPublicProfile(OpenApi):
             data=serializer.data,
             status=HTTP_200_OK,
         )
+
+
+class UpdateNpiNumberApi(BaseApi):
+    class InputSerializer(serializers.Serializer):
+        npi_number = serializers.CharField()
+        first_name = serializers.CharField()
+        last_name = serializers.CharField(required=False)
+
+    input_serializer_class = InputSerializer
+
+    def put(self, request, *args, **kwargs):
+        data = self.validate_input_data()
+        doctor_profile = self.get_doctor_profile()
+
+        # Check NPI number validity
+        if not self.check_npi(data["npi_number"]):
+            self.set_response_message("Invalid NPI number")
+            return self.get_response_400()
+
+        doctor_profile.npi_number = data["npi_number"]
+        doctor_profile.save()
+        user = self.get_user()
+        user.first_name = data["first_name"]
+        if "last_name" in data:
+            user.last_name = data["last_name"]
+        user.save()
+        return Response(
+            data={"message": "NPI number updated successfully"},
+            status=HTTP_200_OK,
+        )
+
+    def check_npi(self, npi_number):
+        response = requests.get(
+            f"https://npiregistry.cms.hhs.gov/api/?number={npi_number}&version=2.1"
+        )
+        if response.status_code == 200:
+            data = response.json()
+            if data.get("results"):
+                return True
+        return False
 
 
 class MessageSerializer(serializers.Serializer):

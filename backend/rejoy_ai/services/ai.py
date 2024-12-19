@@ -6,7 +6,6 @@ from langchain.pydantic_v1 import BaseModel, Field
 from langchain_openai import ChatOpenAI
 
 from rejoy_ai.enitty import RejoyAIResponse
-import os
 
 
 class Source(BaseModel):
@@ -177,7 +176,7 @@ class RejoyAi:
         template = f"""
 You are Rejoy AI that help user with only medical, food, health, medicine related queries. Your response should be more researched based. 
 Search over internet to construct your response. Include 4-7 reference links including videos (if available) and follow up questions that user can ask in your response.
-If  query is not related to medical domain, return error. Also understand user input history.
+If  query is not related to medical domain, return error. Also understand user input history. Never use these websites are sources to provide answer. - webmd.com, and healthline.com 
 
 {output_parser.get_format_instructions()}
 

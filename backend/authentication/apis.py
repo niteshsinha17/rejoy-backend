@@ -5,7 +5,7 @@ from rest_framework.response import Response
 from rest_framework.status import HTTP_200_OK, HTTP_400_BAD_REQUEST
 
 from authentication.data_serializers import AuthLoginResponseDataSerializer
-from authentication.entities import AuthLoginResponseData
+from authentication.entities import AuthLoginResponseData, Permissions
 from authentication.exceptions import (
     EmailAlreadyExistsException,
     InvalidOtpException,
@@ -17,7 +17,7 @@ from authentication.services.email_verification import (
 )
 from authentication.services.phone_verification import PhoneVerificationService
 from common.apis import BaseApi, OpenApi
-from core.models import User
+from core.models import DoctorProfile, User
 from core.user.constants import NAME_MAX_LENGTH, PASSWORD_MAX_LENGTH
 from core.user.services import CreateUserService
 from core.utils import get_phone_number_with_country_code
@@ -27,7 +27,15 @@ class AuthVerifyView(BaseApi):
     def get(self, request, *args, **kwargs):
         user = self.get_user()
         token, _ = create_or_get_authentication_token(user)
-        data = AuthLoginResponseData(token=token.key)
+        # assuming that user is a doctor, Change this if new type of user gets added
+        doctor = DoctorProfile.objects.filter(user=user).first()
+        if not doctor:
+            self.set_response_message("User is not a doctor")
+            return self.get_response_400()
+        data = AuthLoginResponseData(
+            token=token.key,
+            permissions=Permissions(can_access_dashboard=bool(doctor.npi_number)),
+        )
 
         serializer = AuthLoginResponseDataSerializer(data)
         return Response(
@@ -106,7 +114,9 @@ class AuthActivateUserApi(OpenApi):
             self.set_response_message("User not registered")
             return self.get_response_400()
         token, _ = create_or_get_authentication_token(user)
-        data = AuthLoginResponseData(token=token.key)
+        data = AuthLoginResponseData(
+            token=token.key, permissions=Permissions(can_access_dashboard=False)
+        )
         serializer = AuthLoginResponseDataSerializer(data)
         return Response(
             data=serializer.data,
@@ -150,7 +160,12 @@ class AuthLoginView(OpenApi):
                 status=HTTP_400_BAD_REQUEST,
             )
         token, _ = create_or_get_authentication_token(user)
-        data = AuthLoginResponseData(token=token.key)
+        doctor = DoctorProfile.objects.filter(user=user).first()
+        if doctor:
+            permissions = Permissions(can_access_dashboard=bool(doctor.npi_number))
+        else:
+            permissions = Permissions(can_access_dashboard=False)
+        data = AuthLoginResponseData(token=token.key, permissions=permissions)
         serializer = AuthLoginResponseDataSerializer(data)
         return Response(
             data=serializer.data,
@@ -276,7 +291,12 @@ class AuthVerifyPhoneOTP(OpenApi):
             self.set_response_message("User not found")
             return self.get_response_400()
         token, _ = create_or_get_authentication_token(user)
-        data = AuthLoginResponseData(token=token.key)
+        doctor = DoctorProfile.objects.filter(user=user).first()
+        if doctor:
+            permissions = Permissions(can_access_dashboard=bool(doctor.npi_number))
+        else:
+            permissions = Permissions(can_access_dashboard=False)
+        data = AuthLoginResponseData(token=token.key, permissions=permissions)
         serializer = AuthLoginResponseDataSerializer(data)
         user.is_phone_number_verified = True
         user.save()

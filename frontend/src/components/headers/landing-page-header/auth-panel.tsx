@@ -2,6 +2,7 @@
 
 import { AppRoutes } from "@/enum";
 import { useAuth } from "@/hooks";
+import { Button } from "@/ui";
 import { useRouter } from "next/navigation";
 import UserProfile from "../application-page-header/user-profile";
 
@@ -13,12 +14,20 @@ const AuthPanel = () => {
     return (
       <UserProfile
         onClick={() => {
-          router.push(AppRoutes.PROFILE);
+          router.push(AppRoutes.SEARCH);
         }}
       />
     );
 
-  return null;
+  return (
+    <Button
+      variant="outline"
+      color="black"
+      href={AppRoutes.LOGIN}
+    >
+      Provider Login
+    </Button>
+  );
 };
 
 export default AuthPanel;

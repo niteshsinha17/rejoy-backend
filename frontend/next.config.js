@@ -5,6 +5,7 @@ const nextConfig = {
       test: /\.svg$/,
       use: ["@svgr/webpack"],
     });
+
     return config;
   },
   images: {
@@ -14,6 +15,9 @@ const nextConfig = {
         hostname: "private-content.ghost.io",
       },
     ],
+  },
+  experimental: {
+    serverActions: true,
   },
 };
 
