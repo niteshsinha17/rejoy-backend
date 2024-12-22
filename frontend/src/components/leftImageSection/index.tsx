@@ -1,10 +1,11 @@
 import Image from "next/image";
+import { ReactNode } from "react";
 
 const LeftImageSection = (props: {
   img: string;
   imgAlt: string;
-  heading?: string;
-  para?: string;
+  heading?: string | ReactNode;
+  para?: string | string[] | ReactNode;
   custom?: JSX.Element;
 }) => {
   return (
@@ -19,9 +20,23 @@ const LeftImageSection = (props: {
         />
       </div>
       <div>
-        {props.heading && <h3 className="heading-4 text-textPrimary">{props.heading}</h3>}
+        {typeof props.heading === "string" && <h3 className="heading-4 text-black">{props.heading}</h3>}
+        {typeof props.heading !== "string" && props.heading}
 
-        {props.para && <p className="body-1 mt-2 max-w-2xl text-textSecondary">{props.para}</p>}
+        {typeof props.para === "string" && <p className="body-1 mt-2 max-w-2xl text-textSecondary">{props.para}</p>}
+
+        {Array.isArray(props.para) && (
+          <div className="space-y-2 max-w-2xl mt-2">
+            {props.para.map((p, i) => (
+              <p
+                key={i}
+                className="body-1 text-textSecondary"
+              >
+                {p}
+              </p>
+            ))}
+          </div>
+        )}
 
         {props.custom && props.custom}
       </div>

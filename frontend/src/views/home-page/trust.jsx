@@ -46,6 +46,7 @@ const Trust = () => {
                       width={140}
                       height={200}
                       className="h-auto"
+                      objectFit="contain"
                     />
                   </div>
                 );

@@ -1,4 +1,4 @@
-import { FacebookIcon, InstagramIcon, LinkedInIcon, TiktokIcon, TwitterIcon, YouTubeIcon } from "@/../public/icons";
+import { InstagramIcon, LinkedInIcon } from "@/../public/icons";
 import { Container } from "@/components";
 import { Routes } from "@/enum";
 import Link from "next/link";
@@ -24,16 +24,16 @@ const FooterLink = (props: { children: string; path: Routes | string }) => {
 };
 
 const soicalLinks = [
-  {
-    name: "Facebook",
-    icon: <FacebookIcon className="icon-xs" />,
-    url: "https://www.facebook.com/RejoyHealthUSA",
-  },
-  {
-    name: "Twitter",
-    icon: <TwitterIcon className="icon-xs" />,
-    url: "https://twitter.com/rejoyhealth",
-  },
+  // {
+  //   name: "Facebook",
+  //   icon: <FacebookIcon className="icon-xs" />,
+  //   url: "https://www.facebook.com/RejoyHealthUSA",
+  // },
+  // {
+  //   name: "Twitter",
+  //   icon: <TwitterIcon className="icon-xs" />,
+  //   url: "https://twitter.com/rejoyhealth",
+  // },
   {
     name: "Linkedin",
     icon: <LinkedInIcon className="icon-xs" />,
@@ -44,16 +44,16 @@ const soicalLinks = [
     icon: <InstagramIcon className="icon-xs" />,
     url: "https://www.instagram.com/rejoyhealthusa/",
   },
-  {
-    name: "Youtube",
-    icon: <YouTubeIcon className="icon-xs" />,
-    url: "https://www.youtube.com/@rejoyhealthusa",
-  },
-  {
-    name: "Tiktok",
-    icon: <TiktokIcon className="icon-xs" />,
-    url: "https://www.tiktok.com/@rejoyhealth",
-  },
+  // {
+  //   name: "Youtube",
+  //   icon: <YouTubeIcon className="icon-xs" />,
+  //   url: "https://www.youtube.com/@rejoyhealthusa",
+  // },
+  // {
+  //   name: "Tiktok",
+  //   icon: <TiktokIcon className="icon-xs" />,
+  //   url: "https://www.tiktok.com/@rejoyhealth",
+  // },
 ];
 
 const Footer = () => {

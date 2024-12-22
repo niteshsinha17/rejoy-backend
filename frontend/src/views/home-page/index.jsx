@@ -1,11 +1,10 @@
 import Examples from "./examples";
+import GetStarted from "./get-started";
 import Hero from "./hero";
 import ModelMetric from "./modelMetric";
 import QNA from "./qna";
-import Testimonials from "./testimonials";
 import Trust from "./trust";
 import Video from "./video";
-import WalkAndEarn from "./walkAndEarn";
 
 export const HomePageView = () => {
   return (
@@ -15,9 +14,9 @@ export const HomePageView = () => {
       <Examples />
       <Trust />
       <QNA />
-      <Testimonials />
+      {/* <Testimonials /> */}
       <Video />
-      <WalkAndEarn />
+      <GetStarted />
     </div>
   );
 };

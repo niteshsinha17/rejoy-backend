@@ -31,7 +31,7 @@ const Examples = () => {
           <h2 className="text-black">What Do You Want to Research?</h2>
           <p className="mt-4 text-sm md:text-base">Here are examples of topics you can explore with Rejoy Health</p>
         </div>
-        <div className="mt-4 grid grid-cols-2 gap-3">
+        <div className="mt-4 grid md:grid-cols-2 gap-3">
           {examples.map((example, index) => (
             <div
               key={index}

@@ -17,13 +17,10 @@ export const Hero = () => {
       <Container>
         <div className="max-sm:py-6 max-md:py-[100px] md:min-h-[600px] flex justify-center items-center pt-">
           <div>
-            <h1 className="text-center text-black max-w-screen-md mx-auto">
-              Explore, Learn, and <br />
-              Stay Informed
-            </h1>
+            <h1 className="text-center text-black max-w-screen-md mx-auto">Master MOC Exams with Confidence</h1>
             <p className="text-center mx-auto mt-4 max-sm:text-base text-xl md:max-w-[60%]">
-              Whether you're curious about a medical condition, a breakthrough treatment, or the latest healthcare trends, Rejoy Health
-              helps you find trusted answers quickly and easily.
+              Rejoy Health empowers you to excel in your Maintenance of Certification (MOC) exams by providing instant, accurate, and
+              conversational answers to clinical questions. Get reliable information from trusted medical sources—right when you need it.
             </p>
           </div>
         </div>

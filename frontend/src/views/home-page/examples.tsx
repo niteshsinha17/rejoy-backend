@@ -1,5 +1,6 @@
 import SearchIcon from "@/../public/images/home/examples/search.svg";
 import { Container, Section } from "@/components";
+import { Routes } from "@/enum";
 import { ArrowRightIcon } from "@/icons";
 import Link from "next/link";
 
@@ -8,25 +9,25 @@ const aiBotFeatures = [
     title: "Research a Topic",
     description: "Explore complex medical topics with AI-powered summaries, saving time and ensuring accuracy.",
     icon: <SearchIcon />,
-    route: "/research-topic",
+    route: Routes.RESEARCH_TOPIC,
   },
   {
     title: "Prepare for MOC Exams",
     description: "Receive customized exam prep materials, mock questions, and quick explanations tailored to your needs.",
     icon: <SearchIcon />,
-    route: "/prepare-moc-exams",
+    route: Routes.PREPARE_FOR_MOC_EXAM,
   },
   {
     title: "Write a Patient Handout",
     description: "Draft clear, concise, and patient-friendly health information to improve understanding and engagement.",
     icon: <SearchIcon />,
-    route: "/write-patient-handout",
+    route: Routes.WRITE_PATIENT_HANDOUT,
   },
   {
     title: "Write Home Care Instructions",
     description: "Generate specific, actionable post-care guidelines to support patient recovery and safety.",
     icon: <SearchIcon />,
-    route: "/write-home-care-instructions",
+    route: Routes.WRITE_HOME_CARE_INSTRUCTIONS,
   },
   {
     title: "Ask for Evidence",
@@ -46,7 +47,8 @@ const Examples = () => {
   return (
     <Section noBottomPadding>
       <Container>
-        <div className="grid grid-cols-3 gap-3">
+        <h2 className="text-center text-black">Endless Use Cases</h2>
+        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3 mt-4">
           {aiBotFeatures.map((feature, index) => (
             <div
               key={index}
