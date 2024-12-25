@@ -33,13 +33,13 @@ const aiBotFeatures = [
     title: "Ask for Evidence",
     description: "Instantly access credible, evidence-based studies and resources to support medical decisions.",
     icon: <SearchIcon />,
-    route: "/ask-for-evidence",
+    route: Routes.ASK_FOR_EVIDENCE,
   },
   {
     title: "Ask About Labs to Consider",
     description: "Get expert recommendations for diagnostic tests relevant to symptoms and conditions.",
     icon: <SearchIcon />,
-    route: "/ask-labs-to-consider",
+    route: Routes.ASK_LABS_TO_CONSIDER,
   },
 ];
 

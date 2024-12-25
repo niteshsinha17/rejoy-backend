@@ -1,3 +1,4 @@
+import { checkNpi } from "@/actions/check-npi";
 import { useAuth } from "@/hooks";
 import { userApi } from "@/services/user.service";
 import { Button } from "@/ui";
@@ -17,29 +18,13 @@ interface IFormProps {
 const validationSchema = Yup.object({
   firstName: Yup.string().required("First name is required"),
   lastName: Yup.string().required("Last name is required"),
-  npiNumber: Yup.string()
-    .required("NPI number is required")
-    .matches(/^[12]\d{9}$/, "NPI must be a 10-digit number"),
+  npiNumber: Yup.string().required("NPI number is required").length(10, "NPI number must be 10 digits"),
   checked: Yup.boolean().oneOf([true], "You must accept the terms and conditions"),
 });
 
 const Form = (props: IFormProps) => {
   const [updateNpi] = userApi.useUpdateDoctorNpiNumberMutation();
   const { checkAuth } = useAuth();
-
-  const checkNpi = async (npiNumber: string) => {
-    const res = await fetch(`https://npiregistry.cms.hhs.gov/api/?number=${npiNumber}&version=2.1`)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.results && data.results.length > 0) {
-          return true;
-        } else {
-          return false;
-        }
-      })
-      .catch((error) => false);
-    return res;
-  };
 
   const formik = useFormik({
     initialValues: {
