@@ -65,6 +65,7 @@ const AmlodipineMonitoring = () => (
   <LeftImageSection
     img={HypertensionImg.src}
     imgAlt="Hypertension"
+    heading="Labs for Patients on Amlodipine"
     custom={
       <div>
         <p className="mt-2">

@@ -78,7 +78,7 @@ const examples = [
 
 const Examples = () => {
   return (
-    <Section noBottomPadding>
+    <Section>
       <Container>
         <div className="text-center">
           <h2 className="text-black">Ask for Evidence on Any Healthcare Topic</h2>
