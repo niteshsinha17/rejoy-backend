@@ -1,6 +1,7 @@
 import { InstagramIcon, LinkedInIcon } from "@/../public/icons";
 import { Container } from "@/components";
 import { Routes } from "@/enum";
+import { aiBotUseCases } from "@/views/home-page/examples";
 import Link from "next/link";
 import Header from "../headers/base";
 
@@ -107,29 +108,29 @@ const Footer = () => {
                   Precision Motion Technology
                 </FooterLink>
               </div> */}
-              {/* <div>
-                <Heading>Solutions</Heading>
-                <FooterLink path={ROUTES.DIGITAL_PHYSICAL_THERAPY}>
-                  Digital Physical Therapy
-                </FooterLink>
-                <FooterLink path={ROUTES.MUSCULOSKELETAL}>
-                  Musculoskeletal Care
-                </FooterLink>
-                <FooterLink path={ROUTES.ON_CALL}>On Call</FooterLink>
-                <FooterLink path={ROUTES.IN_CENTER_VISITS}>
-                  In-Center Visits
-                </FooterLink>
-              </div> */}
+              <div>
+                <Heading>Use cases</Heading>
+                {aiBotUseCases.map((feature, index) => (
+                  <FooterLink
+                    key={index}
+                    path={feature.route}
+                  >
+                    {feature.title}
+                  </FooterLink>
+                ))}
+              </div>
               <div>
                 <Heading>Resources</Heading>
                 {/* <FooterLink path={ROUTES.ACADEMY}>Academy</FooterLink>*/}
                 {/* <FooterLink path={Routes.MOVE_AND_EARN}>Move and Earn</FooterLink> */}
                 <FooterLink path={Routes.BLOG}>Blogs</FooterLink>
-              </div>
-              <div>
-                <Heading>Term and Conditions</Heading>
-                <FooterLink path={Routes.PRIVACY_POLICY}>Privacy policy</FooterLink>
-                <FooterLink path={Routes.TERMS_OF_SERVIVE}>Terms of Service</FooterLink>
+                <FooterLink path={Routes.PRICING}>Pricing</FooterLink>
+
+                <div className="mt-4">
+                  <Heading>Term and Conditions</Heading>
+                  <FooterLink path={Routes.PRIVACY_POLICY}>Privacy policy</FooterLink>
+                  <FooterLink path={Routes.TERMS_OF_SERVIVE}>Terms of Service</FooterLink>
+                </div>
               </div>
             </div>
           </div>

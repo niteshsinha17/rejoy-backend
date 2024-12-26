@@ -1,44 +1,44 @@
-import SearchIcon from "@/../public/images/home/examples/search.svg";
 import { Container, Section } from "@/components";
 import { Routes } from "@/enum";
 import { ArrowRightIcon } from "@/icons";
+import { BookCheck, CircleHelp, ClipboardCheck, FlaskConical, NotebookPen, SearchCheck } from "lucide-react";
 import Link from "next/link";
 
-const aiBotFeatures = [
+export const aiBotUseCases = [
   {
     title: "Research a Topic",
     description: "Explore complex medical topics with AI-powered summaries, saving time and ensuring accuracy.",
-    icon: <SearchIcon />,
+    icon: <SearchCheck />,
     route: Routes.RESEARCH_TOPIC,
   },
   {
     title: "Prepare for MOC Exams",
     description: "Receive customized exam prep materials, mock questions, and quick explanations tailored to your needs.",
-    icon: <SearchIcon />,
+    icon: <BookCheck />,
     route: Routes.PREPARE_FOR_MOC_EXAM,
   },
   {
     title: "Write a Patient Handout",
     description: "Draft clear, concise, and patient-friendly health information to improve understanding and engagement.",
-    icon: <SearchIcon />,
+    icon: <ClipboardCheck />,
     route: Routes.WRITE_PATIENT_HANDOUT,
   },
   {
     title: "Write Home Care Instructions",
     description: "Generate specific, actionable post-care guidelines to support patient recovery and safety.",
-    icon: <SearchIcon />,
+    icon: <NotebookPen />,
     route: Routes.WRITE_HOME_CARE_INSTRUCTIONS,
   },
   {
     title: "Ask for Evidence",
     description: "Instantly access credible, evidence-based studies and resources to support medical decisions.",
-    icon: <SearchIcon />,
+    icon: <CircleHelp />,
     route: Routes.ASK_FOR_EVIDENCE,
   },
   {
     title: "Ask About Labs to Consider",
     description: "Get expert recommendations for diagnostic tests relevant to symptoms and conditions.",
-    icon: <SearchIcon />,
+    icon: <FlaskConical />,
     route: Routes.ASK_LABS_TO_CONSIDER,
   },
 ];
@@ -49,7 +49,7 @@ const Examples = () => {
       <Container>
         <h2 className="text-center text-black">Endless Use Cases</h2>
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-3 mt-4">
-          {aiBotFeatures.map((feature, index) => (
+          {aiBotUseCases.map((feature, index) => (
             <div
               key={index}
               className="p-4 border rounded-2xl"

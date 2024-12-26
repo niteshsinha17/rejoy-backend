@@ -8,10 +8,14 @@ const Video = () => {
         <div className="relative overflow-hidden aspect-video border-[8px] border-gray-700 bg-gray-700 rounded-2xl">
           <iframe
             className="top-0 left-0 w-full h-full rounded-2xl"
-            src="https://www.youtube.com/embed/pCo5vtkRhL0"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/l8dNmadilS4?si=5kE7HJxUkAarpuDW"
             title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin"
+            allowfullscreen
           ></iframe>
         </div>
       </Container>

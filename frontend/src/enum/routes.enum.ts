@@ -21,6 +21,7 @@ export enum Routes {
   ASK_FOR_EVIDENCE = "/ask-for-evidence",
   ASK_LABS_TO_CONSIDER = "/ask-labs-to-consider",
   PREPARE_FOR_MOC_EXAM = "/prepare-for-moc-exam",
+  PRICING = "/pricing",
 }
 
 export enum AppRoutes {

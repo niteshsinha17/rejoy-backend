@@ -37,6 +37,7 @@
     "formik": "^2.4.6",
     "libphonenumber-js": "^1.11.16",
     "lodash": "^4.17.21",
+    "lucide-react": "^0.469.0",
     "next": "13.4.7",
     "postcss": "^8.4.24",
     "ragie": "^0.9.0",
