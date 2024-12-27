@@ -163,7 +163,14 @@ REST_FRAMEWORK = {
 }
 
 # cors header
-CORS_ORIGIN_ALLOW_ALL = True
+CORS_ORIGIN_ALLOW_ALL = DEBUG
+if not DEBUG:
+    CORS_ALLOWED_ORIGINS = [
+        "https://rejoyhealth.com",
+        "https://www.rejoyhealth.com",
+        "https://rejoy-copy.netlify.app",
+        "https://www.rejoy-copy.netlify.app",
+    ]
 CORS_ALLOW_HEADERS = [*default_headers, "Timezone"]
 
 EMAIL_HOST = "smtp.gmail.com"
