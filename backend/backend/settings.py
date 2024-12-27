@@ -10,7 +10,7 @@ from corsheaders.defaults import default_headers
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
-DEBUG = os.environ.get("ENVIRONMENT") == "development"
+DEBUG = False
 ALLOWED_HOSTS = ["*"]
 
 if not DEBUG:
@@ -22,6 +22,8 @@ if not DEBUG:
         "44.245.172.17",
         "rejoy-copy.netlify.app",
         "www.rejoy-copy.netlify.app",
+        "api.rejoyhealth.com",
+        "www.api.rejoyhealth.com",
     ]
 
     CSRF_TRUSTED_ORIGINS = [
@@ -31,6 +33,8 @@ if not DEBUG:
         "https://www.rejoyhealth.com",
         "https://rejoy-copy.netlify.app",
         "https://www.rejoy-copy.netlify.app",
+        "https://api.rejoyhealth.com",
+        "https://www.api.rejoyhealth.com",
     ]
 
 
