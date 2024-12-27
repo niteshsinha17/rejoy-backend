@@ -20,7 +20,7 @@ const FeatureList = ({ features }: { features: string[] }) => {
 };
 const IndividualPricing = () => {
   return (
-    <div className="p-5 shadow-sm border rounded-3xl h-full w-[500px] flex-shrink-0">
+    <div className="p-5 shadow-sm border rounded-3xl h-full max-w-full w-[500px] flex-shrink-0">
       <div>
         <h3 className="text-lg text-black">Pay-As-You-Go</h3>
         <div className="text-xs text-slate-500 mt-2">Ideal for Individuals</div>
@@ -55,7 +55,7 @@ const IndividualPricing = () => {
 
 const EnterprisePricing = () => {
   return (
-    <div className="p-5 shadow-sm border rounded-3xl h-full w-[500px] flex-shrink-0">
+    <div className="p-5 shadow-sm border rounded-3xl h-full max-w-full w-[500px] flex-shrink-0">
       <h3 className="text-lg text-black">Enterprise</h3>
       <div className="text-xs text-slate-500 mt-2">Ideal for Healthcare Systems & Large Group Clinics</div>
       <div className="mt-4 text-sm text-slate-800 h-[100px]">

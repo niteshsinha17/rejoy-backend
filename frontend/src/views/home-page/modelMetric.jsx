@@ -16,20 +16,20 @@ export default function ModelMetric() {
           <div className="mt-4 space-y-3 max-w-screen-md mx-auto">
             <Bar
               label="Rejoy Health AI modal"
-              percentage="92.80%"
+              percentage="95.50%"
               golden
             />
             <Bar
-              label="Meta LLAM"
-              percentage="90.00%"
-            />
-            <Bar
-              label="Google Med-Palm 2"
-              percentage="88.01%"
-            />
-            <Bar
               label="ChatGPT 4"
-              percentage="87.08%"
+              percentage="90.40%"
+            />
+            <Bar
+              label="Meta LlAM 3.3"
+              percentage="89.50%"
+            />
+            <Bar
+              label="Google Med-PaLM 2"
+              percentage="88.20%"
             />
           </div>
         </div>
