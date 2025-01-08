@@ -67,7 +67,9 @@ class AuthCreateDoctorUserApi(OpenApi):
                 email=email,
                 is_doctor=True,
             )
-            EmailVerificationService().send_email_otp(email)
+            EmailVerificationService().send_email_otp(
+                email=email, first_name=data["first_name"]
+            )
         except EmailAlreadyExistsException:
             return Response(
                 data={
@@ -321,7 +323,10 @@ class SendEmailVerificationCode(OpenApi):
             self.set_response_message("Email not registered.")
             return self.get_response_400()
         try:
-            EmailVerificationService().send_email_otp(email)
+            user = User.objects.get(email=email)
+            EmailVerificationService().send_email_otp(
+                email=email, first_name=user.first_name
+            )
         except Exception as e:
             print(e)
             self.set_response_message("Something went wrong.")

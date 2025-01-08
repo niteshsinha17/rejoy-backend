@@ -6,11 +6,12 @@ from corsheaders.defaults import default_headers
 # Development settings
 # Uncomment the following line to load environment variables from a dev.env file
 # from dotenv import load_dotenv
+
 # load_dotenv("dev.env")
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
-DEBUG = False
+DEBUG = os.environ.get("ENVIRONMENT") == "development"
 ALLOWED_HOSTS = ["*"]
 
 if not DEBUG:

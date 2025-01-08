@@ -4,6 +4,7 @@ from typing import Optional, Type, TypeVar
 
 from django.conf import settings
 from django.core.mail import send_mail as django_send_mail
+from django.core.mail.message import EmailMessage
 from django.db import models
 
 
@@ -26,6 +27,17 @@ def send_mail(subject, message, recipient_list):
         from_email=settings.EMAIL_HOST_USER,
         recipient_list=recipient_list,
     )
+
+
+def send_html_mail(subject, message, recipient_list):
+    email = EmailMessage(
+        subject=subject,
+        body=message,
+        from_email=settings.EMAIL_HOST_USER,
+        to=recipient_list,
+    )
+    email.content_subtype = "html"  # Set email content type to HTML
+    email.send()
 
 
 class FileType(enum.Enum):
