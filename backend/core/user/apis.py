@@ -4,7 +4,7 @@ from rest_framework import serializers
 from rest_framework.response import Response
 from rest_framework.status import HTTP_200_OK
 
-from common.apis import BaseApi, OpenApi
+from common.apis import BaseApi, OpenApi, OptionalAuthApi
 from core.models import DoctorProfile, User
 from core.user.serializers import DoctorProfileSerializer, UserBasicDetailSerializer
 from core.user.services import AgentService, AskService

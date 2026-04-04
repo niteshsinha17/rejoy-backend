@@ -23,4 +23,6 @@ urlpatterns = [
     path("api/v1/core/", include("core.common.urls")),
     path("api/v1/user/", include("core.user.urls")),
     path("api/v1/rejoy-ai/", include("rejoy_ai.urls")),
+    path("api/v1/practice/", include("practice.urls")),
+    path("api/v1/contests/", include("contest.urls")),
 ]
