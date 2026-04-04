@@ -5,3 +5,4 @@ __pycache__/
 redis-data*
 static/
 chroma_db
+venv/
