@@ -14,27 +14,23 @@ from core.models import User
 
 
 def get_verification_code_template(first_name: str, otp: str) -> str:
+    greeting_name = (first_name or "").strip() or "there"
     return f"""
 <html>
   <body style="font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
-    <h2>Dear {first_name},</h2>
-    <p>Welcome to <strong>Rejoy Health</strong>! I’m <strong>Rituraj</strong>, Founder and CEO, and I’m excited to have you with us.</p>
+    <p>Hi {greeting_name},</p>
+    <p>Thanks for signing up for Rejoy Health.</p>
+    <p>To complete your signup, please use the verification code below:</p>
+    <p style="font-size: 1.25rem; font-weight: bold; letter-spacing: 0.1em; color: #2664eb;">{otp}</p>
+    <p>For security reasons, please do not share this code with anyone.</p>
     <p>
-      Rejoy Health is your personal <em>AI healthcare search engine</em>, providing trusted answers to your health questions—anytime, anywhere. 
-      From symptoms and medications to the latest medical research, we’ve got you covered.
+      If you did not request this, you can safely ignore this email or contact us at
+      <a href="mailto:support@rejoyhealth.com">support@rejoyhealth.com</a>.
     </p>
-    <p>
-      Please <strong>verify your email address</strong> to ensure we can keep in touch and provide you with the best possible experience. Enter the following verification code:
-    </p>
-    <h3 style="color: #2664eb; text-align: center;">Verification Code: {otp}</h3>
-    <p>
-      Once verified, you’ll have full access to everything Rejoy Health offers. If you need assistance, I am here to help.
-    </p>
-    <p>Thank you for choosing Rejoy Health!</p>
-    <p style="margin-top: 20px;">
+    <p style="margin-top: 24px;">
       Best regards,<br>
-      <strong>Rituraj</strong><br>
-      Founder & CEO, Rejoy Health
+      Rejoy Health Support<br>
+      <a href="mailto:support@rejoyhealth.com">support@rejoyhealth.com</a>
     </p>
   </body>
 </html>"""
@@ -71,7 +67,7 @@ class EmailVerificationService:
 
     def send_email(self, first_name: str, email, otp):
         send_html_mail(
-            subject="Welcome to Rejoy Health!",
+            subject="Your Rejoy Health verification code",
             message=get_verification_code_template(first_name, otp),
             recipient_list=[email],
         )
