@@ -1,13 +1,13 @@
 from rest_framework.response import Response
 from rest_framework.status import HTTP_200_OK, HTTP_201_CREATED
 
-from common.apis import BaseApi
+from common.apis import BaseApi, OptionalAuthApi
 from practice.serializers import (
     AttemptedQuestionsSerializer,
     QuestionAttemptInputSerializer,
     QuestionAttemptSerializer,
 )
-from practice.services import AttemptService, ProgressService
+from practice.services import AttemptService, PracticePlanService, ProgressService
 
 
 class SubmitAttemptApi(BaseApi):
@@ -70,3 +70,15 @@ class AttemptedQuestionsApi(BaseApi):
             user=user, course=course, subject=subject
         )
         return Response(data={"by_module": by_module}, status=HTTP_200_OK)
+
+
+class CurrentPracticePlanApi(OptionalAuthApi):
+    """
+    GET api/v1/practice/plan/ — the user's ``is_active=True`` line item if not expired; else free tier.
+
+    ``history`` lists inactive plan rows and an expired-but-still-active line item when applicable.
+    """
+
+    def get(self, request, *args, **kwargs):
+        payload = PracticePlanService.get_active_plan_state(request.user)
+        return Response(data=payload, status=HTTP_200_OK)
