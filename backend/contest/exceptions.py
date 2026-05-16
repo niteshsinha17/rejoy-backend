@@ -107,3 +107,9 @@ class MultipleSelectionsNotAllowedError(ContestValidationError):
         "This question is single-select: send at most one value in selected_options, "
         "or set is_skipped to true."
     )
+
+
+class ContestReminderNotAvailableError(ContestValidationError):
+    default_message = (
+        "Reminders are only available for upcoming contests."
+    )

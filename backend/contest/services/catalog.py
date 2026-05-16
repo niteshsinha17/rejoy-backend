@@ -5,7 +5,7 @@ from typing import Optional
 from django.db.models import DateTimeField, F, Func
 from django.utils import timezone
 
-from contest.models import Contest, ContestAttempt
+from contest.models import Contest, ContestAttempt, ContestReminderRegistration
 from core.models import User
 
 
@@ -87,10 +87,15 @@ def get_detail(slug: str, user: Optional[User] = None) -> dict:
         "contest": contest,
         "has_started": False,
         "is_submitted": False,
+        "reminder_registered": False,
     }
     if user and user.is_authenticated:
         attempt = ContestAttempt.objects.filter(user=user, contest=contest).first()
         if attempt:
             result["has_started"] = True
             result["is_submitted"] = attempt.is_submitted
+        result["reminder_registered"] = ContestReminderRegistration.objects.filter(
+            user=user,
+            contest=contest,
+        ).exists()
     return result

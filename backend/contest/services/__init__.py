@@ -13,6 +13,7 @@ from contest.services.leaderboard import (
     get_leaderboard_me_for_user,
 )
 from contest.services.questions import get_practice_payload
+from contest.services.reminders import register_reminder
 from contest.services.results import get_result
 from contest.services.scoring import (
     grade_attempt_against_keys,
@@ -46,3 +47,4 @@ class ContestService:
     get_leaderboard = staticmethod(get_leaderboard)
     get_leaderboard_me_for_user = staticmethod(get_leaderboard_me_for_user)
     grade_attempt_against_keys = staticmethod(grade_attempt_against_keys)
+    register_reminder = staticmethod(register_reminder)

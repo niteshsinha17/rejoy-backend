@@ -5,6 +5,8 @@ from contest.models import (
     Contest,
     ContestAttempt,
     ContestQuestionAttempt,
+    ContestReminderNotification,
+    ContestReminderRegistration,
 )
 from contest.schemas import parse_contest_questions_json
 
@@ -105,6 +107,43 @@ class ContestAttemptAdmin(admin.ModelAdmin):
         if obj.is_expired:
             return "Expired"
         return "In Progress"
+
+
+@admin.register(ContestReminderRegistration)
+class ContestReminderRegistrationAdmin(admin.ModelAdmin):
+    list_display = ["user", "contest", "created_at"]
+    list_filter = ["contest"]
+    search_fields = ["user__email", "user__username", "contest__title"]
+    readonly_fields = ["user", "contest", "created_at"]
+
+    def has_add_permission(self, request):
+        return False
+
+    def has_change_permission(self, request, obj=None):
+        return False
+
+
+@admin.register(ContestReminderNotification)
+class ContestReminderNotificationAdmin(admin.ModelAdmin):
+    list_display = [
+        "contest",
+        "sent_at",
+        "recipient_count",
+        "created_at",
+    ]
+    list_filter = ["sent_at"]
+    search_fields = ["contest__title", "contest__slug"]
+    readonly_fields = [
+        "sent_at",
+        "recipient_count",
+        "error_summary",
+        "created_at",
+    ]
+
+    def get_readonly_fields(self, request, obj=None):
+        if obj and obj.sent_at:
+            return self.readonly_fields + ["contest"]
+        return self.readonly_fields
 
 
 @admin.register(ContestQuestionAttempt)

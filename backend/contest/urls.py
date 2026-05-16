@@ -6,6 +6,7 @@ from contest.apis import (
     ContestLeaderboardApi,
     ContestListApi,
     ContestPracticeApi,
+    ContestReminderRegisterApi,
     ContestResultApi,
     ContestStartApi,
     ContestSubmitApi,
@@ -14,6 +15,11 @@ from contest.apis import (
 urlpatterns = [
     path("", ContestListApi.as_view(), name="contest_list"),
     path("<slug:slug>/", ContestDetailApi.as_view(), name="contest_detail"),
+    path(
+        "<slug:slug>/reminders/register/",
+        ContestReminderRegisterApi.as_view(),
+        name="contest_reminder_register",
+    ),
     path("<slug:slug>/practice/", ContestPracticeApi.as_view(), name="contest_practice"),
     path("<slug:slug>/start/", ContestStartApi.as_view(), name="contest_start"),
     path("<slug:slug>/answer/", ContestAnswerApi.as_view(), name="contest_answer"),

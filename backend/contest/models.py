@@ -113,3 +113,36 @@ class ContestQuestionAttempt(CreatedModalMixin):
 
     def __str__(self):
         return f"{self.contest_attempt} – Q{self.question_id}"
+
+
+class ContestReminderRegistration(CreatedModalMixin):
+    user = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="contest_reminder_registrations"
+    )
+    contest = models.ForeignKey(
+        Contest, on_delete=models.CASCADE, related_name="reminder_registrations"
+    )
+
+    class Meta:
+        unique_together = [["user", "contest"]]
+        ordering = ["-created_at"]
+
+    def __str__(self):
+        return f"{self.user.email} – {self.contest.title}"
+
+
+class ContestReminderNotification(CreatedModalMixin):
+    contest = models.ForeignKey(
+        Contest,
+        on_delete=models.CASCADE,
+        related_name="reminder_notifications",
+    )
+    sent_at = models.DateTimeField(null=True, blank=True)
+    recipient_count = models.PositiveIntegerField(default=0)
+    error_summary = models.TextField(blank=True)
+
+    class Meta:
+        ordering = ["-created_at"]
+
+    def __str__(self):
+        return f"Reminder notification – {self.contest.title}"

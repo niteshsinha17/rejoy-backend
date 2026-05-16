@@ -56,11 +56,13 @@ class ContestListSerializer(serializers.ModelSerializer):
 class ContestDetailSerializer(ContestListSerializer):
     has_started = serializers.SerializerMethodField()
     is_submitted = serializers.SerializerMethodField()
+    reminder_registered = serializers.SerializerMethodField()
 
     class Meta(ContestListSerializer.Meta):
         fields = ContestListSerializer.Meta.fields + [
             "has_started",
             "is_submitted",
+            "reminder_registered",
         ]
 
     def _user_state(self) -> dict:
@@ -71,6 +73,9 @@ class ContestDetailSerializer(ContestListSerializer):
 
     def get_is_submitted(self, obj) -> bool:
         return self._user_state().get("is_submitted", False)
+
+    def get_reminder_registered(self, obj) -> bool:
+        return bool(self._user_state().get("reminder_registered", False))
 
     def get_participated(self, obj: Contest) -> bool:
         if "user_state" in self.context:

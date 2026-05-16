@@ -109,6 +109,17 @@ class ContestDetailApi(OptionalAuthApi):
         return Response(data=serializer.data, status=HTTP_200_OK)
 
 
+class ContestReminderRegisterApi(BaseApi):
+    def post(self, request, slug, *args, **kwargs):
+        contest = get_object_or_404(Contest, slug=slug)
+        user = self.get_user()
+        try:
+            ContestService.register_reminder(user=user, contest=contest)
+        except BaseValidationError as e:
+            return self.error_response(e)
+        return Response(data={"registered": True}, status=HTTP_200_OK)
+
+
 class ContestPracticeApi(OpenApi):
     """Virtual / practice MCQ: full question list, no DB attempt or answers."""
 
