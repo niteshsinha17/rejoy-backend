@@ -16,7 +16,10 @@ const validationSchema = yup.object().shape({
   first_name: yup.string().required("First Name is required"),
   last_name: yup.string(),
   email: yup.string().email("Invalid email").required("Email is required"),
-  password: yup.string().required("Password is required").test("validate-password", "Password is not strong enough", validatePassword),
+  password: yup
+    .string()
+    .required("Password is required")
+    .test("validate-password", "Password must be at least 4 characters", validatePassword),
 });
 
 const STEPS = {

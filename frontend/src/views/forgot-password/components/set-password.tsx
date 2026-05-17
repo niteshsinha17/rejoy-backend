@@ -9,7 +9,10 @@ import { useRouter } from "next/navigation";
 import * as yup from "yup";
 
 const schema = yup.object().shape({
-  password: yup.string().required("Password is required").test("validate-password", "Password is not strong enough", validatePassword),
+  password: yup
+    .string()
+    .required("Password is required")
+    .test("validate-password", "Password must be at least 4 characters", validatePassword),
   verificationCode: yup.string().required("Verification code is required"),
 });
 

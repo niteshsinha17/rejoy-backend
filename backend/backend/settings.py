@@ -119,20 +119,9 @@ else:
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
 
-AUTH_PASSWORD_VALIDATORS = [
-    {
-        "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",
-    },
-    {
-        "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",
-    },
-]
+# Enforced in API serializers (min 4 chars). Django's built-in validators default to 8+ chars
+# and reject numeric-only passwords, which conflicts with the product rules.
+AUTH_PASSWORD_VALIDATORS = []
 
 
 # Internationalization

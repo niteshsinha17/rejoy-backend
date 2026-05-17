@@ -18,7 +18,11 @@ from authentication.services.email_verification import (
 from authentication.services.phone_verification import PhoneVerificationService
 from common.apis import BaseApi, OpenApi
 from core.models import DoctorProfile, User
-from core.user.constants import NAME_MAX_LENGTH, PASSWORD_MAX_LENGTH
+from core.user.constants import (
+    NAME_MAX_LENGTH,
+    PASSWORD_MAX_LENGTH,
+    PASSWORD_MIN_LENGTH,
+)
 from core.user.services import CreateUserService
 from core.utils import get_phone_number_with_country_code
 
@@ -49,6 +53,7 @@ class AuthCreateDoctorUserApi(OpenApi):
         first_name = serializers.CharField(max_length=NAME_MAX_LENGTH)
         last_name = serializers.CharField(allow_blank=True)
         password = serializers.CharField(
+            min_length=PASSWORD_MIN_LENGTH,
             max_length=PASSWORD_MAX_LENGTH,
             required=True,
         )
@@ -344,7 +349,10 @@ class ResetPassword(OpenApi):
     class InputSerializer(serializers.Serializer):
         email = serializers.EmailField()
         otp = serializers.CharField(max_length=4)
-        password = serializers.CharField(max_length=PASSWORD_MAX_LENGTH)
+        password = serializers.CharField(
+            min_length=PASSWORD_MIN_LENGTH,
+            max_length=PASSWORD_MAX_LENGTH,
+        )
 
     input_serializer_class = InputSerializer
 
