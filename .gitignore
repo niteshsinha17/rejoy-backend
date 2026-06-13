@@ -1,4 +1,11 @@
 ssl
 .DS_Store
-ssl
 aws
+db.sqlite3
+env
+__pycache__/
+*.pyc
+redis-data*
+static/
+chroma_db
+venv/

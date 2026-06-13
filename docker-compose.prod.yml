@@ -1,21 +1,27 @@
 services:
+  redis:
+    image: redis
+    volumes:
+      - "./redis-data:/data"
+    command: redis-server --appendonly yes
+    restart: on-failure
+    ports:
+      - "6379:6379"
+
   api:
     build:
-      context: ./backend/
-    command: bash -c "python manage.py migrate && python manage.py collectstatic --noinput && gunicorn -b 0.0.0.0:8000 backend.wsgi:application"
+      context: .
+    working_dir: /usr/src/app
+    command: bash -c "python manage.py migrate && python manage.py collectstatic --noinput && gunicorn -b 0.0.0.0:8000 config.wsgi:application"
     volumes:
-      - ./backend/:/usr/src/app/backend/
-      - django_admin_static_files:/usr/src/app/backend/static
+      - django_admin_static_files:/usr/src/app/static
     env_file:
-      - ./backend/prod.env
+      - ./.env
+      - ./prod.env
     expose:
       - 8000
-
-  # web:
-  #   build:
-  #     context: ./frontend/
-  #   expose:
-  #     - 3000
+    depends_on:
+      - redis
 
   nginx:
     build:
@@ -27,7 +33,7 @@ services:
       - ./prod_conf.d/:/etc/nginx/conf.d/
       - /etc/ssl/:/etc/ssl/
       - /var/log/nginx/:/var/log/nginx/
-      - django_admin_static_files:/home/app/backend/static
+      - django_admin_static_files:/home/app/static
 
 volumes:
   django_admin_static_files:
