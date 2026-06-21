@@ -1,15 +1,5 @@
-from django.db import models
-from django.utils import timezone
+"""Backward-compatible re-exports. Prefer ``core.models.base`` in new code."""
 
+from core.models.base import SoftDeleteBaseModel, TimeStampBaseModel
 
-class TimeStampBaseModel(models.Model):
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now_add=True)
-
-    class Meta:
-        abstract = True
-        ordering = ("-created_at",)
-
-    def save(self, *args, **kwargs):
-        self.updated_at = timezone.now()
-        super(TimeStampBaseModel, self).save(*args, **kwargs)
+__all__ = ["SoftDeleteBaseModel", "TimeStampBaseModel"]

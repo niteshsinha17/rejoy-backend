@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 
-from common.mixin import CreatedModalMixin
+from core.mixin import CreatedModalMixin
 from core.utils import get_phone_number_with_country_code
 
 

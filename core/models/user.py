@@ -20,16 +20,8 @@ class User(AbstractUser):
 
 class DoctorProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
-    specialties = models.JSONField(
-        default=list,
-    )
-    conditions_treated = models.JSONField(
-        default=list,
-    )
-    procedures_performed = models.JSONField(
-        default=list,
-    )
-    insurance_accepted = models.JSONField(
-        default=list,
-    )
+    specialties = models.JSONField(default=list)
+    conditions_treated = models.JSONField(default=list)
+    procedures_performed = models.JSONField(default=list)
+    insurance_accepted = models.JSONField(default=list)
     npi_number = models.CharField(max_length=10, null=True, blank=True)

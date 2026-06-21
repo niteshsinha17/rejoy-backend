@@ -16,6 +16,7 @@ services:
     env_file:
       - ./.env
     environment:
+      REDIS_HOST: redis
       WATCHFILES_FORCE_POLLING: "true"
     depends_on:
       - redis

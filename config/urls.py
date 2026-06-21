@@ -20,9 +20,10 @@ from django.urls import include, path
 urlpatterns = [
     path("django-admin/", admin.site.urls),
     path("api/v1/auth/", include("authentication.urls")),
-    path("api/v1/core/", include("core.common.urls")),
+    path("api/v1/core/", include("core.urls")),
     path("api/v1/user/", include("core.user.urls")),
     path("api/v1/rejoy-ai/", include("rejoy_ai.urls")),
     path("api/v1/practice/", include("practice.urls")),
     path("api/v1/contests/", include("contest.urls")),
+    path("api/v1/community/", include("community.urls")),
 ]

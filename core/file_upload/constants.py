@@ -1,8 +1,3 @@
-import os
+"""Backward-compatible re-exports. Prefer ``core.constants`` in new code."""
 
-
-AWS_ACCESS_KEY_ID = os.environ.get("AWS_ACCESS_KEY_ID")
-AWS_SECRET_ACCESS_KEY = os.environ.get("AWS_SECRET_ACCESS_KEY")
-AWS_STORAGE_BUCKET_NAME = os.environ.get("AWS_STORAGE_BUCKET_NAME")
-AWS_BUCKET_URL = os.environ.get("AWS_BUCKET_URL") or ""
-FILE_BASE_URL = AWS_BUCKET_URL
+from core.constants import *  # noqa: F403

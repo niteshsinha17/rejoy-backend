@@ -5,7 +5,7 @@ from django.utils import timezone
 
 logger = logging.getLogger(__name__)
 
-from common.mixin import CreatedModalMixin, UpdatedModalMixin
+from core.mixin import CreatedModalMixin, UpdatedModalMixin
 from core.models import User
 
 

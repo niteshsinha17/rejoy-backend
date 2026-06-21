@@ -1,8 +1,8 @@
 from django.db import models
 from django.utils.text import slugify
 
-from common.mixin import CreatedModalMixin, DeletedModalMixin
-from common.utils import HashIdConverter
+from core.mixin import CreatedModalMixin, DeletedModalMixin
+from core.utils import HashIdConverter
 from core.models import User
 
 

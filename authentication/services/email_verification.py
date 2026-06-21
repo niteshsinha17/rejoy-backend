@@ -8,8 +8,8 @@ from authentication.exceptions import (
     OtpExpiredException,
 )
 from authentication.models import EmailVerificationOtp
-from common.utils import create_4_digit_otp, send_mail
-from common.utils.opt_generator import send_html_mail
+from core.utils import create_4_digit_otp, send_mail
+from core.utils.common import send_html_mail
 from core.models import User
 
 

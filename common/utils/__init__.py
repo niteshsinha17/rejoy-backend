@@ -1,2 +1,3 @@
-from common.utils.hash_generator import *
-from common.utils.opt_generator import *
+"""Backward-compatible re-exports. Prefer ``core.utils`` in new code."""
+
+from core.utils import *  # noqa: F403

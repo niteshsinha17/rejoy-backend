@@ -4,7 +4,7 @@ from rest_framework.mixins import ListModelMixin
 from rest_framework.pagination import LimitOffsetPagination
 from rest_framework.response import Response
 
-from common.apis import BaseApi
+from core.apis import BaseApi
 from rejoy_ai.models import Thread, ThreadMessage
 from rejoy_ai.serializers.response import ThreadListSerializer
 from rejoy_ai.services.thread import ThreadService

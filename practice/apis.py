@@ -1,7 +1,7 @@
 from rest_framework.response import Response
 from rest_framework.status import HTTP_200_OK, HTTP_201_CREATED
 
-from common.apis import BaseApi, OptionalAuthApi
+from core.apis import BaseApi, OptionalAuthApi
 from practice.serializers import (
     AttemptedQuestionsSerializer,
     QuestionAttemptInputSerializer,

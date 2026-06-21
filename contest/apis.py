@@ -3,8 +3,8 @@ from django.shortcuts import get_object_or_404
 from rest_framework.response import Response
 from rest_framework.status import HTTP_200_OK
 
-from common.apis import BaseApi, OpenApi, OptionalAuthApi
-from common.exceptions import BaseValidationError
+from core.apis import BaseApi, OpenApi, OptionalAuthApi
+from core.exceptions import BaseValidationError
 from contest.models import Contest, ContestAttempt
 from contest.serializers import (
     AnswerInputSerializer,

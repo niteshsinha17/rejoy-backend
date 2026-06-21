@@ -6,8 +6,13 @@ from rest_framework import serializers
 from rest_framework.response import Response
 from rest_framework.status import HTTP_200_OK, HTTP_400_BAD_REQUEST
 
-from common.apis import BaseApi
-from core.file_upload.constants import *
+from core.apis import BaseApi
+from core.constants import (
+    AWS_ACCESS_KEY_ID,
+    AWS_BUCKET_URL,
+    AWS_SECRET_ACCESS_KEY,
+    AWS_STORAGE_BUCKET_NAME,
+)
 
 
 EXPIRATION = 3600

@@ -2,12 +2,12 @@ from twilio.rest import Client
 
 from authentication.exceptions import InvalidOtpException, OtpExpiredException
 from authentication.models import PhoneVerificationOtp
-from common.constants import (
+from core.constants import (
     TWILIO_ACCOUNT_SID,
     TWILIO_AUTH_TOKEN,
     TWILIO_VERIFICATION_NUMBER,
 )
-from common.utils import create_4_digit_otp
+from core.utils import create_4_digit_otp
 from core.utils import get_phone_number_with_country_code
 
 

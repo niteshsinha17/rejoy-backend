@@ -16,7 +16,7 @@ from authentication.services.email_verification import (
     create_or_get_authentication_token,
 )
 from authentication.services.phone_verification import PhoneVerificationService
-from common.apis import BaseApi, OpenApi
+from core.apis import BaseApi, OpenApi
 from core.models import DoctorProfile, User
 from core.user.constants import (
     NAME_MAX_LENGTH,

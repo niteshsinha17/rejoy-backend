@@ -1,4 +1,4 @@
-from common.exceptions import BaseValidationError
+from core.exceptions import BaseValidationError
 
 
 class UsernameNotAvailable(BaseValidationError):

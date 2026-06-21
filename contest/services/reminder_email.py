@@ -6,8 +6,8 @@ import logging
 from django.utils import timezone
 from django.utils.formats import date_format
 
-from common.constants import FRONTEND_URL
-from common.utils.opt_generator import send_html_mail
+from core.constants import FRONTEND_URL
+from core.utils.common import send_html_mail
 from contest.models import (
     Contest,
     ContestReminderNotification,

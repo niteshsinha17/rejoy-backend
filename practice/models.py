@@ -3,7 +3,7 @@ from datetime import timedelta
 from django.db import models
 from django.utils import timezone
 
-from common.mixin import CreatedModalMixin, UpdatedModalMixin
+from core.mixin import CreatedModalMixin, UpdatedModalMixin
 from core.models import User
 
 
