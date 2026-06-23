@@ -15,7 +15,12 @@ def _topic_name_search_q(term: str) -> Q:
     if hospital_ids:
         q |= Q(topic_type=TopicType.HOSPITAL, topic_id__in=hospital_ids)
     college_ids = list(
-        MedicalCollege.objects.filter(name__icontains=term).values_list("pk", flat=True)
+        MedicalCollege.objects.filter(
+            Q(name__icontains=term)
+            | Q(location__icontains=term)
+            | Q(country__icontains=term)
+            | Q(region__icontains=term)
+        ).values_list("pk", flat=True)
     )
     if college_ids:
         q |= Q(topic_type=TopicType.MEDICAL_COLLEGE, topic_id__in=college_ids)

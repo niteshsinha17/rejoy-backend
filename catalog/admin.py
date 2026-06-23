@@ -13,8 +13,9 @@ class HospitalAdmin(admin.ModelAdmin):
 
 @admin.register(MedicalCollege)
 class MedicalCollegeAdmin(admin.ModelAdmin):
-    list_display = ("name", "slug")
-    search_fields = ("name", "slug")
+    list_display = ("name", "slug", "location", "country", "region")
+    list_filter = ("country",)
+    search_fields = ("name", "slug", "location")
     prepopulated_fields = {"slug": ("name",)}
 
 

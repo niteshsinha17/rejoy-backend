@@ -23,6 +23,9 @@ def serialize_topic_row(topic_type: str, row) -> dict:
     }
     if topic_type == TopicType.HOSPITAL:
         data["logo_url"] = row.logo_url
+    if topic_type == TopicType.MEDICAL_COLLEGE:
+        data["subtitle"] = row.subtitle
+        data["display_meta"] = row.display_meta
     return data
 
 
@@ -81,6 +84,14 @@ def resolve_topic_for_post(topic_payload: dict) -> tuple[str, int]:
 
     model = get_topic_model(topic_type)
 
+    if topic_type in (TopicType.MEDICAL_COLLEGE, TopicType.EXAMS):
+        if topic_id is None:
+            raise ValidationError("Topic id is required for this topic type.")
+        row = model.objects.filter(pk=topic_id).first()
+        if not row:
+            raise ValidationError("Topic not found.")
+        return topic_type, row.pk
+
     if topic_id is not None:
         row = model.objects.filter(pk=topic_id).first()
         if not row:
@@ -103,9 +114,16 @@ def resolve_topic_for_post(topic_payload: dict) -> tuple[str, int]:
 
 
 def search_medical_college_topics(q: str, limit: int = 20) -> list[dict]:
+    from django.db.models import Q
+
     return [
         serialize_topic_row(TopicType.MEDICAL_COLLEGE, row)
-        for row in MedicalCollege.objects.filter(name__icontains=q).order_by("name")[:limit]
+        for row in MedicalCollege.objects.filter(
+            Q(name__icontains=q)
+            | Q(location__icontains=q)
+            | Q(country__icontains=q)
+            | Q(region__icontains=q)
+        ).order_by("name")[:limit]
     ]
 
 
@@ -133,5 +151,5 @@ def search_topics(q: str, limit: int = 20) -> list[dict]:
     results.extend(search_medical_college_topics(q, limit))
     results.extend(search_exam_topics(q, limit))
 
-    results.sort(key=lambda r: r["name"].lower())
+    results.sort(key=lambda row: row["name"].lower())
     return results[:limit]
