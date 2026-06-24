@@ -15,7 +15,7 @@ RUN apt-get update \
 RUN pip install --no-cache-dir --upgrade pip
 
 COPY requirements.txt .
-RUN pip install --no-cache-dir mysqlclient
-RUN pip install --no-cache-dir -r requirements.txt
+RUN pip install --no-cache-dir --upgrade pip \
+    && pip install --no-cache-dir -r requirements.txt
 
 COPY . .
