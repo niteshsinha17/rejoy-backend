@@ -5,18 +5,23 @@ services:
       - "./redis-data:/data"
     command: redis-server --appendonly yes
     restart: on-failure
-    ports:
-      - "6379:6379"
+
   api:
     build:
-      context: ./backend/
-    command: bash -c "python manage.py migrate && python manage.py collectstatic --noinput &&  python manage.py create_theme && daphne -b 0.0.0.0 -p 8000 backend.asgi:application"
+      context: .
+    working_dir: /usr/src/app
+    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     volumes:
-      - ./backend/:/usr/src/app/backend/
+      - .:/usr/src/app/
     env_file:
-      - ./backend/dev.env
-    expose:
-      - 8000
+      - ./.env
+    environment:
+      REDIS_HOST: redis
+      WATCHFILES_FORCE_POLLING: "true"
+    depends_on:
+      - redis
+    ports:
+      - "8000:8000"
 
   nginx:
     build:
@@ -26,7 +31,7 @@ services:
     volumes:
       - ./dev_conf.d/:/etc/nginx/conf.d/
       - /var/log/nginx/:/var/log/nginx/
-      - django_admin_static_files:/home/app/backend/static
+      - django_admin_static_files:/home/app/static
 
 volumes:
   django_admin_static_files:

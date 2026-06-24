@@ -1,0 +1,77 @@
+---
+description: Rejoy Django — use core and common shared layers consistently
+globs: "**/*.py"
+alwaysApply: false
+---
+
+# `core` — shared infrastructure
+
+Use **`core`** for cross-app building blocks; do not duplicate these patterns inside feature apps.
+
+## Models (`core.models`)
+
+- **`core.models.base.SoftDeleteBaseModel`**: `created_at`, `updated_at`, `deleted_at`; default manager excludes soft-deleted rows; call **`soft_delete()`** for retention.
+- **`core.models.base.TimeStampBaseModel`**: lightweight `created_at` / `updated_at` only.
+- **`core.models.user.User`**: `AUTH_USER_MODEL`; doctor profile in **`DoctorProfile`**.
+
+## HTTP APIs (`core.apis.base`)
+
+- **`BaseApi`**: Token auth + **`IsAuthenticated`**. Protected endpoints.
+- **`OptionalAuthApi`**: lenient token auth; invalid tokens → anonymous user. Use for public feeds that enrich when logged in (community).
+- **`OpenApi`**: no auth required.
+- Declare **`input_serializer_class`** and call **`validate_input_data()`** / **`validate_query_params()`** in handlers.
+- Use **`get_response_200`**, **`error_response`**, **`set_response_message`** for consistent JSON envelopes.
+
+## Exceptions (`core.exceptions`)
+
+- Feature **`exceptions.py`** classes subclass **`BaseValidationError`**.
+
+## Constants & utilities
+
+- **`core.constants`**: env-backed values (`FRONTEND_URL`, AWS, Twilio, `FILE_BASE_URL`).
+- **`core.utils.hash`**: **`HashIdConverter`**
+- **`core.utils.common`**: OTP helpers, **`send_mail`**, **`send_html_mail`**
+
+## Legacy mixins (`core.mixin`)
+
+- **`CreatedModalMixin`**, **`UpdatedModalMixin`**, **`DeletedModalMixin`** — prefer **`SoftDeleteBaseModel`** / **`TimeStampBaseModel`** in new models.
+
+## URLs
+
+- **`core.urls`**: infrastructure under **`api/v1/core/`** (timezone list, S3 presign).
+
+---
+
+# `common` — backward-compatible shim
+
+- **`common.*`** re-exports from **`core.*`** for legacy imports.
+- **New code** should import from **`core`** directly.
+- Reserve **`common`** for future small cross-cutting endpoints (location, flags) with **`common/urls.py`** at **`api/v1/common/`**.
+
+---
+
+# Feature app layout (match `community/`, `catalog/`)
+
+```
+{app}/
+├── urls.py
+├── apis.py              # or apis/*.py when large
+├── models/              # or models.py if tiny
+├── serializers/         # input.py + output.py when non-trivial
+├── services/
+├── exceptions.py
+├── constants.py         # optional
+└── admin.py
+```
+
+**`catalog/`** has no HTTP layer — consumed by feature services (e.g. `community/services/topic.py`).
+
+---
+
+# Checklist for new backend features
+
+1. API view: **`BaseApi`**, **`OptionalAuthApi`**, or **`OpenApi`** + **`input_serializer_class`** + **`validate_input_data()`**.
+2. Business logic in **`services/`**, not in views.
+3. Errors: **`BaseValidationError`** subclasses in app **`exceptions.py`**.
+4. Soft-delete entities: **`SoftDeleteBaseModel`**; junction rows: **`TimeStampBaseModel`**.
+5. Mount routes at **`api/v1/{resource}/`** in **`config/urls.py`**.
