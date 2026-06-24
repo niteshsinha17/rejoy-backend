@@ -1,14 +1,19 @@
 """
 Populate MedicalCollege rows from catalog/seed_data/medical_colleges.json.
 
+The JSON is maintained in git locally. After adding or editing colleges:
+  1. python manage.py validate_medical_colleges   # local
+  2. commit and push
+  3. python manage.py seed_medical_colleges         # on server
+
 Data shape: list of { name, slug, source_meta, display_meta }.
-Regenerate: python scripts/extract_wikipedia_medical_colleges.py
+Regenerate from Wikipedia: python scripts/extract_wikipedia_medical_colleges.py
 
 Usage:
     python manage.py seed_medical_colleges
     python manage.py seed_medical_colleges --region India
     python manage.py seed_medical_colleges --dry-run
-    python manage.py seed_medical_colleges --validate-slugs
+    python manage.py seed_medical_colleges --show-summary
 """
 
 from __future__ import annotations
@@ -18,7 +23,6 @@ from collections import Counter
 from django.core.management.base import BaseCommand, CommandError
 
 from catalog.seed_data.medical_colleges_loader import (
-    DuplicateSlugError,
     load_medical_college_seed_payload,
     seed_medical_colleges,
 )
@@ -36,28 +40,19 @@ class Command(BaseCommand):
         parser.add_argument(
             "--dry-run",
             action="store_true",
-            help="Print counts without writing to the database.",
+            help="Validate and print counts without writing to the database.",
         )
         parser.add_argument(
             "--show-summary",
             action="store_true",
-            help="Print region counts from the seed file and exit.",
-        )
-        parser.add_argument(
-            "--validate-slugs",
-            action="store_true",
-            help="Validate unique slugs in the seed file and exit.",
+            help="Validate and print region counts from the seed file, then exit.",
         )
 
     def handle(self, *args, **options):
         try:
             rows = load_medical_college_seed_payload()
-        except DuplicateSlugError as exc:
+        except (OSError, ValueError) as exc:
             raise CommandError(str(exc)) from exc
-
-        if options["validate_slugs"]:
-            self.stdout.write(self.style.SUCCESS(f"OK: {len(rows)} unique slugs"))
-            return
 
         if options["show_summary"]:
             self._print_summary(rows)

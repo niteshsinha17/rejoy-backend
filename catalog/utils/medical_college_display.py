@@ -1,6 +1,9 @@
 from __future__ import annotations
 
-from catalog.models import MedicalCollege
+from typing import TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from catalog.models import MedicalCollege
 
 
 def build_medical_college_display_meta(row: MedicalCollege) -> dict:
