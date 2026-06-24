@@ -9,8 +9,7 @@ from pathlib import Path
 
 import requests
 from bs4 import BeautifulSoup
-
-from catalog.utils.medical_college_slug import assign_unique_medical_college_slug
+from django.utils.text import slugify
 
 HEADERS = {
     "User-Agent": "RejoyHealthBot/1.0 (catalog seed; contact: support@rejoyhealth.com)",
@@ -238,6 +237,21 @@ def build_duplicate_report(colleges: list[dict]) -> list[dict]:
     return duplicates
 
 
+def unique_slug(name: str, location: str, used: set[str]) -> str:
+    """Assign a unique slug when regenerating JSON from Wikipedia (slugs are edited in JSON after)."""
+    base = slugify(name)[:255]
+    if not base:
+        base = slugify(location)[:255] or "medical-college"
+    slug = base
+    counter = 2
+    while slug in used:
+        suffix = slugify(location) if location else str(counter)
+        slug = f"{base}-{suffix}"[:255]
+        counter += 1
+    used.add(slug)
+    return slug
+
+
 def to_seed_rows(colleges: list[dict]) -> list[dict]:
     used_slugs: set[str] = set()
     rows: list[dict] = []
@@ -248,11 +262,7 @@ def to_seed_rows(colleges: list[dict]) -> list[dict]:
         rows.append(
             {
                 "name": name,
-                "slug": assign_unique_medical_college_slug(
-                    name=name,
-                    location=location,
-                    used=used_slugs,
-                ),
+                "slug": unique_slug(name, location, used_slugs),
                 "source_meta": {
                     "wikipedia_page": PAGES.get(region, ""),
                     "wikipedia_region": region,

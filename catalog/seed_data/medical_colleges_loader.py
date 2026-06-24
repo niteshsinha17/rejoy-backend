@@ -97,25 +97,6 @@ def load_medical_college_seed_payload() -> list[dict]:
     return rows
 
 
-def _find_existing_college(
-    *,
-    name: str,
-    slug: str,
-    location: str,
-    country: str,
-    region: str,
-) -> MedicalCollege | None:
-    row = MedicalCollege.objects.filter(slug=slug).first()
-    if row:
-        return row
-    return MedicalCollege.objects.filter(
-        name=name,
-        location=location,
-        country=country,
-        region=region,
-    ).first()
-
-
 def _upsert_college(
     *,
     name: str,
@@ -124,17 +105,9 @@ def _upsert_college(
     country: str = "",
     region: str = "",
 ) -> tuple[MedicalCollege, bool, bool]:
-    row = _find_existing_college(
-        name=name,
-        slug=slug,
-        location=location,
-        country=country,
-        region=region,
-    )
+    row = MedicalCollege.objects.filter(slug=slug).first()
     if row:
         updates: dict = {}
-        if row.slug != slug:
-            updates["slug"] = slug
         if row.name != name:
             updates["name"] = name
         if row.location != location:

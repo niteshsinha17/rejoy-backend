@@ -125,7 +125,7 @@ Likes toggle idempotently and update `Post.like_count`.
 | Entity | `topic_type` | Slug |
 |--------|--------------|------|
 | Hospital | `hospital` | Generated from name on first save |
-| Medical college | `medical_college` | Short prefix + location when duplicated (e.g. `aiims-delhi`, `gmc-akola`); otherwise slugified full name |
+| Medical college | `medical_college` | Explicit `slug` in seed JSON (unique); upserted by slug |
 | Exam | `exams` | Generated from name on first save |
 
 ### Medical college seed data

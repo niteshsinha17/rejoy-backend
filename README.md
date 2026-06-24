@@ -182,16 +182,10 @@ python manage.py seed_medical_colleges --dry-run
 python manage.py seed_medical_colleges --region India
 ```
 
-Regenerate seed data from Wikipedia lists:
+Regenerate seed data from Wikipedia lists (then edit slugs in JSON as needed):
 
 ```bash
 python scripts/extract_wikipedia_medical_colleges.py
-```
-
-Slugs use short prefixes where possible (`aiims-delhi`, `gmc-akola`, `gmers-...`). After manual JSON edits, rebuild slugs:
-
-```bash
-python scripts/simplify_medical_college_slugs.py
 python manage.py validate_medical_colleges
 ```
 

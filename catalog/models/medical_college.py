@@ -1,13 +1,12 @@
 from django.db import models
 
-from catalog.models.mixins import SlugFromNameMixin
 from catalog.utils.medical_college_display import (
     build_medical_college_display_meta,
     build_medical_college_subtitle,
 )
 
 
-class MedicalCollege(SlugFromNameMixin, models.Model):
+class MedicalCollege(models.Model):
     name = models.CharField(max_length=255, db_index=True)
     slug = models.SlugField(max_length=255, unique=True, db_index=True)
     location = models.CharField(max_length=128, blank=True, default="")
