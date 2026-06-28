@@ -20,7 +20,6 @@ from django.utils import timezone
 from contest.models import Contest, ContestAttempt, ContestQuestionAttempt, MarkingScheme
 from contest.schemas import parse_contest_questions_json
 from contest.services.answer_key import generate_results
-from contest.services.scoring import normalize_cop
 from core.models import User
 
 QUESTIONS_JSON_URL = (
@@ -47,23 +46,14 @@ LEADERBOARD_USER_COUNT = 55
 LIVE_CONTEST_USER_COUNT = 6
 
 
-def _fetch_questions_payload(url: str) -> list:
+def _fetch_questions_payload(url: str) -> tuple[list[dict], dict[str, list[int]]]:
     response = requests.get(url, timeout=60)
     response.raise_for_status()
     data = response.json()
-    parse_contest_questions_json(data)
-    return data
-
-
-def _answer_key_from_questions(questions: list) -> dict:
-    out: dict[str, list[int]] = {}
-    for q in questions:
-        qid = str(q["id"])
-        cop = q.get("cop")
-        if cop is None:
-            raise ValueError(f"Question {qid} has no cop in source JSON")
-        out[qid] = normalize_cop(cop)
-    return out
+    records = parse_contest_questions_json(data)
+    questions = [r.model_dump(mode="python") for r in records]
+    answer_key = {str(r.id): r.cop for r in records}
+    return questions, answer_key
 
 
 class Command(BaseCommand):
@@ -81,9 +71,8 @@ class Command(BaseCommand):
             )
         )
 
-        questions = _fetch_questions_payload(QUESTIONS_JSON_URL)
+        questions, answer_key = _fetch_questions_payload(QUESTIONS_JSON_URL)
         total = len(questions)
-        answer_key = _answer_key_from_questions(questions)
 
         now = timezone.now()
 
@@ -93,7 +82,6 @@ class Command(BaseCommand):
             title: str,
             start_time,
             duration_minutes: int,
-            with_answer_key: bool,
         ) -> Contest:
             return Contest.objects.create(
                 slug=slug,
@@ -106,7 +94,7 @@ class Command(BaseCommand):
                 questions_json=questions,
                 total_questions=total,
                 marking_scheme=MarkingScheme.NEET_PG,
-                answer_key_json=answer_key if with_answer_key else {},
+                answer_key_json=answer_key,
             )
 
         create_contest(
@@ -114,21 +102,18 @@ class Command(BaseCommand):
             title="Fixture — Upcoming contest",
             start_time=now + timezone.timedelta(days=3),
             duration_minutes=120,
-            with_answer_key=False,
         )
         create_contest(
             slug=FIXTURE_SLUG_LIVE,
             title="Fixture — Live contest",
             start_time=now - timezone.timedelta(minutes=45),
             duration_minutes=240,
-            with_answer_key=True,
         )
         create_contest(
             slug=FIXTURE_SLUG_ENDED_EMPTY,
             title="Fixture — Ended (no attempts)",
             start_time=now - timezone.timedelta(days=5),
             duration_minutes=90,
-            with_answer_key=True,
         )
 
         lb_contest = create_contest(
@@ -136,7 +121,6 @@ class Command(BaseCommand):
             title="Fixture — Ended (paginated leaderboard)",
             start_time=now - timezone.timedelta(days=10),
             duration_minutes=120,
-            with_answer_key=True,
         )
 
         for i, slug in enumerate(FIXTURE_PAST_SLUGS, start=1):
@@ -145,7 +129,6 @@ class Command(BaseCommand):
                 title=f"Fixture — Past page seed {i:02d}",
                 start_time=now - timezone.timedelta(days=30 + i),
                 duration_minutes=60,
-                with_answer_key=(i % 3 == 0),
             )
 
         qids = [str(q["id"]) for q in questions]
