@@ -41,7 +41,7 @@ class Contest(CreatedModalMixin, UpdatedModalMixin):
         choices=MarkingScheme.choices,
         default=MarkingScheme.NEET_PG,
     )
-    # question_id (str) -> sorted list of correct option indices 1–4
+    # question_id (str) -> sorted list of correct option indices 1–4 (synced from questions on qb fetch)
     answer_key_json = models.JSONField(default=dict, blank=True)
     leaderboard_cache_payload = models.JSONField(default=list, blank=True)
     leaderboard_cache_computed_at = models.DateTimeField(null=True, blank=True)

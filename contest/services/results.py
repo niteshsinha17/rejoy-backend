@@ -4,6 +4,7 @@ from django.utils import timezone
 
 from contest.exceptions import NotRegisteredError, ResultsNotReleasedError
 from contest.models import Contest, ContestAttempt
+from contest.services.questions import get_contest_answer_key_map
 from contest.services.ranking import official_scores_and_ranks
 from core.models import User
 
@@ -14,16 +15,16 @@ def get_result(user: User, contest: Contest) -> dict:
         raise ResultsNotReleasedError(
             "Personal results are available only after the contest has ended."
         )
-    if not contest.answer_key_json:
+    if not get_contest_answer_key_map(contest):
         raise ResultsNotReleasedError(
-            "Results are not ready yet. The official answer key has not been published for this contest."
+            "Results are not ready yet. Contest questions or the answer key are not fully loaded."
         )
     attempt = ContestAttempt.objects.filter(user=user, contest=contest).first()
     if not attempt:
         raise NotRegisteredError(
             "You did not take part in this contest, so there is no score or rank to show."
         )
-    answer_map = contest.answer_key_json or {}
+    answer_map = get_contest_answer_key_map(contest)
     score = correct_answers = rank = None
     if len(answer_map) == contest.total_questions:
         attempt = ContestAttempt.objects.prefetch_related("answers").get(pk=attempt.pk)
