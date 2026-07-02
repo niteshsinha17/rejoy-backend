@@ -29,7 +29,10 @@ def _format_pydantic_error(exc: PydanticValidationError) -> str:
 
 def parse_contest_questions_json(data: Any) -> list[ContestQuestionPayload]:
     if not isinstance(data, list):
-        raise ContestJsonValidationError("questions_json must be a JSON array of question objects.")
+        raise ContestJsonValidationError(
+            "questions_json must be a JSON array of question objects (each with id, question, "
+            "options, and cop)."
+        )
     try:
         return ContestQuestionsAdapter.validate_python(data)
     except PydanticValidationError as e:

@@ -10,6 +10,7 @@ from pydantic import BaseModel, ConfigDict, Field, TypeAdapter, field_validator
 class ContestQuestionPayload(BaseModel):
     """
     One row in ``Contest.questions_json`` (question-bank export shape).
+    ``cop`` (correct option) is required on every question at ingest time.
     ``extra='allow'`` keeps forward-compatible fields from the QB without listing them all.
     """
 
@@ -25,13 +26,11 @@ class ContestQuestionPayload(BaseModel):
     subject_name: str = ""
     topic_name: str = ""
     exp: str | None = None
-    cop: list[int] | None = None
+    cop: list[int]
 
     @field_validator("cop", mode="before")
     @classmethod
-    def validate_cop_optional(cls, v: Any) -> list[int] | None:
-        if v is None:
-            return None
+    def validate_cop(cls, v: Any) -> list[int]:
         from contest.services.scoring import normalize_cop
 
         return normalize_cop(v)

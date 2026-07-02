@@ -18,18 +18,25 @@ class ContestAdmin(admin.ModelAdmin):
         "slug",
         "course",
         "get_status",
+        "is_testing",
         "marking_scheme",
         "start_time",
         "end_time",
         "total_questions",
     ]
-    list_filter = ["marking_scheme", "course"]
+    list_filter = ["is_testing", "marking_scheme", "course"]
     search_fields = ["title", "slug"]
     readonly_fields = ["total_questions", "created_at", "updated_at"]
     fieldsets = [
         (
             "Basic Info",
-            {"fields": ["slug", "title", "description", "course"]},
+            {
+                "fields": ["slug", "title", "description", "course", "is_testing"],
+                "description": (
+                    "Enable Testing to hide this contest from public lists while keeping "
+                    "direct slug URLs working for QA."
+                ),
+            },
         ),
         (
             "Schedule",
@@ -73,13 +80,24 @@ class ContestAdmin(admin.ModelAdmin):
                 response = requests.get(obj.qb_url, timeout=30)
                 response.raise_for_status()
                 questions = response.json()
-                parse_contest_questions_json(questions)
-                obj.questions_json = questions
-                obj.total_questions = len(questions)
-                obj.save(update_fields=["questions_json", "total_questions"])
+                records = parse_contest_questions_json(questions)
+                obj.questions_json = [r.model_dump(mode="python") for r in records]
+                obj.total_questions = len(records)
+                obj.answer_key_json = {str(r.id): r.cop for r in records}
+                obj.leaderboard_cache_payload = []
+                obj.leaderboard_cache_computed_at = None
+                obj.save(
+                    update_fields=[
+                        "questions_json",
+                        "total_questions",
+                        "answer_key_json",
+                        "leaderboard_cache_payload",
+                        "leaderboard_cache_computed_at",
+                    ]
+                )
                 self.message_user(
                     request,
-                    f"Fetched and stored {obj.total_questions} questions from qb_url.",
+                    f"Fetched and stored {obj.total_questions} questions (with answer key) from qb_url.",
                 )
             except Exception as e:
                 self.message_user(

@@ -1,8 +1,37 @@
 """Question list payloads for practice and live attempts."""
 
-from contest.exceptions import ContestQuestionsNotLoadedError, PracticeNotAvailableError
+from contest.exceptions import ContestJsonValidationError, ContestQuestionsNotLoadedError, PracticeNotAvailableError
 from contest.models import Contest, ContestStatus
 from contest.schemas import parse_contest_questions_json
+
+
+def get_contest_answer_key_map(contest: Contest) -> dict[str, list[int]]:
+    """
+    Return ``question_id -> sorted correct options`` when a full key is available.
+
+    Prefers ``answer_key_json`` when complete; otherwise derives from ``cop`` in
+    ``questions_json`` (required on every question at ingest time).
+    """
+    total = contest.total_questions
+    if total <= 0:
+        return {}
+
+    stored = contest.answer_key_json or {}
+    if len(stored) == total:
+        return {
+            str(qid): sorted(int(x) for x in (opts or []))
+            for qid, opts in stored.items()
+        }
+
+    if not contest.questions_json:
+        return {}
+    try:
+        records = parse_contest_questions_json(contest.questions_json)
+    except ContestJsonValidationError:
+        return {}
+    if len(records) != total:
+        return {}
+    return {str(record.id): list(record.cop) for record in records}
 
 
 def contest_question_choice_type(contest: Contest, question_id: str) -> str | None:
@@ -24,10 +53,7 @@ def build_question_list(contest: Contest, reveal: bool) -> list:
     """Build question dicts from questions_json; merge answer keys when revealing solutions."""
     keys_map: dict[str, list] = {}
     if reveal:
-        keys_map = {
-            str(qid): list(opts or [])
-            for qid, opts in (contest.answer_key_json or {}).items()
-        }
+        keys_map = get_contest_answer_key_map(contest)
     questions: list = []
     if not contest.questions_json:
         return questions

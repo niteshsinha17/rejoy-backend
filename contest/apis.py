@@ -204,8 +204,9 @@ class ContestResultApi(BaseApi):
 
 class ContestLeaderboardApi(OptionalAuthApi):
     """
-    Live leaderboard for every ``ContestAttempt``. With an answer key, scores use the marking scheme;
-    without a key, ranking is provisional (progress by answered questions). Tied scores share rank.
+    Live leaderboard for every ``ContestAttempt``. When questions are loaded (with ``cop``),
+    scores use the marking scheme; otherwise ranking is provisional. Tied score and max
+    response elapsed share rank (lower max non-skipped answer time wins ties).
     Leaderboard rows are cached on the contest row for 5 minutes (live or ended), then rebuilt on the next request.
     Paginated with ``page`` and ``page_size`` (default 10, max 50).
 
