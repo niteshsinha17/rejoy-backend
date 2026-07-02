@@ -18,18 +18,25 @@ class ContestAdmin(admin.ModelAdmin):
         "slug",
         "course",
         "get_status",
+        "is_testing",
         "marking_scheme",
         "start_time",
         "end_time",
         "total_questions",
     ]
-    list_filter = ["marking_scheme", "course"]
+    list_filter = ["is_testing", "marking_scheme", "course"]
     search_fields = ["title", "slug"]
     readonly_fields = ["total_questions", "created_at", "updated_at"]
     fieldsets = [
         (
             "Basic Info",
-            {"fields": ["slug", "title", "description", "course"]},
+            {
+                "fields": ["slug", "title", "description", "course", "is_testing"],
+                "description": (
+                    "Enable Testing to hide this contest from public lists while keeping "
+                    "direct slug URLs working for QA."
+                ),
+            },
         ),
         (
             "Schedule",

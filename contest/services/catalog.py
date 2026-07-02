@@ -38,12 +38,17 @@ class _ContestWindowEnd(Func):
         return sql, params
 
 
+def _public_contest_queryset():
+    """Contests visible on public list endpoints (excludes QA / fixture rows)."""
+    return Contest.objects.filter(is_testing=False)
+
+
 def _contests_with_computed_end():
     """
     Annotate each row with window end = start_time + duration (same as Contest.end_time).
     Used so filters run in SQL instead of loading all rows and calling Contest.status.
     """
-    return Contest.objects.annotate(
+    return _public_contest_queryset().annotate(
         _window_end=_ContestWindowEnd(F("start_time"), F("duration_minutes")),
     )
 

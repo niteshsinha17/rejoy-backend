@@ -45,6 +45,10 @@ class Contest(CreatedModalMixin, UpdatedModalMixin):
     answer_key_json = models.JSONField(default=dict, blank=True)
     leaderboard_cache_payload = models.JSONField(default=list, blank=True)
     leaderboard_cache_computed_at = models.DateTimeField(null=True, blank=True)
+    is_testing = models.BooleanField(
+        default=False,
+        help_text="When enabled, this contest is hidden from public contest lists but remains accessible by direct URL.",
+    )
 
     class Meta:
         ordering = ["-start_time"]

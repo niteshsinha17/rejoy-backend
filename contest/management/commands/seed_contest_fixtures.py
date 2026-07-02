@@ -95,6 +95,7 @@ class Command(BaseCommand):
                 total_questions=total,
                 marking_scheme=MarkingScheme.NEET_PG,
                 answer_key_json=answer_key,
+                is_testing=True,
             )
 
         create_contest(
