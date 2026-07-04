@@ -30,14 +30,12 @@ services:
       context: ./nginx/
     ports:
       - 80:80
-      # - 443:443  # SSL disabled — re-enable when certs are configured
+      - 443:443
     volumes:
       - ./prod_conf.d/:/etc/nginx/conf.d/
-      # - /etc/ssl/:/etc/ssl/  # SSL disabled
+      - /etc/ssl/:/etc/ssl/
       - /var/log/nginx/:/var/log/nginx/
       - django_admin_static_files:/home/app/static
-    depends_on:
-      - api
 
 volumes:
   django_admin_static_files:
