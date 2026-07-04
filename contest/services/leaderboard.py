@@ -10,15 +10,13 @@ from contest.schemas import (
     leaderboard_entries_to_jsonable,
     parse_leaderboard_payload,
 )
+from contest.services.questions import get_contest_answer_key_map
+from contest.services.ranking import max_submitted_response_elapsed_seconds
 from contest.services.scoring import grade_attempt_against_keys, user_answer_selection
 
 
 def _correct_options_map(contest: Contest) -> dict[str, list[int]]:
-    correct_options: dict[str, list[int]] = {}
-    for qid, opts in (contest.answer_key_json or {}).items():
-        raw = opts or []
-        correct_options[str(qid)] = sorted(int(x) for x in raw)
-    return correct_options
+    return get_contest_answer_key_map(contest)
 
 
 def _provisional_progress(attempt: ContestAttempt) -> tuple[float, int, int]:
@@ -38,9 +36,11 @@ def build_leaderboard_payload(contest: Contest, limit: int | None = None) -> lis
     """
     Leaderboard rows for every contest attempt (submitted or in progress).
 
-    With an answer key: score and correct_answers from the marking scheme (realtime).
-    Without an answer key: provisional ranking by how many questions have a selected answer;
-    ties share rank; further tie-break by total saved responses and attempt time.
+    With a loaded question set (each row includes ``cop``): score and correct_answers from the
+    marking scheme. Without loaded questions / key: provisional ranking by answered question count.
+
+    Tie-break (after score): lower max elapsed time among non-skipped answers with a
+    selection (``created_at - started_at`` per response; skips ignored).
     """
     correct_options = _correct_options_map(contest)
     has_key = bool(correct_options)
@@ -53,7 +53,7 @@ def build_leaderboard_payload(contest: Contest, limit: int | None = None) -> lis
 
     rows: list[dict] = []
     for attempt in attempts:
-        order_time = attempt.started_at
+        max_elapsed = max_submitted_response_elapsed_seconds(attempt)
         user = attempt.user
         if has_key:
             score, ncorrect, nwrong, nskipped = grade_attempt_against_keys(
@@ -69,7 +69,7 @@ def build_leaderboard_payload(contest: Contest, limit: int | None = None) -> lis
                 "skipped_questions": nskipped,
                 "username": user.username,
                 "full_name": user.get_full_name() or user.username,
-                "_order_time": order_time,
+                "_max_elapsed": max_elapsed,
             }
         else:
             score, ncorrect, n_touched = _provisional_progress(attempt)
@@ -81,30 +81,31 @@ def build_leaderboard_payload(contest: Contest, limit: int | None = None) -> lis
                 "skipped_questions": None,
                 "username": user.username,
                 "full_name": user.get_full_name() or user.username,
-                "_order_time": order_time,
+                "_max_elapsed": max_elapsed,
                 "_total_touched": n_touched,
             }
         rows.append(row)
 
     if has_key:
-        rows.sort(key=lambda r: (-r["score"], r["_order_time"]))
+        rows.sort(key=lambda r: (-r["score"], r["_max_elapsed"]))
     else:
         rows.sort(
-            key=lambda r: (-r["score"], -r["_total_touched"], r["_order_time"])
+            key=lambda r: (-r["score"], -r["_total_touched"], r["_max_elapsed"])
         )
-
-    for r in rows:
-        del r["_order_time"]
-        r.pop("_total_touched", None)
 
     for i, r in enumerate(rows):
         if i == 0:
             r["rank"] = 1
         else:
-            if r["score"] == rows[i - 1]["score"]:
-                r["rank"] = rows[i - 1]["rank"]
+            prev = rows[i - 1]
+            if r["score"] == prev["score"] and r["_max_elapsed"] == prev["_max_elapsed"]:
+                r["rank"] = prev["rank"]
             else:
                 r["rank"] = i + 1
+
+    for r in rows:
+        del r["_max_elapsed"]
+        r.pop("_total_touched", None)
 
     entries: list[LeaderboardEntryPayload] = []
     slice_rows = rows if limit is None else rows[:limit]
