@@ -10,6 +10,7 @@ from contest.exceptions import (
     AnswerKeyIncompleteError,
     AnswerKeyUploadError,
     ContestQuestionsNotLoadedError,
+    InvalidCorrectOptionError,
 )
 from contest.models import Contest, ContestAttempt
 from contest.schemas import parse_answer_key_rows, parse_contest_questions_json
@@ -56,6 +57,13 @@ def upload_answer_key_json(contest: Contest, rows: list | None) -> dict:
         for k in ("exp", "choice_type", "subject_name", "topic_name"):
             if k in row_dict and row_dict[k] is not None:
                 questions[idx][k] = row_dict[k]
+
+        effective_choice_type = (questions[idx].get("choice_type") or "single").strip().lower()
+        if effective_choice_type != "multi" and len(row.cop) > 1:
+            raise InvalidCorrectOptionError(
+                f"Question {row.id!r} is not multi-select but the answer key has more than one "
+                "correct option. Only choice_type 'multi' questions may have multiple correct answers."
+            )
 
     answer_map = {row.id: row.cop for row in validated_rows}
     contest.questions_json = questions

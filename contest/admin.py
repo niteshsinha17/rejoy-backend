@@ -1,6 +1,12 @@
-from django.contrib import admin, messages
-import requests
+import json
 
+import requests
+from django import forms
+from django.contrib import admin
+from django.core.exceptions import ValidationError
+from django.utils.html import format_html
+
+from contest.exceptions import ContestJsonValidationError
 from contest.models import (
     Contest,
     ContestAttempt,
@@ -11,8 +17,36 @@ from contest.models import (
 from contest.schemas import parse_contest_questions_json
 
 
+class ContestAdminForm(forms.ModelForm):
+    class Meta:
+        model = Contest
+        fields = "__all__"
+
+    def clean(self):
+        cleaned = super().clean()
+        qb_url = cleaned.get("qb_url")
+        if qb_url and ("qb_url" in self.changed_data or self.instance.pk is None):
+            try:
+                response = requests.get(qb_url, timeout=30)
+                response.raise_for_status()
+                payload = response.json()
+            except Exception as e:
+                raise ValidationError(
+                    {"qb_url": f"Could not fetch questions from this URL: {e}"}
+                ) from e
+            try:
+                records = parse_contest_questions_json(payload)
+            except ContestJsonValidationError as e:
+                raise ValidationError(
+                    {"qb_url": f"Question data at this URL is invalid: {e}"}
+                ) from e
+            self._parsed_records = records
+        return cleaned
+
+
 @admin.register(Contest)
 class ContestAdmin(admin.ModelAdmin):
+    form = ContestAdminForm
     list_display = [
         "title",
         "slug",
@@ -25,7 +59,13 @@ class ContestAdmin(admin.ModelAdmin):
     ]
     list_filter = ["marking_scheme", "course"]
     search_fields = ["title", "slug"]
-    readonly_fields = ["total_questions", "created_at", "updated_at"]
+    readonly_fields = [
+        "total_questions",
+        "questions_preview",
+        "answer_key_preview",
+        "created_at",
+        "updated_at",
+    ]
     fieldsets = [
         (
             "Basic Info",
@@ -42,7 +82,19 @@ class ContestAdmin(admin.ModelAdmin):
         ),
         (
             "Questions & Scoring",
-            {"fields": ["qb_url", "marking_scheme", "total_questions"]},
+            {
+                "fields": [
+                    "qb_url",
+                    "marking_scheme",
+                    "total_questions",
+                    "questions_preview",
+                    "answer_key_preview",
+                ],
+                "description": (
+                    "Questions are fetched and validated from qb_url on save. "
+                    "If the URL is unreachable or the data is invalid, saving is blocked."
+                ),
+            },
         ),
         (
             "Leaderboard cache",
@@ -64,27 +116,37 @@ class ContestAdmin(admin.ModelAdmin):
     def get_status(self, obj: Contest) -> str:
         return obj.status
 
+    @admin.display(description="Questions JSON (parsed)")
+    def questions_preview(self, obj: Contest) -> str:
+        return self._json_preview(obj.questions_json)
+
+    @admin.display(description="Answer key JSON (parsed)")
+    def answer_key_preview(self, obj: Contest) -> str:
+        return self._json_preview(obj.answer_key_json)
+
+    @staticmethod
+    def _json_preview(value) -> str:
+        if not value:
+            return "—"
+        text = json.dumps(value, indent=2, ensure_ascii=False)
+        return format_html(
+            "<pre style='max-height:400px;overflow:auto;white-space:pre-wrap'>{}</pre>",
+            text,
+        )
+
     def save_model(self, request, obj, form, change):
-        old_obj = Contest.objects.filter(pk=obj.pk).first()
-        old_url = old_obj.qb_url if old_obj else None
+        records = getattr(form, "_parsed_records", None)
+        if records is not None:
+            obj.questions_json = [r.model_dump(mode="python") for r in records]
+            obj.total_questions = len(records)
+            obj.answer_key_json = {str(r.id): r.cop for r in records}
+            obj.leaderboard_cache_payload = []
+            obj.leaderboard_cache_computed_at = None
+            self.message_user(
+                request,
+                f"Fetched and stored {obj.total_questions} questions (with answer key) from qb_url.",
+            )
         super().save_model(request, obj, form, change)
-        if not change or old_url != obj.qb_url:
-            try:
-                response = requests.get(obj.qb_url, timeout=30)
-                response.raise_for_status()
-                questions = response.json()
-                parse_contest_questions_json(questions)
-                obj.questions_json = questions
-                obj.total_questions = len(questions)
-                obj.save(update_fields=["questions_json", "total_questions"])
-                self.message_user(
-                    request,
-                    f"Fetched and stored {obj.total_questions} questions from qb_url.",
-                )
-            except Exception as e:
-                self.message_user(
-                    request, f"Could not fetch questions: {e}", level=messages.WARNING
-                )
 
 
 @admin.register(ContestAttempt)

@@ -120,8 +120,8 @@ class ContestQuestionSerializer(serializers.Serializer):
     opc = serializers.CharField()
     opd = serializers.CharField()
     choice_type = serializers.CharField(required=False)
-    subject_name = serializers.CharField(required=False, allow_blank=True)
-    topic_name = serializers.CharField(required=False, allow_blank=True)
+    subject_name = serializers.CharField(required=False, allow_blank=True, allow_null=True)
+    topic_name = serializers.CharField(required=False, allow_blank=True, allow_null=True)
     exp = serializers.CharField(required=False, allow_blank=True)
     cop = serializers.JSONField(required=False, allow_null=True)
 

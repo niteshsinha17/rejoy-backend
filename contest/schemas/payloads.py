@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from pydantic import BaseModel, ConfigDict, Field, TypeAdapter, field_validator
+from pydantic import BaseModel, ConfigDict, Field, TypeAdapter, field_validator, model_validator
 
 
 class ContestQuestionPayload(BaseModel):
@@ -22,8 +22,6 @@ class ContestQuestionPayload(BaseModel):
     opc: str
     opd: str
     choice_type: str = "single"
-    subject_name: str = ""
-    topic_name: str = ""
     exp: str | None = None
     cop: list[int] | None = None
 
@@ -35,6 +33,17 @@ class ContestQuestionPayload(BaseModel):
         from contest.services.scoring import normalize_cop
 
         return normalize_cop(v)
+
+    @model_validator(mode="after")
+    def validate_single_choice_cop(self) -> "ContestQuestionPayload":
+        from contest.exceptions import InvalidCorrectOptionError
+
+        if (self.choice_type or "single").strip().lower() != "multi" and len(self.cop) > 1:
+            raise InvalidCorrectOptionError(
+                f"Question {self.id!r} is not multi-select but has more than one correct option. "
+                "Only choice_type 'multi' questions may have multiple correct answers."
+            )
+        return self
 
 
 class AnswerKeyRowPayload(BaseModel):
