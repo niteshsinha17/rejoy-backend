@@ -64,6 +64,8 @@ class ContestAdmin(admin.ModelAdmin):
         "total_questions",
         "questions_preview",
         "answer_key_preview",
+        "leaderboard_cache_payload",
+        "leaderboard_cache_computed_at",
         "created_at",
         "updated_at",
     ]
@@ -111,8 +113,8 @@ class ContestAdmin(admin.ModelAdmin):
                     "leaderboard_cache_computed_at",
                 ],
                 "description": (
-                    "Cached leaderboard rows until TTL expires. Clear computed_at to force "
-                    "rebuild on the next API read."
+                    "Read-only cached leaderboard rows and last-computed time. "
+                    "Managed automatically by the API; not editable here."
                 ),
             },
         ),
