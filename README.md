@@ -42,7 +42,7 @@ Copy `.env.example` to `.env` at the repository root:
 | `.env` | Shared settings (dev and prod) |
 | `prod.env` | Production-only overrides (database, etc.) |
 
-At minimum, set `DJANGO_SECRET_KEY` and `ENVIRONMENT` (`development` or `production`). See `.env.example` for the full list (Redis, email, Twilio, AWS, OpenAI, etc.).
+At minimum, set `DJANGO_SECRET_KEY` and `ENVIRONMENT` (`development` or `production`). See `.env.example` for the full list (Redis, email, Twilio, AWS, Anthropic/Claude, etc.).
 
 | Variable | Notes |
 |----------|-------|
