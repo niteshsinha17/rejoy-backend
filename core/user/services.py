@@ -1,19 +1,14 @@
 import uuid
 
 from django.forms import ValidationError
-from langchain.agents import AgentExecutor, Tool, create_openai_functions_agent
-from langchain.prompts import MessagesPlaceholder, PromptTemplate
-from langchain.pydantic_v1 import BaseModel, Field
-from langchain.tools import tool
-from langchain_community.callbacks import get_openai_callback
+from langchain.agents import AgentExecutor, Tool, create_tool_calling_agent
 from langchain_community.utilities import GoogleSearchAPIWrapper
-from langchain_core.messages import AIMessage, HumanMessage, SystemMessage
-from langchain_core.prompts import (
-    ChatPromptTemplate,
-    HumanMessagePromptTemplate,
-    PromptTemplate,
-)
-from langchain_openai import ChatOpenAI
+from langchain_core.messages import AIMessage, HumanMessage
+from langchain_core.prompts import ChatPromptTemplate, MessagesPlaceholder
+from langchain_core.tools import tool
+from pydantic import BaseModel, Field
+
+from core.services.llm import get_chat_llm
 
 from authentication.exceptions import EmailAlreadyExistsException
 from core.models import DoctorProfile, User
@@ -146,6 +141,7 @@ Insurance Accepted: {", ".join(self.doctor_detail.insurance_accepted)}
 
 Format Instructions:
 Always return a string response to the user's query.
+Do not include patient-facing disclaimers (e.g. "consult a healthcare professional", "not medical advice", or warnings to seek care before changing diet, exercise, or medications). The audience is clinicians.
 
 """
         search = GoogleSearchAPIWrapper()
@@ -161,25 +157,22 @@ Always return a string response to the user's query.
         formatted_messages = self._format_chat_history(message_history)
         prompt = ChatPromptTemplate.from_messages(
             [
-                SystemMessage(content=template),
+                ("system", template),
                 MessagesPlaceholder(variable_name="chat_history"),
-                HumanMessagePromptTemplate(
-                    prompt=PromptTemplate(input_variables=["input"], template="{input}")
-                ),
+                ("human", "{input}"),
                 MessagesPlaceholder(variable_name="agent_scratchpad"),
             ]
         )
 
-        llm = ChatOpenAI(temperature=0, verbose=True, model="gpt-4")
-        agent = create_openai_functions_agent(llm, tools, prompt)
+        llm = get_chat_llm(temperature=0)
+        agent = create_tool_calling_agent(llm, tools, prompt)
         agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
-        with get_openai_callback() as callback:
-            output = agent_executor.invoke(
-                {
-                    "chat_history": formatted_messages,
-                    "input": message,
-                },
-            )
+        output = agent_executor.invoke(
+            {
+                "chat_history": formatted_messages,
+                "input": message,
+            },
+        )
         return output["output"]
 
 
@@ -203,6 +196,7 @@ class AskService:
         template = f"""
 You are Rejoy AI. You need to help doctor {self.user.full_name} with medical related queries. Your response should be more researched based.
 You response should contain reference links to show the user.
+Do not include patient-facing disclaimers (e.g. "consult a healthcare professional", "not medical advice", or warnings to seek care before changing diet, exercise, or medications). The audience is clinicians.
 
 
 Format Instructions:
@@ -227,23 +221,20 @@ Always return a response in markdown format to the user's query.
         formatted_messages = self._format_chat_history(message_history)
         prompt = ChatPromptTemplate.from_messages(
             [
-                SystemMessage(content=template),
+                ("system", template),
                 MessagesPlaceholder(variable_name="chat_history"),
-                HumanMessagePromptTemplate(
-                    prompt=PromptTemplate(input_variables=["input"], template="{input}")
-                ),
+                ("human", "{input}"),
                 MessagesPlaceholder(variable_name="agent_scratchpad"),
             ]
         )
 
-        llm = ChatOpenAI(temperature=0, verbose=True, model="gpt-4")
-        agent = create_openai_functions_agent(llm, tools, prompt)
+        llm = get_chat_llm(temperature=0)
+        agent = create_tool_calling_agent(llm, tools, prompt)
         agent_executor = AgentExecutor(agent=agent, tools=tools, verbose=True)
-        with get_openai_callback() as callback:
-            output = agent_executor.invoke(
-                {
-                    "chat_history": formatted_messages,
-                    "input": message,
-                },
-            )
+        output = agent_executor.invoke(
+            {
+                "chat_history": formatted_messages,
+                "input": message,
+            },
+        )
         return output["output"]

@@ -1,6 +1,7 @@
 import os
 
 OPENAI_API_KEY = os.environ.get("OPENAI_API_KEY") or ""
+ANTHROPIC_API_KEY = os.environ.get("ANTHROPIC_API_KEY") or ""
 FRONTEND_URL = os.environ.get("FRONTEND_URL") or ""
 TWILIO_ACCOUNT_SID = os.environ.get("TWILIO_ACCOUNT_SID") or ""
 TWILIO_AUTH_TOKEN = os.environ.get("TWILIO_AUTH_TOKEN") or ""

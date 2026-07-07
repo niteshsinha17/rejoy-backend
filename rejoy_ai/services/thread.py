@@ -1,6 +1,7 @@
 from core.models import User
 from rejoy_ai.models import Thread, ThreadMessage
 from rejoy_ai.services.ai import RejoyAi
+from rejoy_ai.services.response_format import get_thread_description
 
 
 class ThreadService:
@@ -10,15 +11,11 @@ class ThreadService:
         response = ai.create_response(input)
         if response.error:
             return (None, response)
-        description = ""
-        text = response.text or []
-        for block in text:
-            if block["type"] == "text":
-                description = block["text"]
-                break
 
         thread = Thread.objects.create(
-            user=user, query=response.query, description=description
+            user=user,
+            query=response.query,
+            description=get_thread_description(response.text),
         )
         message = ThreadMessage.objects.create(
             thread=thread,

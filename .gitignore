@@ -9,3 +9,4 @@ redis-data*
 static/
 chroma_db
 venv/
+logs/

@@ -8,6 +8,7 @@ from core.apis import BaseApi
 from rejoy_ai.models import Thread, ThreadMessage
 from rejoy_ai.serializers.response import ThreadListSerializer
 from rejoy_ai.services.thread import ThreadService
+from rejoy_ai.services.response_format import get_answer_format
 
 
 class InitializeThreadApi(BaseApi):
@@ -37,6 +38,7 @@ class InitializeThreadApi(BaseApi):
                     "sources": message.sources,
                     "follow_ups": message.follow_ups,
                     "text": message.text,
+                    "answer_format": get_answer_format(message.text),
                 },
                 "thread_slug": thread.slug if thread else None,
             }
@@ -73,6 +75,9 @@ class ThreadMessageApi(BaseApi):
                     "query": message.query,
                     "sources": message.sources,
                     "text": message.text,
+                    "answer_format": get_answer_format(message.text),
+                    "error": False,
+                    "follow_ups": [],
                     "created_at": message.created_at,
                 }
                 for message in messages
@@ -174,5 +179,6 @@ class ThreadGenerateResponseApi(BaseApi):
                 "sources": message.sources,
                 "follow_ups": message.follow_ups,
                 "text": message.text,
+                "answer_format": get_answer_format(message.text),
             }
         )

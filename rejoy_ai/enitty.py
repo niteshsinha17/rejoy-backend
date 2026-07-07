@@ -12,4 +12,4 @@ class RejoyAIResponse:
     query: Optional[str]
     sources: Optional[list[dict]]
     follow_ups: Optional[list[str]]
-    text: Optional[list[dict]]
+    text: Optional[list[dict] | dict]

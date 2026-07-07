@@ -1,35 +1,28 @@
-import json
-from typing import Optional
+from urllib.parse import urlparse
 
-from langchain.output_parsers import PydanticOutputParser
-from langchain.pydantic_v1 import BaseModel, Field
-from langchain_openai import ChatOpenAI
+from pydantic import BaseModel, Field, model_validator
 
+from core.services.llm import REJOY_AI_MAX_TOKENS, get_chat_llm
 from rejoy_ai.enitty import RejoyAIResponse
+from rejoy_ai.services.response_format import wrap_markdown_answer
 
 
 class Source(BaseModel):
     title: str
     url: str
-    description: str = Field(description="Some Segment of the source in 70-100 words")
-    favicon: str
-    domain: str
+    description: str = Field(description="Brief source summary in 35-45 words")
+    favicon: str = ""
+    domain: str = ""
 
-
-class Response(BaseModel):
-    sources: list[int] = Field(
-        description="Indexes from sources list. Add when possible"
-    )
-    text: str = Field(
-        description="html for making text bold, italic etc. Do not include p, html, table, h1, h2, etc tags. Use type to specify type of text"
-    )
-    type: str = Field(description="Type of response. Can be text, list and table")
-    list_items: Optional[list[str]]
-    heading: Optional[str] = Field(
-        description="use this for specify heading of list or table or start of para if needed."
-    )
-    table_columns: Optional[list[str]]
-    table_rows: Optional[list[list[str]]]
+    @model_validator(mode="after")
+    def fill_domain_favicon(self):
+        if self.url:
+            netloc = urlparse(self.url).netloc
+            if netloc and not self.domain:
+                self.domain = netloc.removeprefix("www.")
+            if netloc and not self.favicon:
+                self.favicon = f"https://{netloc}/favicon.ico"
+        return self
 
 
 class GetQueryOutputSchema(BaseModel):
@@ -38,13 +31,17 @@ class GetQueryOutputSchema(BaseModel):
         description="Modified Search query for better results. Keep within 100 characters"
     )
     sources: list[Source] = Field(
-        description="List of sources to show user in response"
+        description="Exactly 4 reference links (at most one video)"
     )
     follow_ups: list[str] = Field(
-        description="List of follow up questions to show user in response"
+        description="Exactly 3 follow-up questions"
     )
-    text: list[Response] = Field(
-        description="Detailed response that can parsed to show user in structured format"
+    answer_markdown: str = Field(
+        description=(
+            "Concise GFM markdown for clinicians. Brief intro (1-2 sentences), then 2-4 "
+            "## sections with short bullet lists. Optional pipe table for comparisons. "
+            "Keep total answer under 500 words. No HTML, --- rules, emojis, or disclaimers."
+        )
     )
 
 
@@ -63,29 +60,8 @@ class RejoyAi:
             sources=[
                 {
                     "title": "Health Benefits of Fish Oil",
-                    "url": "https://www.healthline.com/nutrition/13-benefits-of-fish-oil",
-                    "description": "Fish oil is known for its high omega-3 fatty acid content, which is beneficial for heart health, reducing inflammation, and supporting brain function. Studies suggest it may help lower blood pressure and triglycerides.",
-                    "favicon": "https://www.healthline.com/favicon.ico",
-                    "domain": "healthline.com",
-                },
-                {
-                    "title": "Fish Oil: Uses, Benefits & Side Effects",
-                    "url": "https://www.webmd.com/diet/ss/slideshow-fish-oil",
-                    "description": "Fish oil supplements are often used to support cardiovascular health, improve mental health, and reduce inflammation. They are also used in the management of certain mental health conditions.",
-                    "favicon": "https://www.webmd.com/favicon.ico",
-                    "domain": "webmd.com",
-                },
-                {
-                    "title": "Omega-3 Fatty Acids: An Essential Contribution",
-                    "url": "https://ods.od.nih.gov/factsheets/Omega3FattyAcids-Consumer/",
-                    "description": "Omega-3 fatty acids, found in fish oil, are essential fats that have numerous health benefits, including reducing the risk of heart disease, supporting mental health, and reducing inflammation.",
-                    "favicon": "https://ods.od.nih.gov/favicon.ico",
-                    "domain": "ods.od.nih.gov",
-                },
-                {
-                    "title": "The Benefits of Fish Oil: A Closer Look",
                     "url": "https://www.mayoclinic.org/drugs-supplements-fish-oil/art-20364810",
-                    "description": "Fish oil is rich in omega-3 fatty acids, which are crucial for maintaining heart health, reducing inflammation, and supporting cognitive function. It may also aid in managing depression and anxiety.",
+                    "description": "Fish oil is known for its high omega-3 fatty acid content, which is beneficial for heart health, reducing inflammation, and supporting brain function.",
                     "favicon": "https://www.mayoclinic.org/favicon.ico",
                     "domain": "mayoclinic.org",
                 },
@@ -93,43 +69,15 @@ class RejoyAi:
             follow_ups=[
                 "What are the best sources of omega-3 fatty acids?",
                 "How much fish oil should I take daily?",
-                "Are there any side effects of fish oil supplements?",
-                "Can fish oil help with joint pain?",
             ],
-            text=[
-                {
-                    "sources": [0, 1, 2, 3],
-                    "text": "Fish oil is renowned for its high content of omega-3 fatty acids, which are essential for various bodily functions.",
-                    "type": "text",
-                    "list_items": None,
-                    "heading": None,
-                    "table_columns": None,
-                    "table_rows": None,
-                },
-                {
-                    "sources": [0, 1],
-                    "text": "Some of the key benefits of fish oil include:",
-                    "type": "list",
-                    "list_items": [
-                        "Improving heart health by reducing triglycerides and blood pressure.",
-                        "Supporting brain function and mental health.",
-                        "Reducing inflammation in the body.",
-                        "Potentially aiding in the management of depression and anxiety.",
-                    ],
-                    "heading": None,
-                    "table_columns": None,
-                    "table_rows": None,
-                },
-                {
-                    "sources": [2, 3],
-                    "text": "Omega-3 fatty acids in fish oil are crucial for maintaining overall health and preventing chronic diseases.",
-                    "type": "text",
-                    "list_items": None,
-                    "heading": None,
-                    "table_columns": None,
-                    "table_rows": None,
-                },
-            ],
+            text=wrap_markdown_answer(
+                "## Fish oil benefits\n\n"
+                "Fish oil is rich in **omega-3 fatty acids**, which support heart and brain health.\n\n"
+                "### Key benefits\n\n"
+                "- Reduces inflammation\n"
+                "- Supports cardiovascular health\n"
+                "- May improve mental health"
+            ),
         )
 
     def create_response(
@@ -163,8 +111,6 @@ class RejoyAi:
         )
 
     def _generate_response(self, input: str, question_history: list[str]):
-        output_parser = PydanticOutputParser(pydantic_object=GetQueryOutputSchema)
-
         history = ""
         if len(question_history) == 0:
             history = "No history"
@@ -174,19 +120,20 @@ class RejoyAi:
                 history += "\n"
 
         template = f"""
-You are Rejoy AI that help user with only medical, food, health, medicine related queries. Your response should be more researched based. 
-Search over internet to construct your response. Include 4-7 reference links including videos (if available) and follow up questions that user can ask in your response.
-If  query is not related to medical domain, return error. Also understand user input history. Never use these websites are sources to provide answer. - webmd.com, and healthline.com 
-
-{output_parser.get_format_instructions()}
+You are Rejoy AI for licensed clinicians. Answer medical, food, health, and medicine queries concisely.
+Use your medical knowledge; cite exactly 4 reputable sources (never webmd.com or healthline.com).
+If the query is not medical, set error to true.
 
 User inputs history:
 {history}
 
-
 Input: {input}
 """
-        llm = ChatOpenAI(temperature=0.3, model="gpt-4o")
-        response = llm.invoke(template)
-        data = json.loads(output_parser.parse(str(response.content)).json())
+        llm = get_chat_llm(
+            temperature=0.3, max_tokens=REJOY_AI_MAX_TOKENS
+        ).with_structured_output(GetQueryOutputSchema)
+        result = llm.invoke(template)
+        data = result.model_dump()
+        answer_markdown = data.pop("answer_markdown")
+        data["text"] = wrap_markdown_answer(answer_markdown)
         return data
